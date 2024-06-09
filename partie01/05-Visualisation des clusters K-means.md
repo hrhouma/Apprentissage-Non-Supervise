@@ -1,13 +1,14 @@
 # Example - Création d'un nouveau carnet pour le clustering
 
 - Pour débuter notre travail sur le clustering, entrons dans notre environnement de travail.
-- Je vais ouvrir le dossier `Maven`, où j'ai déjà préparé les données lors de la dernière session.
 - En cliquant sur "Nouveau Carnet", je choisis Python 3 comme environnement d'exécution.
-- Une fois le carnet ouvert, je le nomme "Clustering". Maintenant, je vais structurer le document avec une section intitulée "Préparation des données". C'est ici que nous commençons à manipuler nos données.
+- Une fois le carnet ouvert, je le nomme "Clustering". 
 
 ## Chargement des données
 
-Avant toute chose, il est essentiel de charger nos données. Remontons à la racine et accédons aux "matériaux de cours". Dans le dossier `Data`, je trouve mon fichier `Entertainment_Clean.csv`. Pour le lire, j'utilise la bibliothèque `pandas` :
+- Avant toute chose, il est essentiel de charger nos données. 
+- Dans le dossier `Data`, je trouve mon fichier `Entertainment_Clean.csv`. 
+- Pour le lire, j'utilise la bibliothèque `pandas` :
 
 ```python
 import pandas as pd
