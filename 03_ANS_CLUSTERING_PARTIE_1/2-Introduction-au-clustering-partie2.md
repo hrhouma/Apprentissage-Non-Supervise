@@ -124,7 +124,11 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 
 **Réponse 1**: A) Plus proche voisins
+
 **Réponse 2**: A) Epsilon (ε), qui détermine la distance maximale entre deux points pour qu'ils soient considérés dans le même voisinage
+
 **Réponse 3**: A) Incapacité à gérer les grands ensembles de données
+
 **Réponse 4**: A) Capacité à identifier des clusters de formes arbitraires
+
 **Réponse 5**: B) Indice de Silhouette
