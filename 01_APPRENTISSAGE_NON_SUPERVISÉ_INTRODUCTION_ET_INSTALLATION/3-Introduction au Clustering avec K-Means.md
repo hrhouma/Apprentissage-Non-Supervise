@@ -78,7 +78,7 @@ Ce que fait Google News, c'est qu'il regroupe chaque jour des centaines et des m
 
 
 ### Organisation des Nouvelles en Clusters
-Sur l'image que vous avez partagée, nous pouvons voir trois catégories principales où les nouvelles sont regroupées : Canada, Divertissements, et Sports. Chaque catégorie représente un cluster de nouvelles qui partagent des thèmes ou sujets communs.
+Sur l'image ci-haut, nous pouvons voir trois catégories principales où les nouvelles sont regroupées : Canada, Divertissements, et Sports. Chaque catégorie représente un cluster de nouvelles qui partagent des thèmes ou sujets communs.
 
 1. **Canada** : Ce cluster inclut des nouvelles sur des sujets variés concernant le Canada, comme la politique, les conditions météorologiques, et des questions sociales.
    
