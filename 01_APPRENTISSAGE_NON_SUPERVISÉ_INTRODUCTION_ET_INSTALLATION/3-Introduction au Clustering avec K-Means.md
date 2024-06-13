@@ -108,10 +108,39 @@ La génomique est l'étude de l'ADN. Comme vous pouvez le voir sur l'image, diff
 Par exemple, les personnes ayant un génotype Duffy-négatif ont tendance à présenter une plus grande résistance au paludisme et se trouvent généralement dans les régions africaines. Vous pouvez donc établir une relation entre le génotype, l'habitat naturel et découvrir leur réaction à certaines maladies.
 En somme, le clustering partitionne l'ensemble de données selon les similarités en différents groupes qui peuvent servir de base pour des analyses plus approfondies. Le résultat est que les objets d'un même groupe seront similaires entre eux, mais différents des objets d'un autre groupe.
 
+Pour mieux comprendre les différentes méthodes de clustering, examinons les trois types principaux mentionnés :
+
+# Les Types de Clustering - Exclusive / Overlapping  / Hierarchical Clustering
+1. **Clustering Exclusif** :
+    ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/5b1b0111-820b-4784-9d49-bd7fe6df7dea)
+
+2. **Clustering Chevauchant** :
+   ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/fcdd08bd-8bf3-4403-a8a7-989cc5567ca9)
+
+3. **Clustering Hiérarchique** :
+   ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/dfab9f35-9fde-4359-aeb6-6f39ce51f360)
+
+
+1. **Clustering Exclusif** :
+   - **Définition** : Dans le clustering exclusif, chaque élément appartient exclusivement à un seul cluster. Cela signifie qu'un élément ne peut pas être membre de plusieurs clusters.
+   - **Exemple** : L'algorithme K-means est un type de clustering exclusif. Dans ce modèle, chaque point de données est attribué à un seul cluster de manière à minimiser la variance au sein de ce cluster.
+  
+2. **Clustering Chevauchant** :
+   - **Définition** : Contrairement au clustering exclusif, un élément dans un clustering chevauchant peut appartenir à plusieurs clusters. Chaque élément a un degré d'association avec chaque cluster.
+   - **Exemple** : L'algorithme Fuzzy C-means est basé sur le clustering chevauchant. Il permet aux points de données d'appartenir à différents clusters avec différents degrés d'appartenance, reflétant une réalité où les données peuvent naturellement appartenir à plusieurs catégories.
+
+3. **Clustering Hiérarchique** :
+   - **Définition** : Le clustering hiérarchique forme des clusters en une série de partitions qui créent une structure arborescente. Ce type de clustering n'est pas réalisé en une seule étape mais suit une approche progressive pour former les clusters finaux.
+   - **Visuel** : Il ressemble à un arbre, où chaque nœud représente un cluster qui peut se diviser en clusters plus petits, ou fusionner avec d'autres pour former des clusters plus grands.
+
+### Importance de la Vitesse et de l'Efficiency Computationnelle
+- Lors de l'implémentation de ces algorithmes, la vitesse de calcul et l'efficience sont des paramètres cruciaux, surtout avec de grandes quantités de données. Par exemple, K-means est souvent privilégié dans les grands ensembles de données en raison de sa vitesse de calcul supérieure et de sa facilité d'utilisation.
+
+
+
+  
 
 ## Conclusion
-Ce cours offre une introduction complète au monde passionnant du Machine Learning non supervisé et montre comment des techniques telles que le clustering K-means peuvent révolutionner les stratégies de marketing. En segmentant les clients en groupes homogènes, les entreprises améliorent non seulement leur compréhension des besoins des clients mais aussi optimisent l'efficacité de leurs efforts marketing.
+Le clustering K-means a été utilisé pour révolutionner les stratégies de marketing. En segmentant les clients en groupes homogènes, les entreprises améliorent non seulement leur compréhension des besoins des clients mais aussi optimisent l'efficacité de leurs efforts marketing.
 
-Nous espérons que ce cours vous aidera à mieux comprendre le potentiel des analyses de données dans l'élaboration des stratégies de marketing et vous encouragera à explorer ces technologies innovantes. 🌟
 
-Ce README vise à vous guider à travers les concepts fondamentaux du clustering et son application pratique pour améliorer l'engagement et la satisfaction client dans un contexte de marketing basé sur les données. 🚀
