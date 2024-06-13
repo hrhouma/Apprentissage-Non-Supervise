@@ -69,7 +69,32 @@ Poursuivons la compréhension du clustering avec l'exemple de Google News.
 
 Ce que fait Google News, c'est qu'il regroupe chaque jour des centaines et des milliers de nouvelles qui apparaissent sur le web en histoires cohérentes. Comment cela fonctionne-t-il ?
 
-Une fois que vous accédez à news.google.com, vous verrez de nombreuses histoires d'actualités regroupées comme indiqué ci-dessous. Elles sont organisées en différentes histoires d'actualités. Ici, si vous observez la zone mise en évidence en rouge, vous remarquerez que diverses URL de nouvelles concernant Trump et Modi sont regroupées dans une seule section, tandis que les autres sont classées dans différentes sections. En cliquant sur une URL différente du groupe, vous accédez à une histoire différente sur le même sujet. Ainsi, Google News regroupe automatiquement les nouvelles histoires sur le même sujet dans des clusters prédéfinis.
+
+## Exemple de Clustering avec Google News
+
+Lorsque vous visitez le site news.google.com, vous êtes confronté à un flux dense d'informations provenant de diverses sources. Pour faciliter la navigation et l'accès à l'information pertinente, Google News utilise des techniques de clustering pour regrouper les nouvelles par thèmes ou sujets similaires. Voici comment cela fonctionne :
+
+### Organisation des Nouvelles en Clusters
+Sur l'image que vous avez partagée, nous pouvons voir trois catégories principales où les nouvelles sont regroupées : Canada, Divertissements, et Sports. Chaque catégorie représente un cluster de nouvelles qui partagent des thèmes ou sujets communs.
+
+1. **Canada** : Ce cluster inclut des nouvelles sur des sujets variés concernant le Canada, comme la politique, les conditions météorologiques, et des questions sociales.
+   
+2. **Divertissements** : Ce cluster rassemble des articles sur des célébrités, des événements culturels, et d'autres nouvelles liées au divertissement.
+   
+3. **Sports** : Ici, les articles sont principalement axés sur des événements sportifs, des analyses de matches, et des nouvelles concernant les athlètes.
+
+### Mécanisme de Regroupement
+- **Extraction de Caractéristiques** : Google extrait des mots-clés et des entités (comme des noms de personnes ou de lieux) des titres et des contenus des articles.
+- **Application de l'Algorithme de Clustering** : Les articles sont ensuite analysés pour détecter des similarités dans les caractéristiques extraites. Les articles similaires sont regroupés ensemble.
+- **Présentation des Clusters** : Chaque groupe d'articles est présenté sous la forme d'une histoire agrégée qui met en avant un article principal et offre des liens vers d'autres articles relatifs au même sujet.
+
+### Avantages du Clustering
+- **Amélioration de l'Expérience Utilisateur** : Les utilisateurs peuvent rapidement trouver des nouvelles qui les intéressent, car les articles similaires sont regroupés ensemble.
+- **Découverte Facilitée** : Cette méthode expose les lecteurs à une gamme plus large d'articles sur un même sujet, augmentant ainsi la profondeur de l'information accessible.
+- **Efficient pour Suivre des Événements en Évolution** : Les utilisateurs peuvent suivre l'évolution d'un sujet ou d'une histoire grâce à la mise à jour régulière des clusters avec de nouveaux articles.
+
+- Ce système de clustering est un exemple classique de l'utilisation de l'apprentissage non supervisé pour organiser de grands ensembles de données (ici, des articles de nouvelles), ce qui permet de structurer l'information de manière intuitive et accessible.
+
 
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6dd5db3b-cfcc-439a-b37c-70e06e2d8777)
 
