@@ -128,17 +128,29 @@ Cette section conclut la première partie du cours et vous prépare à plonger d
 ---
 
 ### Réponses aux Questions:
+
 **1. C)** L'apprentissage non supervisé regroupe des données similaires sans labels préexistants.  
+
 **2. C)** Compilation de langages de programmation  
+
 **3. B)** DBSCAN  
+
 **4. B)** DBSCAN peut identifier des clusters de densité variable et des outliers.  
-**5. B)** Lorsqu'une visualisation en arbre (dendrogramme) des relations entre clusters est utile.  
+
+**5. B)** Lorsqu'une visualisation en arbre (dendrogramme) des relations entre clusters est utile. 
+
 **6. B)** Coefficient de corrélation de Pearson (ceci est typiquement utilisé pour mesurer la corrélation linéaire entre variables, pas pour évaluer des clusters).
+
 **7. B)** Il ne peut pas bien gérer les clusters de formes non sphériques.
+
 **8. B)** La méthode du coude (Elbow Method)
+
 **9. A)** Il permet d'ajuster le nombre de clusters à la volée.
+
 **10. A)** Il peut identifier efficacement les clusters de différentes tailles et formes.
+
 **11. B)** Il utilise des techniques basées sur les graphes pour regrouper les données.
+
 **12. C)** La couleur des points de données
 
 
