@@ -1,6 +1,6 @@
 #  Clustering K-moyennes !
 
-1. Qu'est-ce que le regroupement ?
+1. Qu'est-ce que le regroupement (RAPPEL)?
    - Introduction au regroupement
    - Différences entre regroupement et classification
    - Exemples de regroupement dans des scénarios réels
