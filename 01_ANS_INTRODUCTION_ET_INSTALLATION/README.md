@@ -1,3 +1,5 @@
+# Commandes conda 
+```powershell
 python --version
 conda activate demo2
 python --version
@@ -11,3 +13,4 @@ python --version
 conda remove --name env3 --all
 conda env list
 doskey /history
+```
