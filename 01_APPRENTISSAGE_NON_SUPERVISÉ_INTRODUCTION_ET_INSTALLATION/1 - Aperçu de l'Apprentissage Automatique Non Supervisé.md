@@ -34,7 +34,8 @@ Il y a seulement quelques décennies, l'idée d'enseigner à une machine et de s
 ------------
 # 2 - Un aperçu de l'apprentissage automatique
 
-![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/bd7bd49a-9f28-42e4-b3d1-034543850794)
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/60eae82f-3a99-47d1-9b68-8015b07ad905)
+
 
 L'apprentissage automatique, ou *machine learning*, est un domaine fascinant de l'intelligence artificielle qui vise à doter les machines de la capacité d'apprendre à partir des données sans être explicitement programmées pour chaque tâche. Imaginez que vous enseignez à un enfant comment reconnaître des fruits. Vous lui montrez plusieurs exemples de pommes et de bananes, et au fil du temps, il apprend à les distinguer, même s'il n'a jamais vu certains de ces fruits auparavant. L'apprentissage automatique fonctionne de manière similaire : nous alimentons le système avec des données (les exemples de fruits), il apprend des modèles à partir de ces données, et finalement, il peut faire des prédictions ou prendre des décisions basées sur de nouvelles données qu'il n'a jamais vues.
 
