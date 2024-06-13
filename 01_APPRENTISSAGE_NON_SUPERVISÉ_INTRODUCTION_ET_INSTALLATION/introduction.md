@@ -211,11 +211,6 @@ Malgré son utilité dans divers scénarios d'application, l'apprentissage non s
 
 
 
-
-
-
-
-
 ## Conclusion
 
 L'apprentissage non supervisé offre des possibilités incroyables, mais aussi des défis uniques. En comprendre les subtilités nous permet de mieux exploiter son potentiel et d'anticiper ses impacts futurs.
