@@ -2,9 +2,9 @@
 
 # Introduction
 
-Ce cours introduit le clustering, une méthode clé de l'apprentissage non supervisé utilisée pour découvrir des structures cachées dans les données. Dans cette première partie, nous explorerons les concepts de base du clustering, son importance et ses applications variées.
+Ce paragraphe introduit le clustering, une méthode clé de l'apprentissage non supervisé utilisée pour découvrir des structures cachées dans les données. Dans cette première partie, nous explorerons les concepts de base du clustering, son importance et ses applications variées.
 
-# Objectifs du Cours
+# Objectifs 
 
 - Comprendre les principes de base et l'importance du clustering.
 - Examiner diverses applications du clustering dans différents domaines.
@@ -52,7 +52,7 @@ Le clustering est crucial pour diverses analyses de données dans plusieurs doma
 
 # 4. Conclusion et Préparation pour les Algorithmes de Clustering
 
-Cette section conclut la première partie du cours et prépare les étudiants à plonger dans les algorithmes spécifiques de clustering tels que K-Means, DBSCAN, et Clustering hiérarchique dans la Partie 2. Les étudiants doivent comprendre l'importance et les applications diverses du clustering avant d'aborder les aspects techniques.
+Cette section conclut la première partie du cours et vous prépare à plonger dans les algorithmes spécifiques de clustering tels que K-Means, DBSCAN, et Clustering hiérarchique dans la Partie 2. Les étudiants doivent comprendre l'importance et les applications diverses du clustering avant d'aborder les aspects techniques.
 
 # 5. Évaluation Formative
 
