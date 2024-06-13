@@ -77,31 +77,51 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 # Quiz - 3
 
 **Question 1**: Quelle méthode n'est pas une méthode valide pour initialiser les centroïdes dans l'algorithme K-Means ?
+
 **A)** Plus proche voisins  
+
 **B)** K-Means++  
+
 **C)** Sélection aléatoire  
+
 **Réponse**: A) Plus proche voisins
 
 **Question 2**: Quel paramètre est crucial pour l'algorithme DBSCAN et comment l'influence-t-il le résultat du clustering ?
+
 **A)** Epsilon (ε), qui détermine la distance maximale entre deux points pour qu'ils soient considérés dans le même voisinage  
+
 **B)** Le nombre de clusters  
+
 **C)** Le nombre d'itérations  
+
 **Réponse**: A) Epsilon (ε), qui détermine la distance maximale entre deux points pour qu'ils soient considérés dans le même voisinage
 
 **Question 3**: Quelle est une limitation majeure du clustering hiérarchique agglomératif ?
+
 **A)** Incapacité à gérer les grands ensembles de données  
+
 **B)** Nécessité de déterminer le nombre de clusters à l'avance  
+
 **C)** Sensibilité aux points de données aberrants  
+
 **Réponse**: A) Incapacité à gérer les grands ensembles de données
 
 **Question 4**: Quel est l'avantage de l'utilisation de techniques de clustering basées sur la densité comme DBSCAN par rapport à K-Means ?
+
 **A)** Capacité à identifier des clusters de formes arbitraires  
+
 **B)** Meilleure performance avec des ensembles de données de grande taille  
+
 **C)** Plus simple à configurer  
+
 **Réponse**: A) Capacité à identifier des clusters de formes arbitraires
 
 **Question 5**: Quelle métrique est souvent utilisée pour évaluer la qualité d'un clustering effectué par K-Means ?
+
 **A)** Coefficient de corrélation  
+
 **B)** Indice de Silhouette  
+
 **C)** AUC-ROC  
+
 **Réponse**: B) Indice de Silhouette
