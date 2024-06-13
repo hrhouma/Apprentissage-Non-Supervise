@@ -1,5 +1,5 @@
-# Cours : Introduction 2 à l'Apprentissage Non Supervisé
-Dans cette série de tutoriels, nous allons explorer le concept d'apprentissage non supervisé, ses algorithmes principaux et leurs cas d'utilisation.
+# Introduction # 2 à l'Apprentissage Non Supervisé - *Méthodes-ET-Défis*
+- Dans cette partie 2, nous allons passer en revue des algorithmes principaux et les concepts de base en relation avec l'ANN (apprenstissage non supervisé).
 
 # Table des matières
 
