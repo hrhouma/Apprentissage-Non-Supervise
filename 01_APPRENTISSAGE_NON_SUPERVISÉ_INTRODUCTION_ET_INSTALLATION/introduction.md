@@ -128,6 +128,7 @@ En somme, le clustering aide à mettre de l'ordre dans le chaos des données non
 # 5- L'association dans l'apprentissage non supervisé
 
 L'association est une technique puissante dans l'apprentissage non supervisé, qui vise à découvrir des liens ou des dépendances entre différents éléments dans un ensemble de données. Ce processus ressemble à trouver des motifs de comportement ou des habitudes dans un ensemble de données, où la présence d'un élément peut impliquer la présence d'un autre. Cela est particulièrement utile dans des domaines comme le marketing, la gestion de stocks, et l'analyse des transactions, où comprendre ces relations peut mener à des décisions plus éclairées et profitable.
+
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/7a03166e-5ccf-443b-a721-58c82d554c6e)
 
 #### Algorithme Apriori
