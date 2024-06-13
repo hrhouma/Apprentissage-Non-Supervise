@@ -106,23 +106,35 @@ Cette section conclut la première partie du cours et vous prépare à plonger d
 **C)** Analyse des composantes principales (PCA)
 
 ### Question 9: Pourquoi le clustering hiérarchique est-il considéré comme particulièrement flexible?
+
 **A)** Il permet d'ajuster le nombre de clusters à la volée.
+
 **B)** Il n'utilise pas de distance euclidienne.
+
 **C)** Il permet des clusters de tailles variées.
 
 ### Question 10: Quel est un avantage clé de l'utilisation de l'algorithme DBSCAN pour le clustering?
+
 **A)** Il peut identifier efficacement les clusters de différentes tailles et formes.
+
 **B)** Il offre les meilleures performances sur les jeux de données de petite taille.
+
 **C)** Il ne nécessite pas de paramètres d'entrée.
 
 ### Question 11: Quelle caractéristique unique le clustering spectral offre-t-il comparé à K-Means ou DBSCAN?
+
 **A)** Il fonctionne bien avec les clusters de forme linéaire.
+
 **B)** Il utilise des techniques basées sur les graphes pour regrouper les données.
+
 **C)** Il ajuste automatiquement le nombre de clusters.
 
 ### Question 12: Quel critère n'est PAS directement impliqué dans le clustering basé sur la densité comme DBSCAN?
+
 **A)** La distance minimum entre les points
+
 **B)** Le nombre minimum de points dans un voisinage
+
 **C)** La couleur des points de données
 
 ---
