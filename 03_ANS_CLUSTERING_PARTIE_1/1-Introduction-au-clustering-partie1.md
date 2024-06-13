@@ -96,13 +96,19 @@ Cette section conclut la première partie du cours et vous prépare à plonger d
 **C)** Coefficient de Davies-Bouldin
 
 ### Question 7: Quel est le principal défi de l'algorithme K-Means?
+
 **A)** Il nécessite que toutes les variables soient de même échelle.
+
 **B)** Il ne peut pas bien gérer les clusters de formes non sphériques.
+
 **C)** Il peut regrouper les outliers avec des clusters normaux.
 
 ### Question 8: Quelle est la méthode principalement utilisée pour déterminer le nombre optimal de clusters en K-Means?
+
 **A)** Test A/B
+
 **B)** La méthode du coude (Elbow Method)
+
 **C)** Analyse des composantes principales (PCA)
 
 ### Question 9: Pourquoi le clustering hiérarchique est-il considéré comme particulièrement flexible?
