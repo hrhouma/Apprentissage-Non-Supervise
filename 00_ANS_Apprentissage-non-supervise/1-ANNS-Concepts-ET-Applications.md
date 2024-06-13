@@ -1,4 +1,4 @@
-# 1 - Introduction et Concept de l'Apprentissage Non Supervisé
+# Introduction et Concept de l'Apprentissage Non Supervisé
 
 # 1 - Définition de l'apprentissage non supervisé :
 - L'apprentissage non supervisé est une méthode d'apprentissage dans laquelle, au lieu de montrer à la machine des exemples de ce qu'elle doit apprendre, on lui fournit uniquement des données et on lui demande d'analyser la structure de ces données pour apprendre elle-même à réaliser certaines tâches.
