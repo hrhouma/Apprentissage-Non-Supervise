@@ -72,7 +72,10 @@ Ce que fait Google News, c'est qu'il regroupe chaque jour des centaines et des m
 
 ## Exemple de Clustering avec Google News
 
-Lorsque vous visitez le site news.google.com, vous êtes confronté à un flux dense d'informations provenant de diverses sources. Pour faciliter la navigation et l'accès à l'information pertinente, Google News utilise des techniques de clustering pour regrouper les nouvelles par thèmes ou sujets similaires. Voici comment cela fonctionne :
+- Lorsque vous visitez le site news.google.com, vous êtes confronté à un flux dense d'informations provenant de diverses sources. Pour faciliter la navigation et l'accès à l'information pertinente, Google News utilise des techniques de clustering pour regrouper les nouvelles par thèmes ou sujets similaires. Voici comment cela fonctionne :
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6dd5db3b-cfcc-439a-b37c-70e06e2d8777)
+
 
 ### Organisation des Nouvelles en Clusters
 Sur l'image que vous avez partagée, nous pouvons voir trois catégories principales où les nouvelles sont regroupées : Canada, Divertissements, et Sports. Chaque catégorie représente un cluster de nouvelles qui partagent des thèmes ou sujets communs.
@@ -96,7 +99,6 @@ Sur l'image que vous avez partagée, nous pouvons voir trois catégories princip
 - Ce système de clustering est un exemple classique de l'utilisation de l'apprentissage non supervisé pour organiser de grands ensembles de données (ici, des articles de nouvelles), ce qui permet de structurer l'information de manière intuitive et accessible.
 
 
-![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6dd5db3b-cfcc-439a-b37c-70e06e2d8777)
 
 
 Une autre application fascinante du clustering se trouve dans le domaine de la génomique. 
