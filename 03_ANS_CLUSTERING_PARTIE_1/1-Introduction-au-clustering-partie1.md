@@ -62,23 +62,85 @@ Cette section conclut la première partie du cours et vous prépare à plonger d
 2. Quelles sont les limites potentielles du clustering dans l'analyse de données complexes comme les données génomiques?
 3. Réfléchissez à un domaine de votre choix où le clustering pourrait révéler des insights non évidents.
 
-# Quiz
 
-1. Quelle est la principale différence entre l'apprentissage supervisé et non supervisé?
-   - A) L'apprentissage non supervisé nécessite des données étiquetées.
-   - B) L'apprentissage supervisé utilise des données non étiquetées.
-   - C) L'apprentissage non supervisé regroupe des données similaires sans labels préexistants.
-   
-2. Lequel de ces domaines n'utilise généralement pas le clustering?
-   - A) Marketing
-   - B) Supervision de réseaux
-   - C) Compilation de langages de programmation
+# Quiz sur le Clustering
 
-3. Quel algorithme de clustering est particulièrement bon pour identifier des clusters de forme arbitraire?
-   - A) K-Means
-   -
+### Question 1: Quelle est la principale différence entre l'apprentissage supervisé et non supervisé?
+**A)** L'apprentissage non supervisé nécessite des données étiquetées.  
+**B)** L'apprentissage supervisé utilise des données non étiquetées.  
+**C)** L'apprentissage non supervisé regroupe des données similaires sans labels préexistants.
 
- B) DBSCAN
-   - C) Clustering hiérarchique
+### Question 2: Lequel de ces domaines n'utilise généralement pas le clustering?
+**A)** Marketing  
+**B)** Supervision de réseaux  
+**C)** Compilation de langages de programmation
 
-Réponses: 1C, 2C, 3B
+### Question 3: Quel algorithme de clustering est particulièrement bon pour identifier des clusters de forme arbitraire?
+**A)** K-Means  
+**B)** DBSCAN  
+**C)** Clustering hiérarchique
+
+### Question 4: Quel est l'avantage principal de l'utilisation de DBSCAN par rapport à K-Means?
+**A)** DBSCAN nécessite de spécifier le nombre de clusters à l'avance.  
+**B)** DBSCAN peut identifier des clusters de densité variable et des outliers.  
+**C)** DBSCAN est plus rapide que K-Means pour les grands jeux de données.
+
+### Question 5: Dans quel scénario le clustering hiérarchique est-il particulièrement utile?
+**A)** Lorsqu'il est nécessaire de regrouper des données en un nombre prédéfini de clusters.  
+**B)** Lorsqu'une visualisation en arbre (dendrogramme) des relations entre clusters est utile.  
+**C)** Lorsque les données sont uniformément distribuées.
+
+### Question 6: Quelle métrique n'est PAS typiquement utilisée pour évaluer la qualité d'un modèle de clustering?
+**A)** Indice de Silhouette  
+**B)** Coefficient de corrélation de Pearson  
+**C)** Coefficient de Davies-Bouldin
+
+### Question 7: Quel est le principal défi de l'algorithme K-Means?
+**A)** Il nécessite que toutes les variables soient de même échelle.
+**B)** Il ne peut pas bien gérer les clusters de formes non sphériques.
+**C)** Il peut regrouper les outliers avec des clusters normaux.
+
+### Question 8: Quelle est la méthode principalement utilisée pour déterminer le nombre optimal de clusters en K-Means?
+**A)** Test A/B
+**B)** La méthode du coude (Elbow Method)
+**C)** Analyse des composantes principales (PCA)
+
+### Question 9: Pourquoi le clustering hiérarchique est-il considéré comme particulièrement flexible?
+**A)** Il permet d'ajuster le nombre de clusters à la volée.
+**B)** Il n'utilise pas de distance euclidienne.
+**C)** Il permet des clusters de tailles variées.
+
+### Question 10: Quel est un avantage clé de l'utilisation de l'algorithme DBSCAN pour le clustering?
+**A)** Il peut identifier efficacement les clusters de différentes tailles et formes.
+**B)** Il offre les meilleures performances sur les jeux de données de petite taille.
+**C)** Il ne nécessite pas de paramètres d'entrée.
+
+### Question 11: Quelle caractéristique unique le clustering spectral offre-t-il comparé à K-Means ou DBSCAN?
+**A)** Il fonctionne bien avec les clusters de forme linéaire.
+**B)** Il utilise des techniques basées sur les graphes pour regrouper les données.
+**C)** Il ajuste automatiquement le nombre de clusters.
+
+### Question 12: Quel critère n'est PAS directement impliqué dans le clustering basé sur la densité comme DBSCAN?
+**A)** La distance minimum entre les points
+**B)** Le nombre minimum de points dans un voisinage
+**C)** La couleur des points de données
+
+---
+
+### Réponses aux Questions:
+**1. C)** L'apprentissage non supervisé regroupe des données similaires sans labels préexistants.  
+**2. C)** Compilation de langages de programmation  
+**3. B)** DBSCAN  
+**4. B)** DBSCAN peut identifier des clusters de densité variable et des outliers.  
+**5. B)** Lorsqu'une visualisation en arbre (dendrogramme) des relations entre clusters est utile.  
+**6. B)** Coefficient de corrélation de Pearson (ceci est typiquement utilisé pour mesurer la corrélation linéaire entre variables, pas pour évaluer des clusters).
+**7. B)** Il ne peut pas bien gérer les clusters de formes non sphériques.
+**8. B)** La méthode du coude (Elbow Method)
+**9. A)** Il permet d'ajuster le nombre de clusters à la volée.
+**10. A)** Il peut identifier efficacement les clusters de différentes tailles et formes.
+**11. B)** Il utilise des techniques basées sur les graphes pour regrouper les données.
+**12. C)** La couleur des points de données
+
+
+
+
