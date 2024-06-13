@@ -84,7 +84,7 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 **C)** Sélection aléatoire  
 
-**Réponse**: A) Plus proche voisins
+
 
 **Question 2**: Quel paramètre est crucial pour l'algorithme DBSCAN et comment l'influence-t-il le résultat du clustering ?
 
@@ -94,7 +94,6 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 **C)** Le nombre d'itérations  
 
-**Réponse**: A) Epsilon (ε), qui détermine la distance maximale entre deux points pour qu'ils soient considérés dans le même voisinage
 
 **Question 3**: Quelle est une limitation majeure du clustering hiérarchique agglomératif ?
 
@@ -104,7 +103,6 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 **C)** Sensibilité aux points de données aberrants  
 
-**Réponse**: A) Incapacité à gérer les grands ensembles de données
 
 **Question 4**: Quel est l'avantage de l'utilisation de techniques de clustering basées sur la densité comme DBSCAN par rapport à K-Means ?
 
@@ -114,7 +112,7 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 **C)** Plus simple à configurer  
 
-**Réponse**: A) Capacité à identifier des clusters de formes arbitraires
+
 
 **Question 5**: Quelle métrique est souvent utilisée pour évaluer la qualité d'un clustering effectué par K-Means ?
 
@@ -124,4 +122,9 @@ Après avoir exploré les fondamentaux et les applications du clustering dans la
 
 **C)** AUC-ROC  
 
-**Réponse**: B) Indice de Silhouette
+
+**Réponse 1**: A) Plus proche voisins
+**Réponse 2**: A) Epsilon (ε), qui détermine la distance maximale entre deux points pour qu'ils soient considérés dans le même voisinage
+**Réponse 3**: A) Incapacité à gérer les grands ensembles de données
+**Réponse 4**: A) Capacité à identifier des clusters de formes arbitraires
+**Réponse 5**: B) Indice de Silhouette
