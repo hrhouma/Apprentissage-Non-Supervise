@@ -64,8 +64,6 @@ L'apprentissage non supervisé est souvent comparé à l'auto-apprentissage, où
 
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/426e0612-e83f-4fc9-899a-6d04c58fb45c)
 
-Voici une version corrigée de l'exemple pour l'illustrer correctement avec le soccer et l'apprentissage non supervisé :
-
 Prenons un exemple quotidien pour illustrer ce concept. Imaginez que vous assistiez pour la première fois à un match de soccer, sans aucune connaissance préalable du jeu, et que vous soyez invité par des amis à voir un match entre Dortmund et Real Madrid. 
 Au début, vous êtes perdu, ne connaissant rien au soccer. Mais au fur et à mesure que le match avance, vous commencez à observer et à tirer des conclusions :
 
