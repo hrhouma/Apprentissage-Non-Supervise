@@ -1,4 +1,4 @@
-# Bienvenue dans le cours ! Clustering
+#  Clustering K-moyennes !
 
 1. Qu'est-ce que le regroupement ?
    - Introduction au regroupement
