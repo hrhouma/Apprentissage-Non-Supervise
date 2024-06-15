@@ -62,5 +62,3 @@ En segmentant les clients en fonction de leur utilisation de la carte de crédit
 - Dataset Kaggle : [Données des Cartes de Crédit](https://www.kaggle.com/arjunbhasin2013/ccdata)
 - Méthode du Coude : [Wikipedia](https://en.wikipedia.org/wiki/Elbow_method_(clustering))
 - Clustering K-Means : [GeeksforGeeks](https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/)
-
-```
