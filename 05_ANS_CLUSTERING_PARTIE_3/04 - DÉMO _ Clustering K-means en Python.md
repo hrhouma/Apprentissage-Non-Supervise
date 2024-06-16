@@ -1,6 +1,6 @@
 # Partie 4 - DÉMO : Clustering K-means en Python
 
-## Cours Complet sur l'Application Pratique du K-means avec Python
+# Application Pratique du K-means avec Python
 
 ### Introduction
 Nous avons déjà exploré en profondeur la théorie derrière le regroupement K-means, mais passons maintenant à la pratique avec Python. L'application de cet algorithme est relativement simple grâce à la bibliothèque `scikit-learn`, qui propose une implémentation robuste et facile à utiliser du K-means.
