@@ -88,13 +88,6 @@ python kmeans_visualizer-v3.py
    pip install -r requirements.txt
    ```
 
-3. Exécuter les scripts :
-   ```sh
-   python kmeans_visualizer-v1.py
-   python kmeans_visualizer-v2.py
-   python kmeans_visualizer-v3.py
-   ```
-
 ## 📜 `requirements.txt`
 
 Voici le contenu du fichier `requirements.txt` :
@@ -106,6 +99,22 @@ matplotlib
 scikit-learn
 tk
 ```
+
+3. Exécuter les scripts :
+   ```sh
+   python -m venv kmeans_visualizer-env
+   kmeans_visualizer-env\Scripts\activate
+   pip install -r requirements.txt
+   # Copier coller le contenu de kmeans_visualizer-v2.py
+   python kmeans_visualizer-v1.py
+   # CTL+C pour sortir ==> Vos interprétations ??
+   # Copier coller le contenu de kmeans_visualizer-v2.py
+   python kmeans_visualizer-v2.py
+   # CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
+   # Copier coller le contenu de kmeans_visualizer-v2.py
+   python kmeans_visualizer-v3.py
+   CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
+   ```
 
 Assurez-vous de suivre chaque étape attentivement et d'exécuter les commandes dans l'ordre. Bon développement ! 🚀
 
