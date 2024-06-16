@@ -244,5 +244,4 @@ Pendant l'exécution, l'animation montrera comment les clusters se forment et é
 ### Notes
 
 - Si vous ajoutez des points en cliquant sur le graphique, ils seront ajoutés au prochain cycle de clustering et traités comme des points de bruit jusqu'à ce qu'ils soient intégrés dans un cluster.
-
-Avec ce guide, vous devriez être en mesure de configurer l'environnement, d'installer les dépendances nécessaires, et d'exécuter le script pour visualiser le processus de clustering DBSCAN.
+- Avec ce guide, vous devriez être en mesure de configurer l'environnement, d'installer les dépendances nécessaires, et d'exécuter le script pour visualiser le processus de clustering DBSCAN.
