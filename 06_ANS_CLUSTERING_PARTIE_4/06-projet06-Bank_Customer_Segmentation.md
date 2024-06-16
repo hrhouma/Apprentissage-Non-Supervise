@@ -1,6 +1,6 @@
 ### 📊 KMeans Bank Customer Segmentation
 
-Bienvenue dans le projet KMeans Bank Customer Segmentation ! Ce projet vous guidera à travers la création d'un visualiseur KMeans pour la segmentation des clients bancaires en Python, étape par étape.
+- Bienvenue dans le projet KMeans Bank Customer Segmentation ! Ce projet vous guidera à travers la création d'un visualiseur KMeans pour la segmentation des clients bancaires en Python, étape par étape.
 
 ## 🚀 Étape 1 : Création du dossier de travail
 
