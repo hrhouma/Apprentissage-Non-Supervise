@@ -75,12 +75,6 @@ kmeans_happiness_clustering-env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Exécuter les scripts :
-```sh
-python kmeans_happiness_clustering-v1.py
-python kmeans_happiness_clustering-v2.py
-```
-
 ## 📜 `requirements.txt`
 
 Voici le contenu du fichier `requirements.txt` :
@@ -91,6 +85,20 @@ pandas
 numpy
 scikit-learn
 plotly
+```
+
+### Exécuter les scripts :
+
+```sh
+python -m venv kmeans_happiness_clustering-env
+kmeans_happiness_clustering-env\Scripts\activate
+pip install -r requirements.txt
+# Copier coller le contenu de kmeans_happiness_clustering-v1.py
+python kmeans_happiness_clustering-v1.py
+# CTL+C pour sortir ==> Vos interprétations ??
+# Copier coller le contenu de kmeans_happiness_clustering-v2.py
+python kmeans_happiness_clustering-v2.py
+# CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
 ```
 
 Assurez-vous de suivre chaque étape attentivement et d'exécuter les commandes dans l'ordre. Bon développement ! 🚀
