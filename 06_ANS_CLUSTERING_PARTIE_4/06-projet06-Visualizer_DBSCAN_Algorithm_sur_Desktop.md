@@ -1,6 +1,6 @@
 ## DBSCAN Visualizer
 
-Ce projet utilise Tkinter pour créer une interface graphique permettant de visualiser l'algorithme DBSCAN en temps réel. Les points sont générés, normalisés, puis l'algorithme DBSCAN est appliqué par étapes pour montrer l'évolution des clusters.
+- Ce projet utilise Tkinter pour créer une interface graphique permettant de visualiser l'algorithme DBSCAN en temps réel. Les points sont générés, normalisés, puis l'algorithme DBSCAN est appliqué par étapes pour montrer l'évolution des clusters.
 
 ### Prérequis
 
