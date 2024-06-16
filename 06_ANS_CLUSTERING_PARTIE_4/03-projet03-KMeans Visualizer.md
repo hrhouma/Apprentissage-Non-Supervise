@@ -434,3 +434,70 @@ if __name__ == "__main__":
     app = KMeansVisualizer()
     app.mainloop()
 ```
+
+
+# Annexe 
+
+### 📊 KMeans Visualizer - Annexe
+
+#### `kmeans_visualizer-v1.py`
+
+**Description :**
+- Ce script implémente une version de base de l'algorithme KMeans pour visualiser les clusters de données.
+- Génère des points aléatoires dans un plan 2D.
+- Initialise aléatoirement les centroids des clusters.
+- Affiche les points et les centroids sur un graphique.
+- Réalise l'algorithme KMeans pour assigner les points aux clusters et mettre à jour les centroids.
+
+**Description :**
+- Interface graphique de base avec Tkinter.
+- Génération et affichage des points et centroids.
+- Implémentation de l'algorithme KMeans avec des itérations fixes pour la convergence.
+
+#### `kmeans_visualizer-v2.py`
+
+**Description :**
+- Ce script améliore la version 1 en ajoutant des fonctionnalités de visualisation dynamique et une interaction utilisateur.
+- Ajoute une animation pour visualiser les étapes de l'algorithme KMeans.
+- Permet à l'utilisateur d'ajouter des points en cliquant sur la zone de tracé.
+- Maintient les fonctionnalités de base de la version 1.
+
+**Ajouté par rapport à la version 1 :**
+- Animation de l'algorithme KMeans avec `FuncAnimation` pour visualiser le processus d'assignation et de mise à jour des centroids.
+- Possibilité d'ajouter des points manuellement via des clics de souris sur le graphique.
+
+#### `kmeans_visualizer-v3.py`
+
+**Description :**
+- Ce script améliore la version 2 en ajoutant une fonctionnalité de pause et de reprise pour l'animation.
+- Prolonge l'animation à 50 itérations pour une visualisation plus détaillée.
+- Ajoute un bouton de pause/reprise pour permettre un contrôle utilisateur plus fin sur l'animation.
+
+**Ajouté par rapport à la version 2 :**
+- Fonctionnalité de pause/reprise de l'animation pour permettre à l'utilisateur de contrôler l'animation en temps réel.
+- Augmentation du nombre d'itérations de l'algorithme KMeans à 50 pour une visualisation plus détaillée.
+- Maintient les fonctionnalités d'animation et d'interaction utilisateur de la version 2.
+
+## 📜 Résumé des commandes
+
+### Créer et activer l'environnement virtuel :
+```sh
+python -m venv kmeans_visualizer-env
+kmeans_visualizer-env\Scripts\activate
+```
+
+### Installer les dépendances :
+```sh
+pip install -r requirements.txt
+```
+
+### Exécuter les scripts :
+```sh
+python kmeans_visualizer-v1.py
+python kmeans_visualizer-v2.py
+python kmeans_visualizer-v3.py
+```
+
+
+
+Assurez-vous de suivre chaque étape attentivement et d'exécuter les commandes dans l'ordre. Bon développement ! 🚀
