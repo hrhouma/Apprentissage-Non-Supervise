@@ -4,7 +4,7 @@
 
 # Annexe - DBSCAN Simplifié
 ## Théorie : https://fr.wikipedia.org/wiki/DBSCAN (THÉORIE)
-**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) est une méthode de regroupement utilisée pour découvrir des clusters de différentes formes et tailles dans des données bruitées. Voici une explication simplifiée avec un exemple de la vraie vie et les étapes.
+**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) est une méthode de regroupement utilisée pour découvrir des clusters de différentes formes et tailles dans des données bruitées. Je vous présente une explication simplifiée avec un exemple de la vraie vie pour comprendre les étapes.
 
 #### Explication Vulgarisée
 
