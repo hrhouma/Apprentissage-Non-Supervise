@@ -1,7 +1,3 @@
-Oui, voici le livre complet avec les ajouts récents intégrés. Cela inclut la table des matières et tout le contenu détaillé de chaque section.
-
----
-
 # Table des Matières
 
 1. Introduction au Clustering
