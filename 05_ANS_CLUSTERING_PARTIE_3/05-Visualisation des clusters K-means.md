@@ -1,12 +1,10 @@
-# Partie 5 - Example : Création d'un nouveau carnet pour le clustering
-
-## Création d'un Nouveau Carnet
+# Example - Création d'un nouveau carnet pour le clustering
 
 - Pour débuter notre travail sur le clustering, entrons dans notre environnement de travail.
 - En cliquant sur "Nouveau Carnet", je choisis Python 3 comme environnement d'exécution.
 - Une fois le carnet ouvert, je le nomme "Clustering". 
 
-## Chargement des Données
+## Chargement des données
 
 - Avant toute chose, il est essentiel de charger nos données. 
 - Dans le dossier `Data`, je trouve mon fichier `Entertainment_Clean.csv`. 
@@ -19,7 +17,7 @@ data = pd.read_csv("../Data/Entertainment_Clean.csv")
 
 Ce fichier contient des données sur le temps passé par les étudiants à lire, regarder la télévision et jouer à des jeux vidéo chaque semaine.
 
-## Vérification des Données
+## Vérification des données
 
 Avant de procéder au clustering, vérifions que nos données sont prêtes pour la modélisation :
 
@@ -31,7 +29,7 @@ Après ces vérifications, il est souvent utile de visualiser les données pour 
 
 ## Modélisation : Clustering K-means
 
-Passons à la modélisation. Nous utiliserons l'algorithme K-means de la bibliothèque `scikit-learn` pour identifier des groupes d'étudiants selon leurs habitudes de divertissement :
+Passons à la modélisation. Nous utiliserons l'algorithme K-means de la bibliothèque scikit-learn pour identifier des groupes d'étudiants selon leurs habitudes de divertissement :
 
 ```python
 from sklearn.cluster import KMeans
@@ -57,11 +55,12 @@ plt.show()
 
 Cette visualisation nous aide à voir comment les étudiants sont regroupés selon le temps qu'ils consacrent à lire et à jouer.
 
+
 ## Visualisation des Clusters K-means
 
 Maintenant que nous avons appliqué l'algorithme K-means pour identifier des clusters dans nos données, il est temps de visualiser ces clusters pour mieux comprendre comment les données sont organisées. Cette étape, bien que non essentielle, est extrêmement utile pour interpréter les résultats de manière intuitive, surtout lorsqu'on présente les résultats à un public non technique.
 
-### Préparation de la Visualisation
+#### Préparation de la visualisation
 
 Pour commencer, nous allons importer les bibliothèques nécessaires et préparer nos données pour la visualisation :
 
@@ -74,7 +73,7 @@ import seaborn as sns
 data['Cluster'] = kmeans.labels_
 ```
 
-### Création du Nuage de Points 3D
+#### Création du nuage de points 3D
 
 Nous allons utiliser un graphique en trois dimensions pour représenter chaque dimension de nos données (livres, émissions de télévision, jeux vidéo) sur un axe différent. Chaque point dans le graphique représentera un étudiant, coloré selon le cluster auquel il appartient :
 
@@ -99,11 +98,11 @@ plt.title('Visualisation des Clusters d\'Étudiants')
 plt.show()
 ```
 
-### Interprétation des Résultats
+### Interprétation des résultats
 
 Ce graphique nous aide non seulement à visualiser la séparation des clusters, mais aussi à observer les tendances et les comportements groupés parmi les étudiants. Par exemple, un cluster peut inclure des étudiants qui passent beaucoup de temps à jouer mais peu à lire, tandis qu'un autre regroupe ceux qui préfèrent regarder la télévision.
 
-### Décomposition du Code
+#### Décomposer le code
 
 1. **Importation des bibliothèques :** `matplotlib` pour la création de graphiques, `seaborn` pour le style et `Axes3D` pour le support des graphiques 3D.
 2. **Préparation des données :** Ajout des étiquettes de clusters aux données initiales pour faciliter la coloration des points dans le graphique.
@@ -111,6 +110,7 @@ Ce graphique nous aide non seulement à visualiser la séparation des clusters, 
 4. **Ajout de détails :** Étiquetage des axes pour une meilleure compréhension des dimensions représentées et ajout d'une légende pour identifier les clusters.
 
 En explorant visuellement nos clusters, nous pouvons mieux comprendre comment l'algorithme K-means a organisé les données et comment nous pourrions utiliser cette information pour des applications pratiques, comme des campagnes de marketing ciblées ou des recommandations personnalisées. Cette visualisation rend les résultats tangibles et plus faciles à communiquer, surtout lorsqu'il s'agit de présenter des analyses complexes à des parties prenantes qui pourraient ne pas être familières avec le data mining.
+
 
 ## Conclusion
 
