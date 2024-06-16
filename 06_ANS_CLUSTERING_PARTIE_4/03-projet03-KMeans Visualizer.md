@@ -434,10 +434,3 @@ if __name__ == "__main__":
     app = KMeansVisualizer()
     app.mainloop()
 ```
-
-Assurez-vous que le fichier `requirements.txt` contient les dépendances suivantes :
-
-```
-numpy
-matplotlib
-```
