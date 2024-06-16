@@ -108,7 +108,7 @@ tk
 ```
 
 Assurez-vous de suivre chaque étape attentivement et d'exécuter les commandes dans l'ordre. Bon développement ! 🚀
-```
+
 
 ### Contenu des fichiers `kmeans_visualizer-v1.py`, `kmeans_visualizer-v2.py`, `kmeans_visualizer-v3.py`
 
