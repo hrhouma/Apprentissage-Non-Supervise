@@ -113,7 +113,7 @@ tk
    # CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
    # Copier coller le contenu de kmeans_visualizer-v2.py
    python kmeans_visualizer-v3.py
-   CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
+   # CTL+C pour sortir ==> Vos interprétations ?? Ajout par rapport à la version précédente ?
    ```
 
 Assurez-vous de suivre chaque étape attentivement et d'exécuter les commandes dans l'ordre. Bon développement ! 🚀
