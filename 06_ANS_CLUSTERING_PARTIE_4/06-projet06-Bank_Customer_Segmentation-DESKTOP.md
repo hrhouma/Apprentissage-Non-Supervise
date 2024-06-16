@@ -108,10 +108,9 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
 import plotly.express as px
-import plotly.graph_objs as go
 from plotly.offline import plot
-import webbrowser
 
 class BankCustomerClusteringApp:
     def __init__(self, root):
@@ -160,32 +159,59 @@ class BankCustomerClusteringApp:
                 'PRC_FULL_PAYMENT': 'PRC_PAIEMENT_COMPLET',
                 'TENURE': 'ANCIENNETE'
             }, inplace=True)
+            
+            # Fill missing values
+            self.data['PAIEMENTS_MINIMUMS'].fillna(self.data['PAIEMENTS_MINIMUMS'].mean(), inplace=True)
+            self.data['LIMITE_CREDIT'].fillna(self.data['LIMITE_CREDIT'].mean(), inplace=True)
+            
+            # Drop 'ID_CLIENT' column
+            self.data.drop("ID_CLIENT", axis=1, inplace=True)
+            
             self.text.insert(tk.END, f"Data Loaded: {file_path}\n")
             self.text.insert(tk.END, self.data.head().to_string() + "\n")
+            print("Data loaded successfully")
 
     def cluster_data(self):
         if hasattr(self, 'data'):
-            self.data.fillna(self.data.mean(), inplace=True)
-            self.data.drop("ID_CLIENT", axis=1, inplace=True)
-            self.data_numeric = self.data.select_dtypes(include=[np.number])
-            self.scaler = StandardScaler()
-            self.scaled_data = self.scaler.fit_transform(self.data_numeric)
+            print("Clustering data...")
+            # Scale the data
+            scaler = StandardScaler()
+            self.data_scaled = scaler.fit_transform(self.data)
+            
+            # K-Means clustering
             self.kmeans = KMeans(n_clusters=4, random_state=42)
-            self.kmeans.fit(self.scaled_data)
+            self.kmeans.fit(self.data_scaled)
             self.data['cluster'] = self.kmeans.labels_
+            
             self.text.insert(tk.END, "Data clustered into 4 clusters.\n")
+            self.text.insert(tk.END, self.data.head().to_string() + "\n")  # Debug statement to show clustered data
+            print("Data clustered successfully")
         else:
             self.text.insert(tk.END, "No data loaded.\n")
+            print("No data loaded")
 
     def plot_data(self):
-        if hasattr(self, 'data'):
-            fig = px.scatter(self.data, x='LIMITE_CREDIT', y='SOLDE', color='cluster',
-                             hover_name='ID_CLIENT', size='PAIEMENTS', 
-                             title='Customer Segmentation based on Credit Limit and Balance')
+        if hasattr(self, 'data') and 'cluster' in self.data.columns:
+            self.text.insert(tk.END, "Plotting data...\n")  # Debug statement to indicate plotting
+            
+            # PCA for dimensionality reduction
+            pca = PCA(n_components=2)
+            principal_comp = pca.fit_transform(self.data_scaled)
+            
+            # Create a DataFrame with PCA components
+            pca_df = pd.DataFrame(data=principal_comp, columns=['pca1', 'pca2'])
+            pca_df = pd.concat([pca_df, pd.DataFrame({'cluster': self.data['cluster']})], axis=1)
+            
+            # Plot the clusters
+            fig = px.scatter(pca_df, x='pca1', y='pca2', color='cluster', 
+                             title='Customer Segmentation with PCA')
             plot(fig, filename='cluster_plot.html', auto_open=True)
+            
             self.text.insert(tk.END, "Cluster plot created and opened in browser.\n")
+            print("Plot created successfully")
         else:
-            self.text.insert(tk.END, "No data loaded.\n")
+            self.text.insert(tk.END, "No data loaded or clustering not performed.\n")
+            print("No data loaded or clustering not performed")
 
 if __name__ == "__main__":
     root = tk.Tk()
