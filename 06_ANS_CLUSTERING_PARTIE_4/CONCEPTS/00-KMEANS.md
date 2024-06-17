@@ -1,9 +1,4 @@
-# K-Means README
-## Références : 
-- https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5177935-decouvrez-l-algorithme-k-means
-- https://www.youtube.com/watch?v=5I3Ei69I40s&t=28s&ab_channel=bitLectures
-  
-## Introduction
+# Introduction
 
 K-Means est un algorithme de clustering populaire utilisé dans l'apprentissage automatique et l'exploration de données. Il partitionne les données en K clusters, où chaque point de données appartient au cluster avec la moyenne (centre) la plus proche. K-Means est simple, rapide et efficace pour les données de grandes dimensions, bien qu'il fonctionne mieux avec des clusters de forme sphérique et de taille similaire.
 
@@ -64,3 +59,12 @@ plt.show()
 ## Conclusion
 
 K-Means est un algorithme de clustering efficace et largement utilisé, particulièrement adapté pour les grandes quantités de données. Bien qu'il présente des limitations telles que la sensibilité à l'initialisation et aux formes de clusters, il reste un outil puissant pour de nombreuses applications de clustering. L'utilisation de techniques avancées comme K-Means++ et l'évaluation des résultats par des méthodes telles que le coefficient de silhouette peuvent aider à obtenir de meilleurs résultats.
+
+
+## Références : 
+- https://www.youtube.com/watch?v=5I3Ei69I40s&t=28s&ab_channel=bitLectures
+- https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5177935-decouvrez-l-algorithme-k-means
+- https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5177936-effectuez-une-classification-hierarchique
+- https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5177938-interpretez-votre-partition
+- https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5345241-tp-partitionnez-vos-donnees
+- https://colab.research.google.com/github/OpenClassrooms-Student-Center/4525281-realisez-une-analyse-exploratoire-de-donnees/blob/main/notebooks/P3C5_TP_bag_of_words.ipynb
