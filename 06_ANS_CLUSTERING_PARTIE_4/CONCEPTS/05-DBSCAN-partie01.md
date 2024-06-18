@@ -1,4 +1,4 @@
-# DBSCAN (Density-Based Spatial Clustering of Applications with Noise) README
+# README - DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 
 
 ## Introduction
 
