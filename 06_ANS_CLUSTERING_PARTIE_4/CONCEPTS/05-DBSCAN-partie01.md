@@ -1,5 +1,5 @@
-# README - DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 
-
+# DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 
+- Références : https://www.youtube.com/watch?v=_A9Tq6mGtLI&ab_channel=TheDataPost
 ## Introduction
 
 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering populaire utilisé dans l'exploration de données et l'apprentissage automatique. Contrairement aux algorithmes de clustering traditionnels comme K-Means, DBSCAN ne nécessite pas de spécifier le nombre de clusters à l'avance. Il peut trouver des clusters de formes arbitraires et est robuste aux bruits (outliers).
