@@ -2,7 +2,7 @@
 
 - https://www.geeksforgeeks.org/difference-between-k-means-and-dbscan-clustering/
 
-### DBSCAN vs KMEANS
+# DBSCAN vs KMEANS
 
 - DBSCAN (Density-Based Spatial Clustering of Applications with Noise) et K-means sont deux algorithmes de clustering couramment utilisés, mais ils sont adaptés à des types de données et des situations différents. Voici quand utiliser l'un ou l'autre :
 
@@ -21,7 +21,7 @@
 - Détection de zones densément peuplées dans des données géographiques.
 - Identification de groupes d'utilisateurs avec des comportements similaires dans des ensembles de données hétérogènes.
 
-### K-means
+# K-means
 
 **Quand utiliser K-means :**
 
@@ -36,7 +36,7 @@
 - Segmentation de marché pour regrouper les clients en fonction de comportements d'achat similaires.
 - Classification des fleurs en différentes espèces dans des ensembles de données comme Iris.
 
-### Comparaison
+# Comparaison
 
 | Caractéristique              | DBSCAN                                  | K-means                       |
 |------------------------------|-----------------------------------------|------------------------------|
@@ -47,4 +47,4 @@
 | Complexité                   | Plus élevé pour les grandes bases       | Plus faible                  |
 | Utilisation typique          | Données géographiques, détection d'anomalies | Segmentation de marché, classification |
 
-En résumé, choisissez DBSCAN lorsque vous travaillez avec des données bruitées et des formes de clusters arbitraires, et optez pour K-means lorsque vous avez des clusters bien définis et sphériques avec une taille relativement uniforme.
+- En résumé, choisissez DBSCAN lorsque vous travaillez avec des données bruitées et des formes de clusters arbitraires, et optez pour K-means lorsque vous avez des clusters bien définis et sphériques avec une taille relativement uniforme.
