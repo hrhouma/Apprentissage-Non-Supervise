@@ -1,5 +1,5 @@
 # Choisir la Valeur Appropriée pour le Paramètre Epsilon (ε) dans l'Algorithme DBSCAN
-
+==> Réponse : https://towardsdatascience.com/machine-learning-clustering-dbscan-determine-the-optimal-value-for-epsilon-eps-python-example-3100091cfbc#:~:text=In%20layman's%20terms%2C%20we%20find,and%20select%20that%20as%20epsilon.
 # Introduction à DBSCAN
 
 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering utilisé pour identifier des groupes de points dans un ensemble de données, même en présence de bruit. Deux paramètres principaux sont nécessaires pour DBSCAN :
