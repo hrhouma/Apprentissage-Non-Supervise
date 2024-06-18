@@ -7,7 +7,7 @@
 - DBSCAN (Density-Based Spatial Clustering of Applications with Noise) et K-means sont deux algorithmes de clustering couramment utilisés, mais ils sont adaptés à des types de données et des situations différents. Voici quand utiliser l'un ou l'autre :
 
 
-
+# DBSCAN
 **Quand utiliser DBSCAN :**
 
 1. **Données avec du bruit** : DBSCAN est particulièrement efficace pour détecter les clusters dans des données contenant du bruit (points anormaux). Il peut identifier les points qui ne font partie d'aucun cluster et les marquer comme du bruit.
