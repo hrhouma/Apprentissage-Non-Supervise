@@ -1,4 +1,6 @@
 # Exemple DBSCAN en Python : Valeur Optimale pour Epsilon (EPS)
+## Choisir la Valeur Appropriée pour le Paramètre Epsilon (ε) dans l'Algorithme DBSCAN
+==> Réponse : https://towardsdatascience.com/machine-learning-clustering-dbscan-determine-the-optimal-value-for-epsilon-eps-python-example-3100091cfbc#:~:text=In%20layman's%20terms%2C%20we%20find,and%20select%20that%20as%20epsilon
 
 DBSCAN, ou Clustering Spatial Basé sur la Densité pour les Applications avec Bruit, est un algorithme d'apprentissage automatique non supervisé. Les algorithmes d'apprentissage automatique non supervisés sont utilisés pour classifier des données non étiquetées. En d'autres termes, les échantillons utilisés pour entraîner notre modèle ne sont pas fournis avec des catégories prédéfinies. Comparé à d'autres algorithmes de clustering, DBSCAN est particulièrement bien adapté aux problèmes nécessitant :
 
