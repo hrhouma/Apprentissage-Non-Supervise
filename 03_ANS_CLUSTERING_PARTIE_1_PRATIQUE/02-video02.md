@@ -86,7 +86,7 @@ Avec ce tutoriel, vous avez appris les bases de l'apprentissage non supervisé e
 
 ---
 
-# Tutoriel : Clustering KMeans avec le jeu de données Iris
+# Résumé et tous le code su tutoriel, Clustering KMeans avec le jeu de données Iris
 
 # Étape 1 : Importation des bibliothèques nécessaires
 
