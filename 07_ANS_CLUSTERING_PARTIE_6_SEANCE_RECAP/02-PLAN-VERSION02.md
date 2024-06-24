@@ -73,9 +73,7 @@
   Lien complet : https://drive.google.com/drive/folders/1VCkeHbQ_2u3tQe53pHoi9ztHeZvRbMng?usp=sharing
 - **Code de la Vidéo 1:** [Code GitHub](https://github.com/MachineLearnia/Python-Machine-Learning/blob/master/24%20-%20Sklearn%20%3A%20Apprentissage%20Non-supervis%C3%A9.ipynb)  
   Lien complet : https://github.com/MachineLearnia/Python-Machine-Learning/blob/master/24%20-%20Sklearn%20%3A%20Apprentissage%20Non-supervis%C3%A9.ipynb
-- **Vidéo 2:** [Voir Vidéo](https://drive.google.com/drive/folders/1RpIXOD_DoJ7
-
-m-FdrNxT21MvA-mly0Tyt?usp=sharing)  
+- **Vidéo 2:** [Voir Vidéo](https://drive.google.com/drive/folders/1RpIXOD_DoJ7m-FdrNxT21MvA-mly0Tyt?usp=sharing)  
   Lien complet : https://drive.google.com/drive/folders/1RpIXOD_DoJ7m-FdrNxT21MvA-mly0Tyt?usp=sharing
 - **Code de la Vidéo 2:** [Code GitHub](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/03_ANS_CLUSTERING_PARTIE_1_PRATIQUE/02-video02.md)  
   Lien complet : https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/03_ANS_CLUSTERING_PARTIE_1_PRATIQUE/02-video02.md
