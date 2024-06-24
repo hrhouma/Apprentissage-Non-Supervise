@@ -1,5 +1,6 @@
-==> https://www.youtube.com/watch?v=FTtzd31IAOw&t=1065s&ab_channel=MachineLearnia
-
+- YOUTUBE : ==> https://www.youtube.com/watch?v=FTtzd31IAOw&t=1065s&ab_channel=MachineLearnia
+- CODE : ==> https://github.com/MachineLearnia/Python-Machine-Learning/blob/master/24%20-%20Sklearn%20%3A%20Apprentissage%20Non-supervis%C3%A9.ipynb
+- TUTORIAL: 
 # Introduction: 
 
 - Bienvenue dans cette vingt-quatrième vidéo de la série Python spéciale machine learning. 
