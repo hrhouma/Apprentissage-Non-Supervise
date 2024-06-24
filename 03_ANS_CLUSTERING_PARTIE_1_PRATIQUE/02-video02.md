@@ -1,4 +1,4 @@
-# Référence:
+# Référence YOUTUBE:
 - https://www.youtube.com/watch?v=HuK48FxITao&t=14s&ab_channel=InformatiqueSansComplexe
 
 # Tutoriel sur l'Apprentissage Non Supervisé
