@@ -1632,8 +1632,6 @@ Cette partie vous a permis de comprendre comment utiliser le clustering K-means 
 
 # 24.Clustering hiérarchique
 
-## Clustering hiérarchique : Un cours exhaustif
-
 ### Introduction au Clustering Hiérarchique
 Le clustering hiérarchique est une méthode de regroupement de données qui crée une hiérarchie de clusters. Contrairement au K-means clustering, qui se concentre sur les centroïdes des clusters, le clustering hiérarchique regroupe les points de données similaires en formant des clusters imbriqués.
 
