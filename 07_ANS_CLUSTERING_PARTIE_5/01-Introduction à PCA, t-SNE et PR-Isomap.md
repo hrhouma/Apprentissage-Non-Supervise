@@ -111,3 +111,33 @@ plt.show()
 # Conclusion
 
 Comprendre PCA, t-SNE et PR-Isomap fournit des outils puissants pour la réduction de dimension dans diverses applications, en particulier dans l'imagerie médicale et la médecine de précision. Chaque méthode a ses forces et ses limitations, et le choix de la méthode dépend des exigences spécifiques des données et de l'analyse envisagée. L'intégration de ces techniques peut significativement améliorer la visualisation des données, l'extraction de caractéristiques et l'analyse globale des jeux de données à haute dimension.
+
+
+
+# Pour finir: Tableau Comparatif : PCA, t-SNE et PR-Isomap
+
+| Caractéristique                     | PCA                                           | t-SNE                                          | PR-Isomap                                     |
+|-------------------------------------|-----------------------------------------------|------------------------------------------------|-----------------------------------------------|
+| **Type de Réduction**               | Linéaire                                      | Non linéaire                                   | Non linéaire                                  |
+| **Complexité Algorithmique**        | Faible                                        | Moyenne à élevée                               | Élevée                                        |
+| **Préservation de la Structure**    | Globale                                       | Locale                                         | Locale et globale                             |
+| **Applications Principales**        | Visualisation, réduction du bruit, extraction de caractéristiques | Visualisation de clusters, détection d'anomalies, prétraitement | Imagerie médicale, médecine de précision, extraction de caractéristiques |
+| **Taille du Jeu de Données**        | Grands jeux de données                        | Petits à moyens jeux de données                | Moyens à grands jeux de données               |
+| **Efficacité Computationnelle**     | Rapide                                        | Lente pour de grands jeux de données           | Plus lente en raison des calculs de chemins les plus courts |
+| **Préservation des Distances**      | Euclidiennes                                  | Proximité locale                               | Géodésiques                                   |
+| **Scalabilité**                     | Haute                                         | Moyenne à faible                               | Moyenne à faible                              |
+| **Visualisation**                   | 2D ou 3D                                      | 2D ou 3D                                       | 2D ou 3D                                       |
+| **Paramètres Clés**                 | Nombre de composantes                         | Perplexité, nombre de dimensions               | Nombre de voisins, taille de la fenêtre PR    |
+| **Exemples d'Applications**         | Réduction de bruit dans les données, analyse de données, compression de données | Exploration de données complexes, visualisation de clusters, réduction de dimensions avant apprentissage automatique | Analyse de biomarqueurs d'imagerie médicale, prédiction des résultats cliniques, médecine de précision |
+| **Robustesse aux Non-Linéarités**   | Faible                                        | Élevée                                         | Élevée                                        |
+| **Capacité d'Intégration**          | Facilement intégrable dans des flux de travail existants | Nécessite un traitement intensif, souvent utilisé pour visualisation uniquement | Peut nécessiter des ajustements importants, bonne intégration pour des analyses spécialisées |
+
+### Conclusion
+
+Chaque méthode présente des avantages et des inconvénients selon l'application envisagée :
+
+- **PCA** est approprié pour des tâches nécessitant une réduction de dimension linéaire rapide et efficace, avec une bonne préservation de la variance globale des données.
+- **t-SNE** est excellent pour la visualisation des structures complexes et non linéaires dans les données de petite à moyenne taille, mais peut être computationnellement coûteux.
+- **PR-Isomap** offre une solution robuste pour la préservation des structures géodésiques dans les données de grande dimension, particulièrement utile dans des contextes comme l'imagerie médicale, bien que nécessitant des ressources computationnelles importantes.
+
+Le choix de la méthode dépend des besoins spécifiques de l'analyse des données et des contraintes computationnelles.
