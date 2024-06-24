@@ -10,7 +10,9 @@ Le clustering hiérarchique est une technique de classification non supervisée 
 
 La distance euclidienne est une mesure couramment utilisée pour calculer la similarité entre deux points dans un espace multidimensionnel. Elle est définie comme la longueur du segment de droite reliant deux points \(A\) et \(B\) dans un espace n-dimensionnel, calculée comme suit :
 
-\[ d(A, B) = \sqrt{\sum_{i=1}^{n} (A_i - B_i)^2} \]
+$$
+d(A, B) = \sqrt{\sum_{i=1}^{n} (A_i - B_i)^2}
+$$
 
 ### 3. Algorithme de Clustering Hiérarchique
 
