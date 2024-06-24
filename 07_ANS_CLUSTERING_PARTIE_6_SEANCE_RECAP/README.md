@@ -6,8 +6,8 @@ Dans cette séance, vous allez en groupe démontrer votre compréhension des tro
 
 # IMPORTANT - LES INSTRUCTIONS :
 
-- ==> 01 PLAN-VERSION01.md ou
-- ==> 02 PLAN-VERSION02.md ou
+- ==> 01 PLAN-VERSION01.md *ou*
+- ==> 02 PLAN-VERSION02.md *ou*
 - ==> SEANCE04-SEANCE_Recapitulatif.txt
 
 # Instructions pour les Projets
