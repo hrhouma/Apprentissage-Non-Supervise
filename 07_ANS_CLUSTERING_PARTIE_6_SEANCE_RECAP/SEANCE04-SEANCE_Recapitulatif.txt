@@ -1,0 +1,135 @@
+
+==> Votre tâche est de réaliser un projet pour chacun de ces algorithmes: 
+
+01-KMEANS
+02-DBSCAN
+03-Clustering Hiérarchique utilisant la Distance Euclidienne
+
+
+Veuillez trouver ci-bas une liste de projets que je propose :
+
+
+
+******************************************************************************************************************
+******************************************************************************************************************
+==========================================================> 01-KMEANS  <==========================================
+******************************************************************************************************************
+******************************************************************************************************************
+
+
+======================> CHOIX1 (NE PAS CHOISIR - DÉJA FAIT)
+- 01 - Projet01_kmeans_Rapport_De_Bonheur_Mondial: 
+https://drive.google.com/drive/folders/1l34cfyvca654f68-_vsqyfn8jK6IZf9c?usp=sharing 
+
+
+
+======================> CHOIX2
+- 04 - ANN_Clustering__Projet02_KMEANS_Projet de Segmentation des Clients Bancaires
+https://drive.google.com/drive/folders/1YmnOezC3ck3kqQ9EhI--9NQ2609nL_Ax?usp=sharing
+
+
+
+======================> CHOIX3
+- Tutorial KMEANS sur JAVAPOINT
+https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning 
+https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/07_ANS_CLUSTERING_PARTIE_5/03-Clustering%20Hi%C3%A9rarchique%20en%20Machine%20Learning.md
+https://drive.google.com/drive/folders/19dWNQnsYMBjnxLbtA3fz4AbcSYSaQ8TF?usp=sharing
+
+
+
+======================> CHOIX4
+- MON cours sur le KMEANS (AVEC EXPLICATIONS)
+ ( PARTIE 01 ==> 23 SOLUTION _ Sélection du meilleur modèle
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md
+
+
+- MON cours sur le KMEANS (AVEC CODE)
+   ( PARTIE 01 ==> PARTIE 10. Example _ Clustering hiérarchique en Python)
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md
+
+
+
+******************************************************************************************************************
+******************************************************************************************************************
+==========================================================> 02-DBSCAN  <==========================================
+******************************************************************************************************************
+******************************************************************************************************************
+
+
+======================> CHOIX1 (MON GITHUB)
+Apprentissage-Non-Supervise/06_ANS_CLUSTERING_PARTIE_4/CONCEPTS
+DU 05-DBSCAN-partie01.md ==> 10-Choisir la valeur appropriée pour ε dans DBSCAN-partie3.md
+DU 07-projet07-Visualizer_DBSCAN_Algorithm_dans_un_notebook.md ou 08-projet08-Visualizer_DBSCAN_Algorithm_sur_Desktop.md
+
+======================> CHOIX2
+- MON cours sur le DBSCAN (AVEC EXPLICATIONS)
+	( PARTIE 32 ==> 39 SOLUTION _ Sélection du meilleur modèle
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md
+
+
+- MON cours sur le DBSCAN (AVEC CODE)
+   ( PARTIE 13 ==> PARTIE 17. Example _ Clustering hiérarchique en Python)
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md
+
+
+======================> CHOIX3  (PROJET)
+DOSSIER05 SUR DRIVE - ANN_Clustering_Projet03_KMEANS_DBSCAN_Clustering des données de géolocalisation de TAXIS
+https://drive.google.com/drive/folders/10Cfy8CxF2BgKlrVSUU87CSzI6dDaxypw?usp=sharing 
+
+
+
+
+
+********************************************************************************
+==================> 03-Clustering Hiérarchique utilisant la Distance Euclidienne
+********************************************************************************
+
+
+======================> CHOIX1 (GITHUB)
+==> LIEN 01: 
+Dossier 07_ANS_CLUSTERING_PARTIE_5
+https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/07_ANS_CLUSTERING_PARTIE_5/03-Clustering%20Hi%C3%A9rarchique%20en%20Machine%20Learning.md 
+==> LIEN 02 (même lien en anglais): 
+https://www.javatpoint.com/hierarchical-clustering-in-machine-learning
+==> Données : 
+https://www.kaggle.com/datasets/shwetabh123/mall-customers 
+
+
+
+
+======================> CHOIX2
+==> LIEN 02 (02-Projet02-Clustering Hiérarchique utilisant la Distance Euclidienne)
+
+https://drive.google.com/drive/folders/1ckvU_GwFMma7nrmzMBlC_oceIqzKqiSI?usp=sharing
+
+
+
+
+======================> CHOIX3 (GITHUB- COURS)
+
+LIEN 01: LECTURE DU 24 ⇒ 31 (Cours exhaustif sur le clustering Hiérarchique)
+https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md 
+
+LIEN 02: Tous les codes 8 ⇒ 12 (Uniquement le code)
+https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md 
+
+
+
+
+
+********************************************************************************
+======================================================================> 04-BONUS
+********************************************************************************
+VIDÉO 1 ==> https://drive.google.com/drive/folders/1VCkeHbQ_2u3tQe53pHoi9ztHeZvRbMng?usp=sharing
+CODE DE LA VIDÉO 1 ==> https://github.com/MachineLearnia/Python-Machine-Learning/blob/master/24%20-%20Sklearn%20%3A%20Apprentissa
+
+- VIDÉO 2 ==> https://drive.google.com/drive/folders/1RpIXOD_DoJ7m-FdrNxT21MvA-mly0Tyt?usp=sharing
+- CODE DE LA VIDÉO 2 ==> https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/03_ANS_CLUSTERING_PARTIE_1_PRATIQUE/02-video02.md
+
+
+********************************************************************************
+RESSOURCES IMPORTANTES ET AUTRES PROJETS + CONCEPTS :
+********************************************************************************
+
+DOSSIER PRATIQUE ==> 06_ANS_CLUSTERING_PARTIE_4 (CODE 8 PROJETS) 
+DOSSIER THÉORIQUE ==> 06_ANS_CLUSTERING_PARTIE ENSUITE DOSSIER CONCEPTS
