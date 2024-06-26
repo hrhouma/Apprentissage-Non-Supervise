@@ -15,7 +15,7 @@
 |                | Choix 3 | Tutoriel KMEANS sur JAVAPOINT | [Lire le tutoriel](https://www.javatpoint.com/k-means-clustering-algorithm-in-machine-learning) |
 |                |          | Plus de détails et code sur GitHub | [GitHub - Clustering Hiérarchique](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/07_ANS_CLUSTERING_PARTIE_5/03-Clustering%20Hi%C3%A9rarchique%20en%20Machine%20Learning.md) |
 |                |          | Projet sur Google Drive | [Accéder au projet](https://drive.google.com/drive/folders/19dWNQnsYMBjnxLbtA3fz4AbcSYSaQ8TF?usp=sharing) |
-|                | Choix 4 | Mon Cours sur KMEANS (Avec Explications) | [Cours Complet](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md) |
+|                | Choix 4 | Mon Cours sur KMEANS (Avec Explications - paragraphe1 ==>8) | [Cours Complet](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md) |
 |                |          | Code Complet | [Code Complet](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md) |
 
 | **Algorithme** | **Choix** | **Description** | **Lien** |
