@@ -1,5 +1,3 @@
-Voici un modèle de README pour expliquer la largeur de silhouette dans l'analyse des clusters :
-
 # Largeur de Silhouette dans l'Analyse des Clusters
 
 La largeur de silhouette (silhouette width) est une mesure essentielle dans l'analyse des clusters pour plusieurs raisons clés :
@@ -48,7 +46,7 @@ En résumé, la largeur de silhouette est un outil polyvalent et puissant pour �
 
 ### Exemples Pratiques
 
-Voici un exemple d'utilisation de la largeur de silhouette en Python avec `scikit-learn` :
+Exemple d'utilisation de la largeur de silhouette en Python avec `scikit-learn` :
 
 ```python
 from sklearn.cluster import KMeans
@@ -66,5 +64,3 @@ labels = kmeans.fit_predict(X)
 silhouette_avg = silhouette_score(X, labels)
 print(f"La largeur de silhouette moyenne est : {silhouette_avg}")
 ```
-
-Pour plus d'exemples et de tutoriels, consultez [lien vers des ressources supplémentaires].
