@@ -44,11 +44,7 @@ La largeur de silhouette (silhouette width) est une mesure essentielle dans l'an
 
 En résumé, la largeur de silhouette est un outil polyvalent et puissant pour évaluer, optimiser et interpréter les résultats de clustering, ce qui en fait une métrique essentielle dans l'analyse des clusters.
 
----
 
-Pour toute question ou contribution, veuillez contacter [votre email ou lien de contact]. Vous pouvez également consulter la [documentation complète](lien vers la documentation) pour plus de détails sur l'implémentation et l'utilisation de la largeur de silhouette.
-
----
 
 ### Exemples Pratiques
 
