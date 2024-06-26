@@ -39,9 +39,7 @@
   Lien complet : https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)cours-complet-regroupement.md
 
 **CHOIX 2**
-- **Mon Cours sur DBSCAN (Avec Explications et Code):** [Cours et Code](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main
-
-/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md)  
+- **Mon Cours sur DBSCAN (Avec Explications et Code):** [Cours et Code](https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md)  
   Lien complet : https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/05_ANS_CLUSTERING_PARTIE_3/00-(FR)codes-complets-regroupement.md
 
 **CHOIX 3**
