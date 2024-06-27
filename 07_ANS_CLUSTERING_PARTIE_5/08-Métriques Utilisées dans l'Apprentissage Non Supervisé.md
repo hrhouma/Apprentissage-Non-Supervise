@@ -1,4 +1,4 @@
-# 07-Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie # 3
+# Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie # 3
 
 # Score de Silhouette
 
