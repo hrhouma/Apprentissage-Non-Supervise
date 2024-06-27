@@ -126,10 +126,3 @@ $$
 - **Importance de choisir les bonnes métriques en fonction des objectifs de l'analyse**
 - **Conseils pour l'interprétation et l'application des résultats dans des projets réels**
 
-### Ressources Supplémentaires
-
-- **Liens vers des articles académiques et des tutoriels en ligne**
-- **Codes sources et notebooks Python pour les exemples présentés**
-- **Lectures recommandées pour approfondir les concepts**
-
-Ce cours fournit une base solide pour comprendre et appliquer les métriques d'évaluation dans l'apprentissage non supervisé, permettant ainsi d'améliorer la qualité et l'interprétation des résultats obtenus.
