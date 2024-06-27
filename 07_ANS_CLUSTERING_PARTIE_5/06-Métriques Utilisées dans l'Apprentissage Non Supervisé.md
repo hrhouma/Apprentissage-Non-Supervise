@@ -1,4 +1,4 @@
-# Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie # 2
+# Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie # 3
 
 L'apprentissage non supervisé est une méthode d'analyse des données qui permet de découvrir des motifs cachés dans des données non étiquetées. Les métriques sont essentielles pour évaluer la qualité des clusters trouvés par des algorithmes comme K-means, DBSCAN, et l'analyse en composantes principales (PCA). Ce cours explore les principales métriques utilisées pour évaluer les algorithmes d'apprentissage non supervisé, avec des formules mathématiques et des exemples vulgarisés.
 
