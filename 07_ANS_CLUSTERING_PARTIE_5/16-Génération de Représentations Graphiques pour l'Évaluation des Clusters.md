@@ -57,7 +57,6 @@ plt.grid(True)
 plt.show()
 ```
 
-![Bon Clustering](https://via.placeholder.com/800x400.png?text=Ensemble+1%3A+Bon+Clustering)
 
 #### Ensemble 2: Clustering Moyennement Bon
 
@@ -109,7 +108,6 @@ plt.grid(True)
 plt.show()
 ```
 
-![Clustering Moyennement Bon](https://via.placeholder.com/800x400.png?text=Ensemble+2%3A+Clustering+Moyennement+Bon)
 
 #### Ensemble 3: Mauvais Clustering
 
@@ -161,7 +159,6 @@ plt.grid(True)
 plt.show()
 ```
 
-![Mauvais Clustering](https://via.placeholder.com/800x400.png?text=Ensemble+3%3A+Mauvais+Clustering)
 
 ### Questions 
 
@@ -173,8 +170,8 @@ plt.show()
      - Normalized Mutual Information (NMI) : `0.90
 
 `
-     - Cohésion : `250.0`
-     - Séparation : `1500.0`
+- Cohésion : `250.0`
+- Séparation : `1500.0`
 
 2. **Ensemble 2: Clustering Moyennement Bon**
    - Les clusters sont-ils bien formés, moyennement bien formés, ou mal formés ? Justifiez votre réponse en utilisant les valeurs des métriques suivantes :
