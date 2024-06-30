@@ -2,7 +2,7 @@
 
 # Table des Matières
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
-  - [1.1 Qu'est-ce qu'une image numérique ?](#1.1-qu-est-ce-qu-une-image-numérique)
+  - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numérique)
   - [1.2 Types d'images numériques](#12-types-d-images-numériques)
   - [1.3 Résolution d'une image](#13-résolution-d-une-image)
 
