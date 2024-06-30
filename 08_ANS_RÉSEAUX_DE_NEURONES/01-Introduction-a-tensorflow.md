@@ -5,62 +5,62 @@
   - [1.2 Types d'images numériques](#12-types-dimages-numériques)
   - [1.3 Résolution d'une image](#13-résolution-dune-image)
 
-- [**Chapitre 2 : Les Bases des Réseaux de Neurones**](#chapitre-2-les-bases-des-réseaux-de-neurones)
+- [**Chapitre 2 : Les Bases des Réseaux de Neurones**](#chapitre-2--les-bases-des-réseaux-de-neurones)
   - [2.1 Qu'est-ce qu'un réseau de neurones ?](#21-quest-ce-quun-réseau-de-neurones)
   - [2.2 Neurone artificiel](#22-neurone-artificiel)
   - [2.3 Couches d'un réseau de neurones](#23-couches-dun-réseau-de-neurones)
 
-- [**Chapitre 3 : Introduction aux Réseaux de Neurones Convolutifs (CNN)**](#chapitre-3-introduction-aux-réseaux-de-neurones-convolutifs-cnn)
+- [**Chapitre 3 : Introduction aux Réseaux de Neurones Convolutifs (CNN)**](#chapitre-3--introduction-aux-réseaux-de-neurones-convolutifs-cnn)
   - [3.1 Historique des CNN](#31-historique-des-cnn)
   - [3.2 Structure d'un CNN](#32-structure-dun-cnn)
 
-- [**Chapitre 4 : Convolution dans les CNN**](#chapitre-4-convolution-dans-les-cnn)
+- [**Chapitre 4 : Convolution dans les CNN**](#chapitre-4--convolution-dans-les-cnn)
   - [4.1 Qu'est-ce que la convolution ?](#41-quest-ce-que-la-convolution)
   - [4.2 Filtre (Kernel)](#42-filtre-kernel)
   - [4.3 Stride](#43-stride)
   - [4.4 Padding](#44-padding)
 
-- [**Chapitre 5 : Couches de ReLU dans les CNN**](#chapitre-5-couches-de-relu-dans-les-cnn)
+- [**Chapitre 5 : Couches de ReLU dans les CNN**](#chapitre-5--couches-de-relu-dans-les-cnn)
   - [5.1 Fonction d'activation ReLU](#51-fonction-dactivation-relu)
 
-- [**Chapitre 6 : Couches de Pooling dans les CNN**](#chapitre-6-couches-de-pooling-dans-les-cnn)
+- [**Chapitre 6 : Couches de Pooling dans les CNN**](#chapitre-6--couches-de-pooling-dans-les-cnn)
   - [6.1 Qu'est-ce que le pooling ?](#61-quest-ce-que-le-pooling)
   - [6.2 Avantages du pooling](#62-avantages-du-pooling)
 
-- [**Chapitre 7 : Couches Entièrement Connectées et Classification**](#chapitre-7-couches-entièrement-connectées-et-classification)
+- [**Chapitre 7 : Couches Entièrement Connectées et Classification**](#chapitre-7--couches-entièrement-connectées-et-classification)
   - [7.1 Couches entièrement connectées](#71-couches-entièrement-connectées)
   - [7.2 Fonctionnement](#72-fonctionnement)
 
-- [**Chapitre 8 : Entraînement des CNN**](#chapitre-8-entraînement-des-cnn)
+- [**Chapitre 8 : Entraînement des CNN**](#chapitre-8--entraînement-des-cnn)
   - [8.1 Processus d'entraînement](#81-processus-dentraînement)
   - [8.2 Hyperparamètres](#82-hyperparamètres)
 
-- [**Chapitre 9 : Applications des CNN**](#chapitre-9-applications-des-cnn)
+- [**Chapitre 9 : Applications des CNN**](#chapitre-9--applications-des-cnn)
   - [9.1 Domaines d'application](#91-domaines-dapplication)
 
-- [**Chapitre 10 : Avantages et Inconvénients des CNN**](#chapitre-10-avantages-et-inconvénients-des-cnn)
+- [**Chapitre 10 : Avantages et Inconvénients des CNN**](#chapitre-10--avantages-et-inconvénients-des-cnn)
   - [10.1 Avantages](#101-avantages)
   - [10.2 Inconvénients](#102-inconvénients)
 
 - [**Conclusion de la première partie**](#conclusion-de-la-première-partie)
 
-- [**Chapitre 11 : Introduction à Keras**](#chapitre-11-introduction-à-keras)
+- [**Chapitre 11 : Introduction à Keras**](#chapitre-11--introduction-à-keras)
   - [Qu'est-ce que Keras ?](#111-quest-ce-que-keras)
   - [Pourquoi utiliser Keras ?](#112-pourquoi-utiliser-keras)
   - [Environnement Keras](#113-environnement-keras)
 
-- [**Chapitre 12 : Créer Votre Premier Réseau de Neurones avec Keras**](#chapitre-12-créer-votre-premier-réseau-de-neurones-avec-keras)
+- [**Chapitre 12 : Créer Votre Premier Réseau de Neurones avec Keras**](#chapitre-12--créer-votre-premier-réseau-de-neurones-avec-keras)
   - [Introduction](#121-introduction)
   - [Importation de Keras](#122-importation-de-keras)
   - [Installation de Keras](#123-installation-de-keras)
   - [Création d'un Modèle Simple](#124-création-dun-modèle-simple)
   - [Changer de Backend](#125-changer-de-backend)
 
-- [**Chapitre 13 : Construire des Modèles avec Keras**](#chapitre-13-construire-des-modèles-avec-keras)
+- [**Chapitre 13 : Construire des Modèles avec Keras**](#chapitre-13--construire-des-modèles-avec-keras)
   - [Modèle Sequential](#131-modèle-sequential)
   - [Classe Model avec API Fonctionnelle](#132-classe-model-avec-api-fonctionnelle)
 
-- [**Chapitre 14 : Introduction aux Réseaux de Neurones Convolutionnels (CNN) avec Keras**](#chapitre-14-introduction-aux-réseaux-de-neurones-convolutionnels-cnn-avec-keras)
+- [**Chapitre 14 : Introduction aux Réseaux de Neurones Convolutionnels (CNN) avec Keras**](#chapitre-14--introduction-aux-réseaux-de-neurones-convolutionnels-cnn-avec-keras)
   - [Vue d'ensemble des Réseaux de Neurones Convolutionnels](#141-vue-densemble-des-réseaux-de-neurones-convolutionnels)
   - [Comprendre les Couches dans Keras](#142-comprendre-les-couches-dans-keras)
   - [Les Couches Communes dans Keras](#143-les-couches-communes-dans-keras)
@@ -69,16 +69,16 @@
   - [Entraîner le CNN](#146-entraîner-le-cnn)
   - [Évaluer le Modèle](#147-évaluer-le-modèle)
 
-- [**Chapitre 15 : Composants d'un CNN**](#chapitre-15-composants-dun-cnn)
+- [**Chapitre 15 : Composants d'un CNN**](#chapitre-15--composants-dun-cnn)
   - [Convolution](#151-convolution)
   - [Activation Non-Linéaire (ReLU)](#152-activation-non-linéaire-relu)
   - [Pooling (Sous-échantillonnage)](#153-pooling-sous-échantillonnage)
 
-- [**Chapitre 16 : Exemple Pratique avec MNIST et Fashion MNIST**](#chapitre-16-exemple-pratique-avec-mnist-et-fashion-mnist)
+- [**Chapitre 16 : Exemple Pratique avec MNIST et Fashion MNIST**](#chapitre-16--exemple-pratique-avec-mnist-et-fashion-mnist)
   - [MNIST](#161-mnist)
   - [Fashion MNIST](#162-fashion-mnist)
 
-- [**Chapitre 17 : Apprentissage par Transfert**](#chapitre-17-apprentissage-par-transfert)
+- [**Chapitre 17 : Apprentissage par Transfert**](#chapitre-17--apprentissage-par-transfert)
   - [Concept](#171-concept)
   - [Exemple avec Inception V3](#172-exemple-avec-inception-v3)
 
