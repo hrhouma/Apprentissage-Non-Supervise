@@ -90,7 +90,7 @@
 # Chapitre 1 : Introduction aux Images Numériques
 
 ### 1.1 Qu'est-ce qu'une image numérique ? <a name="11-quest-ce-quune-image-numerique"></a>
-
+[Retour en haut](#plan)
 - **Définition** : Une image numérique est une représentation visuelle d'une scène sous forme de grille de pixels.
 - **Pixel** : L'élément de base d'une image numérique. Chaque pixel contient des informations sur la couleur ou la luminosité.
 
@@ -117,6 +117,7 @@ plt.show()
 ```
 
 ### 1.2 Types d'images numériques
+[Retour en haut](#plan)
 - **Images en niveaux de gris** : Chaque pixel est une valeur de luminosité allant de 0 (noir) à 255 (blanc).
 - **Images en couleurs** : Chaque pixel est représenté par trois valeurs correspondant aux canaux de couleur rouge, vert et bleu (RVB).
 
@@ -136,6 +137,7 @@ plt.show()
 ```
 
 ### 1.3 Résolution d'une image
+[Retour en haut](#plan)
 - **Définition** : La résolution d'une image est déterminée par le nombre de pixels horizontaux et verticaux.
 - **Exemple** : Une image de 128 x 128 pixels contient 16 384 pixels.
 
@@ -152,9 +154,11 @@ print(f"Nombre de pixels dans l'image : {image.size}")
 #### Chapitre 2 : Les Bases des Réseaux de Neurones
 
 ##### 2.1 Qu'est-ce qu'un réseau de neurones ?
+[Retour en haut](#plan)
 - **Définition** : Un réseau de neurones est un modèle mathématique inspiré du cerveau humain, conçu pour reconnaître des motifs et apprendre à partir de données.
 
 ##### 2.2 Neurone artificiel
+[Retour en haut](#plan)
 - **Fonctionnement** : Chaque neurone reçoit des entrées, les transforme à l'aide de poids et de biais, applique une fonction d'activation, puis produit une sortie.
 - **Fonction d'activation** : Une fonction mathématique qui introduit de la non-linéarité, essentielle pour la modélisation de relations complexes.
 
@@ -200,10 +204,12 @@ model.summary()
 #### Chapitre 3 : Introduction aux Réseaux de Neurones Convolutifs (CNN)
 
 ##### 3.1 Historique des CNN
+[Retour en haut](#plan)
 - **Origines biologiques** : Inspirés par le fonctionnement du cortex visuel des mammifères (recherches de Hubel et Wiesel).
 - **Développement en informatique** : Introduction par Yann LeCun et al. en 1998 pour la classification du dataset MNIST.
 
 ##### 3.2 Structure d'un CNN
+[Retour en haut](#plan)
 - **Couche d'entrée** : Reçoit l'image sous forme de matrice de pixels.
 - **Couches de convolution** : Appliquent des filtres pour extraire des caractéristiques locales.
 - **Couches de ReLU** : Introduisent de la non-linéarité en remplaçant les valeurs négatives par zéro.
@@ -232,6 +238,7 @@ model.summary()
 #### Chapitre 4 : Convolution dans les CNN
 
 ##### 4.1 Qu'est-ce que la convolution ?
+[Retour en haut](#plan)
 - **Définition** : Opération mathématique qui combine deux fonctions pour produire une troisième fonction.
 - **Application dans les CNN** : Utilisée pour appliquer des filtres sur les images afin d'extraire des caractéristiques spécifiques.
 
@@ -253,6 +260,7 @@ plt.show()
 ```
 
 ##### 4.2 Filtre (Kernel)
+[Retour en haut](#plan)
 - **Définition** : Une petite matrice utilisée pour balayer l'image et effectuer des opérations de convolution.
 - **Exemple** : Un filtre 3x3 appliqué sur une image 5x5.
 
@@ -270,6 +278,7 @@ plt.show()
 ```
 
 ##### 4.3 Stride
+[Retour en haut](#plan)
 - **Définition** : Le nombre de pixels par lesquels le filtre se déplace sur l'image.
 - **Impact sur la dimension de l'image convoluée** : Un stride plus grand réduit la dimension de l'image de sortie.
 
@@ -303,6 +312,7 @@ plt.show()
 ```
 
 ##### 4.4 Padding
+[Retour en haut](#plan)
 - **Définition** : Ajout de bordures de pixels autour de l'image pour conserver sa dimension après la convolution.
 - **Types de padding** : Valid (sans padding) et Same (avec padding pour conserver la taille d'origine).
 
@@ -331,6 +341,7 @@ plt.show()
 #### Chapitre 5 : Couches de ReLU dans les CNN
 
 ##### 5.1 Fonction d'activation ReLU
+[Retour en haut](#plan)
 - **Définition** : Fonction d'activation qui remplace toutes les valeurs négatives par zéro.
 - **Importance** : Introduit de la non-linéarité et aide à résoudre le problème de gradient vanishing.
 
@@ -349,6 +360,7 @@ plt.show()
 #### Chapitre 6 : Couches de Pooling dans les CNN
 
 ##### 6.1 Qu'est-ce que le pooling ?
+[Retour en haut](#plan)
 - **Définition** : Opération de réduction de la dimensionnalité de l'image tout en conservant les caractéristiques importantes.
 - **Types de pooling** :
   - **Max Pooling** : Prend la valeur maximale dans une fenêtre de sous-échantillonnage.
@@ -373,6 +385,7 @@ plt.show()
 ```
 
 ##### 6.2 Avantages du pooling
+[Retour en haut](#plan)
 - **Invariance spatiale** : Réduit la sensibilité aux petites translations de l'image.
 - **Réduction des paramètres** : Diminue le nombre de paramètres à apprendre, réduisant ainsi le risque de surapprentissage.
 
@@ -399,6 +412,7 @@ plt.show()
 #### Chapitre 7 : Couches Entièrement Connectées et Classification
 
 ##### 7.1 Couches entièrement connectées
+[Retour en haut](#plan)
 - **Définition** : Chaque neurone est connecté à tous les neurones de la couche précédente.
 - **Rôle** : Effectue la classification finale basée sur les caractéristiques extraites par les couches précédentes.
 
@@ -413,6 +427,7 @@ model.add(Dense(10, activation='softmax'))
 ```
 
 ##### 7.2 Fonctionnement
+[Retour en haut](#plan)
 - **Flattening** : Transformation des matrices 2D en vecteurs 1D pour les couches entièrement connectées.
 - **Softmax** : Fonction d'activation utilisée en sortie pour produire des probabilités de classification.
 
@@ -430,6 +445,7 @@ model.add(Softmax())
 #### Chapitre 8 : Entraînement des CNN
 
 ##### 8.1 Processus d'entraînement
+[Retour en haut](#plan)
 - **Dataset** : Ensemble d'images avec des labels associés.
 - **Forward Propagation** : Calcul des sorties du réseau à partir des entrées.
 - **Backpropagation** : Ajustement des poids et des biais pour minimiser l'erreur de classification.
@@ -455,6 +471,7 @@ model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y
 ```
 
 ##### 8.2 Hyperparamètres
+[Retour en haut](#plan)
 - **Taux d'apprentissage** : Détermine la taille des ajustements des poids.
 - **Nombre d'époques** : Nombre de fois que l'ensemble des données d'entraînement est passé à travers le réseau.
 - **Batch size** : Nombre d'échantillons traités avant la mise à jour des poids.
@@ -470,6 +487,7 @@ model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_test, y
 #### Chapitre 9 : Applications des CNN
 
 ##### 9.1 Domaines d'application
+[Retour en haut](#plan)
 - **Reconnaissance d'images** : Identification d'objets dans des images.
 - **Analyse de vidéos** : Détection et suivi d'objets en mouvement.
 - **Systèmes de recommandation** : Suggestions personnalisées basées sur les préférences visuelles.
@@ -503,10 +521,12 @@ print('Predicted:', decode_predictions(preds, top=3)[0])
 #### Chapitre 10 : Avantages et Inconvénients des CNN
 
 ##### 10.1 Avantages
+[Retour en haut](#plan)
 - **Efficacité** : Excellente performance pour les tâches de vision par ordinateur.
 - **Automatisation** : Capacité à apprendre automatiquement des caractéristiques à partir des données brutes.
 
 ##### 10.2 Inconvénients
+[Retour en haut](#plan)
 - **Complexité** : Nécessitent de grandes quantités de données pour l'entraînement.
 - **Ressources** : Requiert des ressources matérielles importantes pour l'entraînement.
 
@@ -541,6 +561,7 @@ print(f"Temps d'entraînement CNN: {cnn_training_time:.2f} secondes")
 ---
 
 ### Conclusion
+[Retour en haut](#plan)
 
 Les réseaux de neurones convolutifs sont des outils puissants pour le traitement d'images et de vidéos, offrant des performances remarquables grâce à leur capacité à extraire automatiquement des caractéristiques hiérarchiques. Leur utilisation s'étend à de nombreux domaines, rendant les CNN essentiels pour les applications modernes de deep learning.
 
@@ -549,10 +570,12 @@ Les réseaux de neurones convolutifs sont des outils puissants pour le traitemen
 ### Introduction à Keras
 
 #### Qu'est-ce que Keras ?
+[Retour en haut](#plan)
 
 Keras est une API de réseaux de neurones de haut niveau, écrite en Python et capable de s'exécuter sur des moteurs de calcul comme TensorFlow, CNTK, ou Theano. Elle permet de créer et d’entraîner des modèles de deep learning de manière simple et efficace.
 
 #### Pourquoi utiliser Keras ?
+[Retour en haut](#plan)
 
 1. **Facilité d’utilisation** : Keras est conçu pour être convivial et simple à utiliser, ce qui permet de se concentrer sur les aspects importants de la création de modèles de deep learning sans se perdre dans des détails techniques complexes.
 2. **Modularité** : Keras est basé sur un modèle modulaire où chaque composant d'un modèle de deep learning est une entité distincte qui peut être combinée avec d'autres.
@@ -562,12 +585,14 @@ Keras est une API de réseaux de neurones de haut niveau, écrite en Python et c
 #### Environnement Keras
 
 ##### Architecture de Keras
+[Retour en haut](#plan)
 
 - **Votre programme** : C’est le script Python que vous écrivez.
 - **Keras (API NN)** : L’API qui vous permet de définir et d’entraîner vos modèles.
 - **Backend (TensorFlow, Theano, CNTK)** : Le moteur de calcul qui effectue les opérations de bas niveau nécessaires pour entraîner les modèles.
 
 ##### Exemple de modèle avec Keras
+[Retour en haut](#plan)
 
 ```python
 from keras.models import Sequential
@@ -594,10 +619,12 @@ model.fit(x_train, y_train, epochs=5, batch_size=32)
 ### Cours : Créer Votre Premier Réseau de Neurones avec Keras
 
 #### Introduction
+[Retour en haut](#plan)
 
 Keras est une bibliothèque de réseaux de neurones haut niveau qui tourne sur TensorFlow. Il permet de construire et d'entraîner des modèles de Deep Learning facilement grâce à une interface simple et conviviale.
 
 #### Importation de Keras
+[Retour en haut](#plan)
 
 Keras est intégré dans TensorFlow, ce qui signifie que vous pouvez l'utiliser directement en l'important depuis TensorFlow :
 
@@ -607,6 +634,7 @@ from tensorflow import keras
 ```
 
 #### Installation de Keras
+[Retour en haut](#plan)
 
 - **Keras intégré à TensorFlow** : Aucune installation séparée n'est nécessaire si vous utilisez TensorFlow.
 - **Keras autonome** : Il est également possible d'installer Keras comme une bibliothèque autonome et de l'utiliser avec différents backends tels que TensorFlow, Theano, ou CNTK. 
@@ -618,10 +646,12 @@ pip install keras
 Pour changer de backend, vous devez configurer le fichier `.keras/keras.json` dans votre répertoire utilisateur.
 
 #### Création d'un Modèle Simple
+[Retour en haut](#plan)
 
 Pour commencer, nous allons créer un modèle de réseau de neurones simple avec une couche d'entrée, une couche cachée et une couche de sortie.
 
 ##### 1. Importer les Bibliothèques Nécessaires
+[Retour en haut](#plan)
 
 ```python
 import tensorflow as tf
@@ -630,6 +660,7 @@ from tensorflow.keras.layers import Dense
 ```
 
 ##### 2. Préparer les Données
+[Retour en haut](#plan)
 
 Nous allons utiliser le dataset MNIST pour cette démonstration. Ce dataset contient des images de chiffres écrits à la main.
 
@@ -640,6 +671,7 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 ```
 
 ##### 3. Construire le Modèle
+[Retour en haut](#plan)
 
 Nous allons créer un modèle séquentiel avec une couche d'entrée, une couche cachée dense et une couche de sortie.
 
@@ -651,6 +683,7 @@ model = Sequential([
 ```
 
 ##### 4. Compiler le Modèle
+[Retour en haut](#plan)
 
 Ensuite, nous compilons le modèle avec une fonction de perte, un optimiseur et des métriques.
 
@@ -661,6 +694,7 @@ model.compile(optimizer='adam',
 ```
 
 ##### 5. Entraîner le Modèle
+[Retour en haut](#plan)
 
 Nous entraînons le modèle sur les données d'entraînement.
 
@@ -669,6 +703,7 @@ model.fit(x_train, y_train, epochs=5)
 ```
 
 ##### 6. Évaluer le Modèle
+[Retour en haut](#plan)
 
 Enfin, nous évaluons le modèle sur les données de test.
 
@@ -677,6 +712,7 @@ model.evaluate(x_test, y_test)
 ```
 
 #### Changer de Backend
+[Retour en haut](#plan)
 
 Keras permet de changer de backend facilement en modifiant le fichier de configuration `keras.json`.
 
@@ -690,7 +726,7 @@ Keras permet de changer de backend facilement en modifiant le fichier de configu
 ```
 
 ### Conclusion
-
+[Retour en haut](#plan)
 Keras simplifie la création et l'entraînement des modèles de Deep Learning. Son intégration avec TensorFlow permet une utilisation flexible et puissante, adaptée aux débutants comme aux experts.
 
 ---
@@ -698,12 +734,13 @@ Keras simplifie la création et l'entraînement des modèles de Deep Learning. S
 ### Construire des Modèles avec Keras
 
 #### Introduction
-
+[Retour en haut](#plan)
 Keras est une bibliothèque puissante et facile à utiliser pour construire des réseaux de neurones. Elle propose deux principaux types de modèles : le modèle Sequential et la classe Model avec l'API Fonctionnelle.
 
 ---
 
 #### Modèle Sequential
+[Retour en haut](#plan)
 
 **Caractéristiques clés** :
 - **Facile à comprendre** : Le modèle Sequential est simple, ce qui en fait un excellent point de départ pour les débutants.
@@ -714,6 +751,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 #### Classe Model avec API Fonctionnelle
+[Retour en haut](#plan)
 
 **Caractéristiques clés** :
 - **Réseaux de neurones complexes** : Convient aux architectures de réseaux plus complexes.
@@ -724,6 +762,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Règles de base pour les couches cachées
+[Retour en haut](#plan)
 
 **Nombre de couches cachées** :
 - **0** : Représente uniquement des fonctions linéairement séparables.
@@ -737,7 +776,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Règles de base pour les neurones dans les couches cachées
-
+[Retour en haut](#plan)
 **Lignes directrices** :
 - **>= taille de la couche d'entrée ET <= taille de la couche de sortie**
 - **(2/3 * taille des couches d'entrée) + taille de la couche de sortie**
@@ -749,7 +788,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Visualisation
-
+[Retour en haut](#plan)
 **Outils** :
 - **plot_model()** : 
   - Fournit une représentation graphique du modèle.
@@ -762,7 +801,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Callbacks
-
+[Retour en haut](#plan)
 **Fonctions** :
 - **Collecter des informations d'entraînement** : Surveiller les progrès de l'entraînement à distance.
 - **Ajuster les paramètres** : Ajuster les paramètres pendant l'entraînement.
@@ -775,7 +814,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Sauvegarder et Restaurer des Modèles
-
+[Retour en haut](#plan)
 **Méthodes** :
 - **.save(filepath)** : Sauvegarde le modèle dans un fichier HDF5.
 - **.load_model(filepath)** : Charge un modèle depuis un fichier HDF5.
@@ -787,7 +826,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Exemples Pratiques
-
+[Retour en haut](#plan)
 **Modèle Sequential** :
 1. **Couche d'entrée** : La couche de départ du modèle.
 2. **Couches cachées** : Couches intermédiaires qui apprennent à représenter les données.
@@ -801,7 +840,7 @@ Keras est une bibliothèque puissante et facile à utiliser pour construire des 
 ---
 
 ### Conclusion
-
+[Retour en haut](#plan)
 Keras fournit des outils robustes pour construire des réseaux de neurones, que vous travailliez avec des modèles simples utilisant l'API Sequential ou des architectures plus complexes avec l'API Fonctionnelle. Comprendre les lignes directrices pour configurer les couches cachées et les neurones, utiliser les outils de visualisation, les callbacks, et sauvegarder/restaurer les modèles sont des compétences essentielles pour développer des modèles de deep learning efficaces.
 
 **Méthodes de support** :
@@ -814,15 +853,15 @@ Keras fournit des outils robustes pour construire des réseaux de neurones, que 
 ### Introduction aux Réseaux de Neurones Convolutionnels (CNN) avec Keras
 
 #### 1. Vue d'ensemble des Réseaux de Neurones Convolutionnels
-
+[Retour en haut](#plan)
 Les réseaux de neurones convolutionnels (CNN) sont une classe de réseaux de neurones profonds particulièrement efficaces pour analyser les images visuelles. Ils sont largement utilisés dans la reconnaissance d'images et de vidéos, les systèmes de recommandation et le traitement du langage naturel.
 
 #### 2. Comprendre les Couches dans Keras
-
+[Retour en haut](#plan)
 Keras est une bibliothèque de réseaux de neurones open-source puissante et facile à utiliser, écrite en Python. Elle peut fonctionner sur TensorFlow, Microsoft Cognitive Toolkit, Theano ou PlaidML. Elle permet un prototypage facile et rapide, prend en charge à la fois les réseaux convolutionnels et récurrents, et fonctionne sans problème sur CPU et GPU.
 
 #### 3. Les Couches Communes dans Keras
-
+[Retour en haut](#plan)
 - **Couches Denses** : Couches entièrement connectées où chaque neurone est connecté à tous les neurones de la couche précédente.
 - **Couches de Dropout** : Technique de régularisation où des neurones sélectionnés aléatoirement sont ignorés pendant l'entraînement pour éviter le surapprentissage.
 - **Couches de Reshape** : Modifient la forme de l'entrée sans en altérer les données.
@@ -831,14 +870,14 @@ Keras est une bibliothèque de réseaux de neurones open-source puissante et fac
 - **Couches de RepeatVector** : Répètent l'entrée un certain nombre de fois.
 
 #### 4. Les Couches Convolutionnelles
-
+[Retour en haut](#plan)
 Les couches convolutionnelles sont les blocs de construction fondamentaux d'un CNN. Elles appliquent une opération de convolution à l'entrée, passant le résultat à la couche suivante.
 
 - **Couches Convolutionnelles** : Effectuent des convolutions, qui combinent des filtres apprenables avec des données d'entrée pour produire des cartes de caractéristiques.
 - **Couches de Pooling** : Réduisent la dimensionnalité de chaque carte de caractéristiques tout en conservant les informations les plus importantes. Les types courants incluent le Max Pooling et le Average Pooling.
 
 #### 5. Construire un Réseau de Neurones Convolutionnel avec Keras
-
+[Retour en haut](#plan)
 Construisons un CNN simple en utilisant Keras.
 
 ```python
@@ -871,7 +910,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 ```
 
 #### 6. Entraîner le CNN
-
+[Retour en haut](#plan)
 Pour entraîner le CNN, vous devez préparer votre jeu de données, ce qui implique :
 
 - Diviser les données en ensembles d'entraînement et de test.
@@ -906,7 +945,7 @@ model.fit_generator(training_set,
 ```
 
 #### 7. Évaluer le Modèle
-
+[Retour en haut](#plan)
 Après l'entraînement, évaluez la performance du modèle sur le jeu de test pour comprendre sa capacité à se généraliser à de nouvelles données.
 
 ```python
@@ -916,10 +955,11 @@ print('Test accuracy:', score[1])
 ```
 
 #### 8. Conclusion
-
+[Retour en haut](#plan)
 Les réseaux de neurones convolutionnels sont un outil puissant pour la reconnaissance d'images et d'autres tâches impliquant des données de type grille. Keras fournit une API de haut niveau, facile à utiliser pour construire et entraîner ces réseaux de manière efficace.
 
 #### Références
+[Retour en haut](#plan)
 - [Documentation Keras](https://keras.io)
 - [Building Convolutional NN with Keras (Vidéo)]
 - [Employing Layers in Keras Models (Diapositives)]
@@ -927,7 +967,7 @@ Les réseaux de neurones convolutionnels sont un outil puissant pour la reconnai
 ---
 
 ### Introduction aux Réseaux Neuronaux Convolutifs (CNN)
-
+[Retour en haut](#plan)
 #### Définition
 Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neuronaux profonds, feed-forward, qui a été appliquée avec succès à l'analyse des images visuelles.
 
@@ -941,7 +981,7 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 ---
 
 ### Composants d'un CNN
-
+[Retour en haut](#plan)
 #### Convolution
 - **Fonctionnement** : La convolution extrait des caractéristiques des images tout en préservant les relations spatiales des caractéristiques (comme les bords et les éléments composites tels que les yeux ou le nez).
 - **Hyperparamètres clés** :
@@ -951,12 +991,14 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
   - **Padding** : Ajoute des pixels autour de l'image pour préserver les dimensions après la convolution.
 
 #### Activation Non-Linéaire (ReLU)
+[Retour en haut](#plan)
 - **Fonction** : Ajoutée après une couche de convolution pour introduire la non-linéarité, empêchant le problème du gradient qui disparaît.
 - **Formule** : \( y = \max(0,
 
  x) \)
 
 #### Pooling (Sous-échantillonnage)
+[Retour en haut](#plan)
 - **Objectif** : Réduire la dimensionnalité tout en maintenant les caractéristiques importantes.
 - **Types** :
   - **Max Pooling** : Prend la valeur maximale dans une fenêtre de taille définie (ex. 2x2).
@@ -964,6 +1006,7 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 ---
 
 ### Exemple Pratique avec MNIST et Fashion MNIST
+[Retour en haut](#plan)
 
 #### MNIST
 - **Description** : Jeu de données contenant 60 000 images d'entraînement et 10 000 images de test de chiffres manuscrits (28x28 pixels, en niveaux de gris).
@@ -976,6 +1019,7 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 ---
 
 ### Apprentissage par Transfert
+[Retour en haut](#plan)
 
 #### Concept
 - **Objectif** : Utiliser un modèle pré-entraîné sur un large jeu de données pour améliorer la performance sur un problème spécifique.
@@ -991,8 +1035,10 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 ---
 
 ### Structure des Dossiers de Données
+[Retour en haut](#plan)
 
 #### Organisation
+[Retour en haut](#plan)
 - **Emplacement du Programme** : Le dossier `data` contient les sous-dossiers `train` et `validate`.
 - **Données d'Entraînement** : 
   - `train/cats` : 1000 images de chats.
@@ -1005,24 +1051,28 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 ---
 
 ### Synthèse
+[Retour en haut](#plan)
 
 - **Résumé** : Les CNNs résolvent les problèmes d'analyse d'images en extrayant des cartes de caractéristiques et en utilisant des couches de convolution, de non-linéarité et de pooling.
 - **Exemples** : Démonstration avec Fashion MNIST, et utilisation de l'apprentissage par transfert avec Inception V3.
 
 
 # Annexe : 
+[Retour en haut](#plan)
 
 ### Livre sur les Réseaux de Neurones Convolutifs (CNN) avec Keras
 
 ---
 
 #### Introduction
+[Retour en haut](#plan)
 
 Les réseaux de neurones convolutifs (CNN) sont une classe de réseaux neuronaux profonds particulièrement efficaces pour analyser les images visuelles. Ils sont largement utilisés dans la reconnaissance d'images et de vidéos, les systèmes de recommandation et le traitement du langage naturel. Ce livre présente une vue d'ensemble des CNN, les concepts clés et des exemples pratiques avec Keras pour vous aider à démarrer avec la création de modèles de deep learning.
 
 ---
 
 ### Chapitre 1 : Introduction aux Images Numériques
+[Retour en haut](#plan)
 
 #### 1.1 Qu'est-ce qu'une image numérique ?
 Une image numérique est une représentation visuelle d'une scène sous forme de grille de pixels. Chaque pixel contient des informations sur la couleur ou la luminosité.
@@ -1049,6 +1099,7 @@ plt.show()
 ```
 
 #### 1.2 Types d'images numériques
+[Retour en haut](#plan)
 - **Images en niveaux de gris** : Chaque pixel est une valeur de luminosité allant de 0 (noir) à 255 (blanc).
 - **Images en couleurs** : Chaque pixel est représenté par trois valeurs correspondant aux canaux de couleur rouge, vert et bleu (RVB).
 
@@ -1080,6 +1131,7 @@ print(f"Nombre de pixels dans l'image : {image.size}")
 ---
 
 ### Chapitre 2 : Les Bases des Réseaux de Neurones
+[Retour en haut](#plan)
 
 #### 2.1 Qu'est-ce qu'un réseau de neurones ?
 Un réseau de neurones est un modèle mathématique inspiré du cerveau humain, conçu pour reconnaître des motifs et apprendre à partir de données.
@@ -1101,6 +1153,7 @@ print(f"Sortie du neurone : {output}")
 ```
 
 #### 2.3 Couches d'un réseau de neurones
+[Retour en haut](#plan)
 - **Couche d'entrée** : Reçoit les données brutes.
 - **Couches cachées** : Effectuent des transformations et extraient des caractéristiques.
 - **Couche de sortie** : Produit le résultat final, par exemple, la classe prédite d'une image.
@@ -1120,6 +1173,7 @@ model.summary()
 ---
 
 ### Chapitre 3 : Introduction aux Réseaux de Neurones Convolutifs (CNN)
+[Retour en haut](#plan)
 
 #### 3.1 Historique des CNN
 Les CNN sont inspirés par le fonctionnement du cortex visuel des mammifères et ont été introduits par Yann LeCun et al. en 1998 pour la classification du dataset MNIST.
@@ -1149,6 +1203,7 @@ model.summary()
 ---
 
 ### Chapitre 4 : Convolution dans les CNN
+[Retour en haut](#plan)
 
 #### 4.1 Qu'est-ce que la convolution ?
 La convolution est une opération mathématique qui combine deux fonctions pour produire une troisième fonction. Elle est utilisée dans les CNN pour appliquer des filtres sur les images afin d'extraire des caractéristiques spécifiques.
@@ -1433,6 +1488,7 @@ print(f"Temps d'entraînement CNN: {cnn_training_time:.2f} secondes")
 ---
 
 ### Conclusion
+[Retour en haut](#plan)
 
 Les réseaux de neurones convolutifs sont des outils puissants pour le traitement d'images et de vidéos, offrant des performances remarquables grâce à leur capacité à extraire automatiquement des caractéristiques hiérarchiques. Leur utilisation s'étend à de nombreux domaines, rendant les CNN essentiels pour les applications modernes de deep learning.
 
