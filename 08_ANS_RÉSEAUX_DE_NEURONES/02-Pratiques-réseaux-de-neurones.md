@@ -1,5 +1,5 @@
 ### Réseaux de Neurones Convolutifs (CNN)
-# Table des Matières
+# Plan
 
 1. [Introduction](#introduction)
    - [Qu'est-ce que l'apprentissage profond ?](#qu-est-ce-que-l-apprentissage-profond)
@@ -43,6 +43,7 @@
 ---
 
 ## Introduction
+[Retour en haut](#plan)
 - Ce cours est conçu pour fournir une compréhension exhaustive des réseaux de neurones convolutifs (CNN) dans le cadre de l'apprentissage non supervisé. 
 - Nous intégrerons des points clés et des illustrations des slides fournis pour offrir une vue d'ensemble claire et structurée. 
 
