@@ -1,4 +1,8 @@
 ### Réseaux de Neurones Convolutifs (CNN)
+
+# Références
+- Les contenus et les illustrations sont basés sur les slides fournis par Pluralsight.
+
 # Plan
 
 1. [Introduction](#introduction)
