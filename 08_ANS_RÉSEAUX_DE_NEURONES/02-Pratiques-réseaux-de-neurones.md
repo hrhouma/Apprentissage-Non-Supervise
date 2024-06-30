@@ -1,10 +1,5 @@
-### Cours Complet: Réseaux de Neurones Convolutifs (CNN)
-
-Ce cours est conçu pour fournir une compréhension exhaustive des réseaux de neurones convolutifs (CNN) dans le cadre de l'apprentissage non supervisé. Nous intégrerons des points clés et des illustrations des slides fournis pour offrir une vue d'ensemble claire et structurée. Les chapitres suivants sont basés sur les documents suivants : introduction, techniques, applications, impact, et next steps.
-
----
-
-## Table des Matières
+### Réseaux de Neurones Convolutifs (CNN)
+# Table des Matières
 
 1. [Introduction](#introduction)
    - [Qu'est-ce que l'apprentissage profond ?](#qu-est-ce-que-l-apprentissage-profond)
@@ -48,6 +43,9 @@ Ce cours est conçu pour fournir une compréhension exhaustive des réseaux de n
 ---
 
 ## Introduction
+- Ce cours est conçu pour fournir une compréhension exhaustive des réseaux de neurones convolutifs (CNN) dans le cadre de l'apprentissage non supervisé. 
+- Nous intégrerons des points clés et des illustrations des slides fournis pour offrir une vue d'ensemble claire et structurée. 
+
 
 ### Qu'est-ce que l'apprentissage profond ?
 L'apprentissage profond est une sous-discipline de l'intelligence artificielle qui se concentre sur la modélisation de données à l'aide de réseaux de neurones profonds. Contrairement aux méthodes d'apprentissage traditionnelles qui nécessitent une intervention humaine pour extraire des caractéristiques, les réseaux de neurones profonds peuvent apprendre automatiquement des représentations hiérarchiques des données.
