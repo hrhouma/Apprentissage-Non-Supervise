@@ -1236,10 +1236,13 @@ model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_test, y
 
 ##### 9.1 Domaines d'application
 [Retour en haut](#plan)
-- **Reconnaissance d'images** : Identification d'objets dans des images.
-- **Analyse de vidéos** : Détection et suivi d'objets en mouvement.
-- **Systèmes de recommandation** : Suggestions personnalisées basées sur les préférences visuelles.
-- **Traitement du langage naturel** : Applications comme la reconnaissance d'écriture manuscrite.
+
+Les réseaux de neurones convolutifs (CNN) ont révolutionné de nombreux domaines grâce à leur capacité à traiter et analyser les données visuelles. Voici quelques-uns des principaux domaines d'application :
+
+- **Reconnaissance d'images** : Identification et classification d'objets dans des images, utilisée dans des applications telles que la sécurité, l'agriculture, la santé, et les véhicules autonomes.
+- **Analyse de vidéos** : Détection et suivi d'objets en mouvement, essentielle pour la surveillance, la reconnaissance faciale, et les sports.
+- **Systèmes de recommandation** : Suggestions personnalisées basées sur les préférences visuelles, couramment utilisées dans les plateformes de commerce électronique et de streaming.
+- **Traitement du langage naturel** : Applications comme la reconnaissance d'écriture manuscrite et la traduction automatique, où les images de textes sont converties en données numériques.
 
 ```python
 # Exemple : Utiliser un modèle CNN pré-entraîné pour la reconnaissance d'images
@@ -1264,31 +1267,150 @@ preds = vgg_model.predict(x)
 print('Predicted:', decode_predictions(preds, top=3)[0])
 ```
 
+**Exercice 1 : Utiliser un modèle pré-entraîné pour classifier des images**
+1. Choisissez une image de votre choix et utilisez le modèle VGG16 pour prédire son contenu.
+2. Affichez l'image et les prédictions faites par le modèle.
+
+```python
+# Charger une nouvelle image et la préparer pour le modèle
+img_path = 'your_image.jpg'  # Remplacez par le chemin de votre image
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+# Faire des prédictions
+preds = vgg_model.predict(x)
+print('Predicted:', decode_predictions(preds, top=3)[0])
+
+# Afficher l'image et les prédictions
+plt.imshow(image.load_img(img_path, target_size=(224, 224)))
+plt.title("Predictions: " + str(decode_predictions(preds, top=3)[0]))
+plt.show()
+```
+
+**Exercice 2 : Implémenter une application simple de reconnaissance d'images**
+1. Créez une interface simple qui permet de charger une image et d'afficher les prédictions faites par un modèle CNN pré-entraîné.
+2. Utilisez une bibliothèque d'interface graphique en Python comme Tkinter pour créer cette interface.
+
+```python
+import tkinter as tk
+from tkinter import filedialog
+from PIL import ImageTk, Image
+
+def load_image():
+    img_path = filedialog.askopenfilename()
+    img = image.load_img(img_path, target_size=(224, 224))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    preds = vgg_model.predict(x)
+    result = decode_predictions(preds, top=3)[0]
+    print('Predicted:', result)
+    img = ImageTk.PhotoImage(Image.open(img_path))
+    panel = tk.Label(root, image=img)
+    panel.image = img
+    panel.pack()
+    label.config(text=str(result))
+
+root = tk.Tk()
+root.title("Image Recognition with CNN")
+
+btn = tk.Button(root, text="Load Image", command=load_image)
+btn.pack()
+
+label = tk.Label(root, text="")
+label.pack()
+
+root.mainloop()
+```
+
+**Exercice 3 : Comparer les performances de différents modèles pré-entraînés**
+1. Testez plusieurs modèles pré-entraînés disponibles dans Keras, comme ResNet50, InceptionV3, et MobileNet.
+2. Comparez les performances de ces modèles en termes de précision et de temps de prédiction pour différentes images.
+
+```python
+from keras.applications import ResNet50, InceptionV3, MobileNet
+
+# Charger les modèles pré-entraînés
+resnet_model = ResNet50(weights='imagenet')
+inception_model = InceptionV3(weights='imagenet')
+mobilenet_model = MobileNet(weights='imagenet')
+
+models = {
+    "VGG16": vgg_model,
+    "ResNet50": resnet_model,
+    "InceptionV3": inception_model,
+    "MobileNet": mobilenet_model
+}
+
+for name, model in models.items():
+    start_time = time.time()
+    preds = model.predict(x)
+    end_time = time.time()
+    print(f"Model: {name}")
+    print('Predicted:', decode_predictions(preds, top=3)[0])
+    print(f"Time taken: {end_time - start_time:.2f} seconds\n")
+```
+
 ---
 
 #### Chapitre 10 : Avantages et Inconvénients des CNN
 
 ##### 10.1 Avantages
 [Retour en haut](#plan)
-- **Efficacité** : Excellente performance pour les tâches de vision par ordinateur.
-- **Automatisation** : Capacité à apprendre automatiquement des caractéristiques à partir des données brutes.
+
+- **Efficacité** : Les CNN offrent une excellente performance pour les tâches de vision par ordinateur en raison de leur capacité à apprendre automatiquement des caractéristiques hiérarchiques à partir des données brutes.
+- **Flexibilité** : Ils peuvent être appliqués à diverses tâches de traitement d'images et de vidéos, y compris la classification, la segmentation, et la détection d'objets.
+- **Automatisation** : Les CNN éliminent la nécessité de l'ingénierie manuelle des caractéristiques, rendant le processus d'apprentissage plus automatique et efficace.
 
 ##### 10.2 Inconvénients
 [Retour en haut](#plan)
-- **Complexité** : Nécessitent de grandes quantités de données pour l'entraînement.
-- **Ressources** : Requiert des ressources matérielles importantes pour l'entraînement.
+
+- **Complexité** : Les CNN nécessitent de grandes quantités de données pour l'entraînement, ce qui peut être un défi pour certains domaines où les données sont limitées.
+- **Ressources** : Ils requièrent des ressources matérielles importantes, notamment des GPU puissants, pour entraîner des modèles en temps raisonnable.
+- **Interprétabilité** : Les modèles de CNN sont souvent considérés comme des "boîtes noires" en raison de leur complexité, ce qui peut rendre difficile l'interprétation des décisions du modèle.
+
+**Exercice 1 : Analyser les avantages et les inconvénients des CNN**
+1. Réfléchissez aux situations dans lesquelles les avantages des CNN surpassent leurs inconvénients, et vice versa.
+2. Écrivez un court essai discutant de l'impact des CNN dans différents domaines d'application, en mettant l'accent sur les avantages et les défis.
 
 ```python
-# Exemple : Comparer les temps d'entraînement entre un modèle CNN et un modèle traditionnel
+# Exemple de réflexion
+avantages = [
+    "Les CNN offrent une excellente performance pour les tâches de vision par ordinateur.",
+    "Ils peuvent apprendre automatiquement des caractéristiques hiérarchiques.",
+    "Ils sont flexibles et peuvent être appliqués à diverses tâches de traitement d'images."
+]
+
+inconvenients = [
+    "Les CNN nécessitent de grandes quantités de données pour l'entraînement.",
+    "Ils requièrent des ressources matérielles importantes.",
+    "Les modèles de CNN sont souvent difficiles à interpréter."
+]
+
+print("Avantages des CNN:")
+for avantage in avantages:
+    print("-", avantage)
+
+print("\nInconvénients des CNN:")
+for inconvenient in inconvenients:
+    print("-", inconvenient)
+```
+
+**Exercice 2 : Comparer les temps d'entraînement entre un modèle CNN et un modèle traditionnel**
+1. Entraînez un modèle de forêt aléatoire (RandomForest) et un modèle CNN sur le dataset MNIST.
+2. Comparez les temps d'entraînement et les performances des deux modèles.
+
+```python
 import time
 from sklearn.ensemble import RandomForestClassifier
 from keras.datasets import mnist
+from keras.utils import to_categorical
 
 # Charger le dataset MNIST
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-X_train_flat = X_train.reshape(-1,
-
- 28*28)
+X_train_flat = X_train.reshape(-1, 28*28)
 X_test_flat = X_test.reshape(-1, 28*28)
 
 # Entraîner un modèle de forêt aléatoire
@@ -1298,20 +1420,66 @@ rf_model.fit(X_train_flat, y_train)
 rf_training_time = time.time() - start_time
 
 # Entraîner un modèle CNN
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy',
+
+ metrics=['accuracy'])
+
 start_time = time.time()
-model.fit(X_train.reshape(-1, 28, 28, 1), to_categorical(y_train), epochs=10, batch_size=64)
+model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y_test))
 cnn_training_time = time.time() - start_time
 
 print(f"Temps d'entraînement RF: {rf_training_time:.2f} secondes")
 print(f"Temps d'entraînement CNN: {cnn_training_time:.2f} secondes")
 ```
 
----
+**Exercice 3 : Explorer les contraintes de ressources des CNN**
+1. Utilisez un environnement avec des ressources limitées (par exemple, un ordinateur portable sans GPU) pour entraîner un modèle CNN simple.
+2. Notez les limitations rencontrées, telles que le temps d'entraînement et la consommation de mémoire.
+3. Discutez des solutions possibles pour surmonter ces limitations, telles que l'utilisation de services de cloud computing ou de modèles pré-entraînés.
+
+```python
+# Réflexion sur les contraintes de ressources
+limitations = [
+    "Temps d'entraînement plus long en l'absence de GPU.",
+    "Consommation de mémoire élevée pour les grands modèles.",
+    "Difficulté à entraîner des modèles complexes sur des machines avec des ressources limitées."
+]
+
+solutions = [
+    "Utiliser des services de cloud computing pour l'entraînement de modèles.",
+    "Utiliser des modèles pré-entraînés pour réduire les besoins en données et en ressources.",
+    "Optimiser les modèles en réduisant le nombre de paramètres et en utilisant des techniques de compression."
+]
+
+print("Limitations rencontrées lors de l'entraînement des CNN sur des ressources limitées:")
+for limitation in limitations:
+    print("-", limitation)
+
+print("\nSolutions possibles pour surmonter ces limitations:")
+for solution in solutions:
+    print("-", solution)
+```
 
 ### Conclusion
 [Retour en haut](#plan)
 
-Les réseaux de neurones convolutifs sont des outils puissants pour le traitement d'images et de vidéos, offrant des performances remarquables grâce à leur capacité à extraire automatiquement des caractéristiques hiérarchiques. Leur utilisation s'étend à de nombreux domaines, rendant les CNN essentiels pour les applications modernes de deep learning.
+Les réseaux de neurones convolutifs sont des outils puissants pour le traitement d'images et de vidéos, offrant des performances remarquables grâce à leur capacité à extraire automatiquement des caractéristiques hiérarchiques. Leur utilisation s'étend à de nombreux domaines, rendant les CNN essentiels pour les applications modernes de deep learning. Toutefois, il est important de reconnaître leurs défis et de développer des stratégies pour les surmonter, afin de tirer pleinement parti de leur potentiel.
 
 ---
 
