@@ -175,6 +175,8 @@ print(f"Sortie du neurone : {output}")
 ```
 
 ##### 2.3 Couches d'un réseau de neurones
+### 2.3 Couches d'un réseau de neurones
+[Retour en haut](#plan)
 - **Couche d'entrée** : Reçoit les données brutes.
 - **Couches cachées** : Effectuent des transformations et extraient des caractéristiques.
 - **Couche de sortie** : Produit le résultat final, par exemple, la classe prédite d'une image.
