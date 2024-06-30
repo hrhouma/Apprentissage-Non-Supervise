@@ -1,9 +1,9 @@
 ### Les Réseaux de Neurones Convolutifs (CNN)
 # PLAN
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
- - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numerique)
- - [1.2 Types d'images numériques](#12-types-dimages-numériques)
- - [1.3 Résolution d'une image](#13-résolution-dune-image)
+  - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numerique)
+  - [1.2 Types d'images numériques](#12-types-dimages-numériques)
+  - [1.3 Résolution d'une image](#13-résolution-dune-image)
 
 - [**Chapitre 2 : Les Bases des Réseaux de Neurones**](#chapitre-2--les-bases-des-réseaux-de-neurones)
   - [2.1 Qu'est-ce qu'un réseau de neurones ?](#21-quest-ce-quun-réseau-de-neurones)
@@ -277,15 +277,22 @@ plt.show()
 
 ##### 2.1 Qu'est-ce qu'un réseau de neurones ?
 [Retour en haut](#plan)
-- **Définition** : Un réseau de neurones est un modèle mathématique inspiré du cerveau humain, conçu pour reconnaître des motifs et apprendre à partir de données.
+- **Définition** : Un réseau de neurones est un modèle mathématique inspiré du cerveau humain, conçu pour reconnaître des motifs et apprendre à partir de données. Un réseau de neurones est constitué d'unités appelées neurones artificiels, organisés en couches (couches d'entrée, couches cachées et couche de sortie).
+
+**Exercice 1 : Compréhension des Réseaux de Neurones**
+1. Décrivez en vos propres mots ce qu'est un réseau de neurones et ses principales composantes.
+2. Pourquoi les réseaux de neurones sont-ils inspirés du cerveau humain ?
+3. Quels sont les avantages des réseaux de neurones par rapport aux autres méthodes d'apprentissage automatique ?
 
 ##### 2.2 Neurone artificiel
 [Retour en haut](#plan)
-- **Fonctionnement** : Chaque neurone reçoit des entrées, les transforme à l'aide de poids et de biais, applique une fonction d'activation, puis produit une sortie.
-- **Fonction d'activation** : Une fonction mathématique qui introduit de la non-linéarité, essentielle pour la modélisation de relations complexes.
+- **Fonctionnement** : Chaque neurone reçoit des entrées, les transforme à l'aide de poids et de biais, applique une fonction d'activation, puis produit une sortie. 
+- **Fonction d'activation** : Une fonction mathématique qui introduit de la non-linéarité, essentielle pour la modélisation de relations complexes. Les fonctions d'activation courantes incluent la sigmoïde, ReLU (Rectified Linear Unit), et tanh.
 
+**Exemple détaillé : Neurone simple avec fonction d'activation sigmoïde**
 ```python
-# Exemple : Neurone simple avec fonction d'activation sigmoïde
+import numpy as np
+
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -300,26 +307,148 @@ output = sigmoid(np.dot(inputs, weights) + bias)
 print(f"Sortie du neurone : {output}")
 ```
 
-##### 2.3 Couches d'un réseau de neurones
-### 2.3 Couches d'un réseau de neurones
-[Retour en haut](#plan)
-- **Couche d'entrée** : Reçoit les données brutes.
-- **Couches cachées** : Effectuent des transformations et extraient des caractéristiques.
-- **Couche de sortie** : Produit le résultat final, par exemple, la classe prédite d'une image.
+**Exercice 2 : Implémentation d'un Neurone**
+1. Implémentez un neurone artificiel avec une fonction d'activation tanh.
+2. Modifiez le code pour tester avec différentes valeurs de poids et biais.
+3. Expliquez comment les changements de poids et de biais affectent la sortie du neurone.
+
+**Exemple avancé : Comparaison des fonctions d'activation**
+```python
+import matplotlib.pyplot as plt
+
+def tanh(x):
+    return np.tanh(x)
+
+def relu(x):
+    return np.maximum(0, x)
+
+# Créer une gamme de valeurs d'entrée
+x = np.linspace(-10, 10, 100)
+
+# Calculer les sorties pour chaque fonction d'activation
+y_sigmoid = sigmoid(x)
+y_tanh = tanh(x)
+y_relu = relu(x)
+
+# Tracer les résultats
+plt.plot(x, y_sigmoid, label='Sigmoid')
+plt.plot(x, y_tanh, label='Tanh')
+plt.plot(x, y_relu, label='ReLU')
+plt.legend()
+plt.title('Comparaison des fonctions d\'activation')
+plt.xlabel('Entrée')
+plt.ylabel('Sortie')
+plt.show()
+```
+
+**Exercice 3 : Analyse des Fonctions d'Activation**
+1. Tracez et comparez les fonctions d'activation ReLU, Sigmoid et Tanh.
+2. Pour quelles applications chaque fonction d'activation est-elle la plus adaptée ?
+3. Pourquoi est-il important d'introduire de la non-linéarité dans un réseau de neurones ?
+
+**Exercice 4 : Création d'un Réseau de Neurones Simple**
+1. Créez un réseau de neurones à une couche cachée en utilisant la bibliothèque Keras.
+2. Utilisez une fonction d'activation ReLU pour la couche cachée et une fonction d'activation softmax pour la couche de sortie.
+3. Entraînez le réseau sur un ensemble de données simple (par exemple, MNIST).
 
 ```python
-# Exemple : Réseau de neurones simple avec une couche cachée
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.datasets import mnist
+from keras.utils import to_categorical
+
+# Charger les données MNIST
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train = x_train.reshape(-1, 28*28).astype('float32') / 255
+x_test = x_test.reshape(-1, 28*28).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Créer le modèle
+model = Sequential()
+model.add(Dense(128, activation='relu', input_shape=(28*28,)))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(x_train, y_train, epochs=10, batch_size=32, validation_data=(x_test, y_test))
+```
+
+**Exercice 5 : Expérimentation avec des Hyperparamètres**
+1. Modifiez les hyperparamètres du modèle (nombre de neurones, taux d'apprentissage, nombre d'époques) et observez l'impact sur la performance.
+2. Documentez vos observations et tirez des conclusions sur l'importance des hyperparamètres.
+
+##### 2.3 Couches d'un réseau de neurones
+[Retour en haut](#plan)
+
+- **Couche d'entrée** : La couche d'entrée est la première couche d'un réseau de neurones. Elle reçoit les données brutes et les passe aux couches suivantes. Le nombre de neurones dans la couche d'entrée correspond au nombre de caractéristiques dans les données d'entrée.
+
+- **Couches cachées** : Les couches cachées se situent entre la couche d'entrée et la couche de sortie. Elles effectuent des transformations sur les données d'entrée pour extraire des caractéristiques et des informations pertinentes. Un réseau peut avoir plusieurs couches cachées, chacune avec un nombre différent de neurones et des fonctions d'activation variées.
+
+- **Couche de sortie** : La couche de sortie est la dernière couche d'un réseau de neurones. Elle produit le résultat final, par exemple, la classe prédite d'une image ou une valeur de régression. Le nombre de neurones dans la couche de sortie correspond au nombre de classes dans le problème de classification ou à la dimension de la sortie dans un problème de régression.
+
+**Exemple : Réseau de neurones simple avec une couche cachée**
+```python
 from keras.models import Sequential
 from keras.layers import Dense
 
 # Créer le modèle
 model = Sequential()
-model.add(Dense(4, input_dim=3, activation='relu'))  # Couche cachée
-model.add(Dense(1, activation='sigmoid'))  # Couche de sortie
+model.add(Dense(4, input_dim=3, activation='relu'))  # Couche cachée avec 4 neurones
+model.add(Dense(1, activation='sigmoid'))  # Couche de sortie avec 1 neurone
 
 # Afficher le résumé du modèle
 model.summary()
 ```
+
+**Exercice 1 : Création d'un réseau de neurones simple**
+1. Créez un réseau de neurones avec deux couches cachées. La première couche cachée doit avoir 8 neurones avec une fonction d'activation ReLU, et la deuxième couche cachée doit avoir 4 neurones avec une fonction d'activation tanh.
+2. Utilisez une fonction d'activation softmax pour la couche de sortie avec 3 neurones.
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Créer le modèle
+model = Sequential()
+model.add(Dense(8, input_dim=3, activation='relu'))  # Première couche cachée
+model.add(Dense(4, activation='tanh'))  # Deuxième couche cachée
+model.add(Dense(3, activation='softmax'))  # Couche de sortie
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 2 : Expérimentation avec des fonctions d'activation**
+1. Modifiez le réseau ci-dessus pour utiliser une fonction d'activation sigmoid dans la première couche cachée et une fonction d'activation ReLU dans la deuxième couche cachée.
+2. Observez comment cela affecte les résultats de l'entraînement et la performance du modèle sur un ensemble de données simple (par exemple, MNIST).
+
+**Exemple de réseau de neurones avec des couches multiples et une fonction de perte personnalisée**
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.losses import mean_squared_error
+
+# Créer le modèle
+model = Sequential()
+model.add(Dense(16, input_dim=5, activation='relu'))  # Première couche cachée
+model.add(Dense(8, activation='relu'))  # Deuxième couche cachée
+model.add(Dense(4, activation='relu'))  # Troisième couche cachée
+model.add(Dense(1, activation='linear'))  # Couche de sortie
+
+# Compiler le modèle avec une fonction de perte personnalisée
+model.compile(optimizer='adam', loss=mean_squared_error, metrics=['mse'])
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 3 : Compréhension de la structure d'un réseau de neurones**
+1. Dessinez un diagramme de votre réseau de neurones avec les couches d'entrée, cachées et de sortie.
+2. Expliquez pourquoi vous avez choisi certaines fonctions d'activation pour les couches cachées et la couche de sortie.
+3. Discutez de l'impact possible de l'ajout de plus de couches cachées ou de neurones dans les couches existantes sur la performance du modèle.
 
 ---
 
@@ -327,19 +456,28 @@ model.summary()
 
 ##### 3.1 Historique des CNN
 [Retour en haut](#plan)
-- **Origines biologiques** : Inspirés par le fonctionnement du cortex visuel des mammifères (recherches de Hubel et Wiesel).
-- **Développement en informatique** : Introduction par Yann LeCun et al. en 1998 pour la classification du dataset MNIST.
+
+- **Origines biologiques** : Les CNN sont inspirés par le fonctionnement du cortex visuel des mammifères, basé sur les recherches de Hubel et Wiesel dans les années 1960. Ils ont découvert que les neurones dans le cortex visuel des chats réagissent à des motifs visuels spécifiques comme des bords et des lignes de différentes orientations.
+  
+- **Développement en informatique** : Les CNN ont été popularisés par Yann LeCun et ses collègues en 1998 avec la publication de LeNet-5, un modèle de CNN utilisé pour la classification des chiffres manuscrits dans le dataset MNIST. Depuis, les CNN sont devenus un outil fondamental dans le domaine de la vision par ordinateur.
 
 ##### 3.2 Structure d'un CNN
 [Retour en haut](#plan)
-- **Couche d'entrée** : Reçoit l'image sous forme de matrice de pixels.
-- **Couches de convolution** : Appliquent des filtres pour extraire des caractéristiques locales.
-- **Couches de ReLU** : Introduisent de la non-linéarité en remplaçant les valeurs négatives par zéro.
-- **Couches de pooling** : Réduisent la dimensionnalité de l'image tout en conservant les informations essentielles.
-- **Couches entièrement connectées** : Effectuent la classification en se basant sur les caractéristiques extraites.
 
+Un CNN est composé de plusieurs types de couches qui permettent l'extraction automatique de caractéristiques à partir des images d'entrée. Voici une description des différentes couches typiques d'un CNN :
+
+- **Couche d'entrée** : Reçoit l'image sous forme de matrice de pixels. La taille de cette matrice dépend de la résolution de l'image et du nombre de canaux de couleur (par exemple, 28x28x1 pour une image en niveaux de gris de 28x28 pixels).
+
+- **Couches de convolution** : Appliquent des filtres (ou noyaux) sur l'image pour extraire des caractéristiques locales comme des bords, des textures et des motifs. Chaque filtre produit une carte de caractéristiques qui capture une certaine caractéristique de l'image.
+
+- **Couches de ReLU** : Introduisent de la non-linéarité en remplaçant les valeurs négatives par zéro. Cela permet au réseau d'apprendre des relations complexes entre les caractéristiques.
+
+- **Couches de pooling** : Réduisent la dimensionnalité de l'image en sous-échantillonnant les cartes de caractéristiques. Cela aide à réduire le nombre de paramètres et à contrôler le surapprentissage. Le max pooling et le average pooling sont les types de pooling les plus courants.
+
+- **Couches entièrement connectées** : Après les couches de convolution et de pooling, les cartes de caractéristiques sont aplaties et passées à travers des couches de neurones entièrement connectés, similaires à ceux des réseaux de neurones classiques. Ces couches effectuent la classification finale basée sur les caractéristiques extraites.
+
+**Exemple : Construire un simple CNN avec Keras**
 ```python
-# Exemple : Construire un simple CNN avec Keras
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
@@ -355,18 +493,99 @@ model.add(Dense(10, activation='softmax'))  # Couche de sortie
 model.summary()
 ```
 
+**Exercice 1 : Créer et entraîner un CNN simple sur le dataset MNIST**
+1. Chargez le dataset MNIST.
+2. Normalisez les images pour avoir des valeurs entre 0 et 1.
+3. Créez un modèle CNN avec une ou deux couches de convolution, des couches de pooling, et des couches entièrement connectées.
+4. Compilez et entraînez le modèle.
+5. Évaluez la performance du modèle sur les données de test.
+
+```python
+from keras.datasets import mnist
+from keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+# Charger le dataset MNIST
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Créer le modèle
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))  # Couche de convolution
+model.add(MaxPooling2D((2, 2)))  # Couche de pooling
+model.add(Flatten())  # Couche de mise à plat
+model.add(Dense(64, activation='relu'))  # Couche entièrement connectée
+model.add(Dense(10, activation='softmax'))  # Couche de sortie
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(X_train, y_train, epochs=5, batch_size=64, validation_data=(X_test, y_test))
+
+# Évaluer le modèle
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f'Loss: {loss}, Accuracy: {accuracy}')
+```
+
+**Exercice 2 : Expérimenter avec différentes architectures de CNN**
+1. Ajoutez une deuxième couche de convolution et de pooling à l'architecture précédente.
+2. Changez les tailles des filtres et les nombres de filtres dans chaque couche de convolution.
+3. Observez comment ces modifications affectent les performances du modèle.
+
+**Exemple avancé : Utilisation de dropout pour éviter le surapprentissage**
+Le dropout est une technique de régularisation où des neurones sélectionnés aléatoirement sont ignorés pendant l'entraînement. Cela aide à prévenir le surapprentissage en rendant le réseau moins sensible aux valeurs spécifiques des poids des neurones.
+
+```python
+from keras.layers import Dropout
+
+# Créer le modèle avec dropout
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Dropout(0.25))  # Ajout de dropout après la couche de pooling
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))  # Ajout de dropout après la couche dense
+model.add(Dense(10, activation='softmax'))
+
+# Compiler et entraîner le modèle comme précédemment
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit(X_train, y_train, epochs=5, batch_size=64, validation_data=(X_test, y_test))
+
+# Évaluer le modèle
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f'Loss: {loss}, Accuracy: {accuracy}')
+```
+
 ---
 
 #### Chapitre 4 : Convolution dans les CNN
 
 ##### 4.1 Qu'est-ce que la convolution ?
 [Retour en haut](#plan)
-- **Définition** : Opération mathématique qui combine deux fonctions pour produire une troisième fonction.
-- **Application dans les CNN** : Utilisée pour appliquer des filtres sur les images afin d'extraire des caractéristiques spécifiques.
+
+- **Définition** : La convolution est une opération mathématique qui combine deux fonctions pour produire une troisième fonction. Dans le contexte des réseaux de neurones convolutionnels (CNN), cette opération est utilisée pour extraire des caractéristiques spécifiques d'une image en appliquant des filtres (ou noyaux) sur celle-ci.
+- **Application dans les CNN** : Les CNN utilisent des filtres pour détecter divers motifs dans une image, tels que les bords, les textures et d'autres caractéristiques locales. Cela permet au réseau de capturer des informations essentielles à différents niveaux de profondeur.
 
 ```python
 # Exemple : Appliquer un filtre de convolution à une image
+import numpy as np
+import matplotlib.pyplot as plt
 from scipy.ndimage import convolve
+
+# Créer une image simple pour l'exemple
+image = np.array([
+    [0, 1, 1, 0, 0],
+    [0, 0, 1, 1, 0],
+    [0, 0, 0, 1, 1],
+    [0, 0, 1, 1, 0],
+    [0, 1, 1, 0, 0]
+])
 
 # Définir un filtre (kernel) simple
 kernel = np.array([
@@ -378,12 +597,52 @@ kernel = np.array([
 # Appliquer la convolution
 convoluted_image = convolve(image, kernel)
 plt.imshow(convoluted_image, cmap='gray')
+plt.colorbar()
+plt.show()
+```
+
+**Exercice 1 : Appliquer différents filtres à une image**
+1. Créez une image simple ou utilisez une image de votre choix.
+2. Définissez différents filtres, par exemple, des filtres de détection des bords, de flou ou de renforcement des contours.
+3. Appliquez chaque filtre à l'image et affichez le résultat.
+
+```python
+# Filtre de flou
+blur_kernel = np.array([
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1]
+]) / 9
+
+# Filtre de détection des bords
+edge_kernel = np.array([
+    [0, 1, 0],
+    [1, -4, 1],
+    [0, 1, 0]
+])
+
+# Appliquer les filtres
+blurred_image = convolve(image, blur_kernel)
+edges_image = convolve(image, edge_kernel)
+
+# Afficher les résultats
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 3, 1)
+plt.title('Original Image')
+plt.imshow(image, cmap='gray')
+plt.subplot(1, 3, 2)
+plt.title('Blurred Image')
+plt.imshow(blurred_image, cmap='gray')
+plt.subplot(1, 3, 3)
+plt.title('Edges Image')
+plt.imshow(edges_image, cmap='gray')
 plt.show()
 ```
 
 ##### 4.2 Filtre (Kernel)
 [Retour en haut](#plan)
-- **Définition** : Une petite matrice utilisée pour balayer l'image et effectuer des opérations de convolution.
+
+- **Définition** : Un filtre, ou kernel, est une petite matrice utilisée pour balayer l'image et effectuer des opérations de convolution. Les éléments du filtre sont des poids qui sont ajustés pendant l'entraînement pour extraire les caractéristiques les plus utiles pour la tâche de classification.
 - **Exemple** : Un filtre 3x3 appliqué sur une image 5x5.
 
 ```python
@@ -399,9 +658,47 @@ plt.imshow(convoluted_image, cmap='gray')
 plt.show()
 ```
 
+**Exercice 2 : Explorer l'effet de différents kernels sur une image**
+1. Essayez différents types de kernels, comme les kernels de sharpening, de flou, ou de détection des contours.
+2. Appliquez ces kernels à une image et observez les différences dans les résultats.
+
+```python
+# Filtre de sharpening
+sharpen_kernel = np.array([
+    [0, -1, 0],
+    [-1, 5, -1],
+    [0, -1, 0]
+])
+
+# Filtre de détection des contours
+edge_kernel = np.array([
+    [-1, -1, -1],
+    [-1, 8, -1],
+    [-1, -1, -1]
+])
+
+# Appliquer les filtres
+sharpened_image = convolve(image, sharpen_kernel)
+edges_image = convolve(image, edge_kernel)
+
+# Afficher les résultats
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 3, 1)
+plt.title('Original Image')
+plt.imshow(image, cmap='gray')
+plt.subplot(1, 3, 2)
+plt.title('Sharpened Image')
+plt.imshow(sharpened_image, cmap='gray')
+plt.subplot(1, 3, 3)
+plt.title('Edges Image')
+plt.imshow(edges_image, cmap='gray')
+plt.show()
+```
+
 ##### 4.3 Stride
 [Retour en haut](#plan)
-- **Définition** : Le nombre de pixels par lesquels le filtre se déplace sur l'image.
+
+- **Définition** : Le stride est le nombre de pixels par lesquels le filtre se déplace sur l'image. Un stride plus grand réduit la dimension de l'image de sortie, car le filtre est appliqué moins souvent.
 - **Impact sur la dimension de l'image convoluée** : Un stride plus grand réduit la dimension de l'image de sortie.
 
 ```python
@@ -412,31 +709,35 @@ def apply_convolution(image, kernel, stride):
         (image.shape[1] - kernel.shape[1]) // stride + 1
     )
     output = np.zeros(output_shape)
-    for i in range(0, output_shape[0], stride):
-        for j in range(0, output_shape[1], stride):
-            output[i, j] = np.sum(image[i:i+kernel.shape[0], j:j+kernel.shape[1]] * kernel)
+    for i in range(0, output_shape[0]):
+        for j in range(0, output_shape[1]):
+            output[i, j] = np.sum(image[i*stride:i*stride+kernel.shape[0], j*stride:j*stride+kernel.shape[1]] * kernel)
     return output
 
 convoluted_image_stride1 = apply_convolution(image, kernel, 1)
-con
+convoluted_image_stride2 = apply_convolution(image, kernel, 2)
 
-voluted_image_stride2 = apply_convolution(image, kernel, 2)
-
+plt.figure(figsize=(8, 4))
 plt.subplot(1, 2, 1)
 plt.title('Stride 1')
 plt.imshow(convoluted_image_stride1, cmap='gray')
-
 plt.subplot(1, 2, 2)
 plt.title('Stride 2')
 plt.imshow(convoluted_image_stride2, cmap='gray')
-
 plt.show()
 ```
 
+**Exercice 3 : Expérimenter avec différents strides**
+1. Changez le stride utilisé dans l'application du filtre.
+2. Observez comment la taille de l'image convoluée change en fonction du stride utilisé.
+3. Comparez les résultats visuellement.
+
 ##### 4.4 Padding
 [Retour en haut](#plan)
-- **Définition** : Ajout de bordures de pixels autour de l'image pour conserver sa dimension après la convolution.
-- **Types de padding** : Valid (sans padding) et Same (avec padding pour conserver la taille d'origine).
+
+- **Définition** : Le padding consiste à ajouter des bordures de pixels autour de l'image pour conserver sa dimension après la convolution. Il existe principalement deux types de padding :
+  - **Valid padding** : Pas de padding, ce qui réduit la taille de l'image après la convolution.
+  - **Same padding** : Padding ajouté pour que la taille de l'image reste la même après la convolution.
 
 ```python
 # Exemple : Appliquer la convolution avec et sans padding
@@ -447,34 +748,185 @@ def apply_padding(image, padding_size):
 padded_image = apply_padding(image, 1)
 convoluted_image_padded = convolve(padded_image, kernel)
 
+plt.figure(figsize=(8, 4))
 plt.subplot(1, 2, 1)
 plt.title('Sans Padding')
 plt.imshow(convoluted_image, cmap='gray')
-
 plt.subplot(1, 2, 2)
 plt.title('Avec Padding')
 plt.imshow(convoluted_image_padded, cmap='gray')
-
 plt.show()
 ```
 
+**Exercice 4 : Comparer l'effet du padding sur la convolution**
+1. Appliquez la convolution à une image avec et sans padding.
+2. Observez les différences dans les dimensions des images résultantes.
+3. Discutez de l'importance du padding dans le maintien des caractéristiques spatiales.
+
+
 ---
+
 
 #### Chapitre 5 : Couches de ReLU dans les CNN
 
 ##### 5.1 Fonction d'activation ReLU
 [Retour en haut](#plan)
-- **Définition** : Fonction d'activation qui remplace toutes les valeurs négatives par zéro.
-- **Importance** : Introduit de la non-linéarité et aide à résoudre le problème de gradient vanishing.
+
+- **Définition** : ReLU (Rectified Linear Unit) est une fonction d'activation utilisée dans les réseaux de neurones, qui remplace toutes les valeurs négatives par zéro et laisse les valeurs positives inchangées. La formule de la fonction ReLU est la suivante :
+
+\[ \text{ReLU}(x) = \max(0, x) \]
+
+- **Importance** : La fonction ReLU introduit de la non-linéarité dans le modèle, ce qui est essentiel pour permettre au réseau de neurones de modéliser des relations complexes. De plus, elle aide à résoudre le problème du gradient vanishing en fournissant des gradients plus importants pour les valeurs positives.
 
 ```python
 # Exemple : Appliquer la fonction ReLU à une image convoluée
+import numpy as np
+import matplotlib.pyplot as plt
+
 def relu(x):
     return np.maximum(0, x)
 
+# Image convoluée d'exemple
+convoluted_image = np.array([
+    [-1, 2, -3],
+    [4, -5, 6],
+    [-7, 8, -9]
+])
+
 relu_image = relu(convoluted_image)
+
 plt.imshow(relu_image, cmap='gray')
+plt.colorbar()
 plt.show()
+```
+
+**Exercice 1 : Expérimenter avec ReLU**
+1. Créez une matrice 3x3 avec des valeurs négatives et positives.
+2. Appliquez la fonction ReLU à cette matrice.
+3. Affichez la matrice résultante et observez comment les valeurs négatives ont été remplacées par zéro.
+
+```python
+# Matrice d'exemple
+matrix = np.array([
+    [-2, -1, 0],
+    [1, 2, 3],
+    [-3, -2, -1]
+])
+
+# Appliquer ReLU
+relu_matrix = relu(matrix)
+
+print("Matrice originale :")
+print(matrix)
+print("Matrice après application de ReLU :")
+print(relu_matrix)
+```
+
+**Exercice 2 : Comparer ReLU avec d'autres fonctions d'activation**
+1. Implémentez les fonctions d'activation Sigmoid et Tanh.
+2. Appliquez Sigmoid, Tanh et ReLU à la même matrice d'exemple.
+3. Comparez les résultats et discutez de l'impact de chaque fonction d'activation sur les valeurs de la matrice.
+
+```python
+# Fonction Sigmoid
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+# Fonction Tanh
+def tanh(x):
+    return np.tanh(x)
+
+# Appliquer Sigmoid et Tanh
+sigmoid_matrix = sigmoid(matrix)
+tanh_matrix = tanh(matrix)
+
+print("Matrice après application de Sigmoid :")
+print(sigmoid_matrix)
+print("Matrice après application de Tanh :")
+print(tanh_matrix)
+```
+
+**Exercice 3 : Visualisation des fonctions d'activation**
+1. Tracez les courbes des fonctions ReLU, Sigmoid et Tanh sur une plage de valeurs allant de -10 à 10.
+2. Comparez visuellement les différentes fonctions d'activation et leur comportement.
+
+```python
+# Tracer les courbes des fonctions d'activation
+x = np.linspace(-10, 10, 100)
+
+plt.figure(figsize=(10, 6))
+
+plt.subplot(1, 3, 1)
+plt.plot(x, relu(x))
+plt.title('ReLU')
+
+plt.subplot(1, 3, 2)
+plt.plot(x, sigmoid(x))
+plt.title('Sigmoid')
+
+plt.subplot(1, 3, 3)
+plt.plot(x, tanh(x))
+plt.title('Tanh')
+
+plt.show()
+```
+
+
+### Comprendre ReLU dans un contexte CNN
+
+Lorsqu'une image passe par une couche de convolution, elle est transformée en une série de cartes de caractéristiques. L'application de la fonction d'activation ReLU permet d'introduire de la non-linéarité après chaque couche de convolution. Cela permet au réseau de neurones de mieux capturer les motifs complexes et d'améliorer la performance globale du modèle.
+
+```python
+# Exemple : Pipeline simple de CNN avec ReLU dans Keras
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+model = Sequential()
+
+# Ajouter une couche de convolution
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+
+# Ajouter une couche de pooling
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# Ajouter une couche de mise à plat
+model.add(Flatten())
+
+# Ajouter une couche entièrement connectée
+model.add(Dense(128, activation='relu'))
+
+# Ajouter une couche de sortie
+model.add(Dense(10, activation='softmax'))
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 4 : Construire et entraîner un simple CNN**
+1. Utilisez le dataset MNIST pour construire un simple CNN en utilisant Keras.
+2. Appliquez des couches de convolution suivies de la fonction d'activation ReLU.
+3. Entraînez le modèle et évaluez sa performance sur le jeu de test.
+
+```python
+from keras.datasets import mnist
+from keras.utils import to_categorical
+
+# Charger les données MNIST
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y_test))
+
+# Évaluer le modèle
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f"Précision du modèle sur le jeu de test : {accuracy * 100:.2f}%")
 ```
 
 ---
@@ -483,7 +935,8 @@ plt.show()
 
 ##### 6.1 Qu'est-ce que le pooling ?
 [Retour en haut](#plan)
-- **Définition** : Opération de réduction de la dimensionnalité de l'image tout en conservant les caractéristiques importantes.
+
+- **Définition** : Le pooling est une opération de réduction de la dimensionnalité de l'image tout en conservant les caractéristiques importantes.
 - **Types de pooling** :
   - **Max Pooling** : Prend la valeur maximale dans une fenêtre de sous-échantillonnage.
   - **Average Pooling** : Calcule la moyenne des valeurs dans la fenêtre de sous-échantillonnage.
@@ -508,6 +961,7 @@ plt.show()
 
 ##### 6.2 Avantages du pooling
 [Retour en haut](#plan)
+
 - **Invariance spatiale** : Réduit la sensibilité aux petites translations de l'image.
 - **Réduction des paramètres** : Diminue le nombre de paramètres à apprendre, réduisant ainsi le risque de surapprentissage.
 
@@ -529,12 +983,109 @@ plt.imshow(pooled_image_avg, cmap='gray')
 plt.show()
 ```
 
+**Exercice 1 : Expérimenter avec le Max Pooling**
+1. Créez une matrice 4x4 avec des valeurs variées.
+2. Appliquez le Max Pooling avec une fenêtre de 2x2 et un stride de 2.
+3. Affichez la matrice résultante.
+
+```python
+# Matrice d'exemple
+matrix = np.array([
+    [1, 3, 2, 4],
+    [5, 6, 7, 8],
+    [9, 2, 0, 1],
+    [4, 3, 5, 6]
+])
+
+# Appliquer Max Pooling
+max_pooled_matrix = max_pooling(matrix, 2, 2)
+
+print("Matrice originale :")
+print(matrix)
+print("Matrice après application de Max
+
+ Pooling :")
+print(max_pooled_matrix)
+```
+
+**Exercice 2 : Comparer Max Pooling et Average Pooling**
+1. Appliquez à la même matrice d'exemple le Average Pooling avec une fenêtre de 2x2 et un stride de 2.
+2. Comparez les résultats des deux techniques de pooling.
+
+```python
+# Appliquer Average Pooling
+average_pooled_matrix = average_pooling(matrix, 2, 2)
+
+print("Matrice après application de Max Pooling :")
+print(max_pooled_matrix)
+print("Matrice après application de Average Pooling :")
+print(average_pooled_matrix)
+```
+
+### Comprendre le Pooling dans un contexte CNN
+
+Le pooling est utilisé pour réduire la dimensionnalité des cartes de caractéristiques produites par les couches de convolution. Cela permet de diminuer le nombre de paramètres dans les couches suivantes du réseau, ce qui rend le modèle plus efficace et réduit le risque de surapprentissage.
+
+```python
+# Exemple : Pipeline simple de CNN avec Max Pooling dans Keras
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+model = Sequential()
+
+# Ajouter une couche de convolution
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+
+# Ajouter une couche de max pooling
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# Ajouter une couche de mise à plat
+model.add(Flatten())
+
+# Ajouter une couche entièrement connectée
+model.add(Dense(128, activation='relu'))
+
+# Ajouter une couche de sortie
+model.add(Dense(10, activation='softmax'))
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 3 : Construire et entraîner un CNN avec Max Pooling**
+1. Utilisez le dataset MNIST pour construire un CNN en utilisant Keras.
+2. Appliquez des couches de convolution suivies de Max Pooling.
+3. Entraînez le modèle et évaluez sa performance sur le jeu de test.
+
+```python
+from keras.datasets import mnist
+from keras.utils import to_categorical
+
+# Charger les données MNIST
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y_test))
+
+# Évaluer le modèle
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f"Précision du modèle sur le jeu de test : {accuracy * 100:.2f}%")
+```
+
 ---
 
 #### Chapitre 7 : Couches Entièrement Connectées et Classification
 
 ##### 7.1 Couches entièrement connectées
 [Retour en haut](#plan)
+
 - **Définition** : Chaque neurone est connecté à tous les neurones de la couche précédente.
 - **Rôle** : Effectue la classification finale basée sur les caractéristiques extraites par les couches précédentes.
 
@@ -550,6 +1101,7 @@ model.add(Dense(10, activation='softmax'))
 
 ##### 7.2 Fonctionnement
 [Retour en haut](#plan)
+
 - **Flattening** : Transformation des matrices 2D en vecteurs 1D pour les couches entièrement connectées.
 - **Softmax** : Fonction d'activation utilisée en sortie pour produire des probabilités de classification.
 
@@ -561,6 +1113,80 @@ from keras.layers import Softmax
 model.add(Dense(10))
 model.add(Softmax())
 ```
+
+**Exercice 1 : Comprendre le Flattening**
+1. Créez une matrice 2D de 3x3.
+2. Transformez cette matrice en un vecteur 1D en utilisant l'opération de flattening.
+3. Affichez la matrice originale et le vecteur 1D.
+
+```python
+# Matrice d'exemple
+matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+# Appliquer Flattening
+flattened_matrix = matrix.flatten()
+
+print("Matrice originale :")
+print(matrix)
+print("Vecteur après Flattening :")
+print(flattened_matrix)
+```
+
+**Exercice 2 : Construire un réseau de neurones entièrement connecté**
+1. Créez un modèle de réseau de neurones simple avec une couche de flattening et deux couches entièrement connectées.
+2. Utilisez le dataset MNIST pour entraîner le modèle.
+3. Évaluez la performance du modèle sur le jeu de test.
+
+```python
+from keras.models import Sequential
+from keras.layers import Flatten, Dense
+from keras.datasets import mnist
+from keras.utils import to_categorical
+
+# Charger les données MNIST
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+X_train = X_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Créer le modèle
+model = Sequential()
+model.add(Flatten(input_shape=(28, 28, 1)))
+model.add(Dense(128, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y_test))
+
+# Évaluer le modèle
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f"Précision du modèle sur le jeu de test : {accuracy * 100:.2f}%")
+```
+
+**Exercice 3 : Visualiser les poids de la couche entièrement connectée**
+1. Après l'entraînement du modèle, récupérez les poids de la première couche entièrement connectée.
+2. Visualisez ces poids sous forme de matrice de pixels.
+3. Discutez de ce que ces poids représentent.
+
+```python
+# Récupérer les poids de la première couche entièrement connectée
+weights, biases = model.layers[1].get_weights()
+
+# Visualiser les poids
+plt.imshow(weights, cmap='viridis')
+plt.colorbar()
+plt.title('Poids de la première couche entièrement connectée')
+plt.show()
+```
+
 
 ---
 
