@@ -1,9 +1,9 @@
 ### Les Réseaux de Neurones Convolutifs (CNN)
 # PLAN
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
-  - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numérique)
-  - [1.2 Types d'images numériques](#12-types-dimages-numériques)
-  - [1.3 Résolution d'une image](#13-résolution-dune-image)
+ - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numerique)
+ - [1.2 Types d'images numériques](#12-types-dimages-numériques)
+ - [1.3 Résolution d'une image](#13-résolution-dune-image)
 
 - [**Chapitre 2 : Les Bases des Réseaux de Neurones**](#chapitre-2--les-bases-des-réseaux-de-neurones)
   - [2.1 Qu'est-ce qu'un réseau de neurones ?](#21-quest-ce-quun-réseau-de-neurones)
