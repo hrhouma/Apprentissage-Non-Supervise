@@ -75,29 +75,6 @@ En conclusion, l'apprentissage profond offre une approche puissante et flexible 
 
 [Retour en haut](#plan)
 
----
-
-### Liens vers les Slides
-
-Pour une meilleure compréhension et pour voir des exemples visuels, veuillez vous référer aux slides suivants :
-
-- **Introduction :** Pages 1-5
-- **Techniques :** Pages 6-10
-- **Applications :** Pages 11-15
-- **Impact :** Pages 16-20
-- **Conclusion :** Page 21
-
-[Retour en haut](#plan)
-
----
-
-### Références
-
-Les contenus et les illustrations sont basés sur les slides fournis par Pluralsight.
-
-
-
-[Revenir en haut de la page](#table-des-matières)
 
 ---
 
