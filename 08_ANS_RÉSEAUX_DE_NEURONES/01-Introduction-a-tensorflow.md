@@ -86,7 +86,6 @@
 - [**Synthèse**](#synthèse)
 
 
-
 # Chapitre 1 : Introduction aux Images Numériques
 
 ### 1.1 Qu'est-ce qu'une image numérique ? <a name="11-quest-ce-quune-image-numerique"></a>
@@ -94,35 +93,88 @@
 - **Définition** : Une image numérique est une représentation visuelle d'une scène sous forme de grille de pixels.
 - **Pixel** : L'élément de base d'une image numérique. Chaque pixel contient des informations sur la couleur ou la luminosité.
 
-```python
-# Exemple : Afficher une image en niveaux de gris
-import matplotlib.pyplot as plt
-import numpy as np
+#### Exercices :
 
-# Créer une image 8x8 avec des valeurs de niveaux de gris
-image = np.array([
-    [0, 30, 60, 90, 120, 150, 180, 210],
-    [30, 60, 90, 120, 150, 180, 210, 240],
-    [60, 90, 120, 150, 180, 210, 240, 255],
-    [90, 120, 150, 180, 210, 240, 255, 255],
-    [120, 150, 180, 210, 240, 255, 255, 255],
-    [150, 180, 210, 240, 255, 255, 255, 255],
-    [180, 210, 240, 255, 255, 255, 255, 255],
-    [210, 240, 255, 255, 255, 255, 255, 255]
-])
+1. **Afficher une image en niveaux de gris** :
+   ```python
+   import matplotlib.pyplot as plt
+   import numpy as np
 
-plt.imshow(image, cmap='gray')
-plt.colorbar()
-plt.show()
-```
+   # Créer une image 8x8 avec des valeurs de niveaux de gris
+   image = np.array([
+       [0, 30, 60, 90, 120, 150, 180, 210],
+       [30, 60, 90, 120, 150, 180, 210, 240],
+       [60, 90, 120, 150, 180, 210, 240, 255],
+       [90, 120, 150, 180, 210, 240, 255, 255],
+       [120, 150, 180, 210, 240, 255, 255, 255],
+       [150, 180, 210, 240, 255, 255, 255, 255],
+       [180, 210, 240, 255, 255, 255, 255, 255],
+       [210, 240, 255, 255, 255, 255, 255, 255]
+   ])
+
+   plt.imshow(image, cmap='gray')
+   plt.colorbar()
+   plt.show()
+   ```
+
+2. **Convertir une image couleur en niveaux de gris** :
+   ```python
+   import cv2
+
+   # Charger une image couleur
+   image_color = cv2.imread('path/to/your/image.jpg')
+
+   # Convertir l'image en niveaux de gris
+   image_gray = cv2.cvtColor(image_color, cv2.COLOR_BGR2GRAY)
+
+   # Afficher l'image en niveaux de gris
+   plt.imshow(image_gray, cmap='gray')
+   plt.colorbar()
+   plt.show()
+   ```
+
+3. **Créer une image binaire à partir d'une image en niveaux de gris** :
+   ```python
+   # Définir un seuil pour la binarisation
+   threshold = 128
+
+   # Créer une image binaire
+   image_binary = (image_gray > threshold).astype(np.uint8) * 255
+
+   # Afficher l'image binaire
+   plt.imshow(image_binary, cmap='gray')
+   plt.colorbar()
+   plt.show()
+   ```
+
+4. **Manipuler les pixels d'une image** :
+   ```python
+   # Créer une image 8x8 avec des valeurs aléatoires
+   image_random = np.random.randint(0, 256, (8, 8))
+
+   # Afficher l'image aléatoire
+   plt.imshow(image_random, cmap='gray')
+   plt.colorbar()
+   plt.show()
+
+   # Modifier un pixel spécifique
+   image_random[4, 4] = 255
+
+   # Afficher l'image modifiée
+   plt.imshow(image_random, cmap='gray')
+   plt.colorbar()
+   plt.show()
+   ```
 
 ### 1.2 Types d'images numériques
 [Retour en haut](#plan)
 - **Images en niveaux de gris** : Chaque pixel est une valeur de luminosité allant de 0 (noir) à 255 (blanc).
 - **Images en couleurs** : Chaque pixel est représenté par trois valeurs correspondant aux canaux de couleur rouge, vert et bleu (RVB).
 
+#### Exemples :
+
+1. **Afficher une image en couleurs**
 ```python
-# Exemple : Afficher une image en couleurs
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -136,18 +188,88 @@ plt.imshow(image)
 plt.show()
 ```
 
+2. **Convertir une image en niveaux de gris**
+```python
+# Charger une image en couleurs et la convertir en niveaux de gris
+from skimage import color, data
+
+image = data.astronaut()  # Charger une image de démonstration
+gray_image = color.rgb2gray(image)
+
+plt.imshow(gray_image, cmap='gray')
+plt.colorbar()
+plt.show()
+```
+
+#### Exercices :
+
+1. **Exercice 1 : Créer une image en niveaux de gris**
+   - Créez une image de 10x10 pixels avec une transition de noir à blanc.
+   - Affichez l'image en utilisant `matplotlib`.
+
+2. **Exercice 2 : Manipuler les canaux de couleur**
+   - Créez une image de 10x10 pixels.
+   - Définissez le canal rouge avec une valeur croissante de 0 à 255.
+   - Définissez le canal vert avec une valeur décroissante de 255 à 0.
+   - Définissez le canal bleu avec une valeur constante de 128.
+   - Affichez l'image.
+
+3. **Exercice 3 : Conversion de couleur à niveaux de gris**
+   - Chargez une image en couleurs à partir d'un fichier local ou utilisez une image de démonstration de `skimage`.
+   - Convertissez l'image en niveaux de gris et affichez les deux images côte à côte pour comparer.
+
 ### 1.3 Résolution d'une image
 [Retour en haut](#plan)
 - **Définition** : La résolution d'une image est déterminée par le nombre de pixels horizontaux et verticaux.
 - **Exemple** : Une image de 128 x 128 pixels contient 16 384 pixels.
 
+#### Exemples :
+
+1. **Créer une image de 128x128 pixels**
 ```python
-# Exemple : Créer une image de 128x128 pixels
 import numpy as np
 
+# Créer une image de 128x128 pixels avec des valeurs aléatoires
 image = np.random.randint(0, 256, (128, 128), dtype=np.uint8)
 print(f"Nombre de pixels dans l'image : {image.size}")
 ```
+
+2. **Redimensionner une image**
+```python
+from skimage.transform import resize
+from skimage import data
+
+# Charger une image de démonstration
+image = data.camera()
+
+# Redimensionner l'image à 64x64 pixels
+resized_image = resize(image, (64, 64), anti_aliasing=True)
+
+plt.subplot(1, 2, 1)
+plt.title('Originale')
+plt.imshow(image, cmap='gray')
+
+plt.subplot(1, 2, 2)
+plt.title('Redimensionnée')
+plt.imshow(resized_image, cmap='gray')
+
+plt.show()
+```
+
+#### Exercices pour débutants :
+
+1. **Exercice 1 : Calculer la résolution d'une image**
+   - Chargez une image à partir d'un fichier local.
+   - Affichez les dimensions de l'image (hauteur, largeur) et calculez le nombre total de pixels.
+
+2. **Exercice 2 : Redimensionner une image**
+   - Chargez une image de démonstration.
+   - Redimensionnez l'image à différentes résolutions (32x32, 64x64, 128x128).
+   - Affichez les images redimensionnées côte à côte pour observer les différences de résolution.
+
+3. **Exercice 3 : Créer une image à haute résolution**
+   - Créez une image de 256x256 pixels avec des valeurs aléatoires.
+   - Affichez l'image en utilisant `matplotlib`.
 
 ---
 
