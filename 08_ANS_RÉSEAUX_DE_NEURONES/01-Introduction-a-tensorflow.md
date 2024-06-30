@@ -2449,7 +2449,6 @@ print('Test accuracy:', score[1])
 
 
 ---
-
 ### Chapitre 17 : Apprentissage par Transfert
 [Retour en haut](#plan)
 
@@ -2460,37 +2459,204 @@ print('Test accuracy:', score[1])
   - Remplacer le classificateur final par un classificateur adapté à notre problème.
   - Entraîner ce nouveau classificateur sur notre jeu de données spécifique.
 
+L'apprentissage par transfert consiste à tirer parti des réseaux de neurones pré-entraînés sur de vastes ensembles de données pour des tâches spécifiques. Cela permet de réduire le temps d'entraînement et d'améliorer les performances en utilisant les caractéristiques apprises par ces modèles.
+
+**Exemple de modèle pré-entraîné : Inception V3**
+- **Inception V3** est un modèle de classification d'images puissant, pré-entraîné sur le jeu de données ImageNet. Il peut être utilisé pour extraire des caractéristiques visuelles et construire des classificateurs personnalisés pour diverses applications.
+
 #### 17.2 Exemple avec Inception V3
-- **Problèmes de Formation** : Les grands modèles comme Inception nécessitent beaucoup de données et de temps pour l'entraînement.
-- **Solution** : Apprentissage par transfert pour tirer parti de la puissance de ces modèles pré-entraînés.
 
----
+**Étapes de l'apprentissage par transfert :**
+1. **Charger le modèle pré-entraîné :** Utiliser Inception V3 sans la couche de sortie pour extraire des caractéristiques.
+2. **Ajouter un classificateur personnalisé :** Construire et ajouter des couches de classification spécifiques à notre problème.
+3. **Compiler et entraîner le modèle :** Utiliser notre jeu de données pour entraîner le nouveau classificateur.
 
-### Structure des Dossiers de Données
+**Exercice 1 : Apprentissage par transfert avec Inception V3**
+1. **Charger le modèle pré-entraîné sans la dernière couche :**
+
+```python
+from keras.applications import InceptionV3
+from keras.models import Model
+from keras.layers import Dense, GlobalAveragePooling2D
+
+base_model = InceptionV3(weights='imagenet', include_top=False)
+```
+
+2. **Ajouter des couches de classification personnalisées :**
+
+```python
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dense(1024, activation='relu')(x)
+predictions = Dense(10, activation='softmax')(x)
+
+model = Model(inputs=base_model.input, outputs=predictions)
+```
+
+3. **Compiler et entraîner le modèle :**
+
+```python
+for layer in base_model.layers:
+    layer.trainable = False
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Charger les données (exemple avec CIFAR-10)
+from keras.datasets import cifar10
+from keras.utils import to_categorical
+
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+y_train, y_test = to_categorical(y_train, 10), to_categorical(y_test, 10)
+
+model.fit(x_train, y_train, epochs=10, batch_size=32, validation_data=(x_test, y_test))
+```
+
+4. **Évaluer le modèle :**
+
+```python
+score = model.evaluate(x_test, y_test)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+```
+
+**Exercice 2 : Fine-tuning du modèle pré-entraîné**
+1. **Débloquer certaines couches du modèle pré-entraîné :**
+
+```python
+for layer in base_model.layers[:249]:
+    layer.trainable = False
+for layer in base_model.layers[249:]:
+    layer.trainable = True
+```
+
+2. **Compiler de nouveau le modèle avec un taux d'apprentissage plus faible :**
+
+```python
+from keras.optimizers import SGD
+
+model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit(x_train, y_train, epochs=10, batch_size=32, validation_data=(x_test, y_test))
+```
+
+3. **Évaluer le modèle fine-tuné :**
+
+```python
+score = model.evaluate(x_test, y_test)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+```
+
+#### Structure des Dossiers de Données
 [Retour en haut](#plan)
 
-#### Organisation
-[Retour en haut](#plan)
-- **Emplacement du Programme** : Le dossier `data` contient les sous-dossiers `train` et `validate`.
-- **Données d'Entraînement** : 
+**Organisation des données :**
+- **Emplacement du programme :** Le dossier `data` contient les sous-dossiers `train` et `validate`.
+- **Données d'entraînement :**
   - `train/cats` : 1000 images de chats.
   - `train/dogs` : 1000 images de chiens.
-- **Données de Validation** :
+- **Données de validation :**
   - `validate/cats` : 400 images de chats.
   - `validate/dogs` : 400 images de chiens.
-- **Source des Données** : Les données peuvent être téléchargées depuis [Kaggle](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data) (train.zip).
 
----
+**Téléchargement des données :**
+Les données peuvent être téléchargées depuis [Kaggle](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data) (train.zip).
+
+**Exercice 3 : Organiser les données pour l'entraînement**
+1. **Créer une structure de dossiers pour les données d'entraînement et de validation :**
+
+```python
+import os
+import shutil
+
+# Créer les répertoires si nécessaire
+os.makedirs('data/train/cats', exist_ok=True)
+os.makedirs('data/train/dogs', exist_ok=True)
+os.makedirs('data/validate/cats', exist_ok=True)
+os.makedirs('data/validate/dogs', exist_ok=True)
+
+# Déplacer les images dans les répertoires correspondants
+for file in cat_files_train:
+    shutil.move(file, 'data/train/cats/')
+for file in dog_files_train:
+    shutil.move(file, 'data/train/dogs/')
+for file in cat_files_val:
+    shutil.move(file, 'data/validate/cats/')
+for file in dog_files_val:
+    shutil.move(file, 'data/validate/dogs/')
+```
 
 ### Synthèse
 [Retour en haut](#plan)
 
-- **Résumé** : Les CNNs résolvent les problèmes d'analyse d'images en extrayant des cartes de caractéristiques et en utilisant des couches de convolution, de non-linéarité et de pooling.
-- **Exemples** : Démonstration avec Fashion MNIST, et utilisation de l'apprentissage par transfert avec Inception V3.
+- **Résumé :** Les CNNs résolvent les problèmes d'analyse d'images en extrayant des cartes de caractéristiques et en utilisant des couches de convolution, de non-linéarité et de pooling.
+- **Exemples :** Démonstration avec Fashion MNIST, et utilisation de l'apprentissage par transfert avec Inception V3.
+
+**Exercice 4 : Projet de Fin de Chapitre**
+1. **Définir un nouveau problème de classification d'images.**
+2. **Utiliser un modèle pré-entraîné pour extraire des caractéristiques.**
+3. **Construire un classificateur personnalisé et entraîner le modèle.**
+4. **Évaluer et analyser les performances.**
+
+**Exemple de projet : Classification de Fleurs**
+- Utiliser le jeu de données [Flowers Recognition](https://www.kaggle.com/alxmamaev/flowers-recognition) disponible sur Kaggle.
+- Utiliser un modèle pré-entraîné comme ResNet50.
+- Construire et entraîner un classificateur personnalisé pour classer les images de fleurs en cinq catégories différentes.
 
 ---
 
-Les informations détaillées ci-dessus sont basées sur les documents fournis, notamment le fichier PDF "3-How_CNNs_work" et le fichier PowerPoint "cours_3_cnn.pptx".
+**Projet de Fin de Chapitre : Classification de Fleurs**
+
+**1. Charger le modèle pré-entraîné :**
+
+```python
+from keras.applications import ResNet50
+from keras.models import Model
+from keras.layers import Dense, GlobalAveragePooling2D
+
+base_model = ResNet50(weights='imagenet', include_top=False)
+```
+
+**2. Ajouter des couches de classification personnalisées :**
+
+```python
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dense(1024, activation='relu')(x)
+predictions = Dense(5, activation='softmax')(x)
+
+model = Model(inputs=base_model.input, outputs=predictions)
+```
+
+**3. Compiler et entraîner le modèle :**
+
+```python
+for layer in base_model.layers:
+    layer.trainable = False
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Charger les données de fleurs
+from keras.preprocessing.image import ImageDataGenerator
+
+train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
+test_datagen = ImageDataGenerator(rescale=1./255)
+
+training_set = train_datagen.flow_from_directory('flowers/train', target_size=(224, 224), batch_size=32, class_mode='categorical')
+test_set = test_datagen.flow_from_directory('flowers/validate', target_size=(224, 224), batch_size=32, class_mode='categorical')
+
+model.fit(training_set, steps_per_epoch=2000//32, epochs=10, validation_data=test_set, validation_steps=800//32)
+```
+
+**4. Évaluer le modèle :**
+
+```python
+score = model.evaluate(test_set)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+```
+
+Ce chapitre final fournit une compréhension approfondie de l'apprentissage par transfert et de son application pratique, vous offrant  des opportunités pour expérimenter avec des projets réels et approfondir votre maîtrise des réseaux de neurones convolutionnels ;).
 
 ---
 
