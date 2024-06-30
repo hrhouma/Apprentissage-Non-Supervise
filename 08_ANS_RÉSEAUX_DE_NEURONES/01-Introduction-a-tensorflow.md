@@ -88,7 +88,7 @@
 
 # Chapitre 1 : Introduction aux Images Numériques
 
-### 1.1 Qu'est-ce qu'une image numérique ? <a name="11-quest-ce-quune-image-numerique"></a>
+### 1.1 Qu'est-ce qu'une image numérique ?
 [Retour en haut](#plan)
 - **Définition** : Une image numérique est une représentation visuelle d'une scène sous forme de grille de pixels.
 - **Pixel** : L'élément de base d'une image numérique. Chaque pixel contient des informations sur la couleur ou la luminosité.
