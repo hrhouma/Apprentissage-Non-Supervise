@@ -256,7 +256,7 @@ plt.imshow(resized_image, cmap='gray')
 plt.show()
 ```
 
-#### Exercices pour débutants :
+#### Exercices :
 
 1. **Exercice 1 : Calculer la résolution d'une image**
    - Chargez une image à partir d'un fichier local.
