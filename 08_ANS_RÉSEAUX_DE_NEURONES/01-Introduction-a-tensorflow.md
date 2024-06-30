@@ -1,5 +1,95 @@
 ### Cours Complet sur les Réseaux de Neurones Convolutifs (CNN)
+### Table des Matières
+# Chapitre 1 : Introduction aux Images Numériques
+- 1.1 Qu'est-ce qu'une image numérique ?
+- 1.2 Types d'images numériques
+- 1.3 Résolution d'une image
 
+# Chapitre 2 : Les Bases des Réseaux de Neurones
+- 2.1 Qu'est-ce qu'un réseau de neurones ?
+- 2.2 Neurone artificiel
+- 2.3 Couches d'un réseau de neurones
+
+# Chapitre 3 : Introduction aux Réseaux de Neurones Convolutifs (CNN)
+- 3.1 Historique des CNN
+- 3.2 Structure d'un CNN
+
+# Chapitre 4 : Convolution dans les CNN
+- 4.1 Qu'est-ce que la convolution ?
+- 4.2 Filtre (Kernel)
+- 4.3 Stride
+- 4.4 Padding
+
+# Chapitre 5 : Couches de ReLU dans les CNN
+- 5.1 Fonction d'activation ReLU
+
+# Chapitre 6 : Couches de Pooling dans les CNN
+- 6.1 Qu'est-ce que le pooling ?
+- 6.2 Avantages du pooling
+
+# Chapitre 7 : Couches Entièrement Connectées et Classification
+- 7.1 Couches entièrement connectées
+- 7.2 Fonctionnement
+
+# Chapitre 8 : Entraînement des CNN
+- 8.1 Processus d'entraînement
+- 8.2 Hyperparamètres
+
+#### Chapitre 9 : Applications des CNN
+- 9.1 Domaines d'application
+
+# Chapitre 10 : Avantages et Inconvénients des CNN
+- 10.1 Avantages
+- 10.2 Inconvénients
+
+# Conclusion
+
+# Chapitre 10 : Introduction à Keras
+- Qu'est-ce que Keras ?
+- Pourquoi utiliser Keras ?
+- Environnement Keras
+
+# Chapitre 11 : Créer Votre Premier Réseau de Neurones avec Keras
+- Introduction
+- Importation de Keras
+- Installation de Keras
+- Création d'un Modèle Simple
+- Changer de Backend
+
+# Chapitre 12 :Construire des Modèles avec Keras
+- Modèle Sequential
+- Classe Model avec API Fonctionnelle
+
+# Chapitre 13 : Introduction aux Réseaux de Neurones Convolutionnels (CNN) avec Keras
+- Vue d'ensemble des Réseaux de Neurones Convolutionnels
+- Comprendre les Couches dans Keras
+- Les Couches Communes dans Keras
+- Les Couches Convolutionnelles
+- Construire un Réseau de Neurones Convolutionnel avec Keras
+- Entraîner le CNN
+- Évaluer le Modèle
+
+# Chapitre 14 : Introduction aux Réseaux Neuronaux Convolutifs (CNN)
+- Définition
+- Problème de la Dimensionalité
+- Invariance par Translation
+
+# Chapitre 15 : Composants d'un CNN
+- Convolution
+- Activation Non-Linéaire (ReLU)
+- Pooling (Sous-échantillonnage)
+
+# Chapitre 16 : Exemple Pratique avec MNIST et Fashion MNIST
+- MNIST
+- Fashion MNIST
+
+# Chapitre 17 :Apprentissage par Transfert
+- Concept
+- Exemple avec Inception V3
+
+#### Structure des Dossiers de Données
+
+# Synthèse
 ---
 
 #### Chapitre 1 : Introduction aux Images Numériques
