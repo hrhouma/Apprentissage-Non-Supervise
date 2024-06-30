@@ -921,6 +921,3 @@ Un réseau neuronal convolutif (CNN, ou ConvNet) est une classe de réseaux neur
 - **Résumé** : Les CNNs résolvent les problèmes d'analyse d'images en extrayant des cartes de caractéristiques et en utilisant des couches de convolution, de non-linéarité et de pooling.
 - **Exemples** : Démonstration avec Fashion MNIST, et utilisation de l'apprentissage par transfert avec Inception V3.
 
----
-
-Ce cours couvre les concepts clés et les avantages de Keras et des réseaux de neurones convolutifs, ainsi que des exemples pratiques pour démarrer avec la création de modèles de deep learning. Pour des détails plus approfondis, vous pouvez vous référer aux slides fournis et aux vidéos associées.
