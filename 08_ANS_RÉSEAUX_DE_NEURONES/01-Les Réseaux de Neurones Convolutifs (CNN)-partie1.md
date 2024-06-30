@@ -1,4 +1,4 @@
-### Réseaux de Neurones Convolutifs (CNN)
+# 01 - Réseaux de Neurones Convolutifs (CNN)
 
 # Références
 - Les contenus et les illustrations sont basés sur les slides fournis par Pluralsight.
