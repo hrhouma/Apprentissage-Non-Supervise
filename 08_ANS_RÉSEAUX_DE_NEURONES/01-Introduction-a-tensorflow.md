@@ -1,4 +1,8 @@
 # Les Réseaux de Neurones Convolutifs (CNN)
+
+### Introduction
+- Dans le cadre de ce cours sur l'apprentissage non supervisé, il est essentiel de comprendre les réseaux de neurones convolutifs (CNN). Une solide compréhension des CNN est indispensable, surtout pour les applications en imagerie. Les CNN sont des outils puissants pour extraire et représenter les caractéristiques complexes des images, une compétence clé pour appliquer efficacement des techniques non supervisées comme les autoencodeurs et le clustering. Nous aurons une partie dédiée à l'imagerie dans ce cours, où nous explorerons comment appliquer des techniques d'apprentissage non supervisé aux images.
+
 # PLAN
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
   - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numerique)
@@ -2664,3 +2668,10 @@ Ce chapitre final fournit une compréhension approfondie de l'apprentissage par 
 [Retour en haut](#plan)
 
 ### Livre sur les Réseaux de Neurones Convolutifs (CNN) avec Keras
+
+
+
+
+### Conclusion
+[Retour en haut](#plan)
+- Maîtriser les réseaux de neurones convolutifs (CNN) est crucial pour l'apprentissage non supervisé, en particulier dans le domaine de l'imagerie. Les CNN sont la composante principale pour extraire des caractéristiques détaillées des images, permettant d'utiliser des techniques non supervisées telles que les autoencodeurs pour découvrir des structures et motifs cachés dans les données visuelles. Une partie dédiée à l'imagerie dans ce cours explorera comment appliquer des techniques d'apprentissage non supervisé aux images. En combinant ces connaissances avec des méthodes avancées d'apprentissage non supervisé, vous serez mieux équipé pour traiter et analyser des données visuelles complexes. Les exemples et exercices de ce cours vous aideront à développer ces compétences et à les appliquer à des problèmes réels.
