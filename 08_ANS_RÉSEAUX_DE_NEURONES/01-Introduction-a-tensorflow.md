@@ -774,7 +774,10 @@ plt.show()
 
 - **Définition** : ReLU (Rectified Linear Unit) est une fonction d'activation utilisée dans les réseaux de neurones, qui remplace toutes les valeurs négatives par zéro et laisse les valeurs positives inchangées. La formule de la fonction ReLU est la suivante :
 
-\[ \text{ReLU}(x) = \max(0, x) \]
+$$
+\text{ReLU}(x) = \max(0, x)
+$$
+
 
 - **Importance** : La fonction ReLU introduit de la non-linéarité dans le modèle, ce qui est essentiel pour permettre au réseau de neurones de modéliser des relations complexes. De plus, elle aide à résoudre le problème du gradient vanishing en fournissant des gradients plus importants pour les valeurs positives.
 
