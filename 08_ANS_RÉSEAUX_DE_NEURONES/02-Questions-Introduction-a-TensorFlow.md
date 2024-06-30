@@ -12,7 +12,7 @@
 
 ```python
   (all_x_train, all_y_train), (x_test, y_test) = fashion_mnist_data.load_data()
-  ``
+```
 
 # 3. Types de données : différence entre `float32` et `float64`
 
