@@ -1,6 +1,4 @@
-# 1 - Cours : Introduction à TensorFlow
-
-# Questions
+# 03 - Questions -  Introduction à TensorFlow
 
 # 1. Concept de division des données en données d'entraînement et de test
 
