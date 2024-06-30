@@ -1,4 +1,4 @@
-### Les Réseaux de Neurones Convolutifs (CNN)
+# Les Réseaux de Neurones Convolutifs (CNN)
 # PLAN
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
   - [1.1 Qu'est-ce qu'une image numérique ?](#11-quest-ce-quune-image-numerique)
