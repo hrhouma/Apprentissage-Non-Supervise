@@ -98,7 +98,7 @@ plt.colorbar()
 plt.show()
 ```
 
-##### 1.2 Types d'images numériques
+### 1.2 Types d'images numériques
 - **Images en niveaux de gris** : Chaque pixel est une valeur de luminosité allant de 0 (noir) à 255 (blanc).
 - **Images en couleurs** : Chaque pixel est représenté par trois valeurs correspondant aux canaux de couleur rouge, vert et bleu (RVB).
 
@@ -117,7 +117,7 @@ plt.imshow(image)
 plt.show()
 ```
 
-##### 1.3 Résolution d'une image
+### 1.3 Résolution d'une image
 - **Définition** : La résolution d'une image est déterminée par le nombre de pixels horizontaux et verticaux.
 - **Exemple** : Une image de 128 x 128 pixels contient 16 384 pixels.
 
