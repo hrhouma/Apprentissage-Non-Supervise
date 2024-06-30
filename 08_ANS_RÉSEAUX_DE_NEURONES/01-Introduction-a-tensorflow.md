@@ -1494,12 +1494,18 @@ for solution in solutions:
 
 ---
 
+
 ### Chapitre 11 : Introduction à Keras
 
 #### 11.1 Qu'est-ce que Keras ?
 [Retour en haut](#plan)
 
-Keras est une API de réseaux de neurones de haut niveau, écrite en Python et capable de s'exécuter sur des moteurs de calcul comme TensorFlow, CNTK, ou Theano. Elle permet de créer et d’entraîner des modèles de deep learning de manière simple et efficace.
+- Keras est une API de réseaux de neurones de haut niveau, écrite en Python et capable de s'exécuter sur des moteurs de calcul comme TensorFlow, CNTK, ou Theano.
+- Elle permet de créer et d’entraîner des modèles de deep learning de manière simple et efficace.
+- Keras est aussi une bibliothèque extrêmement puissante qui simplifie le processus de création et d'entraînement de modèles de deep learning.
+- Avec des fonctionnalités comme la modularité, l'extensibilité, et une interface conviviale, Keras est un excellent outil pour les débutants comme pour les experts en deep learning.
+- Les exercices pratiques ci-dessous à faire à la maison vous aideront à vous familiariser avec les concepts clés de Keras et à expérimenter avec différents aspects de la création de modèles.
+
 
 #### 11.2 Pourquoi utiliser Keras ?
 [Retour en haut](#plan)
@@ -1521,16 +1527,64 @@ Keras est une API de réseaux de neurones de haut niveau, écrite en Python et c
 ##### 11.3.2 Exemple de modèle avec Keras
 [Retour en haut](#plan)
 
+Voici un exemple de création et d'entraînement d'un modèle simple avec Keras. 
+
+**Étape 1 : Importer les bibliothèques nécessaires**
+
 ```python
 from keras.models import Sequential
 from keras.layers import Dense
+```
 
-# Initialiser le modèle
+**Étape 2 : Initialiser le modèle**
+
+```python
 model = Sequential()
+```
 
-# Ajouter des couches
+**Étape 3 : Ajouter des couches au modèle**
+
+```python
 model.add(Dense(units=64, activation='relu', input_dim=100))
 model.add(Dense(units=10, activation='softmax'))
+```
+
+**Étape 4 : Compiler le modèle**
+
+```python
+model.compile(loss='categorical_crossentropy',
+              optimizer='sgd',
+              metrics=['accuracy'])
+```
+
+**Étape 5 : Entraîner le modèle**
+
+```python
+model.fit(x_train, y_train, epochs=5, batch_size=32)
+```
+
+### Exercices à faire à la maison
+
+**Exercice 1 : Créer un modèle simple**
+
+1. Créez un modèle Keras similaire à l'exemple ci-dessus, mais avec une couche supplémentaire de 32 neurones après la première couche cachée.
+2. Changez la fonction d'activation de la couche de sortie en `sigmoid`.
+3. Compilez et entraînez le modèle avec des données fictives.
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+import numpy as np
+
+# Données fictives
+x_train = np.random.random((1000, 100))
+y_train = np.random.randint(2, size=(1000, 10))
+
+# Créer le modèle
+model = Sequential()
+model.add(Dense(units=64, activation='relu', input_dim=100))
+model.add(Dense(units=32, activation='relu'))
+model.add(Dense(units=10, activation='sigmoid'))
 
 # Compiler le modèle
 model.compile(loss='categorical_crossentropy',
@@ -1541,6 +1595,58 @@ model.compile(loss='categorical_crossentropy',
 model.fit(x_train, y_train, epochs=5, batch_size=32)
 ```
 
+**Exercice 2 : Expérimenter avec différents optimizers**
+
+1. Modifiez le modèle créé dans l'Exercice 1 pour utiliser l'optimizer `adam` au lieu de `sgd`.
+2. Comparez les performances en termes de précision et de temps d'entraînement.
+
+```python
+# Compiler le modèle avec optimizer 'adam'
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(x_train, y_train, epochs=5, batch_size=32)
+```
+
+**Exercice 3 : Sauvegarder et charger un modèle**
+
+1. Sauvegardez le modèle entraîné dans l'Exercice 1 sur le disque.
+2. Chargez le modèle sauvegardé et utilisez-le pour faire des prédictions sur de nouvelles données fictives.
+
+```python
+# Sauvegarder le modèle
+model.save('my_model.h5')
+
+# Charger le modèle
+from keras.models import load_model
+model = load_model('my_model.h5')
+
+# Nouvelles données fictives
+x_new = np.random.random((10, 100))
+
+# Faire des prédictions
+predictions = model.predict(x_new)
+print(predictions)
+```
+
+**Exercice 4 : Visualiser les courbes d'entraînement**
+
+1. Ajoutez des callbacks pour visualiser les courbes de précision et de perte pendant l'entraînement du modèle.
+2. Utilisez TensorBoard pour afficher les graphiques.
+
+```python
+from keras.callbacks import TensorBoard
+
+# Initialiser TensorBoard
+tensorboard = TensorBoard(log_dir='./logs', histogram_freq=1, write_graph=True, write_images=True)
+
+# Entraîner le modèle avec TensorBoard
+model.fit(x_train, y_train, epochs=5, batch_size=32, callbacks=[tensorboard])
+```
+
+
 ---
 
 ### Chapitre 12 : Créer Votre Premier Réseau de Neurones avec Keras
@@ -1548,7 +1654,7 @@ model.fit(x_train, y_train, epochs=5, batch_size=32)
 #### 12.1 Introduction
 [Retour en haut](#plan)
 
-Keras est une bibliothèque de réseaux de neurones haut niveau qui tourne sur TensorFlow. Il permet de construire et d'entraîner des modèles de Deep Learning facilement grâce à une interface simple et conviviale.
+Keras est une bibliothèque de réseaux de neurones haut niveau qui tourne sur TensorFlow. Il permet de construire et d'entraîner des modèles de Deep Learning facilement grâce à une interface simple et conviviale. Ce chapitre vous guidera pas à pas dans la création de votre premier réseau de neurones avec Keras.
 
 #### 12.2 Importation de Keras
 [Retour en haut](#plan)
@@ -1652,10 +1758,109 @@ Keras permet de changer de backend facilement en modifiant le fichier de configu
 }
 ```
 
+### Exercices à faire à la maison
+
+Pour bien assimiler les concepts et techniques décrits dans ce chapitre, voici quelques exercices pratiques. Ces exercices vous permettront de renforcer votre compréhension de la création et de l'entraînement des modèles de deep learning avec Keras.
+
+#### Exercice 1 : Créer un modèle de réseau de neurones
+
+1. **Objectif** : Créer un modèle avec une structure différente pour comprendre l'impact des différentes architectures de réseaux.
+2. **Instructions** :
+    - Créez un modèle avec deux couches cachées de 64 et 32 neurones respectivement.
+    - Utilisez la fonction d'activation `tanh` pour la première couche cachée et `relu` pour la seconde.
+    - Changez la fonction d'activation de la couche de sortie en `softmax`.
+    - Compilez et entraînez le modèle sur le dataset MNIST.
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Créer le modèle
+model = Sequential()
+model.add(Dense(64, activation='tanh', input_shape=(784,)))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(x_train, y_train, epochs=5)
+```
+
+#### Exercice 2 : Comparer les optimizers
+
+1. **Objectif** : Comprendre l'impact de différents optimizers sur la performance du modèle.
+2. **Instructions** :
+    - Utilisez le même modèle que dans l'Exercice 1.
+    - Compilez et entraînez le modèle en utilisant différents optimizers (`adam`, `sgd`, `rmsprop`).
+    - Comparez les performances en termes de précision et de temps d'entraînement.
+
+```python
+# Compilez le modèle avec différents optimizers et comparez les performances
+
+# Optimizer 'adam'
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+history_adam = model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
+
+# Optimizer 'sgd'
+model.compile(optimizer='sgd', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+history_sgd = model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
+
+# Optimizer 'rmsprop'
+model.compile(optimizer='rmsprop', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+history_rmsprop = model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
+```
+
+#### Exercice 3 : Ajouter des callbacks
+
+1. **Objectif** : Utiliser des callbacks pour surveiller et ajuster l'entraînement du modèle.
+2. **Instructions** :
+    - Ajoutez des callbacks pour visualiser les courbes de précision et de perte pendant l'entraînement.
+    - Utilisez `EarlyStopping` pour arrêter l'entraînement si la performance sur le jeu de validation ne s'améliore pas pendant un certain nombre d'époques.
+
+```python
+from keras.callbacks import TensorBoard, EarlyStopping
+
+# Initialiser TensorBoard
+tensorboard = TensorBoard(log_dir='./logs', histogram_freq=1, write_graph=True, write_images=True)
+
+# Initialiser EarlyStopping
+early_stopping = EarlyStopping(monitor='val_loss', patience=3)
+
+# Entraîner le modèle avec les callbacks
+model.fit(x_train, y_train, epochs=10, batch_size=32, validation_data=(x_test, y_test), callbacks=[tensorboard, early_stopping])
+```
+
+#### Exercice 4 : Sauvegarder et charger un modèle
+
+1. **Objectif** : Apprendre à sauvegarder et charger un modèle pour réutilisation ultérieure.
+2. **Instructions** :
+    - Sauvegardez le modèle entraîné dans l'Exercice 1 sur le disque.
+    - Chargez le modèle sauvegardé et utilisez-le pour faire des prédictions sur de nouvelles données.
+
+```python
+# Sauvegarder le modèle
+model.save('my_model.h5')
+
+# Charger le modèle
+from keras.models import load_model
+model = load_model('my_model.h5')
+
+# Nouvelles données fictives
+x_new = np.random.random((10, 784))
+
+# Faire des prédictions
+predictions = model.predict(x_new)
+print(predictions)
+```
+
 ### Conclusion
 [Retour en haut](#plan)
 
-Keras simplifie la création et l'entraînement des modèles de Deep Learning. Son intégration avec TensorFlow permet une utilisation flexible et puissante, adaptée aux débutants comme aux experts.
+Keras simplifie la création et l'entraînement des modèles de Deep Learning. Son intégration avec TensorFlow permet une utilisation flexible et puissante, adaptée aux débutants comme aux experts. Les exercices pratiques vous aideront à renforcer vos compétences et à mieux comprendre les concepts de base de la création de réseaux de neurones avec Keras.
 
 ---
 
@@ -1664,22 +1869,131 @@ Keras simplifie la création et l'entraînement des modèles de Deep Learning. S
 #### 13.1 Modèle Sequential
 [Retour en haut](#plan)
 
+Le modèle Sequential est l'une des approches les plus simples et directes pour construire des réseaux de neurones avec Keras. Voici ses principales caractéristiques et comment l'utiliser efficacement.
+
 **Caractéristiques clés** :
 - **Facile à comprendre** : Le modèle Sequential est simple, ce qui en fait un excellent point de départ pour les débutants.
 - **Séquence de couches** : Les couches sont ajoutées une par une, formant une pile linéaire.
 - **Interconnexion automatique des couches** : Chaque couche est automatiquement connectée à la suivante.
 - **Rapide et simple** : Idéal pour des architectures de réseaux de neurones simples.
 
+**Exemple de création d'un modèle Sequential :**
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Initialiser le modèle
+model = Sequential()
+
+# Ajouter des couches
+model.add(Dense(64, activation='relu', input_dim=100))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 1 : Créer un modèle Sequential**
+1. Créez un modèle Sequential avec trois couches cachées de tailles 128, 64 et 32 neurones respectivement.
+2. Utilisez la fonction d'activation `relu` pour toutes les couches cachées.
+3. Utilisez la fonction d'activation `softmax` pour la couche de sortie.
+4. Compilez le modèle avec l'optimiseur `adam` et la fonction de perte `sparse_categorical_crossentropy`.
+
+```python
+# Créer le modèle
+model = Sequential()
+model.add(Dense(128, activation='relu', input_dim=100))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
 ---
 
 #### 13.2 Classe Model avec API Fonctionnelle
 [Retour en haut](#plan)
+
+L'API fonctionnelle de Keras offre plus de flexibilité et de puissance pour créer des architectures de réseaux de neurones complexes. Elle permet de construire des modèles avec des connexions arbitraires, ce qui est particulièrement utile pour les réseaux qui ne sont pas purement séquentiels.
 
 **Caractéristiques clés** :
 - **Réseaux de neurones complexes** : Convient aux architectures de réseaux plus complexes.
 - **Couches comme unités fonctionnelles** : Permet de traiter les couches comme des fonctions pouvant être connectées dans une structure de graphe.
 - **Connexions de couches définies par l'utilisateur** : Donne un contrôle total sur les connexions entre les couches.
 - **Détaillé et puissant** : Plus flexible et puissant que le modèle Sequential.
+
+**Exemple de création d'un modèle avec l'API fonctionnelle :**
+```python
+from keras.models import Model
+from keras.layers import Input, Dense
+
+# Définir l'entrée
+inputs = Input(shape=(100,))
+
+# Ajouter des couches
+x = Dense(64, activation='relu')(inputs)
+x = Dense(64, activation='relu')(x)
+outputs = Dense(10, activation='softmax')(x)
+
+# Créer le modèle
+model = Model(inputs=inputs, outputs=outputs)
+
+# Compiler le modèle
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+**Exercice 2 : Créer un modèle avec l'API fonctionnelle**
+1. Créez un modèle avec deux entrées : une pour les caractéristiques numériques et une pour les images.
+2. La première entrée doit passer par deux couches denses avec `relu` et la seconde par une couche convolutionnelle suivie d'une couche de pooling.
+3. Combinez les sorties des deux branches et ajoutez une couche dense finale avec `softmax`.
+
+```python
+from keras.models import Model
+from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten, concatenate
+
+# Première branche (caractéristiques numériques)
+input_numeric = Input(shape=(10,))
+x1 = Dense(64, activation='relu')(input_numeric)
+x1 = Dense(32, activation='relu')(x1)
+
+# Deuxième branche (images)
+input_image = Input(shape=(28, 28, 1))
+x2 = Conv2D(32, (3, 3), activation='relu')(input_image)
+x2 = MaxPooling2D((2, 2))(x2)
+x2 = Flatten()(x2)
+x2 = Dense(64, activation='relu')(x2)
+
+# Combiner les deux branches
+combined = concatenate([x1, x2])
+
+# Couche de sortie
+outputs = Dense(10, activation='softmax')(combined)
+
+# Créer le modèle
+model = Model(inputs=[input_numeric, input_image], outputs=outputs)
+
+# Compiler le modèle
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+# Afficher le résumé du modèle
+model.summary()
+```
+
+### Conclusion
+[Retour en haut](#plan)
+
+- Keras offre deux principales façons de créer des modèles de réseaux de neurones : le modèle Sequential et l'API fonctionnelle. Le modèle Sequential est idéal pour les architectures simples et linéaires, tandis que l'API fonctionnelle offre la flexibilité nécessaire pour les réseaux complexes. En comprenant les caractéristiques et les avantages de chaque approche, vous pouvez choisir celle qui convient le mieux à vos besoins et exploiter pleinement la puissance de Keras pour créer des modèles de deep learning performants et efficaces.
 
 ---
 
@@ -1703,9 +2017,28 @@ Keras est une bibliothèque de réseaux de neurones open-source puissante et fac
 - **Couches de Reshape** : Modifient la forme de l'entrée sans en altérer les données.
 - **Couches de Flatten** : Aplatissent l'entrée, la convertissant en un tableau à 1 dimension.
 - **Couches de Permute** : Permutent les dimensions de l'entrée selon un schéma donné.
-
-
 - **Couches de RepeatVector** : Répètent l'entrée un certain nombre de fois.
+
+**Exercice 1 : Exploration des Couches**
+1. Créez un modèle Sequential en utilisant les couches mentionnées ci-dessus.
+2. Ajoutez une couche Dense, une couche Dropout, une couche Flatten, une couche Reshape, une couche Permute et une couche RepeatVector.
+3. Compilez le modèle et affichez son résumé.
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten, Reshape, Permute, RepeatVector
+
+model = Sequential()
+model.add(Dense(64, activation='relu', input_dim=100))
+model.add(Dropout(0.5))
+model.add(Flatten())
+model.add(Reshape((8, 8, 1)))
+model.add(Permute((2, 1, 3)))
+model.add(RepeatVector(10))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.summary()
+```
 
 #### 14.4 Les Couches Convolutionnelles
 [Retour en haut](#plan)
@@ -1715,49 +2048,72 @@ Les couches convolutionnelles sont les blocs de construction fondamentaux d'un C
 - **Couches Convolutionnelles** : Effectuent des convolutions, qui combinent des filtres apprenables avec des données d'entrée pour produire des cartes de caractéristiques.
 - **Couches de Pooling** : Réduisent la dimensionnalité de chaque carte de caractéristiques tout en conservant les informations les plus importantes. Les types courants incluent le Max Pooling et le Average Pooling.
 
+**Exercice 2 : Construire un CNN Basique**
+1. Créez un modèle CNN en utilisant des couches convolutionnelles et des couches de pooling.
+2. Ajoutez une couche de convolution suivie d'une couche de MaxPooling, puis répétez le processus.
+3. Ajoutez des couches Flatten et Dense à la fin pour la classification.
+
+```python
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.summary()
+```
+
 #### 14.5 Construire un Réseau de Neurones Convolutionnel avec Keras
 [Retour en haut](#plan)
 
-Construisons un CNN simple en utilisant Keras.
+Construisons un CNN complet et plus détaillé en utilisant Keras.
 
+**Exemple de code : Construire un CNN avec Keras**
 ```python
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 
-# Initialiser le CNN
 model = Sequential()
-
-# Étape 1 - Convolution
 model.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
-
-# Étape 2 - Pooling
 model.add(MaxPooling2D(pool_size=(2, 2)))
-
-# Ajouter une deuxième couche convolutionnelle
 model.add(Conv2D(32, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-
-# Étape 3 - Flattening
 model.add(Flatten())
-
-# Étape 4 - Connection Complète
-model.add(Dense(units=128, activation='relu'))
+model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(units=1, activation='sigmoid'))
+model.add(Dense(1, activation='sigmoid'))
 
-# Compiler le CNN
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.summary()
+```
+
+**Exercice 3 : Ajouter des Couches à un CNN**
+1. Modifiez le modèle ci-dessus pour ajouter une troisième couche convolutionnelle et une couche de Dropout supplémentaire.
+2. Compilez le modèle et affichez son résumé.
+
+```python
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.5))
+model.summary()
 ```
 
 #### 14.6 Entraîner le CNN
 [Retour en haut](#plan)
 
 Pour entraîner le CNN, vous devez préparer votre jeu de données, ce qui implique :
-
 - Diviser les données en ensembles d'entraînement et de test.
 - Normaliser les images.
 - Appliquer des techniques d'augmentation de données pour augmenter la diversité de vos données d'entraînement sans collecter de nouvelles données.
 
+**Exemple de code : Préparer les données et entraîner le modèle**
 ```python
 from keras.preprocessing.image import ImageDataGenerator
 
@@ -1785,15 +2141,40 @@ model.fit(training_set,
           validation_steps=2000//32)
 ```
 
+**Exercice 4 : Entraîner un CNN avec Data Augmentation**
+1. Ajoutez des transformations supplémentaires dans `ImageDataGenerator` pour l'augmentation des données.
+2. Entraînez le modèle avec les nouvelles transformations.
+
+```python
+train_datagen = ImageDataGenerator(rescale=1./255,
+                                   shear_range=0.2,
+                                   zoom_range=0.2,
+                                   rotation_range=30,
+                                   width_shift_range=0.2,
+                                   height_shift_range=0.2,
+                                   horizontal_flip=True)
+```
+
 #### 14.7 Évaluer le Modèle
 [Retour en haut](#plan)
 
 Après l'entraînement, évaluez la performance du modèle sur le jeu de test pour comprendre sa capacité à se généraliser à de nouvelles données.
 
+**Exemple de code : Évaluer le modèle**
 ```python
 score = model.evaluate(test_set)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+```
+
+**Exercice 5 : Évaluation du modèle**
+1. Utilisez le jeu de données de test pour évaluer le modèle.
+2. Affichez la précision et la perte sur le jeu de test.
+
+```python
+test_loss, test_accuracy = model.evaluate(test_set)
+print(f'Loss on test data: {test_loss}')
+print(f'Accuracy on test data: {test_accuracy}')
 ```
 
 ---
@@ -1803,25 +2184,172 @@ print('Test accuracy:', score[1])
 #### 15.1 Convolution
 [Retour en haut](#plan)
 
-- **Fonctionnement** : La convolution extrait des caractéristiques des images tout en préservant les relations spatiales des caractéristiques (comme les bords et les éléments composites tels que les yeux ou le nez).
-- **Hyperparamètres clés** :
-  - **Taille du noyau (Kernel Size)** : Détermine les pixels liés.
-  - **Nombre de filtres** : Détecte différentes caractéristiques.
-  - **Stride** : Distance de déplacement du filtre (valeurs plus grandes réduisent la taille de la carte de caractéristiques et l'information transmise à la couche suivante).
-  - **Padding** : Ajoute des pixels autour de l'image pour préserver les dimensions après la convolution.
+**Fonctionnement** :
+- La convolution est une opération qui applique un filtre (ou noyau) sur l'image d'entrée pour extraire des caractéristiques importantes tout en préservant les relations spatiales. 
+- Les caractéristiques extraites peuvent inclure des bords, des textures, et des motifs complexes.
+
+**Hyperparamètres clés** :
+1. **Taille du noyau (Kernel Size)** :
+   - Détermine la taille de la matrice de filtre appliquée à l'image.
+   - Un noyau 3x3 est couramment utilisé.
+   
+   **Exemple de code** :
+   ```python
+   from keras.layers import Conv2D
+
+   model = Sequential()
+   model.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
+   ```
+
+2. **Nombre de filtres** :
+   - Le nombre de filtres détermine le nombre de cartes de caractéristiques générées par la couche de convolution.
+   - Plus de filtres permettent d'extraire plus de types de caractéristiques.
+
+3. **Stride** :
+   - Le stride est le nombre de pixels par lequel le filtre se déplace sur l'image.
+   - Un stride plus grand réduit la taille de la carte de caractéristiques mais peut perdre des informations.
+
+   **Exemple de code** :
+   ```python
+   model.add(Conv2D(32, (3, 3), strides=(2, 2), activation='relu'))
+   ```
+
+4. **Padding** :
+   - Le padding ajoute des pixels autour de l'image pour conserver les dimensions après la convolution.
+   - Types de padding : "valid" (sans padding) et "same" (padding pour conserver la taille d'origine).
+
+   **Exemple de code** :
+   ```python
+   model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
+   ```
+
+**Exercice 1 : Expérimenter avec la Convolution**
+1. Créez un modèle CNN avec différentes tailles de noyaux (3x3, 5x5) et comparez les résultats.
+2. Expérimentez avec différents nombres de filtres (32, 64) et observez l'impact sur les performances.
+3. Testez différents strides (1, 2) et notez les changements dans la taille de la carte de caractéristiques.
+
+```python
+# Exercice pratique
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, (5, 5), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.summary()
+```
 
 #### 15.2 Activation Non-Linéaire (ReLU)
 [Retour en haut](#plan)
 
-- **Fonction** : Ajoutée après une couche de convolution pour introduire la non-linéarité, empêchant le problème du gradient qui disparaît.
-- **Formule** : \( y = \max(0, x) \)
+**Fonction** :
+- La fonction d'activation ReLU (Rectified Linear Unit) remplace toutes les valeurs négatives par zéro, introduisant ainsi de la non-linéarité dans le modèle. Cela permet au réseau de mieux capturer des relations complexes.
+
+**Formule** : 
+$$
+y = \max(0, x)
+$$
+
+
+**Exemple de code** :
+```python
+def relu(x):
+    return np.maximum(0, x)
+
+# Appliquer ReLU à une matrice d'exemple
+matrix = np.array([[-1, 2], [-3, 4]])
+relu_matrix = relu(matrix)
+print(relu_matrix)
+```
+
+**Exercice 2 : Comparer ReLU avec d'autres Fonctions d'Activation**
+1. Implémentez les fonctions d'activation Sigmoid et Tanh.
+2. Appliquez ReLU, Sigmoid, et Tanh à la même matrice d'exemple.
+3. Comparez les résultats et discutez de l'impact de chaque fonction d'activation.
+
+```python
+import numpy as np
+
+# Fonctions d'activation
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def tanh(x):
+    return np.tanh(x)
+
+# Matrice d'exemple
+matrix = np.array([[-1, 2], [-3, 4]])
+
+# Appliquer les fonctions d'activation
+relu_matrix = relu(matrix)
+sigmoid_matrix = sigmoid(matrix)
+tanh_matrix = tanh(matrix)
+
+print("ReLU :\n", relu_matrix)
+print("Sigmoid :\n", sigmoid_matrix)
+print("Tanh :\n", tanh_matrix)
+```
 
 #### 15.3 Pooling (Sous-échantillonnage)
 [Retour en haut](#plan)
 
-- **Objectif** : Réduire la dimensionnalité tout en maintenant les caractéristiques importantes.
-- **Types** :
-  - **Max Pooling** : Prend la valeur maximale dans une fenêtre de taille définie (ex. 2x2).
+**Objectif** :
+- Le pooling réduit la dimensionnalité de l'image tout en conservant les caractéristiques importantes, augmentant ainsi l'efficacité du calcul et réduisant le surapprentissage.
+
+**Types** :
+1. **Max Pooling** :
+   - Prend la valeur maximale dans une fenêtre de taille définie (ex. 2x2).
+   
+   **Exemple de code** :
+   ```python
+   model.add(MaxPooling2D(pool_size=(2, 2)))
+   ```
+
+2. **Average Pooling** :
+   - Calcule la moyenne des valeurs dans la fenêtre de sous-échantillonnage.
+
+   **Exemple de code** :
+   ```python
+   from keras.layers import AveragePooling2D
+
+   model.add(AveragePooling2D(pool_size=(2, 2)))
+   ```
+
+**Exercice 3 : Expérimenter avec le Pooling**
+1. Créez un modèle CNN en utilisant le Max Pooling et l'Average Pooling.
+2. Comparez les performances des deux modèles.
+3. Expérimentez avec différentes tailles de fenêtres de pooling (2x2, 3x3).
+
+```python
+# Modèle avec Max Pooling
+model_max = Sequential()
+model_max.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
+model_max.add(MaxPooling2D(pool_size=(2, 2)))
+model_max.add(Flatten())
+model_max.add(Dense(128, activation='relu'))
+model_max.add(Dense(10, activation='softmax'))
+
+model_max.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model_max.summary()
+
+# Modèle avec Average Pooling
+model_avg = Sequential()
+model_avg.add(Conv2D(32, (3, 3), input_shape=(64, 64, 3), activation='relu'))
+model_avg.add(AveragePooling2D(pool_size=(2, 2)))
+model_avg.add(Flatten())
+model_avg.add(Dense(128, activation='relu'))
+model_avg.add(Dense(10, activation='softmax'))
+
+model_avg.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model_avg.summary()
+```
 
 ---
 
@@ -1829,12 +2357,96 @@ print('Test accuracy:', score[1])
 [Retour en haut](#plan)
 
 #### 16.1 MNIST
-- **Description** : Jeu de données contenant 60 000 images d'entraînement et 10 000 images de test de chiffres manuscrits (28x28 pixels, en niveaux de gris).
-- **Performance** : Un CNN basique peut atteindre une précision supérieure à 99 %.
+**Description** : 
+- Le jeu de données MNIST contient 60 000 images d'entraînement et 10 000 images de test de chiffres manuscrits (28x28 pixels, en niveaux de gris).
+- Il est couramment utilisé pour tester les algorithmes de reconnaissance d'image.
 
-#### 16.2 Fashion MNIST
-- **Description** : Jeu de données similaire à MNIST mais contenant des images de vêtements avec 10 classes différentes.
-- **Défi** : Un CNN basique peut atteindre une précision de 90 %, et plus avec un ajustement.
+**Performance** : 
+- Un CNN basique peut atteindre une précision supérieure à 99 %.
+
+**Exercice 4 : Construire et Entraîner un CNN sur MNIST**
+1. Chargez le jeu de données MNIST.
+2. Construisez un CNN avec des couches de convolution, de pooling, de flattening et dense.
+3. Entraînez le modèle et évaluez sa performance.
+
+```python
+from keras.datasets import mnist
+from keras.utils import to_categorical
+
+# Charger les données MNIST
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train = x_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+x_test = x_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Construire le modèle
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(x_train, y_train, epochs=10, batch_size=64, validation_data=(x_test, y_test))
+
+# Évaluer le modèle
+score = model.evaluate(x_test, y_test)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+```
+
+#### 16.2 Fashion
+
+ MNIST
+**Description** : 
+- Le jeu de données Fashion MNIST est similaire à MNIST mais contient des images de vêtements avec 10 classes différentes.
+- Il est utilisé pour des tâches de classification plus complexes que MNIST.
+
+**Défi** : 
+- Un CNN basique peut atteindre une précision de 90 %, et plus avec un ajustement.
+
+**Exercice 5 : Construire et Entraîner un CNN sur Fashion MNIST**
+1. Chargez le jeu de données Fashion MNIST.
+2. Construisez un CNN avec des couches de convolution, de pooling, de flattening et dense.
+3. Entraînez le modèle et évaluez sa performance.
+
+```python
+from keras.datasets import fashion_mnist
+
+# Charger les données Fashion MNIST
+(x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
+x_train = x_train.reshape(-1, 28, 28, 1).astype('float32') / 255
+x_test = x_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
+
+# Construire le modèle
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+# Compiler le modèle
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entraîner le modèle
+model.fit(x_train, y_train, epochs=10, batch_size=64, validation_data=(x_test, y_test))
+
+# Évaluer le modèle
+score = model.evaluate(x_test, y_test)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+```
+
 
 ---
 
