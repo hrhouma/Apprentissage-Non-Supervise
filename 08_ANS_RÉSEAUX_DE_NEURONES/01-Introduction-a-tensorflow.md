@@ -2,9 +2,10 @@
 
 # Table des Matières
 - [**Chapitre 1 : Introduction aux Images Numériques**](#chapitre-1--introduction-aux-images-numériques)
-  - [1.1 Qu'est-ce qu'une image numérique ?](#1.1)
-  - [1.2 Types d'images numériques](#1.2)
-  - [1.3 Résolution d'une image](#1.3)
+  - [1.1 Qu'est-ce qu'une image numérique ?](#11-qu-est-ce-qu-une-image-numérique)
+  - [1.2 Types d'images numériques](#12-types-d-images-numériques)
+  - [1.3 Résolution d'une image](#13-résolution-d-une-image)
+
 - [**Chapitre 2 : Les Bases des Réseaux de Neurones**](#chapitre-2)
   - [2.1 Qu'est-ce qu'un réseau de neurones ?](#2.1)
   - [2.2 Neurone artificiel](#2.2)
