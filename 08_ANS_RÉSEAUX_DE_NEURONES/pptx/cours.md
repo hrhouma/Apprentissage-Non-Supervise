@@ -1,5 +1,3 @@
-Pour fournir un cours exhaustif et créer des liens fonctionnels dans la table des matières, nous allons extraire et organiser toutes les informations pertinentes des documents fournis.
-
 ### Table des Matières
 
 1. [Introduction à l'Intelligence Artificielle et à l'Apprentissage Machine](#introduction-a-lintelligence-artificielle-et-a-lapprentissage-machine)
