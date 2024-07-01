@@ -1,5 +1,3 @@
-Voici la version corrigée du document avec les liens de la table des matières fonctionnels et les numéros ajoutés :
-
 ## Table des Matières
 
 1. [Introduction à l'Intelligence Artificielle et à l'Apprentissage Machine](#1-introduction-à-lintelligence-artificielle-et-à-lapprentissage-machine)
