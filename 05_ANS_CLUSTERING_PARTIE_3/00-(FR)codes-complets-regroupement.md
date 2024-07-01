@@ -806,7 +806,10 @@ Le score de silhouette pour un point de données est défini comme suit :
 - **b** : La distance moyenne entre ce point et tous les points du cluster le plus proche auquel il n'appartient pas.
 
 Le score de silhouette s(i) pour un point i est donné par :
-\[ s(i) = \frac{b - a}{\max(a, b)} \]
+
+$$
+s(i) = \frac{b - a}{\max(a, b)} 
+$$
 
 ---
 
