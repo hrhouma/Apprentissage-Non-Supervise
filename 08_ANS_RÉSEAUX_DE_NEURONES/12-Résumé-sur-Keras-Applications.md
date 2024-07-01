@@ -1,5 +1,6 @@
 ### Résumé sur Keras Applications
-
+# RÉFÉRENCE :
+- https://keras.io/api/applications/
 **À propos de Keras Applications**
 Keras Applications fournit des modèles de deep learning pré-entraînés disponibles pour la prédiction, l'extraction de caractéristiques et le fine-tuning. Les poids des modèles sont automatiquement téléchargés lors de l'instanciation et stockés dans le répertoire `~/.keras/models/`.
 
