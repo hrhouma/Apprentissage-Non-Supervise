@@ -1,5 +1,8 @@
+# Important: 
+- Les diapositives peuvent être téléchargés à partir du DRIVE du cours.
+- Veuillez trouver ci-bas les titres des diapositives.
+  
 # Titres
-
 1. **Introduction à l'Intelligence Artificielle et à l'Apprentissage Machine : Théorie**
 2. **Pratique de l'IA et de l'Apprentissage Profond avec Google Colab et TensorFlow**
 3. **Atelier Pratique : Construction et Entraînement de Modèles Supervisés et Non Supervisés avec TensorFlow**
