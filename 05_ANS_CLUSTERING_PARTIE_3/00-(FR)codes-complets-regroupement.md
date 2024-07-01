@@ -991,15 +991,11 @@ Pour montrer visuellement comment ces modèles se comparent côte à côte, nous
 
 ### Clusters sphériques
 
-![Clustering sphériques](link_to_image1)
-
 - **K-means** : Excellent pour des clusters sphériques bien séparés.
 - **Clustering Hiérarchique** : Identifie correctement les clusters.
 - **DBSCAN** : Identifie correctement les clusters.
 
 ### Clusters en forme de longues chaînes
-
-![Clustering longues chaînes](link_to_image2)
 
 - **K-means** : Essaye de trouver des clusters sphériques même s'ils n'existent pas.
 - **Clustering Hiérarchique** : Fait un meilleur travail en trouvant des clusters.
@@ -1007,15 +1003,11 @@ Pour montrer visuellement comment ces modèles se comparent côte à côte, nous
 
 ### Clusters en forme de cercle
 
-![Clustering cercles](link_to_image3)
-
 - **K-means** : Essaye de trouver des clusters sphériques, ce qui n'est pas adapté ici.
 - **Clustering Hiérarchique** : Identifie correctement les clusters.
 - **DBSCAN** : Le plus performant, identifie les clusters irréguliers et les points de bruit.
 
 ### Clusters de formes aléatoires
-
-![Clustering formes aléatoires](link_to_image4)
 
 - **K-means** : Essaye de trouver des clusters sphériques, ce qui n'est pas adapté ici.
 - **Clustering Hiérarchique** : Identifie correctement les clusters.
@@ -1023,16 +1015,102 @@ Pour montrer visuellement comment ces modèles se comparent côte à côte, nous
 
 ### Données aléatoires
 
-![Clustering données aléatoires](link_to_image5)
 
 - **K-means** : Essaye de trouver des clusters là où il n'y en a pas.
 - **Clustering Hiérarchique** : Identifie un cluster unique dans une zone légèrement différente.
 - **DBSCAN** : Reconnaît que tout est du bruit.
 
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/bef6719e-871e-413a-a1ba-6207d2601bd9)
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/0289bba2-232e-4aa8-8731-d4be27314df3)
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/677dc78c-6cd3-4b6f-a73f-d932d5cb7c06)
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/444d5636-c915-400b-95f7-44881079fcbc)
+
+
+
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN
+from sklearn.datasets import make_blobs, make_moons, make_circles
+
+# Comparaison visuelle
+# Pour montrer visuellement comment ces modèles se comparent côte à côte, nous allons utiliser des visualisations pour comparer nos modèles sur différents jeux de données.
+
+# Clusters sphériques
+# Clustering sphériques
+# K-means : Excellent pour des clusters sphériques bien séparés.
+# Clustering Hiérarchique : Identifie correctement les clusters.
+# DBSCAN : Identifie correctement les clusters.
+
+# Clusters en forme de longues chaînes
+# Clustering longues chaînes
+# K-means : Essaye de trouver des clusters sphériques même s'ils n'existent pas.
+# Clustering Hiérarchique : Fait un meilleur travail en trouvant des clusters.
+# DBSCAN : Identifie correctement les clusters.
+
+# Clusters en forme de cercle
+# Clustering cercles
+# K-means : Essaye de trouver des clusters sphériques, ce qui n'est pas adapté ici.
+# Clustering Hiérarchique : Identifie correctement les clusters.
+# DBSCAN : Le plus performant, identifie les clusters irréguliers et les points de bruit.
+
+# Clusters de formes aléatoires
+# Clustering formes aléatoires
+# K-means : Essaye de trouver des clusters sphériques, ce qui n'est pas adapté ici.
+# Clustering Hiérarchique : Identifie correctement les clusters.
+# DBSCAN : Le plus performant, identifie les clusters irréguliers et les points de bruit.
+
+# Données aléatoires
+# Clustering données aléatoires
+# K-means : Essaye de trouver des clusters là où il n'y en a pas.
+# Clustering Hiérarchique : Identifie un cluster unique dans une zone légèrement différente.
+# DBSCAN : Reconnaît que tout est du bruit.
+
+# Conclusion
+# En utilisant ces différentes méthodes de clustering, nous avons pu voir comment chaque algorithme se comporte avec différents jeux de données. En comparant les scores de silhouette, nous pouvons déterminer quel algorithme a produit les clusters les plus distincts et les plus appropriés pour un jeu de données spécifique.
+
+# Fonction pour tracer les clusters
+def plot_clusters(X, labels, title, ax):
+    ax.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50)
+    ax.set_title(title)
+
+# Générer les données
+spherical_data, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+chain_data, _ = make_moons(n_samples=300, noise=0.05, random_state=0)
+circle_data, _ = make_circles(n_samples=300, factor=0.5, noise=0.05, random_state=0)
+random_data = np.random.rand(300, 2)
+
+# Configurer les modèles de clustering
+kmeans = KMeans(n_clusters=4)
+hierarchical = AgglomerativeClustering(n_clusters=4)
+dbscan = DBSCAN(eps=0.3, min_samples=5)
+
+datasets = [
+    ('Clusters sphériques', spherical_data),
+    ('Clusters en forme de longues chaînes', chain_data),
+    ('Clusters en forme de cercle', circle_data),
+    ('Données aléatoires', random_data)
+]
+
+fig, axes = plt.subplots(len(datasets), 3, figsize=(15, 20))
+for idx, (title, data) in enumerate(datasets):
+    kmeans_labels = kmeans.fit_predict(data)
+    hierarchical_labels = hierarchical.fit_predict(data)
+    dbscan_labels = dbscan.fit_predict(data)
+    
+    plot_clusters(data, kmeans_labels, f'{title}\nK-means : Excellent pour des clusters sphériques bien séparés.', axes[idx, 0])
+    plot_clusters(data, hierarchical_labels, f'{title}\nClustering Hiérarchique : Identifie correctement les clusters.', axes[idx, 1])
+    plot_clusters(data, dbscan_labels, f'{title}\nDBSCAN : Identifie correctement les clusters.', axes[idx, 2])
+
+plt.tight_layout()
+plt.show()
+
+
 ## Conclusion
 
 En utilisant ces différentes méthodes de clustering, nous avons pu voir comment chaque algorithme se comporte avec différents jeux de données. En comparant les scores de silhouette, nous pouvons déterminer quel algorithme a produit les clusters les plus distincts et les plus appropriés pour un jeu de données spécifique.
-
+```
 ---
 
 # 23. Étapes suivantes du clustering
