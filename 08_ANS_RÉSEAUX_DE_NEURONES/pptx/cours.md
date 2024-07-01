@@ -887,8 +887,3 @@ plt.ylabel('Accuracy Score')
 plt.show()
 ```
 
-Ce code permet d'analyser et de modéliser les données du fichier desabonnement.csv. Il inclut l'importation des données, leur préparation, une analyse exploratoire et la modélisation à l'aide de la régression logistique et du Random Forest. L'évaluation des modèles permet de comparer leurs performances.
-
----
-
-Ce cours couvre de manière exhaustive les concepts et les pratiques de l'intelligence artificielle et de l'apprentissage machine, avec une attention particulière aux réseaux de neurones convolutifs (CNN), à l'optimisation pour l'apprentissage profond, et à
