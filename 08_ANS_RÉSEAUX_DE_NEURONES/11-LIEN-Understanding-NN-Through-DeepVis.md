@@ -1,6 +1,7 @@
 **Résumé de "Understanding Neural Networks Through Deep Visualization"**
 # RÉFÉRENCE : 
 - https://yosinski.com/deepvis
+  
 **Auteurs : Jason Yosinski, Jeff Clune, Anh Nguyen, Thomas Fuchs, Hod Lipson**
 
 ### Contexte
