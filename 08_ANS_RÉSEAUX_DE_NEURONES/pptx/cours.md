@@ -665,8 +665,6 @@ plt.show()
 
 
 ---
-# oups
-
 ### Exercices Pratiques avec TensorFlow (suite)
 
 ```python
