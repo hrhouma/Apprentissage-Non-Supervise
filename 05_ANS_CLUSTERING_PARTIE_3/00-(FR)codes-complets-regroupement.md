@@ -1068,3 +1068,6 @@ Maintenant que nous avons parcouru plusieurs modèles de clustering en détail, 
 ## Conclusion
 
 En résumé, aucun modèle de clustering n'est le meilleur tout le temps. Cela dépend vraiment de l'apparence de votre jeu de données. Pour K-means, il trouvera des clusters sphériques. Pour le clustering hiérarchique, il se base sur les calculs de distance. Pour DBSCAN, il se base sur la densité des points. En choisissant le bon algorithme pour vos données, vous pouvez obtenir des clusters plus significatifs et interprétables.
+
+# Références : 
+- https://r.qcbs.ca/workshop09/book-fr/regroupement.html
