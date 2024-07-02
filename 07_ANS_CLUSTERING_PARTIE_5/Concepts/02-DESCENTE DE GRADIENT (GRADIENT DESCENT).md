@@ -1,4 +1,4 @@
-# Niveau 01
+# Niveau 01 - avec vulgarisation
 La descente du gradient est une méthode d'optimisation très utilisée en apprentissage automatique, notamment pour entraîner des réseaux de neurones. Imagine que tu es sur une montagne et que tu veux descendre jusqu'à la vallée la plus basse, mais qu'il fait nuit noire et que tu ne peux pas voir où tu vas. Voici une explication simple pour comprendre ce processus.
 
 ### Concept de base
@@ -30,7 +30,7 @@ Supposons que tu essaies de deviner le bon nombre dans un jeu, et chaque fois qu
 Voilà, la descente du gradient expliquée de manière simple sans que j'utilise de mathématiques complexes. 
 L'idée principale est de toujours ajuster ta position de manière à descendre progressivement jusqu'à atteindre le point le plus bas, ou la meilleure solution possible pour ton modèle.
 
-# Niveau 2
+# Niveau 2 - avec une petite touche de mathématique
 
 Pour ajouter une touche de mathématiques, on peut introduire la notion de fonction de coût et de gradient de manière simple.
 
@@ -79,7 +79,7 @@ Cette petite touche de mathématiques montre comment la descente du gradient aju
 
 
 
-# Niveau 3
+# Niveau 3 - C'est quoi la descente de gradient ? La vraie définition !
 
 ### Équations
 
