@@ -154,7 +154,7 @@ Le t-SNE (t-distributed Stochastic Neighbor Embedding) est une technique de réd
 
 4. **KL-Divergence** :
    - **Minimisation de la Divergence de KL** : L'objectif est de minimiser la divergence de Kullback-Leibler (KL) entre les distributions $$P$$ et $$Q$$, comme défini par l'équation 5.
-   - **Descente de Gradient** : On utilise des techniques de descente de gradient pour ajuster les positions des points dans l'espace de faible dimension afin de minimiser cette divergence. Cela implique de déplacer les points de manière itérative pour réduire l'écart entre $$P$$ et $$Q$$.
+   - **Descente de Gradient** : On utilise des techniques de descente de gradient pour ajuster les positions des points dans l'espace de faible dimension afin de minimiser cette divergence. Cela implique de déplacer les points de manière itérative pour réduire l'écart entre *P* et *Q*.
 
 ### Applications
 
