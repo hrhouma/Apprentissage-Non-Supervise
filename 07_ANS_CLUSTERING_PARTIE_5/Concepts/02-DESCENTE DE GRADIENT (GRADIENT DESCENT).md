@@ -62,7 +62,7 @@ $$
 \theta := \theta - \alpha \nabla J(\theta) 
 $$
 
-où $$theta$$ est le vecteur des paramètres.
+où $$\theta$$ est le vecteur des paramètres.
 
 ### Exemple simple
 
