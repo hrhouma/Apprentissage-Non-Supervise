@@ -42,7 +42,7 @@ $$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 
 $$
 
-où \( y_i \) est la valeur réelle, \(\hat{y}_i\) est la valeur prédite par le modèle, et \( n \) est le nombre total d'exemples.
+où \( y_i \) est la valeur réelle, $$ \hat{y}_i $$ est la valeur prédite par le modèle, et *n* est le nombre total d'exemples.
 
 ### Gradient
 
@@ -50,15 +50,19 @@ Le gradient est un vecteur qui contient les dérivées partielles de la fonction
 
 Si on a une fonction de coût \( J(\theta) \) dépendant des paramètres \( \theta \), le gradient est :
 
-\[ \nabla J(\theta) = \left( \frac{\partial J}{\partial \theta_1}, \frac{\partial J}{\partial \theta_2}, \dots, \frac{\partial J}{\partial \theta_n} \right) \]
+$$ 
+\nabla J(\theta) = \left( \frac{\partial J}{\partial \theta_1}, \frac{\partial J}{\partial \theta_2}, \dots, \frac{\partial J}{\partial \theta_n} \right) 
+$$
 
 ### Mise à jour des paramètres
 
 Lors de chaque itération de la descente du gradient, on met à jour les paramètres en soustrayant une fraction du gradient. Cette fraction est appelée le taux d'apprentissage (\( \alpha \)).
 
-\[ \theta := \theta - \alpha \nabla J(\theta) \]
+$$ 
+\theta := \theta - \alpha \nabla J(\theta) 
+$$
 
-où \( \theta \) est le vecteur des paramètres.
+où *\theta* est le vecteur des paramètres.
 
 ### Exemple simple
 
