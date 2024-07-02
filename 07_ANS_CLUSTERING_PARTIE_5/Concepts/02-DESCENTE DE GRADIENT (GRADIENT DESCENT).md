@@ -1,5 +1,6 @@
 
-$$ \theta $$ est le vecteur des paramètres.
+$$ \theta $$ 
+est le vecteur des paramètres.
 
 ### Exemple simple
 
