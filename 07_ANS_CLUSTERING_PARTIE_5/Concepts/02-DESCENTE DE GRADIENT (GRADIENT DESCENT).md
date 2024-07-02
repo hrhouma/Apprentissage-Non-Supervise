@@ -42,13 +42,13 @@ $$
 \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 
 $$
 
-où \( y_i \) est la valeur réelle, \( \hat{y}_i \) est la valeur prédite par le modèle, et \( n \) est le nombre total d'exemples.
+où $$ y_i $$ est la valeur réelle, $$ \hat{y}_i $$ est la valeur prédite par le modèle, et *n* est le nombre total d'exemples.
 
 ### Gradient
 
 Le gradient est un vecteur qui contient les dérivées partielles de la fonction de coût par rapport à chaque paramètre du modèle. Ces dérivées nous indiquent comment la fonction de coût change si on modifie légèrement chaque paramètre.
 
-Si on a une fonction de coût \( J(\theta) \) dépendant des paramètres \( \theta \), le gradient est :
+Si on a une fonction de coût $$ J(\theta) $$ dépendant des paramètres $$ \theta $$, le gradient est :
 
 $$ 
 \nabla J(\theta) = \left( \frac{\partial J}{\partial \theta_1}, \frac{\partial J}{\partial \theta_2}, \dots, \frac{\partial J}{\partial \theta_n} \right) 
@@ -62,11 +62,11 @@ $$
 \theta := \theta - \alpha \nabla J(\theta) 
 $$
 
-où \( \theta \) est le vecteur des paramètres.
+où $$ \theta $$ est le vecteur des paramètres.
 
 ### Exemple simple
 
-Supposons que notre fonction de coût soit une simple parabole \( J(\theta) = \theta^2 \). Le gradient de cette fonction est \( \frac{dJ}{d\theta} = 2\theta \). Si on commence avec un \( \theta \) initial de 3 et un taux d'apprentissage de 0.1, la mise à jour des paramètres se fait comme suit :
+Supposons que notre fonction de coût soit une simple parabole $$ J(\theta) = \theta^2 $$. Le gradient de cette fonction est $$ \frac{dJ}{d\theta} = 2\theta $$. Si on commence avec un $$ \theta $$ initial de 3 et un taux d'apprentissage de 0.1, la mise à jour des paramètres se fait comme suit :
 
 1. Calcul du gradient : $$ \frac{dJ}{d\theta} = 2 \times 3 = 6 $$
 2. Mise à jour de $$ \theta $$ : $$ \theta := 3 - 0.1 \times 6 = 3 - 0.6 = 2.4 $$
