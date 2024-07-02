@@ -38,7 +38,7 @@ En résumé, le t-SNE est comme un traducteur qui prend des tableaux compliqués
 
 # Niveau 2  - avec une petite touche de mathématiques
 
-D'accord, reprenons l'exemple des fruits et ajoutons une touche de mathématiques simplifiées pour expliquer le fonctionnement du t-SNE.
+Reprenons l'exemple des fruits et ajoutons une touche de mathématiques simplifiées pour expliquer le fonctionnement du t-SNE.
 
 ### Vue d'ensemble
 Le t-SNE (t-distributed Stochastic Neighbor Embedding) est une méthode qui aide à transformer des données complexes en une représentation visuelle simple. Imagine que tu as une liste de fruits avec leurs caractéristiques (couleur et taille). Le t-SNE peut transformer cette liste en une image où les fruits similaires apparaissent proches les uns des autres.
