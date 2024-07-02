@@ -1,18 +1,20 @@
-où $$ 
-\theta
-$$
-est le vecteur des paramètres.
+Voici la partie corrigée pour que les équations s'affichent correctement :
+
+---
+
+où \( \theta \) est le vecteur des paramètres.
 
 ### Exemple simple
 
-Supposons que notre fonction de coût soit une simple parabole $$ J(\theta) = \theta^2 $$. Le gradient de cette fonction est $$ \frac{dJ}{d\theta} = 2\theta $$. Si on commence avec un $$ \theta $$ initial de 3 et un taux d'apprentissage de 0.1, la mise à jour des paramètres se fait comme suit :
+Supposons que notre fonction de coût soit une simple parabole \( J(\theta) = \theta^2 \). Le gradient de cette fonction est \( \frac{dJ}{d\theta} = 2\theta \). Si on commence avec un \( \theta \) initial de 3 et un taux d'apprentissage de 0.1, la mise à jour des paramètres se fait comme suit :
 
-1. Calcul du gradient : $$ \frac{dJ}{d\theta} = 2 \times 3 = 6 $$
-2. Mise à jour de $$ \theta $$ : $$ \theta := 3 - 0.1 \times 6 = 3 - 0.6 = 2.4 $$
+1. Calcul du gradient : \( \frac{dJ}{d\theta} = 2 \times 3 = 6 \)
+2. Mise à jour de \( \theta \) : \( \theta := 3 - 0.1 \times 6 = 3 - 0.6 = 2.4 \)
 
 On répète ce processus jusqu'à ce que le gradient soit proche de zéro, ce qui signifie que la fonction de coût est minimisée.
 
 Cette petite touche de mathématiques montre comment la descente du gradient ajuste les paramètres du modèle pour minimiser les erreurs en utilisant des concepts de dérivées et de mises à jour itératives.
+
 # Niveau 01
 La descente du gradient est une méthode d'optimisation très utilisée en apprentissage automatique, notamment pour entraîner des réseaux de neurones. Imagine que tu es sur une montagne et que tu veux descendre jusqu'à la vallée la plus basse, mais qu'il fait nuit noire et que tu ne peux pas voir où tu vas. Voici une explication simple pour comprendre ce processus.
 
