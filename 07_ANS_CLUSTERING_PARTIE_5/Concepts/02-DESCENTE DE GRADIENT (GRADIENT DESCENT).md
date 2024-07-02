@@ -1,3 +1,6 @@
+# RÉFÉRNCE : 
+- https://www.youtube.com/watch?v=rcl_YRyoLIY&ab_channel=MachineLearnia
+  
 # Niveau 01 - avec vulgarisation
 La descente du gradient est une méthode d'optimisation très utilisée en apprentissage automatique, notamment pour entraîner des réseaux de neurones. Imagine que tu es sur une montagne et que tu veux descendre jusqu'à la vallée la plus basse, mais qu'il fait nuit noire et que tu ne peux pas voir où tu vas. Voici une explication simple pour comprendre ce processus.
 
@@ -150,3 +153,6 @@ Prenons un exemple simple de régression linéaire avec un seul paramètre $$\th
    - Répéter les étapes 2 et 3 jusqu'à ce que la fonction de coût $$J(\theta)$$ converge à une valeur minimale.
 
 En conclusion, la descente de gradient est une technique essentielle en apprentissage automatique pour optimiser les paramètres des modèles en minimisant la fonction de coût, ce qui conduit à des prédictions plus précises.
+
+# RÉFÉRNCE : 
+- https://www.youtube.com/watch?v=rcl_YRyoLIY&ab_channel=MachineLearnia
