@@ -1,4 +1,4 @@
-# Niveau 1 
+# Niveau 1 - vulgarisation
 ### Vue d'ensemble
 Le t-SNE est une méthode utilisée pour rendre les données complexes plus faciles à comprendre. Imagine que tu as un grand tableau avec beaucoup d'informations (par exemple, les goûts musicaux de milliers de personnes). Le t-SNE aide à transformer ce grand tableau en une image simple que tu peux regarder et comprendre plus facilement.
 
@@ -36,7 +36,7 @@ Imagine que tu as une liste de fruits avec leurs couleurs et tailles (pomme roug
 En résumé, le t-SNE est comme un traducteur qui prend des tableaux compliqués et les transforme en images simples et compréhensibles, permettant ainsi de voir facilement les relations et les groupes dans les données.
 
 
-# Niveau 2 
+# Niveau 2  - avec une petite touche de mathématiques
 
 D'accord, reprenons l'exemple des fruits et ajoutons une touche de mathématiques simplifiées pour expliquer le fonctionnement du t-SNE.
 
@@ -98,7 +98,7 @@ Imagine que tu as les fruits suivants :
 
 En résumé, le t-SNE prend des données complexes (comme des listes de fruits avec leurs caractéristiques) et les transforme en une image simple, en utilisant des concepts mathématiques pour s'assurer que les relations originales entre les données sont préservées.
 
-# Niveau 3
+# Niveau 3 - C'est quoi le t-SNE ?  ( La bonne définition)
 
 ### Vue d'ensemble
 Le t-SNE (t-distributed Stochastic Neighbor Embedding) est une technique de réduction de dimension non linéaire principalement utilisée pour la visualisation des données à haute dimension. Il transforme des données complexes en une représentation de faible dimension tout en préservant la structure des relations entre les points de données.
@@ -107,9 +107,9 @@ Le t-SNE (t-distributed Stochastic Neighbor Embedding) est une technique de réd
 
 1. **Similitudes Par Paires** :
    - **Calcul des Similitudes** : Pour chaque paire de points de données dans l'espace de haute dimension, t-SNE calcule une mesure de similarité. Typiquement, on utilise la distance Euclidienne pour quantifier à quel point les points sont proches.
-     \[
+    $$
      \text{similarité}_{ij} = \exp\left(-\frac{\|x_i - x_j\|^2}{2\sigma_i^2}\right)
-     \]
+    $$
      où \(x_i\) et \(x_j\) sont les vecteurs de caractéristiques des points \(i\) et \(j\), et \(\sigma_i\) est un paramètre d'échelle ajusté pour chaque point \(i\).
 
 2. **Distribution de Probabilité Conjointe** :
