@@ -1,6 +1,6 @@
 # Comparaison entre  les algorithmes PCA, t-SNE et PR-Isomap
 
-# Analyse en Composantes Principales (PCA)
+# 1 - Analyse en Composantes Principales (PCA)
 
 #### Vue d'ensemble
 L'Analyse en Composantes Principales (PCA) est une technique statistique utilisée pour simplifier un jeu de données en réduisant ses dimensions tout en conservant autant de variabilité que possible. Cela est réalisé en transformant les données originales en un nouvel ensemble de variables orthogonales (non corrélées) appelées composantes principales.
@@ -17,7 +17,7 @@ L'Analyse en Composantes Principales (PCA) est une technique statistique utilis�
 - **Réduction du Bruit** : Élimination des dimensions insignifiantes pour réduire le bruit.
 - **Extraction de Caractéristiques** : Identification des caractéristiques significatives pour une analyse plus approfondie.
 
-# t-Distributed Stochastic Neighbor Embedding (t-SNE)
+# 2 - t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
 #### Vue d'ensemble
 Le t-SNE est une technique de réduction de dimension non linéaire principalement utilisée pour la visualisation des données. Il convertit les données à haute dimension en un espace de faible dimension tout en préservant la structure et les relations entre les points de données.
@@ -33,7 +33,7 @@ Le t-SNE est une technique de réduction de dimension non linéaire principaleme
 - **Détection d'Anomalies** : Identification des points de données hors normes ou inhabituels.
 - **Prétraitement** : Réduction de la dimension avant d'appliquer d'autres algorithmes d'apprentissage automatique.
 
-# PR-Isomap
+# 3 - PR-Isomap
 
 #### Vue d'ensemble
 PR-Isomap est une version modifiée de l'Isometric Mapping (Isomap) qui intègre une contrainte de fenêtre Parzen-Rosenblatt (PR). Cette amélioration vise à améliorer l'uniformité du graphe des chemins les plus courts, en particulier pour les données à haute dimension (HD) telles que les biomarqueurs d'imagerie médicale.
@@ -48,7 +48,7 @@ PR-Isomap est une version modifiée de l'Isometric Mapping (Isomap) qui intègre
 - **Médecine de Précision** : Amélioration de la précision de la détection des maladies et de la prédiction des résultats en préservant des informations critiques dans les dimensions réduites.
 - **Extraction de Caractéristiques** : Identification et préservation des caractéristiques importantes des données HD.
 
-# Analyse Comparative
+# 4 - Analyse Comparative
 
 ## PCA vs. t-SNE
 - **PCA** :
@@ -76,9 +76,9 @@ PR-Isomap est une version modifiée de l'Isometric Mapping (Isomap) qui intègre
   - Maintient à la fois les structures locales et globales dans les données HD.
   - Plus adapté aux applications nécessitant la préservation des distances géodésiques.
 
-# Implémentation en Python
+# 5 - Implémentation en Python
 
-Voici un exemple simplifié d'implémentation de PCA, t-SNE et PR-Isomap en utilisant Python :
+*Exemple simplifié d'implémentation de PCA, t-SNE et PR-Isomap en utilisant Python :*
 
 ```python
 import numpy as np
@@ -132,7 +132,7 @@ Comprendre PCA, t-SNE et PR-Isomap fournit des outils puissants pour la réducti
 | **Robustesse aux Non-Linéarités**   | Faible                                        | Élevée                                         | Élevée                                        |
 | **Capacité d'Intégration**          | Facilement intégrable dans des flux de travail existants | Nécessite un traitement intensif, souvent utilisé pour visualisation uniquement | Peut nécessiter des ajustements importants, bonne intégration pour des analyses spécialisées |
 
-### Conclusion
+# 5 - Conclusion
 
 Chaque méthode présente des avantages et des inconvénients selon l'application envisagée :
 
