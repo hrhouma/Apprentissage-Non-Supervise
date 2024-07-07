@@ -1,3 +1,4 @@
+# Métriques Utilisées dans l'Apprentissage Non Supervisé (5 parties)
 # Table des Matières
 
 ## [1. Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)](#1-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-1-sans-math)
