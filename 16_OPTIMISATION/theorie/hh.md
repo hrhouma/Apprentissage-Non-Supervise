@@ -1,6 +1,6 @@
 # Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1
 
-## Score de Silhouette
+# 1 -  Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins.
 
 Le score de silhouette *s(i)* pour un point *i* est défini comme :
@@ -15,7 +15,7 @@ où :
 
 Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
 
-## Indice de Davies-Bouldin
+# 2 - Indice de Davies-Bouldin
 L'indice de Davies-Bouldin (DBI) évalue la qualité du clustering en comparant la moyenne des dispersions intra-cluster à la séparation inter-cluster. Il est défini comme :
 
 $$
@@ -29,12 +29,12 @@ où :
 
 Un indice de Davies-Bouldin faible indique que les clusters sont compacts et bien séparés les uns des autres, suggérant un bon clustering.
 
-## Cohésion et Séparation
+# 3 - Cohésion et Séparation
 La cohésion *a(i)* et la séparation *b(i)* sont deux critères clés pour évaluer la qualité des clusters :
 - La cohésion, ou intra-cluster distance, mesure à quel point les points de données dans un même cluster sont proches les uns des autres.
 - La séparation, ou inter-cluster distance, mesure la distance entre les différents clusters.
 
-## Indice de Rand Ajusté (ARI)
+# 4 - Indice de Rand Ajusté (ARI)
 L'indice de Rand ajusté (ARI) est une mesure de la similarité entre deux partitions d'un ensemble de données. Il est défini comme :
 
 $$
@@ -43,7 +43,7 @@ $$
 
 où *n_{ij}* est le nombre de points dans les clusters *i* et *j*, *a(i)*  et *b(i)* sont les sommes des lignes et des colonnes respectivement.
 
-## Normalized Mutual Information (NMI)
+# 5 - Normalized Mutual Information (NMI)
 La Normalized Mutual Information (NMI) est une mesure utilisée pour comparer deux partitions d'un ensemble de données. Elle est définie comme :
 
 $$
@@ -54,7 +54,7 @@ où :
 - *I(U; V)* est l'information mutuelle entre les partitions *U* et *V*.
 - *H(U)* et *H(V)* sont les entropies des partitions *U* et *V*.
 
-## Courbe d'Inertie pour K-means
+# 6 - Courbe d'Inertie pour K-means
 La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre optimal de clusters dans l'algorithme K-means. L'inertie (\( WCSS \)) est définie comme la somme des distances au carré entre chaque point de données et le centre de son cluster :
 
 $$
