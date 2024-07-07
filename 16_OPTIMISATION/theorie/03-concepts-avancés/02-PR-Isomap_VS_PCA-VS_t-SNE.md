@@ -1,4 +1,4 @@
-## Introduction à PCA, t-SNE et PR-Isomap
+# Comparaison entre  les algorithmes PCA, t-SNE et PR-Isomap
 
 # Analyse en Composantes Principales (PCA)
 
