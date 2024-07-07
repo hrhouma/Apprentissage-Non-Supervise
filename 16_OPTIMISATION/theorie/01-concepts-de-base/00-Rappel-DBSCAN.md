@@ -51,10 +51,7 @@ DBSCAN peut identifier automatiquement ces zones d'activité (clusters) sans avo
 
 DBSCAN est puissant car il peut identifier des clusters de formes variées et est robuste face au bruit. Dans notre exemple de la ville, il permettrait de repérer automatiquement les lieux de rassemblement importants sans savoir combien il y en a ni où ils sont situés.
 
-## 1.6 - Références
-- https://fr.wikipedia.org/wiki/DBSCAN (THÉORIE)
-- https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html (DÉMO NOTEBOOK)
-- https://blog.dailydoseofds.com/p/meet-dbscan-the-faster-and-scalable
+
 ----
 
 # Annexe 1 - Une démonstration visuelle du clustering DBSCAN
@@ -243,7 +240,9 @@ plt.show()
 # Démo 2 - DBSCAN 
 - voir les projets ici  ==> 
 
-# Références : 
-- Pratique : https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html (DÉMO NOTEBOOK)
 
-https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html (DÉMO NOTEBOOK)
+## Références
+- https://fr.wikipedia.org/wiki/DBSCAN
+- https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html
+- https://blog.dailydoseofds.com/p/meet-dbscan-the-faster-and-scalable
+
