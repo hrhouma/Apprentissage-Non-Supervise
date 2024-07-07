@@ -24,13 +24,13 @@ $$
 
 où :
 - *k* est le nombre de clusters.
-- *sigma_i* est la dispersion intra-cluster pour le cluster \( i \).
-- *d(c_i, c_j)* est la distance entre les centres des clusters \( i \) et \( j \).
+- *sigma_i* est la dispersion intra-cluster pour le cluster *i*.
+- *d(c_i, c_j)* est la distance entre les centres des clusters *i* et *j*.
 
 Un indice de Davies-Bouldin faible indique que les clusters sont compacts et bien séparés les uns des autres, suggérant un bon clustering.
 
 ## Cohésion et Séparation
-La cohésion (\( a(i) \)) et la séparation (\( b(i) \)) sont deux critères clés pour évaluer la qualité des clusters :
+La cohésion *a(i)* et la séparation *b(i)* sont deux critères clés pour évaluer la qualité des clusters :
 - La cohésion, ou intra-cluster distance, mesure à quel point les points de données dans un même cluster sont proches les uns des autres.
 - La séparation, ou inter-cluster distance, mesure la distance entre les différents clusters.
 
@@ -41,7 +41,7 @@ $$
 ARI = \frac{\sum_{ij} \binom{n_{ij}}{2} - \left[ \sum_i \binom{a_i}{2} \sum_j \binom{b_j}{2} \right] / \binom{n}{2}}{0.5 \left[ \sum_i \binom{a_i}{2} + \sum_j \binom{b_j}{2} \right] - \left[ \sum_i \binom{a_i}{2} \sum_j \binom{b_j}{2} \right] / \binom{n}{2}}
 $$
 
-où \( n_{ij} \) est le nombre de points dans les clusters \( i \) et \( j \), \( a_i \) et \( b_j \) sont les sommes des lignes et des colonnes respectivement.
+où *n_{ij}* est le nombre de points dans les clusters *i* et *j*, *a(i)*  et *b(i)* sont les sommes des lignes et des colonnes respectivement.
 
 ## Normalized Mutual Information (NMI)
 La Normalized Mutual Information (NMI) est une mesure utilisée pour comparer deux partitions d'un ensemble de données. Elle est définie comme :
@@ -51,8 +51,8 @@ NMI(U, V) = \frac{2 \cdot I(U; V)}{H(U) + H(V)}
 $$
 
 où :
-- \( I(U; V) \) est l'information mutuelle entre les partitions \( U \) et \( V \).
-- \( H(U) \) et \( H(V) \) sont les entropies des partitions \( U \) et \( V \).
+- *I(U; V)* est l'information mutuelle entre les partitions *U* et *V*.
+- *H(U)* et *H(V)* sont les entropies des partitions *U* et *V*.
 
 ## Courbe d'Inertie pour K-means
 La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre optimal de clusters dans l'algorithme K-means. L'inertie (\( WCSS \)) est définie comme la somme des distances au carré entre chaque point de données et le centre de son cluster :
