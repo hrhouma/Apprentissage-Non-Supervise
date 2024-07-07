@@ -3,15 +3,15 @@
 ## Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins.
 
-Le score de silhouette \( s(i) \) pour un point \( i \) est défini comme :
+Le score de silhouette *s(i)* pour un point *i* est défini comme :
 
 $$
 s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
 $$
 
 où :
-- \( a(i) \) est la distance moyenne entre \( i \) et tous les autres points du même cluster.
-- \( b(i) \) est la distance moyenne entre \( i \) et tous les points du cluster le plus proche.
+- *a(i)* est la distance moyenne entre *i* et tous les autres points du même cluster.
+- *b(i)* est la distance moyenne entre *i* et tous les points du cluster le plus proche.
 
 Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
 
@@ -23,9 +23,9 @@ DBI = \frac{1}{k} \sum_{i=1}^{k} \max_{j \ne i} \left( \frac{\sigma_i + \sigma_j
 $$
 
 où :
-- \( k \) est le nombre de clusters.
-- \( \sigma_i \) est la dispersion intra-cluster pour le cluster \( i \).
-- \( d(c_i, c_j) \) est la distance entre les centres des clusters \( i \) et \( j \).
+- *k* est le nombre de clusters.
+- *sigma_i* est la dispersion intra-cluster pour le cluster \( i \).
+- *d(c_i, c_j)* est la distance entre les centres des clusters \( i \) et \( j \).
 
 Un indice de Davies-Bouldin faible indique que les clusters sont compacts et bien séparés les uns des autres, suggérant un bon clustering.
 
