@@ -1,3 +1,11 @@
+# Table des Matières
+
+## [1. Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)](#1-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-1-sans-math)
+## [2. Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #2 (avec Math)](#2-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-2-avec-math)
+## [3. Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #3 (Quand utiliser et quand ne pas utiliser)](#3-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-3-quand-utiliser-et-quand-ne-pas-utiliser)
+## [4. Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #4 (Tableau Comparatif)](#4-récapitulation-sur-les-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-4-tableau-comparatif)
+## [5. Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #5 (avec Math)](#5-récapitulation-sur-les-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-5-avec-math)
+
 # 1- Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)
 
 # 1 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#1
