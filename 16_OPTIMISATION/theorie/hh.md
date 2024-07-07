@@ -9,6 +9,8 @@
 # 1- Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)
 
 # 1 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#1
+<a href="##Table-des-Matières">Revenir en haut</a>
+
 ## 1.1 - Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins. Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
 
