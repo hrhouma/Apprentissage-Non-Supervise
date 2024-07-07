@@ -1,5 +1,5 @@
 # Table des Matières - t-SNE
-
+- [Niveau 1 - Vulgarisation](#niveau-1---vulgarisation)
 - [Niveau 1 - Vulgarisation](#niveau-1---vulgarisation)
   - [Vue d'ensemble](#vue-densemble)
   - [Comment ça marche ?](#comment-ca-marche)
@@ -62,7 +62,21 @@
 
 
 
+# Introduction - t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
+#### Vue d'ensemble
+Le t-SNE est une technique de réduction de dimension non linéaire principalement utilisée pour la visualisation des données. Il convertit les données à haute dimension en un espace de faible dimension tout en préservant la structure et les relations entre les points de données.
+
+#### Fonctionnement de t-SNE
+1. **Similitudes Par Paires** : Calculer les similitudes par paires entre les points de données dans l'espace de haute dimension.
+2. **Distribution de Probabilité Conjointe** : Convertir les similitudes par paires en probabilités conjointes.
+3. **Mappage en Faible Dimension** : Initialiser un mappage aléatoire des points de données dans l'espace de faible dimension.
+4. **KL-Divergence** : Minimiser la divergence de Kullback-Leibler (KL) entre les probabilités conjointes des espaces de haute et de faible dimension en utilisant la descente de gradient.
+
+#### Applications
+- **Exploration des Données** : Visualisation des clusters ou des motifs dans les données à haute dimension.
+- **Détection d'Anomalies** : Identification des points de données hors normes ou inhabituels.
+- **Prétraitement** : Réduction de la dimension avant d'appliquer d'autres algorithmes d'apprentissage automatique.
 # Niveau 1 - vulgarisation
 [Retour en haut](#table-des-matières---t-sne)
 ### Vue d'ensemble
