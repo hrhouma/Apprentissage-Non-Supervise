@@ -89,7 +89,7 @@ En traçant l'inertie en fonction du nombre de clusters, on peut observer commen
 
 # 3 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #3 (Quand utiliser et quand ne pas utiliser)
 
-# Score de Silhouette
+## Score de Silhouette
 
 **Utilisation :**
 Le score de silhouette est utilisé pour évaluer la qualité du clustering après avoir appliqué un algorithme de clustering, comme K-means ou DBSCAN. Il est particulièrement utile lorsque vous avez plusieurs solutions de clustering et que vous souhaitez choisir la meilleure.
@@ -113,7 +113,7 @@ Le score de silhouette est utilisé pour évaluer la qualité du clustering apr�
 - Sensible aux valeurs aberrantes.
 - Le calcul peut être coûteux en temps pour de très grands ensembles de données.
 
-# Indice de Davies-Bouldin
+## Indice de Davies-Bouldin
 
 **Utilisation :**
 L'indice de Davies-Bouldin est utilisé pour évaluer la qualité des clusters après un clustering. Il compare la dispersion intra-cluster avec la séparation inter-cluster.
@@ -136,7 +136,7 @@ L'indice de Davies-Bouldin est utilisé pour évaluer la qualité des clusters a
 - Peut ne pas bien fonctionner avec des clusters de formes irrégulières.
 - La mesure repose sur les centres de clusters, ce qui peut être biaisé pour des clusters de tailles inégales.
 
-# Cohésion et Séparation
+## Cohésion et Séparation
 
 **Utilisation :**
 Ces mesures sont utilisées pour évaluer la compacité des clusters (cohésion) et la distinction entre eux (séparation).
@@ -158,7 +158,7 @@ Ces mesures sont utilisées pour évaluer la compacité des clusters (cohésion)
 - Peut être difficile à interpréter sans visualisation.
 - Sensible aux valeurs aberrantes et aux variations de densité.
 
-# Indice de Rand Ajusté (ARI)
+## Indice de Rand Ajusté (ARI)
 
 **Utilisation :**
 L'ARI est utilisé pour comparer la similarité entre deux partitions de données, souvent une partition obtenue et une partition de référence.
@@ -179,7 +179,7 @@ L'ARI est utilisé pour comparer la similarité entre deux partitions de donnée
 - Peut être biaisé pour des clusters très déséquilibrés.
 - Nécessite une partition de référence pour la comparaison.
 
-# Normalized Mutual Information (NMI)
+## Normalized Mutual Information (NMI)
 
 **Utilisation :**
 La NMI est utilisée pour comparer deux partitions de données en termes d'information partagée.
@@ -221,7 +221,7 @@ La courbe d'inertie est utilisée pour déterminer le nombre optimal de clusters
 - Peut ne pas bien fonctionner pour des clusters non sphériques.
 - La détermination du "coude" peut être subjective.
 
-# 5 - Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#5 (Tableau Comparatif)
+# 4 - Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#4 (Tableau Comparatif)
 
 
 | Critère                    | Score de Silhouette | Indice de Davies-Bouldin | Cohésion et Séparation   | ARI                  | NMI                  | Courbe d'Inertie    |
