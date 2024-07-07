@@ -1,6 +1,29 @@
 # Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1
 
-# 1 -  Score de Silhouette
+# 1 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie # 1
+## 1.1 - Score de Silhouette
+Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins. Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
+
+## 1.2 -  Indice de Davies-Bouldin
+L'indice de Davies-Bouldin évalue la qualité du clustering en comparant la moyenne des dispersions intra-cluster à la séparation inter-cluster. La dispersion intra-cluster est une mesure de la distance moyenne entre les points de données et le centre de leur cluster respectif, tandis que la séparation inter-cluster mesure la distance entre les centres de clusters. Un indice de Davies-Bouldin faible indique que les clusters sont compacts et bien séparés les uns des autres, suggérant un bon clustering. Cette mesure aide à identifier si les clusters sont bien définis, ce qui est essentiel pour des applications où la distinction claire entre groupes est cruciale.
+
+## 1.3 -  Cohésion et Séparation
+La cohésion et la séparation sont deux critères clés pour évaluer la qualité des clusters. La cohésion, ou intra-cluster distance, mesure à quel point les points de données dans un même cluster sont proches les uns des autres. Une bonne cohésion signifie que les membres d'un cluster sont très similaires entre eux, ce qui est souhaitable. La séparation, ou inter-cluster distance, mesure la distance entre les différents clusters. Une bonne séparation signifie que les clusters sont bien distincts les uns des autres. Ensemble, une bonne cohésion et une bonne séparation indiquent que les clusters sont bien formés, ce qui est crucial pour des analyses significatives et interprétables.
+
+## 1.4 - Indice de Rand Ajusté (ARI)
+L'indice de Rand ajusté (ARI) est une mesure de la similarité entre deux partitions d'un ensemble de données, généralement une partition réelle et une partition obtenue par un algorithme de clustering. ARI tient compte de toutes les paires de points de données et compare combien de paires sont assignées de manière cohérente dans les deux partitions. Une valeur élevée d'ARI signifie que les clusters obtenus sont très similaires aux clusters attendus ou réels. Contrairement à d'autres indices, l'ARI est ajusté pour la probabilité de correspondances par hasard, offrant ainsi une évaluation plus robuste de la qualité du clustering.
+
+## 1.5 -  Normalized Mutual Information (NMI)
+La Normalized Mutual Information (NMI) est une mesure utilisée pour comparer deux partitions d'un ensemble de données en termes d'information partagée. Elle évalue combien d'information sur l'une des partitions est contenue dans l'autre, et vice versa. Une NMI élevée indique que les deux partitions partagent beaucoup d'information, ce qui signifie qu'elles sont similaires. NMI est particulièrement utile pour évaluer des algorithmes de clustering où les partitions peuvent avoir des tailles différentes et où l'information partagée doit être normalisée pour fournir une comparaison équitable.
+
+## 1.6 -  Courbe d'Inertie pour K-means
+La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre optimal de clusters dans l'algorithme K-means. L'inertie mesure la somme des distances au carré entre chaque point de données et le centre de son cluster. En traçant l'inertie en fonction du nombre de clusters, on peut observer comment l'inertie diminue à mesure que le nombre de clusters augmente. Le "coude" de la courbe indique le point optimal où ajouter plus de clusters n'améliore plus significativement l'inertie, suggérant ainsi le nombre de clusters à utiliser. Cette approche aide à équilibrer la précision du clustering et la complexité du modèle.
+
+
+
+# 2 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #2
+
+# 2.1 -  Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins.
 
 Le score de silhouette *s(i)* pour un point *i* est défini comme :
@@ -15,7 +38,7 @@ où :
 
 Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
 
-# 2 - Indice de Davies-Bouldin
+# 2.2 - Indice de Davies-Bouldin
 L'indice de Davies-Bouldin (DBI) évalue la qualité du clustering en comparant la moyenne des dispersions intra-cluster à la séparation inter-cluster. Il est défini comme :
 
 $$
@@ -29,12 +52,12 @@ où :
 
 Un indice de Davies-Bouldin faible indique que les clusters sont compacts et bien séparés les uns des autres, suggérant un bon clustering.
 
-# 3 - Cohésion et Séparation
+# 2.3 - Cohésion et Séparation
 La cohésion *a(i)* et la séparation *b(i)* sont deux critères clés pour évaluer la qualité des clusters :
 - La cohésion, ou intra-cluster distance, mesure à quel point les points de données dans un même cluster sont proches les uns des autres.
 - La séparation, ou inter-cluster distance, mesure la distance entre les différents clusters.
 
-# 4 - Indice de Rand Ajusté (ARI)
+# 2.4 - Indice de Rand Ajusté (ARI)
 L'indice de Rand ajusté (ARI) est une mesure de la similarité entre deux partitions d'un ensemble de données. Il est défini comme :
 
 $$
@@ -43,7 +66,7 @@ $$
 
 où *n_{ij}* est le nombre de points dans les clusters *i* et *j*, *a(i)*  et *b(i)* sont les sommes des lignes et des colonnes respectivement.
 
-# 5 - Normalized Mutual Information (NMI)
+# 2.5 - Normalized Mutual Information (NMI)
 La Normalized Mutual Information (NMI) est une mesure utilisée pour comparer deux partitions d'un ensemble de données. Elle est définie comme :
 
 $$
@@ -54,7 +77,7 @@ où :
 - *I(U; V)* est l'information mutuelle entre les partitions *U* et *V*.
 - *H(U)* et *H(V)* sont les entropies des partitions *U* et *V*.
 
-# 6 - Courbe d'Inertie pour K-means
+# 2.6 - Courbe d'Inertie pour K-means
 La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre optimal de clusters dans l'algorithme K-means. L'inertie (\( WCSS \)) est définie comme la somme des distances au carré entre chaque point de données et le centre de son cluster :
 
 $$
