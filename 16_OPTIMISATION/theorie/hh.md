@@ -6,9 +6,9 @@
 ## [4. Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #4 (Tableau Comparatif)](#4-récapitulation-sur-les-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-4-tableau-comparatif)
 ## [5. Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #5 (avec Math)](#5-récapitulation-sur-les-métriques-utilisées-dans-lapprentissage-non-supervisé---partie-5-avec-math)
 
+----
 # 1- Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)
 
-# 1 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#1
 ## [Revenir en haut](#Table-des-Matières)
 
 ## 1.1 - Score de Silhouette
@@ -30,7 +30,7 @@ La Normalized Mutual Information (NMI) est une mesure utilisée pour comparer de
 La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre optimal de clusters dans l'algorithme K-means. L'inertie mesure la somme des distances au carré entre chaque point de données et le centre de son cluster. En traçant l'inertie en fonction du nombre de clusters, on peut observer comment l'inertie diminue à mesure que le nombre de clusters augmente. Le "coude" de la courbe indique le point optimal où ajouter plus de clusters n'améliore plus significativement l'inertie, suggérant ainsi le nombre de clusters à utiliser. Cette approche aide à équilibrer la précision du clustering et la complexité du modèle.
 
 
-
+----
 # 2 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#2 (avec Math)
 ## [Revenir en haut](#Table-des-Matières)
 # 2.1 -  Score de Silhouette
@@ -96,7 +96,7 @@ $$
 
 En traçant l'inertie en fonction du nombre de clusters, on peut observer comment l'inertie diminue à mesure que le nombre de clusters augmente. Le "coude" de la courbe indique le point optimal où ajouter plus de clusters n'améliore plus significativement l'inertie.
 
-
+----
 # 3 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #3 (Quand utiliser et quand ne pas utiliser)
 
 ## Score de Silhouette
@@ -231,6 +231,7 @@ La courbe d'inertie est utilisée pour déterminer le nombre optimal de clusters
 - Peut ne pas bien fonctionner pour des clusters non sphériques.
 - La détermination du "coude" peut être subjective.
 
+----
 # 4 - Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#4 (Tableau Comparatif)
 ## [Revenir en haut](#Table-des-Matières)
 
@@ -345,6 +346,8 @@ $$
 - **Application** : Comparaison de partitions pour différents algorithmes de clustering.
 - **Exemple Vulgarisé** : La validation croisée vous aide à voir si les groupes sont cohérents d'une méthode à l'autre.
 
+
+----
 ### 5. Exemple Pratique : Évaluation des Algorithmes de Clustering
 
 #### Cas d'Étude : Données Iris
