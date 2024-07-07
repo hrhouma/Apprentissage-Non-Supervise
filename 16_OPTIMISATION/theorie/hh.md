@@ -9,7 +9,7 @@
 # 1- Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie #1 (sans Math)
 
 # 1 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#1
-<a href="##Table-des-Matières">Revenir en haut</a>
+## [Revenir en haut](#Table-des-Matières)
 
 ## 1.1 - Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins. Un score de silhouette varie de -1 à 1, où un score proche de 1 indique que les points sont bien groupés dans leurs clusters respectifs et bien séparés des autres clusters. Un score proche de 0 indique que les points sont à la frontière des clusters, et un score négatif signifie que les points sont probablement dans le mauvais cluster.
@@ -32,7 +32,7 @@ La courbe d'inertie est un outil graphique utilisé pour déterminer le nombre o
 
 
 # 2 - Métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#2 (avec Math)
-
+## [Revenir en haut](#Table-des-Matières)
 # 2.1 -  Score de Silhouette
 Le score de silhouette est une mesure utilisée pour évaluer la qualité des clusters formés par un algorithme de clustering. Chaque point de données reçoit un score de silhouette basé sur deux critères : la cohésion et la séparation. La cohésion mesure à quel point un point est proche des autres points dans le même cluster, tandis que la séparation mesure la distance entre ce point et les points dans les clusters voisins.
 
@@ -147,7 +147,7 @@ L'indice de Davies-Bouldin est utilisé pour évaluer la qualité des clusters a
 - La mesure repose sur les centres de clusters, ce qui peut être biaisé pour des clusters de tailles inégales.
 
 ## Cohésion et Séparation
-
+## [Revenir en haut](#Table-des-Matières)
 **Utilisation :**
 Ces mesures sont utilisées pour évaluer la compacité des clusters (cohésion) et la distinction entre eux (séparation).
 
@@ -232,7 +232,7 @@ La courbe d'inertie est utilisée pour déterminer le nombre optimal de clusters
 - La détermination du "coude" peut être subjective.
 
 # 4 - Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#4 (Tableau Comparatif)
-
+## [Revenir en haut](#Table-des-Matières)
 
 | Critère                    | Score de Silhouette | Indice de Davies-Bouldin | Cohésion et Séparation   | ARI                  | NMI                  | Courbe d'Inertie    |
 |----------------------------|---------------------|--------------------------|--------------------------|----------------------|----------------------|---------------------|
@@ -245,7 +245,7 @@ La courbe d'inertie est utilisée pour déterminer le nombre optimal de clusters
 
 
 # 5 - Récapitulation sur les métriques Utilisées dans l'Apprentissage Non Supervisé - Partie#5 (avec Math)
-
+## [Revenir en haut](#Table-des-Matières)
 L'apprentissage non supervisé est une méthode d'analyse des données qui permet de découvrir des motifs cachés dans des données non étiquetées. Les métriques sont essentielles pour évaluer la qualité des clusters trouvés par des algorithmes comme K-means, DBSCAN, et l'analyse en composantes principales (PCA). Cette partie rappel et récapitule les principales métriques utilisées pour évaluer les algorithmes d'apprentissage non supervisé, avec des formules mathématiques et des exemples vulgarisés.
 
 ## Équations
