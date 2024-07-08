@@ -1,7 +1,8 @@
+# OPTIMISATION DBSCAN-eps-min_samples
+----
 # Partie 1 - Tester dans Colab le Notebbok 02_OPTIMISATION_DBSCAN_02.ipynb
 # Lien des fichiers : 
 
-- https://drive.google.com/drive/folders/1Nylr3kw389kdNaBizsmq0uSbHeI0K4Ys?usp=sharing
 - https://drive.google.com/drive/folders/1Oe9DgDq_64ZlibnWSz1PM2udQ5VtKTdb?usp=sharing
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/8f2d0525-527f-4ffa-956f-5fbb2fec49ac)
 
