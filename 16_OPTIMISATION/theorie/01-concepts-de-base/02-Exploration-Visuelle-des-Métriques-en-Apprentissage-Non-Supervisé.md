@@ -50,17 +50,17 @@ Considérons trois clusters avec leurs centroïdes respectifs :
 
 Nous allons calculer la distance entre chaque paire de centroïdes en utilisant la distance euclidienne.
 
-- Distance entre le Cluster 1 et le Cluster 2 
+# Distance entre le Cluster 1 et le Cluster 2 
 $$
 \sqrt{(6-2)^2 + (8-4)^2} = \sqrt{16 + 16} = \sqrt{32} \approx 5.657
 $$
 
-- Distance entre le Cluster 1 et le Cluster 3
+# Distance entre le Cluster 1 et le Cluster 3
 $$
 \sqrt{(10-2)^2 + (12-4)^2} = \sqrt{64 + 64} = \sqrt{128} \approx 11.314
 $$
 
-- Distance entre le Cluster 2 et le Cluster 3
+# Distance entre le Cluster 2 et le Cluster 3
 $$
 \sqrt{(10-6)^2 + (12-8)^2} = \sqrt{16 + 16} = \sqrt{32} \approx 5.657
 $$
@@ -72,19 +72,16 @@ L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résu
 $$
 \text{Indice de Dunn} = \frac{\text{min\_intercluster\_distance}}{\text{max\_intracluster\_distance}}
 $$
+$$
+\text{min\_intercluster\_distance}
+$$ 
 
-- 
-  $$
-  \text{min\_intercluster\_distance}
-  $$ 
-   
-  La distance minimale entre toute paire de points de données de clusters différents.
-- 
-  $$
-  \text{max\_intracluster\_distance}
-  $$ 
+La distance minimale entre toute paire de points de données de clusters différents. 
+$$
+\text{max\_intracluster\_distance}
+$$ 
 
-  La distance maximale entre toute paire de points de données au sein du même cluster.
+La distance maximale entre toute paire de points de données au sein du même cluster.
 
 #### Exemple de Calcul
 
@@ -104,7 +101,7 @@ Considérons une solution de clustering avec trois clusters : Cluster 1, Cluster
 
   La distance intra-cluster maximale est donc 2.5.
 
-Indice de Dunn :
+# Indice de Dunn :
 
 $$
 \text{Indice de Dunn} = \frac{3.2}{2.5} \approx 1.28
