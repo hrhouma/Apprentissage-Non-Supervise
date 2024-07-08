@@ -70,9 +70,6 @@ $$
 
 L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résultats de clustering. Il est calculé en utilisant la formule suivante
 
-$$
-\text{Indice de Dunn} = \frac{\text{min_intercluster_distance}}{\text{max_intracluster_distance}}
-$$
 
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/17febcb0-be0b-4be2-95a2-056f7f95369e)
 
