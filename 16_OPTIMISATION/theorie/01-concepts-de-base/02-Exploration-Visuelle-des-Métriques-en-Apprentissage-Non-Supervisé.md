@@ -65,23 +65,26 @@ $$
 \sqrt{(10-6)^2 + (12-8)^2} = \sqrt{16 + 16} = \sqrt{32} \approx 5.657
 $$
 
+
+
+
+
 ### Indice de Dunn
 
-L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résultats de clustering. Il est calculé en utilisant la formule suivante 
+L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résultats de clustering. Il est calculé en utilisant la formule suivante :
 
 $$
 \text{Indice de Dunn} = \frac{\text{min\_intercluster\_distance}}{\text{max\_intracluster\_distance}}
 $$
-$$
-\text{min\_intercluster\_distance}
-$$ 
 
-La distance minimale entre toute paire de points de données de clusters différents. 
-$$
-\text{max\_intracluster\_distance}
-$$ 
+#### min\_intercluster\_distance
+
+La distance minimale entre toute paire de points de données de clusters différents.
+
+#### max\_intracluster\_distance
 
 La distance maximale entre toute paire de points de données au sein du même cluster.
+
 
 #### Exemple de Calcul
 
