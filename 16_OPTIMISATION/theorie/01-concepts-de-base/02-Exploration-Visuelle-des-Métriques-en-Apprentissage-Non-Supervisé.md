@@ -71,7 +71,6 @@ $$
 
 L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résultats de clustering. Il est calculé en utilisant la formule suivante
 
-
 $$
 \text{Indice de Dunn} = \frac{\text{min_intercluster_distance}}{\text{max_intracluster_distance}}
 $$
@@ -117,3 +116,18 @@ Citations:
 [2] http://abdelhamid-djeffal.net/web_documents/coursclustering1819.pdf
 [3] https://search.r-project.org/CRAN/refmans/clv/html/cluster_scatter.html
 [4] https://en.wikipedia.org/wiki/Cluster_analysis
+
+
+
+Here's the corrected formatting for the Dunn index equation:
+
+$$
+\text{Dunn Index} = \frac{\min_{i \neq j} \delta(C_i, C_j)}{\max_{1 \leq k \leq n} \Delta_k}
+$$
+
+Where:
+- $\delta(C_i, C_j)$ is the inter-cluster distance between clusters $C_i$ and $C_j$
+- $\Delta_k$ is the intra-cluster distance of cluster $k$
+- $n$ is the number of clusters
+
+This formulation more precisely represents the Dunn index, showing that it's the ratio of the minimum inter-cluster distance to the maximum intra-cluster distance across all clusters.
