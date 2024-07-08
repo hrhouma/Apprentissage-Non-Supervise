@@ -1,3 +1,5 @@
+#### Lien : https://drive.google.com/drive/folders/1eYlsTNAAoy53DmvL7Ymb07bOi039Ynn4?usp=sharing
+
 # Partie1
 
 - L'évaluation des clusters en analyse de données et en apprentissage non supervisé implique souvent de mesurer la similarité des points de données au sein des clusters (intra-cluster) et entre les clusters (inter-cluster). Voici les définitions et significations de ces deux concepts :
