@@ -71,23 +71,13 @@ $$
 
 L'indice de Dunn est une métrique utilisée pour évaluer la qualité des résultats de clustering. Il est calculé en utilisant la formule suivante
 
-Voici l'équation de l'indice de Dunn formatée correctement :
 
 $$
-\text{Indice de Dunn} = \frac{\text{min\_intercluster\_distance}}{\text{max\_intracluster\_distance}}
+\text{Indice de Dunn} = \frac{\text{min_intercluster_distance}}{\text{max_intracluster_distance}}
 $$
 
-Cette formule est utilisée pour évaluer la qualité des résultats de clustering en mesurant la compacité et la séparation des clusters.
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/17febcb0-be0b-4be2-95a2-056f7f95369e)
 
-Citations:
-[1] https://pplx-res.cloudinary.com/image/upload/v1720439257/user_uploads/ovehdxysd/image.jpg
-[2] https://fr.wikipedia.org/wiki/Indice_de_Dunn
-[3] https://en.wikipedia.org/wiki/Dunn_index
-[4] https://permetrics.readthedocs.io/en/joss-paper/pages/clustering/DI.html
-[5] https://www.geeksforgeeks.org/dunn-index-and-db-index-cluster-validity-indices-set-1/
-[6] https://ruivieira.dev/dunn-index.html
-[7] https://www.datanovia.com/en/lessons/cluster-validation-statistics-must-know-methods/
-[8] https://www.linkedin.com/pulse/quantifying-excellence-demystifying-clustering-metrics-bathula
 
 
 #### min\_intercluster\_distance
