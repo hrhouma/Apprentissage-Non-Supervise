@@ -1,10 +1,28 @@
-# 1 - Rappel de l'algorithme DBSCAN
+# 1 - Rappel de l'algorithme DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 
 
 ## 1.1 - Théorie : 
 
-**DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) est une méthode de regroupement utilisée pour découvrir des clusters de différentes formes et tailles dans des données bruitées. Je vous présente une explication simplifiée avec un exemple de la vraie vie pour comprendre les étapes.
+**DBSCAN**  DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering populaire utilisé dans l'exploration de données et l'apprentissage automatique. Contrairement aux algorithmes de clustering traditionnels comme K-Means, DBSCAN ne nécessite pas de spécifier le nombre de clusters à l'avance. Il peut trouver des clusters de formes arbitraires et est robuste aux bruits (outliers).
 
-## 1.2 - Explication Vulgarisée
+## 1.2 - Comment fonctionne DBSCAN
+
+DBSCAN fonctionne en regroupant les points qui sont densément groupés tout en marquant les points qui se trouvent seuls dans des régions de faible densité comme des outliers. Les concepts clés de DBSCAN sont :
+
+1. **Epsilon (ε)** : La distance maximale entre deux points pour que l'un soit considéré comme voisin de l'autre.
+2. **Nombre minimum de points (minPts)** : Le nombre minimum de points requis pour former une région dense (c'est-à-dire un cluster).
+
+## 1.3 - Étapes de DBSCAN :
+
+1. **Identifier les points de cœur** : Les points qui ont au moins `minPts` points dans un rayon de `ε`.
+2. **Former des clusters** : Connecter les points de cœur et leurs voisins pour former des clusters.
+3. **Identifier le bruit** : Les points qui ne sont ni des points de cœur ni accessibles depuis un point de cœur sont classifiés comme du bruit.
+
+## 1.4 - Paramètres
+
+- **eps** : La distance maximale entre deux échantillons pour que l'un soit considéré comme dans le voisinage de l'autre. Ce n'est pas une limite maximale sur les distances des points dans un cluster.
+- **min_samples** : Le nombre d'échantillons (ou le poids total) dans un voisinage pour qu'un point soit considéré comme un point de cœur. Cela inclut le point lui-même.
+
+## 1.5 - Explication Vulgarisée
 
 Imaginez que vous êtes dans un parc rempli de groupes de personnes, et vous voulez identifier chaque groupe sans savoir combien il y en a au départ. Vous pourriez vous approcher de chaque personne et demander :
 
@@ -15,7 +33,7 @@ En utilisant cette méthode, vous pourriez dire :
 - Si une personne a beaucoup de gens autour d'elle, elle fait partie d'un groupe.
 - Si une personne n'a pas beaucoup de gens autour d'elle, elle est peut-être seule (du bruit).
 
-## 1.3 - Exemple de la Vraie Vie
+## 1.6 - Exemple de la Vraie Vie
 
 Imaginez une application pour détecter les zones d'activité dans une ville en analysant les données GPS des téléphones mobiles. Chaque point GPS représente une personne à un moment donné.
 
@@ -24,7 +42,7 @@ Imaginez une application pour détecter les zones d'activité dans une ville en 
 
 DBSCAN peut identifier automatiquement ces zones d'activité (clusters) sans avoir besoin de savoir combien de zones existent à l'avance.
 
-## 1.4 - Étapes de DBSCAN
+## 1.7 - Étapes de DBSCAN
 
 1. **Définir les paramètres** :
    - **ε (epsilon)** : La distance maximale pour considérer deux points comme voisins.
@@ -47,7 +65,19 @@ DBSCAN peut identifier automatiquement ces zones d'activité (clusters) sans avo
 6. **Répéter** :
    - Continuez avec les points non visités jusqu'à ce que tous les points soient marqués soit comme faisant partie d'un cluster, soit comme bruit.
 
-## 1.5 - Conclusion
+## 1.8 - Avantages de DBSCAN
+
+- **Pas besoin de spécifier le nombre de clusters** : Contrairement à K-Means, DBSCAN ne nécessite pas de spécifier le nombre de clusters à l'avance.
+- **Peut trouver des clusters de formes arbitraires** : DBSCAN peut trouver des clusters de toute forme, car il ne suppose aucune forme prédéfinie des clusters.
+- **Robuste au bruit** : DBSCAN peut efficacement identifier les outliers comme du bruit.
+
+## 1.9 -Inconvénients de DBSCAN
+
+- **Sensible aux paramètres** : Les performances de DBSCAN dépendent fortement du choix de `eps` et `min_samples`. Un mauvais choix de ces paramètres peut conduire à des résultats de clustering médiocres.
+- **Difficulté avec les clusters de densité variable** : DBSCAN peut avoir du mal à identifier des clusters de densités très différentes au sein du même ensemble de données.
+
+
+## 1.10 - Conclusion
 
 DBSCAN est puissant car il peut identifier des clusters de formes variées et est robuste face au bruit. Dans notre exemple de la ville, il permettrait de repérer automatiquement les lieux de rassemblement importants sans savoir combien il y en a ni où ils sont situés.
 
@@ -92,9 +122,8 @@ Pour comprendre comment fonctionne DBSCAN, il est important de connaître les co
 2. **Point de bordure** : Un point de données qui se trouve dans le voisinage d'un point central mais qui n'a pas suffisamment de points dans son propre voisinage pour être un point central.
 3. **Point de bruit** : Un point de données qui n'est ni un point central ni un point de bordure.
 
-### Exemple pratique avec Python
+### Exemple pratique 1 avec Python
 
-Voici un exemple simple de l'utilisation de DBSCAN avec la bibliothèque Scikit-learn en Python :
 
 ```python
 import numpy as np
@@ -116,6 +145,12 @@ plt.ylabel('Feature 2')
 plt.title('DBSCAN Clustering')
 plt.show()
 ```
+
+
+### Exemple pratique 2 avec Python
+
+- vérifiez le Github du cours.
+
 
 ### Conclusion
 
@@ -245,4 +280,5 @@ plt.show()
 - https://fr.wikipedia.org/wiki/DBSCAN
 - https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html
 - https://blog.dailydoseofds.com/p/meet-dbscan-the-faster-and-scalable
+- https://www.youtube.com/watch?v=_A9Tq6mGtLI&ab_channel=TheDataPost
 
