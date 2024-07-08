@@ -1,9 +1,8 @@
-Voici le texte formaté avec les équations LaTeX pour être utilisé dans un fichier README.md sur GitHub :
+# Partie 1 : la Distance Intra-Cluster, la Distance Inter-Cluster et l'Indice de Dunn
 
 # Référence :
 - https://medium.com/@Suraj_Yadav/understanding-intra-cluster-distance-inter-cluster-distance-and-dun-index-a-comprehensive-guide-a8de726f5769
-
-## Guide Complet sur la Distance Intra-Cluster, la Distance Inter-Cluster et l'Indice de Dunn
+- https://www.geeksforgeeks.org/ml-intercluster-and-intracluster-distance/
 
 ### Distance Intra-Cluster
 
@@ -123,3 +122,6 @@ Where:
 - $n$ is the number of clusters
 
 This formulation more precisely represents the Dunn index, showing that it's the ratio of the minimum inter-cluster distance to the maximum intra-cluster distance across all clusters.
+
+
+# Partie 2 : la Distance Intra-Cluster, la Distance Inter-Cluster et l'Indice de Dunn
