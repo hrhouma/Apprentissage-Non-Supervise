@@ -33,7 +33,7 @@ $$
 \sqrt{(3-5)^2 + (5-7)^2} = \sqrt{4 + 4} = \sqrt{8} \approx 2.828
 $$
 
-Distance moyenne 
+# Distance moyenne 
 $$
 \text{Distance moyenne} = \frac{1.414 + 4.243 + 2.828}{3} \approx 2.828
 $$
