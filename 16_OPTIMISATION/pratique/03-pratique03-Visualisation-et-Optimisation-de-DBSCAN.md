@@ -1,4 +1,4 @@
-## README
+# Visualisation et Optimisation de DBSCAN
 
 ### Objectif du Projet
 
