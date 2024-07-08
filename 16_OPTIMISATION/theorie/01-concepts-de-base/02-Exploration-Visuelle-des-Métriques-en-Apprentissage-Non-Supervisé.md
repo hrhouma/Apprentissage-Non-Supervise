@@ -101,8 +101,7 @@ Considérons une solution de clustering avec trois clusters : Cluster 1, Cluster
 
   La distance intra-cluster maximale est donc 2.5.
 
-# Indice de Dunn :
-
+# Indice de Dunn 
 $$
 \text{Indice de Dunn} = \frac{3.2}{2.5} \approx 1.28
 $$
