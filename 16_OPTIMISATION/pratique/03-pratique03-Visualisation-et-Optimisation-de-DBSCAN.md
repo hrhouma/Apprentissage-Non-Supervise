@@ -26,7 +26,8 @@ Ce projet fournit une interface graphique interactive, développée avec Tkinter
 
 L'interface de l'application se compose de plusieurs sections et éléments interactifs pour contrôler et visualiser le processus de clustering DBSCAN. Voici une description détaillée des éléments visibles dans l'image :
 
-![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/fa125e47-8e3d-49f4-8fe7-93b9f4b6033b)
+![1](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/c4f1102a-ce82-4f90-96f7-a349298c77a7)
+
 
 1. **Barre de Contrôle Supérieure :**
    - **Number of Points:** Un champ d'entrée pour définir le nombre de points de données à générer (ici, 750).
