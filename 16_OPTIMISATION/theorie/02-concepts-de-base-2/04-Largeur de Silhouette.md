@@ -1,5 +1,5 @@
 # Largeur de Silhouette dans l'Analyse des Clusters
-
+#### Lien : https://drive.google.com/drive/folders/1eYlsTNAAoy53DmvL7Ymb07bOi039Ynn4?usp=sharing
 La largeur de silhouette (silhouette width) est une mesure essentielle dans l'analyse des clusters pour plusieurs raisons clés :
 
 ## Évaluation de la Qualité du Clustering
