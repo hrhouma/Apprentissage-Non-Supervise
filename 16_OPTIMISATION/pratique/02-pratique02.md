@@ -1,9 +1,10 @@
-### README
+# Partie 1 - Tester dans Colab le Notebbok 02_OPTIMISATION_DBSCAN_02.ipynb
+# Lien des fichiers : 
 
-# Programme de Clustering DBSCAN
-
-https://drive.google.com/drive/folders/1Oe9DgDq_64ZlibnWSz1PM2udQ5VtKTdb?usp=sharing
+- https://drive.google.com/drive/folders/1Nylr3kw389kdNaBizsmq0uSbHeI0K4Ys?usp=sharing
+- https://drive.google.com/drive/folders/1Oe9DgDq_64ZlibnWSz1PM2udQ5VtKTdb?usp=sharing
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/8f2d0525-527f-4ffa-956f-5fbb2fec49ac)
+
 ## Objectif du Programme
 
 L'objectif de ce programme est de comprendre et d'optimiser l'utilisation de l'algorithme de clustering DBSCAN pour analyser un jeu de données. Nous souhaitons explorer visuellement et interpréter les résultats des clusters en jouant avec les paramètres de DBSCAN (`eps` et `min_samples`) et en utilisant le score silhouette pour évaluer la qualité des clusters.
