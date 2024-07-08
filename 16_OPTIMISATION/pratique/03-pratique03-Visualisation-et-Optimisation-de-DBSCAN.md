@@ -1,7 +1,8 @@
 # Visualisation et Optimisation de DBSCAN
 ----
-# Partie 1 - Tester dans Colab le Notebbok 02_OPTIMISATION_DBSCAN_02.ipynb
+# Partie 1 - Tester le programme en local en utilisant tkinter et dbscan_visualizer.py
 # Lien des fichiers : 
+- https://drive.google.com/drive/folders/1wf2p3Qji_tP5BKj-6SiBHHW090tOjtsz?usp=sharing
 
 
 
