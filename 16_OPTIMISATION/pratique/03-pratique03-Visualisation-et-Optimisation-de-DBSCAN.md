@@ -1,4 +1,9 @@
 # Visualisation et Optimisation de DBSCAN
+----
+# Partie 1 - Tester dans Colab le Notebbok 02_OPTIMISATION_DBSCAN_02.ipynb
+# Lien des fichiers : 
+
+
 
 ### Objectif du Projet
 
