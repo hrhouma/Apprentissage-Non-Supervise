@@ -1,8 +1,9 @@
-# Référence : 
+Voici le texte formaté avec les équations LaTeX pour être utilisé dans un fichier README.md sur GitHub :
+
+# Référence :
 - https://medium.com/@Suraj_Yadav/understanding-intra-cluster-distance-inter-cluster-distance-and-dun-index-a-comprehensive-guide-a8de726f5769
 
 ## Guide Complet sur la Distance Intra-Cluster, la Distance Inter-Cluster et l'Indice de Dunn
-Bien sûr, voici les équations formatées pour être utilisées dans un fichier README.md sur GitHub :
 
 ### Distance Intra-Cluster
 
@@ -79,8 +80,17 @@ $$
 \text{Indice de Dunn} = \frac{\text{min\_intercluster\_distance}}{\text{max\_intracluster\_distance}}
 $$
 
-- \(\text{min\_intercluster\_distance}\) : La distance minimale entre toute paire de points de données de clusters différents.
-- \(\text{max\_intracluster\_distance}\) : La distance maximale entre toute paire de points de données au sein du même cluster.
+- 
+  $$
+  \text{min\_intercluster\_distance}
+  $$ 
+  : 
+  La distance minimale entre toute paire de points de données de clusters différents.
+- 
+  $$
+  \text{max\_intracluster\_distance}
+  $$ 
+  : La distance maximale entre toute paire de points de données au sein du même cluster.
 
 #### Exemple de Calcul
 
@@ -106,4 +116,3 @@ $$
 \text{Indice de Dunn} = \frac{3.2}{2.5} \approx 1.28
 $$
 
-Vous pouvez copier ces sections et les intégrer dans votre fichier README.md sur GitHub.
