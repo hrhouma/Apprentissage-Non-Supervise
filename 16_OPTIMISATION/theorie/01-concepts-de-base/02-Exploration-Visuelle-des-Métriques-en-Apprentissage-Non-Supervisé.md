@@ -121,7 +121,8 @@ Where:
 - $\Delta_k$ is the intra-cluster distance of cluster $k$
 - $n$ is the number of clusters
 
-This formulation more precisely represents the Dunn index, showing that it's the ratio of the minimum inter-cluster distance to the maximum intra-cluster distance across all clusters.
 
 
-# Partie 2 : la Distance Intra-Cluster, la Distance Inter-Cluster et l'Indice de Dunn
+# Partie 2 : Observation visuelle
+- https://www.geeksforgeeks.org/ml-intercluster-and-intracluster-distance/
+- https://drive.google.com/drive/folders/1eYlsTNAAoy53DmvL7Ymb07bOi039Ynn4?usp=sharing
