@@ -24,13 +24,15 @@ Pour calculer la distance intra-cluster, nous calculons la distance moyenne entr
   \sqrt{(2-3)^2 + (4-5)^2} = \sqrt{1 + 1} = \sqrt{2} \approx 1.414
   $$
 
-- Distance entre A et C 
+- Distance entre A et C
+
 
   $$
   \sqrt{(2-5)^2 + (4-7)^2} = \sqrt{9 + 9} = \sqrt{18} \approx 4.243
   $$
 
 - Distance entre B et C 
+
 
   $$
   \sqrt{(3-5)^2 + (5-7)^2} = \sqrt{4 + 4} = \sqrt{8} \approx 2.828
@@ -84,13 +86,14 @@ $$
   $$
   \text{min\_intercluster\_distance}
   $$ 
-  : 
+   
   La distance minimale entre toute paire de points de données de clusters différents.
 - 
   $$
   \text{max\_intracluster\_distance}
   $$ 
-  : La distance maximale entre toute paire de points de données au sein du même cluster.
+
+  La distance maximale entre toute paire de points de données au sein du même cluster.
 
 #### Exemple de Calcul
 
