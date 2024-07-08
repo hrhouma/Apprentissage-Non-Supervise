@@ -77,6 +77,7 @@ $$
 \text{Indice de Dunn} = \frac{\text{min\_intercluster\_distance}}{\text{max\_intracluster\_distance}}
 $$
 
+
 #### min\_intercluster\_distance
 
 La distance minimale entre toute paire de points de données de clusters différents.
@@ -109,3 +110,8 @@ $$
 \text{Indice de Dunn} = \frac{3.2}{2.5} \approx 1.28
 $$
 
+Citations:
+[1] https://www.geeksforgeeks.org/ml-intercluster-and-intracluster-distance/
+[2] http://abdelhamid-djeffal.net/web_documents/coursclustering1819.pdf
+[3] https://search.r-project.org/CRAN/refmans/clv/html/cluster_scatter.html
+[4] https://en.wikipedia.org/wiki/Cluster_analysis
