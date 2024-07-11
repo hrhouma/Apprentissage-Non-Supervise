@@ -116,6 +116,54 @@ En résumé, le graphique montre effectivement **un seul cluster dense (cluster 
 
 *OPTIONNEL - Travail à faire en groupe* : Pour améliorer la compréhension de cette visualisation, il pourrait être utile de vérifier les paramètres de DBSCAN et de les ajuster si nécessaire, ou d'examiner les données brutes pour mieux comprendre leur distribution.
 
+# 7 - Clarifiez l'interprétation de ce diagramme des silhouettes (la forme verticale et horizontale, les indices 0 et -1, et le nombre de clusters):
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/04d84366-ad25-4561-92e3-4b7f00afb65b)
+
+# Composants du Diagramme des Silhouettes
+
+1. **Axe des Abscisses (X-axis)** :
+   - Représente les valeurs des coefficients de silhouette, allant de -0.1 à 0.7 dans votre graphique.
+   - Le coefficient de silhouette pour chaque échantillon mesure à quel point cet échantillon est bien assigné à son cluster. Il varie entre -1 et 1 :
+     - Un score proche de 1 indique que l'échantillon est bien intégré à son cluster.
+     - Un score proche de 0 indique que l'échantillon est sur la frontière entre deux clusters.
+     - Un score négatif indique que l'échantillon serait mieux dans un autre cluster.
+
+2. **Axe des Ordonnées (Y-axis)** :
+   - Représente les clusters, avec les indices 0 et -1 :
+     - **0** : Indique le cluster 0.
+     - **-1** : Indique les points classés comme bruit (ou anomalies).
+
+3. **Formes Noires** :
+   - Chaque barre verticale noire représente un échantillon.
+   - La largeur de chaque barre représente le coefficient de silhouette de cet échantillon.
+
+# Interprétation des Clusters et des Formes
+
+1. **Clusters** :
+   - **Cluster 0** : Représenté par les barres dans la section étiquetée "0" sur l'axe des ordonnées.
+   - **Bruit (Cluster -1)** : Représenté par les barres dans la section étiquetée "-1".
+
+2. **Formes Verticales** :
+   - La forme verticale de chaque cluster montre la distribution des scores de silhouette pour les échantillons de ce cluster.
+   - Pour le **cluster 0**, la plupart des barres ont des scores de silhouette positifs, mais il y a une variation significative. Les barres plus larges vers le bas indiquent que de nombreux échantillons ont des scores de silhouette autour de 0.1 à 0.3.
+   - Pour le **bruit (cluster -1)**, les scores de silhouette sont négatifs ou très faibles, indiquant que ces échantillons sont mal intégrés à tout cluster.
+
+3. **Trait Rouge Pointillé** :
+   - Le trait rouge vertical représente le score moyen de silhouette pour tous les échantillons.
+   - Un score moyen de silhouette autour de 0.35 indique une qualité de clustering modérée. Plus le score moyen est élevé, meilleure est la qualité du clustering.
+
+### Résumé du Nombre de Clusters
+
+- **Nombre de Clusters** : Il y a **un seul cluster principal (cluster 0)** et plusieurs points de **bruit (cluster -1)**. 
+- **Indices 0 et -1** :
+  - **0** : Les échantillons appartenant au cluster principal.
+  - **-1** : Les échantillons considérés comme du bruit par l'algorithme DBSCAN, car ils ne répondent pas aux critères de densité pour être inclus dans un cluster.
+
+### Conclusion
+
+Le diagramme des silhouettes montre comment chaque échantillon est intégré dans son cluster. Les formes noires verticales indiquent la distribution des scores de silhouette pour chaque cluster, et le trait rouge montre le score moyen de silhouette pour évaluer globalement la qualité du clustering. Dans ce cas, nous avons un cluster principal (*UN SEUL*) et plusieurs points de bruit, avec des scores de silhouette variés mais généralement positifs pour le cluster 0.
+
 
 ---
 # Annexe 1 - Pourquoi la partie correspondant à \(0\) est plus large que celle correspondant à \(-1\) dans notre diagramme des silhouettes, examinons en détail comment ce graphique est construit et ce qu'il représente ?
