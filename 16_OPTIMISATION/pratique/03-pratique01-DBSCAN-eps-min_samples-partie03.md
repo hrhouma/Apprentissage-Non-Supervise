@@ -4,6 +4,15 @@
 
 Ce programme permet de visualiser des clusters générés par l'algorithme DBSCAN et d'interagir avec les graphiques pour explorer les résultats. Voici les différentes interactions possibles :
 
+# Environnement
+```bash
+python -m venv dbscan-silho
+dbscan-silho-env\Scripts\activate
+# source dbscan-silho/bin/activate (LINUX)
+pip install numpy matplotlib scikit-learn seaborn
+python dbscan_visualizer.py
+```
+
 ### Clic Droit (Zoom)
 
 - **Clic droit** sur une zone du graphique des clusters pour zoomer sur cette zone.
@@ -18,7 +27,7 @@ Ce programme permet de visualiser des clusters générés par l'algorithme DBSCA
 
 - **Clic sur un point** du graphique des clusters pour sélectionner ce point.
 - Le point sélectionné sera mis en évidence par un cercle bleu.
-- Le diagramme des silhouettes mettra en évidence la valeur de silhouette correspondant au point sélectionné.
+- Le diagramme des silhouettes mettra en évidence la valeur de silhouette correspondant au point sélectionné ou l'échantillon.
 
 ## Dépendances
 
