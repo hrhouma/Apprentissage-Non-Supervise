@@ -1,5 +1,9 @@
 # Clustering DBSCAN avec Visualisation Interactive
+
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
 # Partie 1
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
+
 ## Mode d'utilisation
 
 Ce programme permet de visualiser des clusters générés par l'algorithme DBSCAN et d'interagir avec les graphiques pour explorer les résultats. Voici les différentes interactions possibles :
@@ -205,13 +209,10 @@ Cette fonction est déclenchée lorsqu'un utilisateur effectue un clic droit sur
 
 Cette fonction est déclenchée lorsqu'un utilisateur effectue un double-clic sur le graphique des clusters. Elle réinitialise la vue du graphique des clusters et du diagramme des silhouettes à leurs états originaux.
 
-# Partie 2 - Version 2 du code
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
+# Partie 2 - Version 2 du code Clustering DBSCAN avec Visualisation Interactive
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
 
-Voici un README complet pour le code mis à jour, incluant des instructions détaillées pour les utilisateurs.
-
----
-
-# README - Clustering DBSCAN avec Visualisation Interactive
 
 ## Mode d'utilisation
 
