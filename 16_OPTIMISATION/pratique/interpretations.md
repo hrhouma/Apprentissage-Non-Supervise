@@ -1,4 +1,4 @@
----
+
 # Exercice 1 - interprétez ce graphique :
 
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/0ef2e03c-f8d2-4d36-85dd-b7bee91f9402)
