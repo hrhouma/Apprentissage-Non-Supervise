@@ -32,3 +32,34 @@
 
 
 # Exercice 2 - interprétez ce graphique :
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/e1af8d4c-407f-436c-8913-7c64937ba816)
+
+Dans le graphique ci-haut, nous avons utilisé l'algorithme DBSCAN pour le clustering. comment interpréter ce graphique ?
+
+### Interprétation du Graphique
+
+1. **Clusters Identifiés** :
+   - **Cluster 0 (Jaune)** : Les points jaunes représentent les échantillons assignés au cluster 0.
+   - **Bruit (Cluster -1, Violet)** : Les points violets représentent les échantillons considérés comme du bruit par l'algorithme DBSCAN. Ces points ne sont pas assignés à un cluster particulier en raison de leur éloignement par rapport aux autres points.
+
+### Caractéristiques de DBSCAN
+
+- **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** :
+  - Il identifie les clusters en fonction de la densité des points.
+  - Les points en dehors de toute région dense sont classés comme bruit.
+  - L'algorithme utilise deux paramètres principaux : \(\epsilon\) (eps, rayon de recherche) et \(\text{min_samples}\) (le nombre minimum de points pour former un cluster dense).
+
+### Analyse du Graphique
+
+- **Cluster 0 (Points Jaunes)** :
+  - Tous les points jaunes forment un cluster unique (cluster 0).
+  - Cela signifie que ces points sont suffisamment proches les uns des autres pour être considérés comme un cluster dense par DBSCAN.
+
+- **Points de Bruit (Points Violets)** :
+  - Ces points sont trop éloignés de tout cluster dense pour être inclus dans un cluster.
+  - Ils sont classés comme du bruit (cluster -1).
+
+### Conclusion
+
+Dans ce graphique, il y a effectivement **un seul cluster principal (cluster 0)** et plusieurs **points de bruit (cluster -1)**. L'algorithme DBSCAN a déterminé que les points jaunes sont suffisamment denses pour former un cluster, tandis que les points violets ne le sont pas et sont donc considérés comme du bruit.
