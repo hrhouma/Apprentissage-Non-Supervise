@@ -33,7 +33,7 @@ Pour mieux illustrer, imaginez que vous avez un cluster où la majorité des éc
 En résumé, les points atteignant presque 0.7 indiquent des échantillons très bien assignés à leur cluster. La forme du diagramme des silhouettes varie en fonction de la distribution et de la qualité des clusters dans le dataset.
 
 
-# pourquoi la partie correspondant à *0* est plus large que celle correspondant à *-1* (Verticalement) ? 
+# 2 - Pourquoi la partie correspondant à *0* est plus large que celle correspondant à *-1* (Verticalement) ? 
 
 - Tout simplement, nous avons plus d'échantillons dans le cluster 0 que dans le cluster -1 .
 - Pour comprendre pourquoi la partie correspondant à *0* est plus large que celle correspondant à *-1* dans notre diagramme ci-haut des silhouettes, examinons en détail comment ce graphique est construit et ce qu'il représente.
