@@ -65,3 +65,56 @@ Dans le graphique ci-haut, nous avons utilisé l'algorithme DBSCAN pour le clust
 Dans ce graphique, il y a effectivement **un seul cluster principal (cluster 0)** et plusieurs **points de bruit (cluster -1)**. L'algorithme DBSCAN a déterminé que les points jaunes sont suffisamment denses pour former un cluster, tandis que les points violets ne le sont pas et sont donc considérés comme du bruit.
 
 ---
+# Exercice 3 - - interprétez ce graphique :
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/45e51f8e-42ce-47bb-a0b4-be971283e807)
+
+Il faut examiner les deux parties : *la visualisation des clusters DBSCAN sur la gauche* et *le diagramme des silhouettes sur la droite*.
+
+### Visualisation des Clusters DBSCAN (à gauche)
+
+1. **Axes** :
+   - Axe des abscisses (x) : Calories
+   - Axe des ordonnées (y) : Sucres (Sugars)
+
+2. **Points** :
+   - **Points Jaunes** : Représentent les échantillons assignés au cluster 0.
+   - **Points Violets** : Représentent les échantillons classés comme bruit (cluster -1).
+
+### Diagramme des Silhouettes (à droite)
+
+1. **Axes** :
+   - Axe des abscisses (x) : Valeurs des coefficients de silhouette (de -0.1 à 1.1).
+   - Axe des ordonnées (y) : Clusters (ici, il y a le cluster 0 et le bruit -1).
+
+2. **Traits et Formes** :
+   - **Trait rouge pointillé** : Représente le score moyen de silhouette pour tous les échantillons.
+   - **Forme noire** : Montre la répartition des scores de silhouette pour les échantillons dans chaque cluster.
+
+### Interprétation des Clusters DBSCAN
+
+1. **Nombre de Clusters** :
+   - **Cluster 0** : Tous les points jaunes appartiennent à ce cluster.
+   - **Cluster -1** : Les points violets sont considérés comme du bruit, ce qui signifie qu'ils ne sont pas suffisamment proches d'autres points pour être inclus dans un cluster.
+
+2. **Répartition** :
+   - Le cluster 0 est relativement dense, avec la plupart des points regroupés autour de valeurs spécifiques de calories et de sucres.
+   - Les points de bruit sont dispersés et isolés, ce qui les empêche d'être inclus dans le cluster principal.
+
+### Diagramme des Silhouettes
+
+1. **Scores de Silhouette** :
+   - Le score de silhouette moyen est représenté par le trait rouge vertical, qui se situe autour de 0.35.
+   - Les scores de silhouette pour le cluster 0 sont principalement positifs, indiquant une bonne cohésion interne du cluster.
+   - Les scores de silhouette pour les points de bruit (cluster -1) sont négatifs, ce qui est typique car ces points ne s'intègrent bien dans aucun cluster.
+
+2. **Interprétation** :
+   - **Cluster 0** : Les échantillons ont des scores de silhouette majoritairement positifs, suggérant qu'ils sont bien assignés à ce cluster.
+   - **Cluster -1** : Les points de bruit ont des scores négatifs, indiquant qu'ils sont plus proches des points d'autres clusters que du cluster auquel ils sont assignés (mais comme ils sont bruit, ils ne sont assignés à aucun cluster).
+
+### Conclusion
+
+- **Nombre de Clusters** : Il y a un seul cluster principal (cluster 0) et plusieurs points de bruit (cluster -1).
+- **Qualité du Clustering** : Le score de silhouette moyen de 0.35 pour le cluster 0 indique une bonne séparation des clusters, mais pas parfaite. Les points de bruit montrent que certains points ne sont pas bien intégrés dans le clustering.
+
+Ce graphique fournit une bonne visualisation de la distribution des données en termes de calories et de sucres, et montre comment l'algorithme DBSCAN a identifié un cluster dense et plusieurs points de bruit.
