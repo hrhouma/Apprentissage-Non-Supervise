@@ -166,6 +166,8 @@ Le diagramme des silhouettes montre comment chaque échantillon est intégré da
 
 # 8 - Interprétez ce graphique
 
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/bab96433-f5cd-4c90-b809-bf6fb4a05fdc)
+
 
 ### Diagramme des Silhouettes pour le Cluster -1 (Bruit)
 
@@ -209,9 +211,6 @@ Le diagramme des silhouettes montre comment chaque échantillon est intégré da
 - **Nombre de Clusters** : Vous avez un cluster principal (**cluster 0**) et plusieurs points de **bruit** (**cluster -1**).
 
 L'observation de scores positifs pour les échantillons de **bruit** peut se produire et indique que ces points sont probablement **proches d'un cluster dense** mais ne répondent pas aux critères stricts pour y être inclus selon les paramètres de DBSCAN.
-```
-
-
 
 
 
