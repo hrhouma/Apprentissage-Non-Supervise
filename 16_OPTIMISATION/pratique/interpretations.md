@@ -23,4 +23,10 @@
 ### Très important: 
 - Le trait rouge représente le score moyen de la silhouette pour évaluer globalement la qualité du clustering, tandis que la forme du diagramme montre la distribution des scores de silhouette pour chaque échantillon. La forme peut être due à une forte variabilité dans la qualité des clusters pour les différents échantillons.
 
+# Formatif :  Interprétez ce graphique
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/41fee991-31c4-4421-9c9d-c96c4c1b6657)
+
 ---
+
+
+# Exercice 2 - interprétez ce graphique :
