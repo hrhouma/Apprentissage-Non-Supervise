@@ -164,3 +164,69 @@ Il faut examiner les deux parties : *la visualisation des clusters DBSCAN sur la
 - **Qualité du Clustering** : Le score de silhouette moyen de 0.35 pour le cluster 0 indique une bonne séparation des clusters, mais pas parfaite. Les points de bruit montrent que certains points ne sont pas bien intégrés dans le clustering.
 
 Ce graphique fournit une bonne visualisation de la distribution des données en termes de calories et de sucres, et montre comment l'algorithme DBSCAN a identifié un cluster dense et plusieurs points de bruit.
+
+----
+# Exercice # 4 : 
+
+- Ce graphique fournit une visualisation claire des clusters et de la qualité du clustering, avec des informations détaillées sur la distribution des scores de silhouette pour chaque cluster.
+- **Question** : Interprétons le !!!
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/ce77a685-4559-41f6-8b8d-ab746375e65f)
+
+- Analysons ce graphique en détail, nous devons examiner les deux parties : (1) *la visualisation des clusters DBSCAN sur la gauche* et *le diagramme des silhouettes sur la droite*.
+
+### Visualisation des Clusters DBSCAN (à gauche)
+
+1. **Axes** :
+   - Axe des abscisses (x) : Feature 1
+   - Axe des ordonnées (y) : Feature 2
+
+2. **Points et Couleurs** :
+   - **Points Colorés** : Représentent les différents clusters trouvés par l'algorithme DBSCAN. Chaque couleur correspond à un cluster distinct.
+   - **Points Noirs** : Représentent les échantillons classés comme bruit (cluster -1).
+
+### Diagramme des Silhouettes (à droite)
+
+1. **Axes** :
+   - Axe des abscisses (x) : Valeurs des coefficients de silhouette (allant de -0.6 à 0.8).
+   - Axe des ordonnées (y) : Clusters (étiquetés de 0 à 5).
+
+2. **Formes et Trait Rouge** :
+   - **Formes Colorées** : Chaque section colorée verticale représente un cluster, montrant la distribution des scores de silhouette pour les échantillons de ce cluster.
+   - **Trait Rouge Pointillé** : Représente le score moyen de silhouette pour tous les échantillons. Ici, il est proche de zéro, ce qui indique une qualité de clustering faible.
+
+### Interprétation des Clusters DBSCAN
+
+1. **Nombre de Clusters** :
+   - Il y a 6 clusters identifiés (0 à 5), chacun représenté par une couleur différente.
+   - Les points noirs représentent le bruit, c'est-à-dire les points qui ne sont pas inclus dans les clusters en raison de leur éloignement par rapport aux autres points.
+
+2. **Répartition des Clusters** :
+   - Les clusters sont formés de manière distincte avec différents groupes de points colorés.
+   - Les points noirs sont dispersés et n'appartiennent à aucun cluster spécifique.
+
+### Interprétation du Diagramme des Silhouettes
+
+1. **Scores de Silhouette** :
+   - Chaque barre colorée dans le diagramme des silhouettes représente les scores de silhouette des échantillons d'un cluster spécifique.
+   - Un score de silhouette positif indique que l'échantillon est bien intégré dans son cluster.
+   - Un score de silhouette proche de 0 indique que l'échantillon est proche de la frontière entre deux clusters.
+   - Un score de silhouette négatif indique que l'échantillon serait mieux assigné à un autre cluster.
+
+2. **Formes des Silhouettes** (*VARIANTE  :
+   - **Cluster 0** : La majorité des scores de silhouette sont positifs, mais il y a une grande variation, ce qui suggère que certains points sont bien intégrés tandis que d'autres sont proches de la frontière.
+   - **Cluster 1** : La forme montre une bonne intégration avec des scores majoritairement positifs.
+   - **Cluster 2** : Les scores sont principalement positifs, avec une bonne cohésion.
+   - **Cluster 3, 4 et 5** : Ces clusters montrent également des scores de silhouette positifs, mais avec des variations.
+   - **Cluster -1** : Ceci représente le bruit (*Cluster-1*).
+
+3. **Trait Rouge Pointillé** :
+   - Le score moyen de silhouette est proche de zéro, indiquant que, globalement, les clusters ne sont pas très bien séparés ou qu'il y a beaucoup de bruit.
+
+### Conclusion
+
+- **Clusters Identifiés** : Il y a 6 clusters distincts avec des niveaux de cohésion variés. Les points de bruit sont dispersés et non inclus dans ces clusters.
+- **Qualité du Clustering** : Le score moyen de silhouette étant proche de zéro, la qualité du clustering est faible, indiquant que les clusters ne sont pas bien séparés ou qu'il y a un nombre significatif de points de bruit.
+- **Améliorations Possibles** : Pour améliorer la qualité du clustering, il pourrait être utile d'ajuster les paramètres de DBSCAN *epsilon* et *min_samples* ou d'explorer d'autres méthodes de clustering.
+
+
