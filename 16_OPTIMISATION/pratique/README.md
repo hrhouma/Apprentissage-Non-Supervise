@@ -1,8 +1,9 @@
 # IMPORTANT (LIEN DES PRATIQUES)
 - https://drive.google.com/drive/folders/1vbrcgJiY2dHB8U3HlNixxxwxCg6apA2C?usp=sharing
 
-✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
-✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
+# 02-pratique01-DBSCAN-eps-min_samples-partie02.md
+✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️✈️
 # python .\test-nader-1.py
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/b755860a-0906-419f-a283-255510502c01)
 # python .\test-nader-9.py
