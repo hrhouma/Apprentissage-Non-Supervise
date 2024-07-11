@@ -81,7 +81,40 @@ La forme du diagramme des silhouettes avec une partie plus large autour de *0* p
 
 
 
+# 6 - Interprétez ce graphique :
 
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/e1af8d4c-407f-436c-8913-7c64937ba816)
+
+### Clustering DBSCAN
+
+1. **Algorithme DBSCAN** :
+   - **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering basé sur la densité.
+   - Il identifie des zones de haute densité séparées par des zones de faible densité.
+   - Les deux principaux paramètres sont :
+     - \(\epsilon\) (eps) : Le rayon de recherche autour d'un point.
+     - \(\text{min_samples}\) : Le nombre minimum de points requis pour former une région dense (un cluster).
+
+2. **Interprétation du Graphique** :
+   - **Axes** : Les axes représentent les variables "Calories" (en abscisse) et une autre variable "Sugars" (en ordonnée).
+   - **Couleurs des Points** :
+     - **Points Jaunes (Cluster 0)** : Ces points sont regroupés en un seul cluster par l'algorithme DBSCAN.
+     - **Points Violets (Cluster -1)** : Ces points sont considérés comme du bruit ou des anomalies par l'algorithme DBSCAN.
+
+### Analyse Détaillée
+
+1. **Nombre de Clusters** :
+   - Selon le graphique, il n'y a qu'un seul cluster identifié (cluster 0).
+   - Tous les autres points qui ne peuvent pas être regroupés dans ce cluster sont étiquetés comme bruit (cluster -1).
+
+2. **Forme des Clusters** :
+   - Les points jaunes formant le cluster 0 sont répartis de manière dense, ce qui répond aux critères de DBSCAN pour former un cluster.
+   - Les points violets (bruit) sont dispersés et ne remplissent pas les critères de densité pour appartenir à un cluster.
+
+### Conclusion
+
+En résumé, le graphique montre effectivement **un seul cluster dense (cluster 0)** et plusieurs points étiquetés comme **bruit (cluster -1)**. La "forme bizarre" de la distribution peut être due aux caractéristiques des données et aux paramètres choisis pour DBSCAN *epsilon* et *min_samples*. 
+
+*OPTIONNEL - Travail à faire en groupe* : Pour améliorer la compréhension de cette visualisation, il pourrait être utile de vérifier les paramètres de DBSCAN et de les ajuster si nécessaire, ou d'examiner les données brutes pour mieux comprendre leur distribution.
 
 
 ---
