@@ -9,7 +9,7 @@ $$
      s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
 $$
 
-     où \(a(i)\) est la distance moyenne entre \(i\) et tous les autres points de son propre cluster, et \(b(i)\) est la distance moyenne entre \(i\) et tous les points du cluster le plus proche auquel \(i\) ne appartient pas.
+     où a(i) est la distance moyenne entre i et tous les autres points de son propre cluster, et b(i) est la distance moyenne entre i et tous les points du cluster le plus proche auquel i ne appartient pas.
 
 2. **Clusters et Scores Élevés** :
    - Les échantillons ayant un score de silhouette proche de 1 (comme ceux qui atteignent presque 0.7 dans votre graphique) sont très bien intégrés à leur cluster et bien séparés des autres clusters.
