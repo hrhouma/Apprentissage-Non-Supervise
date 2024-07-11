@@ -63,3 +63,5 @@ Dans le graphique ci-haut, nous avons utilisé l'algorithme DBSCAN pour le clust
 ### Conclusion
 
 Dans ce graphique, il y a effectivement **un seul cluster principal (cluster 0)** et plusieurs **points de bruit (cluster -1)**. L'algorithme DBSCAN a déterminé que les points jaunes sont suffisamment denses pour former un cluster, tandis que les points violets ne le sont pas et sont donc considérés comme du bruit.
+
+---
