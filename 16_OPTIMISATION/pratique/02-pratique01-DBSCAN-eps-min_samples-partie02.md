@@ -3,7 +3,7 @@
 python -m venv dbscan-env
 dbscan-env\Scripts\activate
 # source dbscan-env/bin/activate (LINUX)
-pip install tkinter numpy matplotlib scikit-learn
+pip install tkinter numpy matplotlib scikit-learn sklearn
 python dbscan_visualizer.py
 ```
 # Explication
