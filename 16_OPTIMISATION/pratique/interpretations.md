@@ -24,6 +24,8 @@
 - Le trait rouge représente le score moyen de la silhouette pour évaluer globalement la qualité du clustering, tandis que la forme du diagramme montre la distribution des scores de silhouette pour chaque échantillon. La forme peut être due à une forte variabilité dans la qualité des clusters pour les différents échantillons.
 
 # Formatif :  Interprétez ce graphique
+# Le trait rouge pointillé vertical représente le score moyen de la silhouette pour tous les échantillons du dataset.
+### Les traits horizantaux ==> Score de silhouette pour les échantillons (ensemble de points)
 ![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/41fee991-31c4-4421-9c9d-c96c4c1b6657)
 
 ---
