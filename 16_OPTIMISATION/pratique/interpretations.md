@@ -48,7 +48,7 @@ Dans le graphique ci-haut, nous avons utilisé l'algorithme DBSCAN pour le clust
 - **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** :
   - Il identifie les clusters en fonction de la densité des points.
   - Les points en dehors de toute région dense sont classés comme bruit.
-  - L'algorithme utilise deux paramètres principaux : \(\epsilon\) (eps, rayon de recherche) et \(\text{min_samples}\) (le nombre minimum de points pour former un cluster dense).
+  - L'algorithme utilise deux paramètres principaux : **epsilon** (eps, rayon de recherche) et **min_samples** (le nombre minimum de points pour former un cluster dense).
 
 ### Analyse du Graphique
 
