@@ -164,6 +164,56 @@ En résumé, le graphique montre effectivement **un seul cluster dense (cluster 
 
 Le diagramme des silhouettes montre comment chaque échantillon est intégré dans son cluster. Les formes noires verticales indiquent la distribution des scores de silhouette pour chaque cluster, et le trait rouge montre le score moyen de silhouette pour évaluer globalement la qualité du clustering. Dans ce cas, nous avons un cluster principal (*UN SEUL*) et plusieurs points de bruit, avec des scores de silhouette variés mais généralement positifs pour le cluster 0.
 
+# 8 - Interprétez ce graphique
+
+
+### Diagramme des Silhouettes pour le Cluster -1 (Bruit)
+
+1. **Cluster -1** :
+   - Le cluster -1 représente les échantillons classés comme **bruit** par l'algorithme DBSCAN.
+   - Typiquement, les échantillons de **bruit** ont des scores de silhouette **négatifs ou très faibles**, car ils ne sont pas bien intégrés dans un cluster spécifique.
+
+2. **Observation des Scores Positifs et Négatifs** :
+   - Si vous observez des scores **positifs** pour les échantillons étiquetés comme **-1**, cela peut sembler contre-intuitif. Cependant, cela peut se produire pour plusieurs raisons :
+   - La majorité des échantillons de **bruit** auront des scores de silhouette **négatifs**, indiquant qu'ils ne s'intègrent pas bien dans un cluster.
+
+### Raisons pour les Scores Positifs dans le Cluster -1
+
+1. **Calcul du Coefficient de Silhouette** :
+   - Le coefficient de silhouette pour un échantillon \(i\) est calculé comme :
+     \[
+     s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+     \]
+     où \(a(i)\) est la distance moyenne entre \(i\) et tous les autres points de son propre cluster, et \(b(i)\) est la distance moyenne entre \(i\) et tous les points du cluster le plus proche auquel \(i\) ne appartient pas.
+
+2. **Clusters Proches** :
+   - Si les **points de bruit** sont proches d'un cluster mais ne remplissent pas les critères de densité pour être inclus, ils peuvent encore avoir des scores de silhouette **relativement positifs**. Cela peut indiquer que ces points sont proches des **frontières de clusters**.
+
+3. **Paramètres de DBSCAN** :
+   - Les paramètres de DBSCAN (\(\epsilon\) et \(\text{min_samples}\)) influencent fortement la classification des points. Des **paramètres mal ajustés** peuvent conduire à ce que certains points soient classés comme **bruit** alors qu'ils sont proches des **clusters denses**.
+
+### Revisualisation du Graphique
+
+1. **Formes Verticales pour -1** :
+   - Les barres pour le cluster **-1** montrent que certains échantillons ont des scores de silhouette **légèrement positifs**, ce qui peut indiquer qu'ils sont proches de clusters mais pas assez denses pour y être inclus.
+   - La majorité des barres pour le cluster **-1** montrent des scores de silhouette **négatifs**, indiquant une mauvaise intégration dans un cluster spécifique.
+
+2. **Formes Verticales pour 0** :
+   - La plupart des points dans le cluster **0** ont des scores de silhouette **positifs**, indiquant une bonne cohésion interne du cluster.
+
+### Résumé et Conclusion
+
+- **Scores Positifs pour -1** : Les scores légèrement **positifs** pour les échantillons de **bruit** peuvent indiquer leur **proximité avec un cluster**, bien qu'ils ne soient pas assez denses pour y être inclus.
+- **Scores Négatifs pour -1** : Les scores **négatifs** pour les échantillons de **bruit** indiquent qu'ils sont mal intégrés dans un cluster et sont isolés.
+- **Qualité du Clustering** : Le score de silhouette moyen autour de **0.35** indique une **qualité de clustering modérée**.
+- **Nombre de Clusters** : Vous avez un cluster principal (**cluster 0**) et plusieurs points de **bruit** (**cluster -1**).
+
+L'observation de scores positifs pour les échantillons de **bruit** peut se produire et indique que ces points sont probablement **proches d'un cluster dense** mais ne répondent pas aux critères stricts pour y être inclus selon les paramètres de DBSCAN.
+```
+
+
+
+
 
 ---
 # Annexe 1 - Pourquoi la partie correspondant à \(0\) est plus large que celle correspondant à \(-1\) dans notre diagramme des silhouettes, examinons en détail comment ce graphique est construit et ce qu'il représente ?
