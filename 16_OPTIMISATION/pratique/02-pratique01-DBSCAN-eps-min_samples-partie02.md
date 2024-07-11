@@ -1,4 +1,12 @@
 ```bash
+python -m venv dbscan-env
+dbscan-env\Scripts\activate
+source dbscan-env/bin/activate
+pip install tkinter numpy matplotlib scikit-learn
+python dbscan_visualizer.py
+```
+
+```bash
 # Étape 1 : Créer un environnement virtuel
 python -m venv dbscan-env
 
