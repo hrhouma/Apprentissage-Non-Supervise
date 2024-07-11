@@ -229,4 +229,136 @@ Ce graphique fournit une bonne visualisation de la distribution des données en 
 - **Qualité du Clustering** : Le score moyen de silhouette étant proche de zéro, la qualité du clustering est faible, indiquant que les clusters ne sont pas bien séparés ou qu'il y a un nombre significatif de points de bruit.
 - **Améliorations Possibles** : Pour améliorer la qualité du clustering, il pourrait être utile d'ajuster les paramètres de DBSCAN *epsilon* et *min_samples* ou d'explorer d'autres méthodes de clustering.
 
+----
+# Exercice # 5: 
+
+- *Question* : Comparez la qualité du clustering ! Quel cluster représente une meilleur cohésion ?
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6787562e-a47f-4d4f-8e65-21ff072ffc2f)
+
+## Analyser les éléments clés :
+
+### Composants du Diagramme des Silhouettes
+
+1. **Axe des Abscisses (X-axis)** :
+   - Représente les valeurs des coefficients de silhouette, allant de -0.6 à 0.8.
+   - Le coefficient de silhouette pour chaque échantillon mesure à quel point cet échantillon est bien assigné à son cluster. 
+     - Un score proche de 1 indique que l'échantillon est bien intégré à son cluster.
+     - Un score proche de 0 indique que l'échantillon est sur la frontière entre deux clusters.
+     - Un score négatif indique que l'échantillon serait mieux dans un autre cluster.
+
+2. **Axe des Ordonnées (Y-axis)** :
+   - Représente les différents clusters (étiquetés de 0 à 5).
+   - Les valeurs de l'axe Y (0 à 200) représentent les échantillons individuels dans chaque cluster.
+
+### Analyse des Clusters et des Silhouettes
+
+1. **Largeur Verticale des Clusters** :
+   - La largeur verticale de chaque cluster représente le nombre d'échantillons dans ce cluster. 
+   - Plus la barre est longue, plus le cluster contient d'échantillons.
+
+2. **Scores de Silhouette** :
+   - **Cluster 0** : Scores de silhouette allant de négatifs à positifs. Cohésion interne moyenne, avec certains échantillons mal assignés.
+   - **Cluster 1** : Majoritairement des scores positifs, indiquant une bonne cohésion interne.
+   - **Cluster 2** : Scores positifs, mais avec des variations. Cohésion relativement bonne mais moins homogène que Cluster 1.
+   - **Cluster 3** : Scores positifs avec moins de variation, bonne cohésion.
+   - **Cluster 4** : Scores positifs avec une distribution étroite, excellente cohésion.
+   - **Cluster 5** : Scores positifs élevés, indiquant une très bonne cohésion.
+
+### Comparaison des Clusters
+
+Pour déterminer quel cluster est le meilleur en termes de cohésion interne et de séparation des autres clusters, nous regardons les scores de silhouette :
+
+- **Cluster 5** : Montre les scores de silhouette les plus élevés et les plus positifs, indiquant qu'il est bien séparé des autres clusters et que ses échantillons sont bien intégrés.
+- **Cluster 4** : A également des scores positifs élevés, ce qui indique une bonne cohésion.
+- **Cluster 3** : A des scores positifs mais légèrement plus variés que Cluster 4 et 5.
+- **Cluster 2** : Présente une bonne cohésion interne mais moins homogène.
+- **Cluster 1** : Bonnes cohésion et intégration.
+- **Cluster 0** : A des scores de silhouette qui varient de négatifs à positifs, indiquant une cohésion interne moyenne et des échantillons mal assignés.
+
+### Conclusion
+
+- **Meilleur Cluster** : **Cluster 5**, en raison de ses scores de silhouette élevés et positifs, indiquant une excellente cohésion interne et une bonne séparation des autres clusters.
+- **Cohésion Interne** : La cohésion interne des clusters peut être évaluée en regardant les scores de silhouette. Plus les scores sont positifs et élevés, meilleure est la cohésion interne.
+- **Axe des Y** : Les valeurs sur l'axe des Y représentent les échantillons dans chaque cluster. La hauteur des barres indique le nombre d'échantillons dans chaque cluster.
+
+## En résumé, le diagramme des silhouettes montre que Cluster 5 a la meilleure cohésion interne, suivi de près par Cluster 4, tandis que Cluster 0 a la cohésion interne la plus faible avec plusieurs échantillons mal assignés.
+
+---
+# Annexe  1 : Analyse approfondie de la question 5
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6787562e-a47f-4d4f-8e65-21ff072ffc2f)
+
+### Composants du Diagramme des Silhouettes
+
+1. **Axe des Abscisses (X-axis)** :
+   - Représente les valeurs des coefficients de silhouette, allant de -0.6 à 0.8.
+   - Le coefficient de silhouette pour chaque échantillon mesure à quel point cet échantillon est bien assigné à son cluster. 
+     - Un score proche de 1 indique que l'échantillon est bien intégré à son cluster.
+     - Un score proche de 0 indique que l'échantillon est sur la frontière entre deux clusters.
+     - Un score négatif indique que l'échantillon serait mieux dans un autre cluster.
+
+2. **Axe des Ordonnées (Y-axis)** :
+   - Représente les différents clusters (étiquetés de 0 à 5).
+   - Les valeurs de l'axe Y (0 à 200) représentent les échantillons individuels dans chaque cluster.
+
+### Analyse des Clusters et des Silhouettes
+
+1. **Largeur Verticale des Clusters** :
+   - La largeur verticale de chaque cluster représente le nombre d'échantillons dans ce cluster. 
+   - Plus la barre est longue, plus le cluster contient d'échantillons.
+
+2. **Scores de Silhouette** :
+   - **Cluster 0** : Scores de silhouette allant de négatifs à positifs. Cohésion interne moyenne, avec certains échantillons mal assignés.
+   - **Cluster 1** : Majoritairement des scores positifs, indiquant une bonne cohésion interne.
+   - **Cluster 2** : Scores positifs, mais avec des variations. Cohésion relativement bonne mais moins homogène que Cluster 1.
+   - **Cluster 3** : Scores positifs avec moins de variation, bonne cohésion.
+   - **Cluster 4** : Scores positifs avec une distribution étroite, excellente cohésion.
+   - **Cluster 5** : Scores positifs élevés, indiquant une très bonne cohésion.
+
+### Comparaison des Clusters
+
+Pour déterminer quel cluster est le meilleur en termes de cohésion interne et de séparation des autres clusters, nous regardons les scores de silhouette :
+
+- **Cluster 5** : Montre les scores de silhouette les plus élevés et les plus positifs, indiquant qu'il est bien séparé des autres clusters et que ses échantillons sont bien intégrés.
+- **Cluster 4** : A également des scores positifs élevés, ce qui indique une bonne cohésion.
+- **Cluster 3** : A des scores positifs mais légèrement plus variés que Cluster 4 et 5.
+- **Cluster 2** : Présente une bonne cohésion interne mais moins homogène.
+- **Cluster 1** : Bonnes cohésion et intégration.
+- **Cluster 0** : A des scores de silhouette qui varient de négatifs à positifs, indiquant une cohésion interne moyenne et des échantillons mal assignés.
+
+### Conclusion
+
+- **Meilleur Cluster** : **Cluster 5**, en raison de ses scores de silhouette élevés et positifs, indiquant une excellente cohésion interne et une bonne séparation des autres clusters.
+- **Cohésion Interne** : La cohésion interne des clusters peut être évaluée en regardant les scores de silhouette. Plus les scores sont positifs et élevés, meilleure est la cohésion interne.
+- **Axe des Y** : Les valeurs sur l'axe des Y représentent les échantillons dans chaque cluster. La hauteur des barres indique le nombre d'échantillons dans chaque cluster.
+
+# ==> En résumé, le diagramme des silhouettes montre que Cluster 5 a la meilleure cohésion interne, suivi de près par Cluster 4, tandis que Cluster 0 a la cohésion interne la plus faible avec plusieurs échantillons mal assignés.
+
+# Annexe 2 : C'est quoi le chiffre 200 dans le graphique sur l'axe des ordonnées (Y) ?
+
+![image](https://github.com/hrhouma/Apprentissage-Non-Supervise/assets/10111526/6787562e-a47f-4d4f-8e65-21ff072ffc2f)
+
+Le nombre 200 sur l'axe des ordonnées (Y) du diagramme des silhouettes représente le nombre total de points de données (ou échantillons) utilisés dans l'analyse de clustering. Cela ne représente pas le nombre de combinaisons pour former des échantillons, mais simplement le nombre d'échantillons individuels.
+
+### Explication Détailée
+
+1. **Nombre Total de Points** :
+   - Le dataset utilisé pour le clustering contient 200 points de données au total.
+   - Ces points sont répartis entre différents clusters, tels que déterminés par l'algorithme DBSCAN.
+
+2. **Représentation dans le Diagramme des Silhouettes** :
+   - L'axe des ordonnées (Y) du diagramme des silhouettes s'étend de 0 à 200, représentant les 200 points de données.
+   - Chaque cluster est représenté par une section verticale du diagramme. Les valeurs sur l'axe Y à l'intérieur de chaque section indiquent le nombre de points dans ce cluster.
+
+3. **Interprétation des Clusters** :
+   - Par exemple, si le cluster 2 couvre les valeurs de 100 à 150 sur l'axe Y, cela signifie qu'il y a 50 points de données dans le cluster 2.
+   - Chaque point de données dans un cluster est représenté par une barre verticale colorée, et la longueur horizontale de la barre indique le score de silhouette pour cet échantillon.
+
+### Conclusion
+
+- **200 Points de Données** : Le nombre 200 sur l'axe Y représente le nombre total de points de données individuels.
+- **Distribution entre Clusters** : Les sections du diagramme des silhouettes montrent comment ces 200 points sont répartis entre les différents clusters, avec les scores de silhouette indiquant la qualité de l'intégration de chaque point dans son cluster respectif.
+
+# ==> En résumé, le chiffre 200 représente le nombre total de points de données dans le dataset utilisé pour le clustering et non pas des combinaisons pour former des échantillons.
 
