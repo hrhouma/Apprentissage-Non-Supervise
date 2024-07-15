@@ -1,7 +1,7 @@
 
 # Partie 2: Questions de réfléxion et recherche sur les Algorithmes de Clustering pour les Très Grandes Bases de Données et les Données de Haute Dimensionnalité
 # Documentation supplémentaire :
-- 
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/tree/main/17_OPTIMISATION_2
 #### Instructions Générales :
 1. Faites une petite recherche complémentaire en plus des lectures fournies.
 2. Rédigez un paragraphe pour chaque question, en expliquant ce que vous pensez des algorithmes de clustering pour les très grandes bases de données et pour les données de haute dimensionnalité.
