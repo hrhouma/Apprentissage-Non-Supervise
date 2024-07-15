@@ -1,5 +1,5 @@
 
-### Partie 2: Algorithmes de Clustering pour les Très Grandes Bases de Données et les Données de Haute Dimensionnalité
+# Partie 2: Algorithmes de Clustering pour les Très Grandes Bases de Données et les Données de Haute Dimensionnalité
 
 #### Instructions Générales :
 1. Faites une petite recherche complémentaire en plus des lectures fournies.
