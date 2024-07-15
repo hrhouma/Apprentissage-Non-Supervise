@@ -161,6 +161,134 @@ print(f"Silhouette Score DBSCAN: {silhouette_dbscan}")
 print(f"Davies-Bouldin Index DBSCAN: {dbi_dbscan}")
 ```
 
-# Conclusion
+# Annexe 1
 
-Ce README fournit un exemple complet d'analyse de clustering pour la détection de chutes. Cet exemple n'est pas garanti d'être correct à 100% et peut nécessiter des ajustements. Il est de votre responsabilité de vérifier, corriger et interpréter les résultats obtenus. Utilisez cet exemple comme point de départ pour votre propre analyse et adaptation aux spécificités de votre dataset.
+Ce document fournit un exemple complet d'analyse de clustering pour la détection de chutes. Cet exemple n'est pas garanti d'être correct à 100% et peut nécessiter des ajustements. Il est de votre responsabilité de vérifier, corriger et interpréter les résultats obtenus. Utilisez cet exemple comme point de départ pour votre propre analyse et adaptation aux spécificités de votre dataset.
+
+# Annexe 2
+
+### Description des Colonnes
+
+#### 1. Fichier `Subject1-raw-all.csv`
+
+| Colonne   | Description                                                                                           |
+|-----------|-------------------------------------------------------------------------------------------------------|
+| `Acc(X)`  | Accélération le long de l'axe X                                                                       |
+| `Acc(Y)`  | Accélération le long de l'axe Y                                                                       |
+| `Acc(Z)`  | Accélération le long de l'axe Z                                                                       |
+| `Rot(X)`  | Rotation le long de l'axe X                                                                           |
+| `Rot(Y)`  | Rotation le long de l'axe Y                                                                           |
+| `Rot(Z)`  | Rotation le long de l'axe Z                                                                           |
+| `Pitch`   | Angle de tangage (inclinaison vers le haut ou le bas)                                                 |
+| `Roll`    | Angle de roulis (inclinaison vers la gauche ou la droite)                                             |
+| `Yaw`     | Angle de lacet (rotation autour de l'axe vertical)                                                    |
+| `Timestamp` | Horodatage indiquant le moment de la mesure                                                        |
+
+#### 2. Fichier `Subject1.csv`
+
+| Colonne                  | Description                                                                                           |
+|--------------------------|-------------------------------------------------------------------------------------------------------|
+| `Index`                  | Indice de la ligne de données                                                                         |
+| `Acceleration Mean`      | Moyenne de l'accélération sur toutes les dimensions                                                    |
+| `Rotation Mean`          | Moyenne de la rotation sur toutes les dimensions                                                       |
+| `Acceleration Variance`  | Variance de l'accélération sur toutes les dimensions                                                   |
+| `Rotation Variance`      | Variance de la rotation sur toutes les dimensions                                                      |
+| `Acc Y Mean`             | Moyenne de l'accélération le long de l'axe Y                                                           |
+| `Acc Z Mean`             | Moyenne de l'accélération le long de l'axe Z                                                           |
+| `Rot Y Mean`             | Moyenne de la rotation le long de l'axe Y                                                             |
+| `Rot Z Mean`             | Moyenne de la rotation le long de l'axe Z                                                             |
+| `Max Acceleration`       | Accélération maximale mesurée                                                                          |
+| `Max Rotation`           | Rotation maximale mesurée                                                                              |
+| `First Acceleration`     | Première valeur de l'accélération dans l'enregistrement                                                |
+| `Last Acceleration`      | Dernière valeur de l'accélération dans l'enregistrement                                                |
+| `Fall Time`              | Durée d'une chute détectée                                                                             |
+| `Pitch`                  | Angle de tangage                                                                                       |
+| `Roll`                   | Angle de roulis                                                                                        |
+| `Yaw`                    | Angle de lacet                                                                                        |
+| `Timestamp`              | Horodatage indiquant le moment de la mesure                                                           |
+| `Fall`                   | Indicateur binaire (0 ou 1) indiquant si une chute a été détectée                                      |
+| `Acc Y Stdev`            | Écart-type de l'accélération le long de l'axe Y                                                       |
+| `Acc Z Stdev`            | Écart-type de l'accélération le long de l'axe Z                                                       |
+| `Rot Y Stdev`            | Écart-type de la rotation le long de l'axe Y                                                          |
+| `Rot Z Stdev`            | Écart-type de la rotation le long de l'axe Z                                                          |
+| `Fourier Acc Coef`       | Coefficients de la transformation de Fourier appliquée à l'accélération                                |
+| `Fourier Rot Coef`       | Coefficients de la transformation de Fourier appliquée à la rotation                                  |
+
+#### 3. Fichier `Subject1-raw.csv`
+
+| Colonne   | Description                                                                                           |
+|-----------|-------------------------------------------------------------------------------------------------------|
+| `Feature Line` | Indice de la ligne de données                                                                    |
+| `Acc(X)`  | Accélération le long de l'axe X                                                                       |
+| `Acc(Y)`  | Accélération le long de l'axe Y                                                                       |
+| `Acc(Z)`  | Accélération le long de l'axe Z                                                                       |
+| `Rot(X)`  | Rotation le long de l'axe X                                                                           |
+| `Rot(Y)`  | Rotation le long de l'axe Y                                                                           |
+| `Rot(Z)`  | Rotation le long de l'axe Z                                                                           |
+| `Pitch`   | Angle de tangage                                                                                       |
+| `Roll`    | Angle de roulis                                                                                        |
+| `Yaw`     | Angle de lacet                                                                                        |
+| `Timestamp` | Horodatage indiquant le moment de la mesure                                                        |
+| `Fall`    | Indicateur binaire (0 ou 1) indiquant si une chute a été détectée                                      |
+
+
+
+### Description des Colonnes
+
+#### 1. Fichier `Subject1-raw-all.csv`
+
+- `Acc(X)`: Accélération le long de l'axe X
+- `Acc(Y)`: Accélération le long de l'axe Y
+- `Acc(Z)`: Accélération le long de l'axe Z
+- `Rot(X)`: Rotation le long de l'axe X
+- `Rot(Y)`: Rotation le long de l'axe Y
+- `Rot(Z)`: Rotation le long de l'axe Z
+- `Pitch`: Angle de tangage (inclinaison vers le haut ou le bas)
+- `Roll`: Angle de roulis (inclinaison vers la gauche ou la droite)
+- `Yaw`: Angle de lacet (rotation autour de l'axe vertical)
+- `Timestamp`: Horodatage indiquant le moment de la mesure
+
+#### 2. Fichier `Subject1.csv`
+
+- `Index`: Indice de la ligne de données
+- `Acceleration Mean`: Moyenne de l'accélération sur toutes les dimensions
+- `Rotation Mean`: Moyenne de la rotation sur toutes les dimensions
+- `Acceleration Variance`: Variance de l'accélération sur toutes les dimensions
+- `Rotation Variance`: Variance de la rotation sur toutes les dimensions
+- `Acc Y Mean`: Moyenne de l'accélération le long de l'axe Y
+- `Acc Z Mean`: Moyenne de l'accélération le long de l'axe Z
+- `Rot Y Mean`: Moyenne de la rotation le long de l'axe Y
+- `Rot Z Mean`: Moyenne de la rotation le long de l'axe Z
+- `Max Acceleration`: Accélération maximale mesurée
+- `Max Rotation`: Rotation maximale mesurée
+- `First Acceleration`: Première valeur de l'accélération dans l'enregistrement
+- `Last Acceleration`: Dernière valeur de l'accélération dans l'enregistrement
+- `Fall Time`: Durée d'une chute détectée
+- `Pitch`: Angle de tangage
+- `Roll`: Angle de roulis
+- `Yaw`: Angle de lacet
+- `Timestamp`: Horodatage indiquant le moment de la mesure
+- `Fall`: Indicateur binaire (0 ou 1) indiquant si une chute a été détectée
+- `Acc Y Stdev`: Écart-type de l'accélération le long de l'axe Y
+- `Acc Z Stdev`: Écart-type de l'accélération le long de l'axe Z
+- `Rot Y Stdev`: Écart-type de la rotation le long de l'axe Y
+- `Rot Z Stdev`: Écart-type de la rotation le long de l'axe Z
+- `Fourier Acc Coef`: Coefficients de la transformation de Fourier appliquée à l'accélération
+- `Fourier Rot Coef`: Coefficients de la transformation de Fourier appliquée à la rotation
+
+#### 3. Fichier `Subject1-raw.csv`
+
+- `Feature Line`: Indice de la ligne de données
+- `Acc(X)`: Accélération le long de l'axe X
+- `Acc(Y)`: Accélération le long de l'axe Y
+- `Acc(Z)`: Accélération le long de l'axe Z
+- `Rot(X)`: Rotation le long de l'axe X
+- `Rot(Y)`: Rotation le long de l'axe Y
+- `Rot(Z)`: Rotation le long de l'axe Z
+- `Pitch`: Angle de tangage
+- `Roll`: Angle de roulis
+- `Yaw`: Angle de lacet
+- `Timestamp`: Horodatage indiquant le moment de la mesure
+- `Fall`: Indicateur binaire (0 ou 1) indiquant si une chute a été détectée
+
+
