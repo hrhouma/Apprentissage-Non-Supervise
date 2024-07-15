@@ -1,6 +1,5 @@
-# README: Analyse de Clustering pour la Détection de Chutes
+# Exemple de code
 
-# Introduction
 ## Lien pour les données : 
 - https://drive.google.com/drive/folders/13OXLFmbp29cuEH3gTZhDSjb697iivN1J?usp=sharing
   
