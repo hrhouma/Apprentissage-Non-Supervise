@@ -1,5 +1,7 @@
 # Analyse comparative des méthodes de clustering pour des activités et la détection de chutes
-
+# Documentation supplémentaire :
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/tree/main/17_OPTIMISATION_2
+  
 ### Objectif :
 L'objectif est de comparer l'efficacité de K-means, DBSCAN et le clustering hiérarchique pour la détection non supervisée des activités journalères comme s'assoir, walking, sitting, chutes en utilisant un ou deux datasets parmi ceux proposés.
 
