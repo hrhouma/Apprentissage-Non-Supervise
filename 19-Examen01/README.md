@@ -1,4 +1,4 @@
-Chers étudiants,
+Chers étudiant.e.s,
 
 Je vous informe que votre travail est divisé en trois parties distinctes. 
 
