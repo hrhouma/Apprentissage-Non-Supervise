@@ -145,9 +145,7 @@ LDA est une technique de réduction de dimensionnalité supervisée qui maximise
 | t-SNE                     | - Excellente capacité à révéler la structure locale<br>- Utile pour la visualisation | - Inefficace pour de très grandes bases de données<br>- Sensibilité aux paramètres  | PCA, LDA                                 |
 | DBSCAN                    | - Capacité à détecter des clusters de formes variées<br>- Robustesse aux anomalies<br>- Pas besoin de spécifier le nombre de clusters | - Sensibilité aux paramètres ε et MinPts<br>- Difficulté à détecter des clusters dans des données de haute dimension | PCA                                      |
 | Clustering Spectral       | - Capacité à détecter des clusters non convexes<br>- Efficace pour les données de haute dimension | - Complexité computationnelle élevée<br>- Sensibilité au choix de la fonction de similarité | PCA                                      |
-| Méthodes de Réduction de Dimensionnal
-
-ité (PCA, LDA) | - Amélioration de la séparation des classes<br>- Réduction efficace de la dimensionnalité | - PCA : Perte d'information<br>- LDA : Nécessite des données étiquetées | N/A                                      |
+| Méthodes de Réduction de Dimensionnalité (PCA, LDA) | - Amélioration de la séparation des classes<br>- Réduction efficace de la dimensionnalité | - PCA : Perte d'information<br>- LDA : Nécessite des données étiquetées | N/A                                      |
 
 [Retour à la table des matières](#table-des-matières)
 
