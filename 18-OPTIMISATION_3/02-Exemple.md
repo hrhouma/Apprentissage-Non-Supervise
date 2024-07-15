@@ -1,7 +1,9 @@
 # README: Analyse de Clustering pour la Détection de Chutes
 
 # Introduction
-
+## Lien pour les données : 
+- https://drive.google.com/drive/folders/13OXLFmbp29cuEH3gTZhDSjb697iivN1J?usp=sharing
+  
 Ce README présente un exemple d'analyse comparative de différentes méthodes de clustering pour la détection de chutes à partir de données brutes. Cet exemple utilise les algorithmes K-means, DBSCAN et le clustering hiérarchique pour analyser les données des sujets.
 
 > **Remarque :** Cet exemple est fourni à titre d'illustration et peut nécessiter des ajustements et des corrections. Il est de votre responsabilité de vérifier, corriger et interpréter les résultats obtenus.
