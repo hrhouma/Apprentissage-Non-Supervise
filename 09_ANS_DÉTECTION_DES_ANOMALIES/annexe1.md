@@ -1,19 +1,23 @@
 # Détection des Anomalies avec l'Apprentissage Non Supervisé
 
-- Les étudiants apprendront à utiliser divers algorithmes pour détecter des anomalies : DBSCAN pour identifier des outliers dans des jeux de données en utilisant `pandas` et `matplotlib`; Isolation Forest pour détecter des anomalies dans les données d'assurance avec encodage des variables catégorielles et visualisation en 3D; et un autoencodeur pour détecter des anomalies dans des données standardisées. De plus, les étudiants exploreront par eux-mêmes l'utilisation de réseaux adversariaux génératifs (GANs) pour générer des données synthétiques et identifier les anomalies, ainsi que l'application des Deep Belief Networks (DBN) à travers des travaux de recherche.
-
+Les étudiants apprendront à utiliser divers algorithmes pour détecter des anomalies : DBSCAN pour identifier des outliers dans des jeux de données en utilisant `pandas` et `matplotlib`; Isolation Forest pour détecter des anomalies dans les données d'assurance avec encodage des variables catégorielles et visualisation en 3D; et un autoencodeur pour détecter des anomalies dans des données standardisées. De plus, les étudiants exploreront par eux-mêmes l'utilisation de réseaux adversariaux génératifs (GANs) pour générer des données synthétiques et identifier les anomalies, ainsi que l'application des Deep Belief Networks (DBN) à travers des travaux de recherche.
 # Détection des Anomalies avec l'Apprentissage Non Supervisé
 
 **Description 1 : Utilisation de DBSCAN**
+
 Les étudiants vont apprendre à utiliser l'algorithme DBSCAN pour détecter les anomalies dans un jeu de données. Ils comprendront comment prétraiter les données avec `pandas` et `StandardScaler`, et visualiser les résultats avec `matplotlib`.
 
 **Description 2 : Utilisation de l'Isolation Forest**
+
 Les étudiants vont découvrir comment appliquer l'algorithme Isolation Forest pour identifier les anomalies dans des données d'assurance. Ils apprendront à encoder les variables catégorielles, à utiliser `Pandas` pour la manipulation des données et à visualiser les anomalies détectées avec `matplotlib` en 3D.
 
 **Description 3 : Détection d'Anomalies dans les Images**
+
 Les étudiants vont explorer l'utilisation de l'Isolation Forest pour détecter les anomalies dans les images. Ils apprendront à quantifier les images, à entraîner un modèle de détection d'anomalies, et à utiliser OpenCV pour afficher les résultats, indiquant si une image est une anomalie ou non.
 
-**Description 4 : Détection des Anomalies avec des Autoencodeurs et GANs**
+# Non inclus dans le plan de cours (partie optionnelle qui ne sera pas démontrée en classe)
+**Description 4 : Détection des Anomalies avec des Autoencodeurs et des GANs**
+
 Les étudiants vont apprendre à utiliser des autoencodeurs et des réseaux adversariaux génératifs (GANs) pour détecter des anomalies dans un ensemble de données. Ils comprendront comment prétraiter les données, encoder les variables catégorielles, entraîner un modèle d'autoencodeur, et utiliser les GANs pour générer des données synthétiques et identifier les anomalies.
 
 ```python
