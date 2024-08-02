@@ -1,0 +1,3 @@
+### Plan de Cours : Détection des Anomalies avec l'Apprentissage Non Supervisé
+
+Les étudiants apprendront à utiliser divers algorithmes pour détecter des anomalies : DBSCAN pour identifier des outliers dans des jeux de données en utilisant `pandas` et `matplotlib`; Isolation Forest pour détecter des anomalies dans les données d'assurance avec encodage des variables catégorielles et visualisation en 3D; et un autoencodeur pour détecter des anomalies dans des données standardisées. De plus, les étudiants exploreront par eux-mêmes l'utilisation de réseaux adversariaux génératifs (GANs) pour générer des données synthétiques et identifier les anomalies, ainsi que l'application des Deep Belief Networks (DBN) à travers des travaux de recherche.
