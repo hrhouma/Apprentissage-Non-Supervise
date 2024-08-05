@@ -223,7 +223,7 @@ Supposons que dans une entreprise, la majorité des employés travaillent de 9h 
 # Variables Catégorielles
 Isolation Forest peut aussi traiter des variables catégorielles. Imaginez des rectangles de différentes tailles représentant différentes équipes dans l'entreprise. La taille de chaque rectangle est proportionnelle au nombre d'employés dans chaque équipe. L'algorithme utilise ces rectangles pour diviser les données de manière équitable.
 
-![Variables catégorielles](file-4Zuttub2b3kDBzKKMyaIRLR1)
+
 
 ### Implémentation en Python : Un Exemple Concret
 
