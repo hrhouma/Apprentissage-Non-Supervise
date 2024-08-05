@@ -1,5 +1,8 @@
 # Étude de Cas : Détection des Comportements Anormaux des Employés avec IsolationForest
 
+# Références : 
+- https://drive.google.com/drive/folders/1jhca6EyF4XQoMkIxfjKUMLeoRr4yUO5G?usp=sharing
+
 # Contexte
 
 Dans cette étude de cas, nous utilisons l'algorithme IsolationForest pour détecter les comportements anormaux parmi les employés d'une entreprise. L'objectif est d'identifier les employés qui présentent des comportements problématiques tels que des plaintes fréquentes, des absences élevées, des heures de travail atypiques et des scores de performance faibles.
