@@ -58,10 +58,14 @@ Rappelez-vous qu'une coupure peut également se produire le long de l'autre dime
 
 
 ![image](https://github.com/user-attachments/assets/95716ccc-9ee7-46e6-a58e-992a92af97c5)
-![image](https://github.com/user-attachments/assets/643121d0-2c9f-4943-851d-fef31f260607)
 
 
 En moyenne, un point de données anormal sera isolé dans une boîte englobante à une profondeur d'arbre plus petite que les autres points. Lors de l'inférence avec un modèle Isolation Forest entraîné, le score d'anomalie final est reporté comme la moyenne des scores reportés par chaque arbre de décision individuel.
+
+
+![image](https://github.com/user-attachments/assets/643121d0-2c9f-4943-851d-fef31f260607)
+
+
 
 
 # Variables catégorielles
