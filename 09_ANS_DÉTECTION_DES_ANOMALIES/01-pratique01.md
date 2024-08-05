@@ -1,7 +1,7 @@
 # Lien des travaux : 
 - https://drive.google.com/drive/folders/1eYlsTNAAoy53DmvL7Ymb07bOi039Ynn4?usp=sharing
-
-## Détection d'Anomalies avec K-Means et DBSCAN
+---
+# Détection d'Anomalies avec K-Means et DBSCAN
 
 Ce document présente trois méthodes différentes pour détecter des anomalies dans des ensembles de données en utilisant les algorithmes K-Means et DBSCAN. Chaque méthode a ses propres caractéristiques et avantages en fonction du type de données et de la nature des anomalies recherchées.
 
@@ -30,7 +30,8 @@ anomalies = X[silhouette_values < 0]
 - `silhouette_samples(X, labels)` : Cette fonction calcule la valeur de silhouette pour chaque point de données. Elle prend en entrée les données `X` et les labels des clusters `labels`.
 - `anomalies = X[silhouette_values < 0]` : Ici, nous filtrons les points dont la valeur de silhouette est négative et les considérons comme des anomalies.
 
-#### 2. DBSCAN
+-----
+# 2. DBSCAN
 
 ##### Algorithme
 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering basé sur la densité. Il forme des clusters en regroupant des points proches les uns des autres, en fonction de deux paramètres :
@@ -56,7 +57,8 @@ anomalies = X[labels_dbscan == -1]
 - `labels_dbscan = dbscan.fit_predict(X)` : Cette fonction exécute l'algorithme DBSCAN sur les données `X` et retourne les labels des clusters. Les points de bruit sont marqués avec le label `-1`.
 - `anomalies = X[labels_dbscan == -1]` : Ici, nous filtrons les points dont le label est `-1` et les considérons comme des anomalies.
 
-#### 3. K-Means avec Distances aux Centres
+----
+# 3. K-Means avec Distances aux Centres
 
 ##### Algorithme
 Comme précédemment, K-Means partitionne un ensemble de données en `k` clusters en minimisant la variance intra-cluster.
@@ -85,9 +87,10 @@ anomalies = distances > threshold
 | **Complexité**                   | Relativement simple à implémenter et à comprendre.                                                                                                      | Peut être plus complexe à paramétrer et à comprendre, mais très efficace pour des données avec des densités variées. | Relativement simple à implémenter et à comprendre.                                                                          |
 | **Qualité du clustering**        | La largeur de silhouette offre une mesure claire de la qualité du clustering.                                                                            | Pas de mesure directe de la qualité, mais très efficace pour détecter des anomalies dans des données bruitées.          | Pas de mesure directe de la qualité, mais l'utilisation des distances peut offrir une bonne indication des anomalies.       |
 
-## Annexes
+----
+# Annexes
 
-### Annexe 1 : K-Means avec Largeur de Silhouette
+# Annexe 1 : K-Means avec Largeur de Silhouette
 
 ```python
 import matplotlib.pyplot as plt
@@ -139,7 +142,7 @@ print(f
 print(f'Nombre d\'anomalies détectées : {len(anomalies)}')
 ```
 
-### Annexe 2 : DBSCAN
+# Annexe 2 : DBSCAN
 
 ```python
 import matplotlib.pyplot as plt
@@ -186,7 +189,7 @@ print(f'La largeur de silhouette moyenne pour DBSCAN est : {silhouette_avg_dbsca
 print(f'Nombre d\'anomalies détectées : {len(X[labels_dbscan == -1])}')
 ```
 
-### Annexe 3 : K-Means avec Distances aux Centres
+# Annexe 3 : K-Means avec Distances aux Centres
 
 ```python
 import matplotlib.pyplot as plt
