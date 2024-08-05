@@ -188,38 +188,38 @@ Isolation Forest est un algorithme conçu pour détecter les anomalies dans un e
 
 Imaginez que vous gérez une entreprise où la plupart des employés arrivent au bureau entre 8h et 9h. Un jour, vous remarquez qu'un employé arrive à 6h du matin. Cet employé est une anomalie. Isolation Forest aide à identifier ces comportements anormaux.
 
-##### Étape 1 : Sélectionner une Dimension
+## Étape 1 : Sélectionner une Dimension
 L'algorithme commence par choisir une dimension aléatoire. C'est comme décider de regarder les heures d'arrivée des employés pour identifier les comportements anormaux.
 
-![Sélection d'une dimension](file-J8AhTSpWdC3HC7sgY3OULmlA)
 
-##### Étape 2 : Diviser les Données
+
+## Étape 2 : Diviser les Données
 Ensuite, l'algorithme divise les données selon cette dimension. Imaginez que vous séparez les employés en deux groupes : ceux qui arrivent avant 8h et ceux qui arrivent après 8h.
 
-![Diviser les données](file-q0Ebvm11xbA2YAgVlgeg2Vek)
 
-##### Étape 3 : Créer des Sous-Arbres
+
+## Étape 3 : Créer des Sous-Arbres
 Chaque groupe devient alors un sous-arbre. C'est comme organiser les employés dans différentes équipes en fonction de leurs heures d'arrivée.
 
-![Créer des sous-arbres](file-ZW5hpnRITsfGZajS9rnBSYTL)
 
-##### Étape 4 : Répéter le Processus
+
+## Étape 4 : Répéter le Processus
 Le processus de division continue jusqu'à ce que chaque employé soit dans son propre groupe. C'est comme continuer à diviser les équipes jusqu'à ce que chaque employé soit seul.
 
-![Répéter le processus](file-3Qifo63z1fGniryLRShtiESJ)
 
-##### Exemple Pratique : Identifier l'Anomalie
+
+## Exemple Pratique : Identifier l'Anomalie
 Imaginez que vous avez un groupe d'employés (points bleus) et un employé qui arrive à 6h du matin (point rouge). Au début, l'algorithme peut ne pas isoler cet employé immédiatement. Mais après quelques itérations, il réussit à le faire.
 
-![Exemple pratique](file-2ggQUFzBT1vSEl0pCHop8fNO)
 
-#### Pourquoi est-ce Efficace ?
+
+## Pourquoi est-ce Efficace ?
 Dans Isolation Forest, un point de données anormal (comme l'employé qui arrive très tôt) sera isolé plus rapidement avec moins de divisions qu'un point normal (les employés qui arrivent entre 8h et 9h). C'est comme dire qu'il est plus facile de trouver l'employé qui arrive à 6h parmi ceux qui arrivent à 8h parce qu'il se démarque immédiatement.
 
-##### Comparaison avec les Horaires de Travail
+## Comparaison avec les Horaires de Travail
 Supposons que dans une entreprise, la majorité des employés travaillent de 9h à 17h. Si un employé commence à travailler à 3h du matin, il sera plus facile à repérer. De la même manière, Isolation Forest isole rapidement les comportements rares ou inhabituels.
 
-#### Variables Catégorielles
+# Variables Catégorielles
 Isolation Forest peut aussi traiter des variables catégorielles. Imaginez des rectangles de différentes tailles représentant différentes équipes dans l'entreprise. La taille de chaque rectangle est proportionnelle au nombre d'employés dans chaque équipe. L'algorithme utilise ces rectangles pour diviser les données de manière équitable.
 
 ![Variables catégorielles](file-4Zuttub2b3kDBzKKMyaIRLR1)
