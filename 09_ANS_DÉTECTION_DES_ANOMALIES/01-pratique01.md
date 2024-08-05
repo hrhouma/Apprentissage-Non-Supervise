@@ -7,7 +7,7 @@ Ce document présente trois méthodes différentes pour détecter des anomalies 
 
 ### Approches
 
-#### 1. K-Means avec Largeur de Silhouette
+# 1. K-Means avec Largeur de Silhouette
 
 ##### Algorithme
 K-Means est un algorithme de clustering qui partitionne un ensemble de données en `k` clusters. L'algorithme minimise la variance intra-cluster et attribue chaque point au cluster dont le centre est le plus proche. Voici comment ça fonctionne :
