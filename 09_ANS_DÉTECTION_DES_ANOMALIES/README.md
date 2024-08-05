@@ -13,7 +13,7 @@
 
 
 ########################################################################################
-# 01 - Explication Détaillée de la Détection des Anomalies dans chaque Code
+# 01 - Explication de la Détection des Anomalies dans chaque Code Proposé
 ########################################################################################
 
 #### 1. K-Means avec Largeur de Silhouette
@@ -53,9 +53,10 @@ anomalies = distances > threshold
 ```
 
 - **distances = np.linalg.norm(X - kmeans.cluster_centers_[labels], axis=1)** : Cette ligne calcule la distance euclidienne entre chaque point et le centre de son cluster respectif. Mathématiquement, la distance euclidienne \( d \) entre un point \( x_i \) et le centre du cluster \( c_j \) est donnée par :
-  \[
+
+$$
   d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
-  \]
+$$
   où \( x_{ik} \) est la \( k \)-ième dimension du point \( x_i \), et \( c_{jk} \) est la \( k \)-
 
 
