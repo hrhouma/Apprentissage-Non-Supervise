@@ -13,7 +13,27 @@
 ## 10. features = pd.merge(features, df_temp_3, how='left', on='restaurant_id')
 ## 11. features.head()
 
+-------------------
+# Correction Patie 01:
 
+- Erreurs dans la ligne 7 et la ligne 9 :
+
+# ligne 7 : 
+
+- df_temp_2 = pd.merge(restaurants, cnt, how='left', on='zone')
+  
+## Oupsssss erreuuuuurrrrr ici: Fusion incorrecte avec seulement 'zone'
+## Cette fusion ne prend pas en compte la catégorie, ce qui entraîne une mauvaise association des comptes
+
+# ligne 9 : 
+
+- df_temp_3 = df_temp_2.drop_duplicates(['restaurant_id', 'nom', 'moyenne_etoiles', 'ville', 'zone', 'ferme']).groupby('restaurant_id').agg({'zone_categories_intersection': 'sum'}).reset_index()
+
+# Oupsssss erreuuuuurrrrr ici: Agrégation avant de supprimer les duplicatas
+# Il est incorrect de supprimer les duplicatas avant le groupby, cela peut entraîner des erreurs dans le comptage
+
+-------------------
+# Correction Patie 02:
 
 ```python
 
@@ -39,8 +59,9 @@ features.head()
 #********************************************************************************************************************************************
 # 5) zone_categories_intersection
 #********************************************************************************************************************************************
-# Voici l'ancien code avec les erreurs soulignées:
+# ANCIEN code avec les erreurs soulignées:
 
+```python
 import pandas as pd
 
 # Charger les données à partir des fichiers CSV
@@ -96,7 +117,7 @@ features.head()
    df_temp_3 = df_temp_3.groupby('restaurant_id').agg({'zone_categories_intersection': 'sum'}).reset_index()
    ```
 
-### Commentaires pour les débutants
+# Commentaires 
 
 - **Charger les données** : Utilisez `pd.read_csv('path_to_file')` pour charger les fichiers CSV contenant les données des restaurants et des catégories. Assurez-vous que les chemins des fichiers sont corrects.
 - **Fusionner les tables** : Utilisez `pd.merge` pour fusionner les DataFrames sur une colonne clé commune, ici `restaurant_id`. Cela permet de combiner les informations des deux fichiers en un seul DataFrame.
@@ -107,7 +128,6 @@ features.head()
 - **Ajouter la colonne** : Fusionnez le DataFrame résultant avec le DataFrame des features existantes pour ajouter les nouvelles informations. Utilisez `pd.merge` pour cette fusion.
 - **Afficher les résultats** : Utilisez `head()` pour afficher les premières lignes du DataFrame final et vérifier les résultats.
 
-En suivant ces étapes et en corrigeant les erreurs, le code devrait maintenant fonctionner correctement et fournir les résultats attendus.
 
 
 
