@@ -1,3 +1,5 @@
+# https://drive.google.com/drive/folders/1kGx1bGp_TmMUm5hdzj0t0ILYvUY6MVln?usp=sharing
+
 # Références :
 
 - https://medium.com/analytics-vidhya/anomaly-detection-using-generative-adversarial-networks-gan-ca433f2ac287
