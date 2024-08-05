@@ -1,5 +1,5 @@
 ######################################################################################
-# Étude de Cas 1 : Détection des Fraudes dans les Transactions Bancaires
+##### Étude de Cas 1 : Détection des Fraudes dans les Transactions Bancaires
 ######################################################################################
 
 **Contexte :**
@@ -16,8 +16,9 @@ Vous êtes un data scientist travaillant pour une banque. On vous a demandé de 
 
 
 -----
+
 ######################################################################################
-# Étude de Cas 2 : Détection des Comportements Anormaux des Employés
+##### Étude de Cas 2 : Détection des Comportements Anormaux des Employés
 ######################################################################################
 
 **Contexte :**
@@ -34,8 +35,9 @@ Une entreprise souhaite surveiller les comportements de ses employés pour déte
 
 
 ----------
+
 ######################################################################################
-# Étude de Cas 3 : Détection des Anomalies dans les Capteurs Industriels
+##### Étude de Cas 3 : Détection des Anomalies dans les Capteurs Industriels
 ######################################################################################
 
 **Contexte :**
@@ -51,8 +53,9 @@ Vous travaillez pour une entreprise de fabrication qui utilise de nombreux capte
 4. Évaluez l'efficacité des méthodes en termes de détection précoce des pannes.
 
 -----
+
 ######################################################################################
-# Étude de Cas 4 : Détection des Anomalies dans les Logs d'Application Web
+##### Étude de Cas 4 : Détection des Anomalies dans les Logs d'Application Web
 ######################################################################################
 
 **Contexte :**
