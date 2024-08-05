@@ -65,8 +65,6 @@ Une entreprise de services web souhaite analyser les logs de son application pou
 
 
 
-
-
 ---
 
 # Annexe:
