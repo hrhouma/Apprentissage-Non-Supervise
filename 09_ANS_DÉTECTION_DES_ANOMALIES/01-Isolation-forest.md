@@ -29,11 +29,19 @@ Il est important de noter que les autres arbres de l'ensemble sélectionneront d
 
 ![image](https://github.com/user-attachments/assets/70b0b335-0cd6-48c8-8cfd-3082d1c6ff31)
 
-Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gauche de la ligne et l'autre représentant les points à droite de la ligne. Le processus est répété jusqu'à ce que chaque feuille de l'arbre représente un point de données unique du jeu de données. Dans notre exemple, la deuxième itération parvient à isoler l'anomalie. Après cette étape, l'arbre ressemblerait à ceci :
-
+Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gauche de la ligne et l'autre représentant les points à droite de la ligne. 
 
 
 ![image](https://github.com/user-attachments/assets/02bfb42c-f95f-4672-a29d-0507b9bac644)
+
+Le processus est répété jusqu'à ce que chaque feuille de l'arbre représente un point de données unique du jeu de données. 
+
+![image](https://github.com/user-attachments/assets/50be8390-30be-4f81-a18f-0080c774fe19)
+
+Dans notre exemple, la deuxième itération parvient à isoler l'anomalie. Après cette étape, l'arbre ressemblerait à ceci :
+
+![image](https://github.com/user-attachments/assets/c8ebf98a-46d6-492f-b448-a57c2100d28c)
+
 
 
 
@@ -47,8 +55,8 @@ Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gau
 
 Rappelez-vous qu'une coupure peut également se produire le long de l'autre dimension, comme c'est le cas pour ce troisième arbre de décision.
 
-![image](https://github.com/user-attachments/assets/50be8390-30be-4f81-a18f-0080c774fe19)
-![image](https://github.com/user-attachments/assets/c8ebf98a-46d6-492f-b448-a57c2100d28c)
+
+
 ![image](https://github.com/user-attachments/assets/95716ccc-9ee7-46e6-a58e-992a92af97c5)
 ![image](https://github.com/user-attachments/assets/643121d0-2c9f-4943-851d-fef31f260607)
 
