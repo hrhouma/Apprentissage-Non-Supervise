@@ -47,6 +47,15 @@ anomalies = distances > threshold
 
 #### 4. DBSCAN avec Données de Melbourne
 
+
+
+- **model = DBSCAN(eps=0.63).fit(X1)** : Applique l'algorithme DBSCAN sur les données normalisées `X1` avec un paramètre `eps` de 0.63.
+- **labels = model.labels_** : Les points marqués par le label `-1` sont considérés comme des anomalies, car ils ne font partie d'aucun cluster dense et sont donc traités comme du bruit.
+- **labels = [('anomaly' if x == -1 else 'normal') for x in labels]** : Les anomalies sont étiquetées comme 'anomaly' si leur label est `-1`.
+
+
+
+
 **Code** :
 ```python
 from google.colab import drive
@@ -112,6 +121,13 @@ plot_model(labels, 'DBSCAN', 1)
 - **labels = [('anomaly' if x == -1 else 'normal') for x in labels]** : Les anomalies sont étiquetées comme 'anomaly' si leur label est `-1`.
 
 #### 5. Isolation Forest
+
+
+- **clf = IsolationForest(contamination=0.1)** : Crée et entraîne un modèle Isolation Forest pour détecter les anomalies dans les données en supposant que 10% des employés ont des comportements problématiques.
+- **df['anomaly'] = clf.predict(df[features])** : Prédit les anomalies en utilisant le modèle entraîné. Les anomalies sont marquées par le label `-1`.
+- **df['anomaly'] = df['anomaly'].map({1: 'Normal', -1: 'Problématique'})** : Les valeurs numériques des anomalies sont remplacées par des étiquettes lisibles.
+
+
 
 **Code** :
 ```python
@@ -250,3 +266,30 @@ Cette méthode utilise également l'algorithme K-Means, mais détecte les anomal
 ### Conclusion
 
 Chacune de ces méthodes a ses propres forces et faiblesses en fonction du type de données et de la nature des anomalies recherchées. La méthode basée sur la largeur de silhouette est idéale pour des données avec des clusters bien définis, tandis que DBSCAN est plus adapté aux données avec des formes et des densités variées. L'approche utilisant les distances aux centres est une alternative simple et efficace pour les données avec des clusters sphériques. En comprenant les principes et les formules clés derrière chaque méthode, on peut choisir l'approche la plus appropriée pour une tâche spécifique de détection d'anomalies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Conclusion
+
+Chacune de ces méthodes a ses propres forces et faiblesses en fonction du type de données et de la nature des anomalies recherchées. La méthode basée sur la largeur de silhouette est idéale pour des données avec des clusters bien définis, tandis que DBSCAN est plus adapté aux données avec des formes et des densités variées. L'approche utilisant les distances aux centres est une alternative simple et efficace pour les données avec des clusters sphériques. Isolation Forest est efficace pour une grande variété de types de données, y compris celles avec des anomalies subtiles. En comprenant les principes et les formules clés derrière chaque méthode, on peut choisir l'approche la plus appropriée pour une tâche spécifique de détection d'anomalies.
