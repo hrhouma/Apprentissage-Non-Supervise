@@ -1,5 +1,26 @@
 # Exercice : Trouvez les erreurs dans ce code :
 
+```python
+
+import pandas as pd
+restaurants = pd.read_csv('path_to_restaurants_csv')
+categories = pd.read_csv('path_to_categories_csv')
+df_temp_1 = pd.merge(restaurants, categories, how='left', on='restaurant_id')
+df_temp_1.reset_index(drop=True, inplace=True)
+cnt = df_temp_1.groupby(['zone', 'categorie']).size().to_frame('count')
+# Oupsssss erreuuuuurrrrr ici: Fusion incorrecte avec seulement 'zone'
+# Cette fusion ne prend pas en compte la catégorie, ce qui entraîne une mauvaise association des comptes
+df_temp_2 = pd.merge(restaurants, cnt, how='left', on='zone')
+df_temp_2.rename(columns={'count': 'zone_categories_intersection'}, inplace=True)
+# Oupsssss erreuuuuurrrrr ici: Agrégation avant de supprimer les duplicatas
+# Il est incorrect de supprimer les duplicatas avant le groupby, cela peut entraîner des erreurs dans le comptage
+df_temp_3 = df_temp_2.drop_duplicates(['restaurant_id', 'nom', 'moyenne_etoiles', 'ville', 'zone', 'ferme']).groupby('restaurant_id').agg({'zone_categories_intersection': 'sum'}).reset_index()
+features = pd.merge(features, df_temp_3, how='left', on='restaurant_id')
+features.head()
+
+```
+
+
 
 #********************************************************************************************************************************************
 # 5) zone_categories_intersection
