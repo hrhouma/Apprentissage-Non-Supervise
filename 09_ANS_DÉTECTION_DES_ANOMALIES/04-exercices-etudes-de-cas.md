@@ -71,3 +71,32 @@ Une entreprise de services web souhaite analyser les logs de son application pou
 4. Fournissez des recommandations basées sur les résultats pour améliorer la sécurité et la performance de l'application.
 
 - Ces études de cas vous permettent de pratiquer la détection des anomalies en utilisant différentes techniques et de comparer leurs performances dans des contextes variés.
+
+
+
+
+
+---
+
+# Annexe:
+
+# 1. Transactions Bancaires
+Utilisez les données de transactions bancaires pour détecter les fraudes potentielles parmi les millions de transactions quotidiennes.
+
+- **Données** : [Télécharger](https://drive.google.com/drive/folders/1yZ2OchujpGtz4q613KG6Z-x46Rr6BZ4f?usp=sharing)
+
+# 2. Comportements des Employés
+Analysez les comportements des employés pour détecter des actions potentiellement nuisibles ou anormales au sein de l'entreprise.
+
+- **Données** : [Télécharger](https://drive.google.com/drive/folders/1yZ2OchujpGtz4q613KG6Z-x46Rr6BZ4f?usp=sharing)
+
+# 3. Lectures des Capteurs Industriels
+Surveillez les lectures des capteurs industriels pour détecter les anomalies et éviter les pannes des équipements.
+
+- **Données** : [Télécharger](https://drive.google.com/drive/folders/1yZ2OchujpGtz4q613KG6Z-x46Rr6BZ4f?usp=sharing)
+
+# 4. Logs d'Application Web
+Analysez les logs de l'application web pour détecter des activités suspectes ou des erreurs non courantes.
+
+- **Données** : [Télécharger](https://drive.google.com/drive/folders/1yZ2OchujpGtz4q613KG6Z-x46Rr6BZ4f?usp=sharing)
+
