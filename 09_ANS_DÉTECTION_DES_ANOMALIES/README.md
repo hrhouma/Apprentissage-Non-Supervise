@@ -62,10 +62,10 @@ $$
 d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
 $$ 
 
- où 
- $$
- x_{ik}
- $$ 
+où: 
+$$
+x_{ik}
+$$ 
  
  est la  **k**-ième dimension du point x_i, et c_{jk} est la \( k \)-ième dimension du centre de cluster \( c_j \).
 
