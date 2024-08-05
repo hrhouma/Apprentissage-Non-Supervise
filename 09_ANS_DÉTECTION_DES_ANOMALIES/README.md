@@ -8,12 +8,20 @@
 - https://medium.com/data-reply-it-datatech/detecting-the-unseen-anomaly-detection-with-gans-8b20f3056a11
 - https://medium.com/simform-engineering/anomaly-detection-with-unsupervised-machine-learning-3bcf4c431aff
 
-# ==> Équation 1
-$$
-d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
-$$
+# ÉQUATION 1 : 
+  $$
+  d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
+  $$
 
 
+# ÉQUATION 2 : 
+$$ \frac{b - a}{\max(a, b)} $$
+
+
+# ÉQUATION 3 : 
+  $$ d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2} $$
+
+Chaque méthode de détection d'anomalies utilise une approche différente pour identifier les points de données aberrants dans un ensemble de données. Voici une comparaison détaillée des trois méthodes discutées : K-Means avec largeur de silhouette, DBSCAN, et K-Means avec distances aux centres.
 
 ########################################################################################
 # 01 - Explication de la Détection des Anomalies dans chaque Code Proposé
@@ -241,20 +249,7 @@ Chacune de ces méthodes a ses propres forces et faiblesses en fonction du type 
 # 02 -  Comparaison des Méthodes de Détection d'Anomalies
 ##########################################################################################
 
-# ÉQUATION 1 : 
-  $$
-  d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
-  $$
 
-
-# ÉQUATION 2 : 
-$$ \frac{b - a}{\max(a, b)} $$
-
-
-# ÉQUATION 3 : 
-  $$ d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2} $$
-
-Chaque méthode de détection d'anomalies utilise une approche différente pour identifier les points de données aberrants dans un ensemble de données. Voici une comparaison détaillée des trois méthodes discutées : K-Means avec largeur de silhouette, DBSCAN, et K-Means avec distances aux centres.
 
 #### 1. K-Means avec Largeur de Silhouette
 
