@@ -62,7 +62,7 @@ $$
 d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
 $$ 
 
-# ==> ou: 
+ 
 $$
 x_{ik}
 $$ 
@@ -218,14 +218,17 @@ Chaque méthode de détection d'anomalies utilise une approche différente pour 
 
 ### Tableau Récapitulatif des Méthodes
 
+### Tableau Récapitulatif des Méthodes
+
 | **Critère**                      | **K-Means avec Largeur de Silhouette**                                                                                                                | **DBSCAN**                                                                                                  | **K-Means avec Distances aux Centres**                                                                                     |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | **Algorithme**                   | Partitionnement des données en `k` clusters en minimisant la variance intra-cluster.                                                                    | Clustering basé sur la densité avec les paramètres `eps` et `min_samples`.                                  | Partitionnement des données en `k` clusters en minimisant la variance intra-cluster.                                         |
 | **Détection d'anomalies**        | Utilisation du score de silhouette : les points avec une silhouette négative sont des anomalies.                                                       | Points marqués comme du bruit (label `-1`) sont des anomalies.                                               | Calcul de la distance euclidienne entre chaque point et le centre de son cluster : les points au-delà d'un certain seuil sont des anomalies. |
 | **Mesure principale**            | Largeur de silhouette, score entre -1 et 1.                                                                                                            | Densité des points, label `-1` pour les anomalies.                                                          | Distance euclidienne aux centres de clusters, seuil défini comme la moyenne des distances plus deux écarts-types.                        |
-| **Formule clé**                  | Silhouette : \(\frac{b - a}{\max(a, b)}\), où \(a\) est la distance moyenne entre un point et les autres points du même cluster, et \(b\) est la distance moyenne entre un point et les points du cluster le plus proche. | Distance entre les points et leurs voisins dans un rayon `eps`.                                             | Distance euclidienne : \( d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2} \).                                        |
+| **Formule clé**                  | Silhouette : ==> ÉQUATION 2, où \(a\) est la distance moyenne entre un point et les autres points du même cluster, et \(b\) est la distance moyenne entre un point et les points du cluster le plus proche. | Distance entre les points et leurs voisins dans un rayon `eps`.                                             | Distance euclidienne : ==> ÉQUATION 3.                                        |
 | **Avantages**                    | Simple à implémenter et à comprendre, fournit une mesure claire de la qualité du clustering.                                                            | Efficace pour des données avec des formes irrégulières et des densités variées, détecte automatiquement le bruit.  | Simple à implémenter et à comprendre, l'utilisation des distances offre une bonne indication des anomalies.                   |
 | **Inconvénients**                | Fonctionne mieux avec des clusters sphériques et de taille similaire.                                                                                   | Peut être plus complexe à paramétrer, nécessite des choix appropriés pour `eps` et `min_samples`.           | Fonctionne mieux avec des clusters sphériques et de taille similaire, nécessite de définir un seuil approprié pour les distances. |
+
 
 ### Conclusion
 
