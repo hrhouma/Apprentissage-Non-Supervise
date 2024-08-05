@@ -16,7 +16,7 @@ Dans cette étude de cas, nous utilisons l'algorithme IsolationForest pour déte
 2. **Création du jeu de données fictif**
    Nous avons créé un jeu de données fictif pour illustrer notre cas. Ce jeu de données contient les informations suivantes pour 100 employés :
    - `employee_id` : Identifiant de l'employé.
-   - `num_complaints` : Nombre de plaintes reçues par l'employé.
+   - `num_complaints` : Nombre de plaintes.
    - `num_absences` : Nombre d'absences de l'employé.
    - `work_hours` : Nombre d'heures travaillées par semaine.
    - `performance_score` : Score de performance de l'employé.
