@@ -1,17 +1,17 @@
 # Exercice : Trouvez les erreurs dans ce code :
 
 
-1. import pandas as pd
-2. restaurants = pd.read_csv('path_to_restaurants_csv')
-3. categories = pd.read_csv('path_to_categories_csv')
-4. df_temp_1 = pd.merge(restaurants, categories, how='left', on='restaurant_id')
-5. df_temp_1.reset_index(drop=True, inplace=True)
-6. cnt = df_temp_1.groupby(['zone', 'categorie']).size().to_frame('count')
-7.df_temp_2 = pd.merge(restaurants, cnt, how='left', on='zone')
-8.df_temp_2.rename(columns={'count': 'zone_categories_intersection'}, inplace=True)
-9. df_temp_3 = df_temp_2.drop_duplicates(['restaurant_id', 'nom', 'moyenne_etoiles', 'ville', 'zone', 'ferme']).groupby('restaurant_id').agg({'zone_categories_intersection': 'sum'}).reset_index()
-10. features = pd.merge(features, df_temp_3, how='left', on='restaurant_id')
-11. features.head()
+## 1. import pandas as pd
+## 2. restaurants = pd.read_csv('path_to_restaurants_csv')
+## 3. categories = pd.read_csv('path_to_categories_csv')
+## 4. df_temp_1 = pd.merge(restaurants, categories, how='left', on='restaurant_id')
+## 5. df_temp_1.reset_index(drop=True, inplace=True)
+## 6. cnt = df_temp_1.groupby(['zone', 'categorie']).size().to_frame('count')
+## 7.df_temp_2 = pd.merge(restaurants, cnt, how='left', on='zone')
+## 8.df_temp_2.rename(columns={'count': 'zone_categories_intersection'}, inplace=True)
+## 9. df_temp_3 = df_temp_2.drop_duplicates(['restaurant_id', 'nom', 'moyenne_etoiles', 'ville', 'zone', 'ferme']).groupby('restaurant_id').agg({'zone_categories_intersection': 'sum'}).reset_index()
+## 10. features = pd.merge(features, df_temp_3, how='left', on='restaurant_id')
+## 11. features.head()
 
 
 
