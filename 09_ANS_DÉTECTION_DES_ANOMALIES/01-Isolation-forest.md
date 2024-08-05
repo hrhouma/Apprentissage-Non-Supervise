@@ -4,6 +4,7 @@ Isolation Forest est un algorithme d'apprentissage automatique non supervisé po
 # Algorithme
 
 Supposons que nous ayons les points de données suivants :
+
 ![image](https://github.com/user-attachments/assets/6c10502f-d7d4-4283-b183-84502d3be1f0)
 
 
@@ -11,8 +12,11 @@ L'algorithme Isolation Forest sélectionne une dimension aléatoire (dans ce cas
 
 
 Il est important de noter que les autres arbres de l'ensemble sélectionneront des coupures initiales différentes. Dans l'exemple suivant, la première coupure n'isole pas l'anomalie.
+
 ![image](https://github.com/user-attachments/assets/02d1715e-90fd-4dea-9e84-140d0df21dfb)
+
 Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gauche de la ligne et l'autre représentant les points à droite de la ligne. Le processus est répété jusqu'à ce que chaque feuille de l'arbre représente un point de données unique du jeu de données. Dans notre exemple, la deuxième itération parvient à isoler l'anomalie. Après cette étape, l'arbre ressemblerait à ceci :
+
 
 ![image](https://github.com/user-attachments/assets/b178ed3d-e532-411b-a223-437fcaf4baa9)
 ![image](https://github.com/user-attachments/assets/70b0b335-0cd6-48c8-8cfd-3082d1c6ff31)
@@ -36,12 +40,15 @@ En moyenne, un point de données anormal sera isolé dans une boîte englobante 
 # Variables catégorielles
 Si vous êtes comme moi, vous vous demandez probablement comment cela fonctionnerait avec des variables catégorielles. En supposant qu'une valeur moins observée soit anormale, l'algorithme Isolation Forest peut utiliser des variables catégorielles en les représentant comme des rectangles où la taille du rectangle est proportionnelle à la fréquence d'occurrence.
 
+
 ![image](https://github.com/user-attachments/assets/e39f4045-3052-40b3-8579-861160aac57d)
 
 Nous considérons l'ensemble des valeurs possibles entre le milieu de la première valeur et le milieu de la dernière valeur. Nous sélectionnons un point aléatoire le long du domaine, puis déterminons le bord le plus proche d'un rectangle donné. Ceci est utilisé pour notre coupure.
+
 ![image](https://github.com/user-attachments/assets/ada3c218-58b1-498d-9b00-66bcb546be20)
 
 Pour garantir l'équité, les autres arbres de la forêt utiliseront un ordre différent.
+
 ![image](https://github.com/user-attachments/assets/836751cf-2133-4e39-b1df-3407dae178aa)
 
 Python
