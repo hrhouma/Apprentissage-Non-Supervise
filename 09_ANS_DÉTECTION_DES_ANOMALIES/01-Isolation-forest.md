@@ -288,3 +288,6 @@ Pensez à la détection de fraude par carte de crédit. Isolation Forest peut d�
 
 ### Conclusion
 Isolation Forest est un outil puissant et flexible pour détecter les anomalies dans divers types de données. Grâce à ses arbres de décision aléatoires, il peut isoler rapidement et efficacement les points de données inhabituels, même dans des jeux de données complexes. Avec des exemples de la vie professionnelle et des comparaisons pratiques, nous pouvons mieux comprendre comment cet algorithme fonctionne et pourquoi il est si utile.
+
+# Références : 
+- https://medium.com/@corymaklin/isolation-forest-799fceacdda4
