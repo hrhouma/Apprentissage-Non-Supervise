@@ -11,26 +11,33 @@
 ![image](https://github.com/user-attachments/assets/6c10502f-d7d4-4283-b183-84502d3be1f0)
 
 
-- L'algorithme Isolation Forest sélectionne une dimension aléatoire (dans ce cas, la dimension associée à l'axe des x) et divise aléatoirement les données le long de cette dimension. 
+- L'algorithme Isolation Forest sélectionne une dimension aléatoire (dans ce cas, la dimension associée à l'axe des x) et divise aléatoirement les données le long de cette dimension.
+
+
+![image](https://github.com/user-attachments/assets/b178ed3d-e532-411b-a223-437fcaf4baa9)
+
 - Les deux sous-espaces résultants définissent leur propre sous-arbre.
+
+
 - Dans cet exemple, la coupure sépare un point isolé du reste du jeu de données.
 - Le premier niveau de l'arbre binaire résultant se compose de deux nœuds, l'un contenant le sous-arbre des points à gauche de la coupure initiale et l'autre représentant le point unique à droite.
 
 
+![image](https://github.com/user-attachments/assets/02d1715e-90fd-4dea-9e84-140d0df21dfb)
+
 Il est important de noter que les autres arbres de l'ensemble sélectionneront des coupures initiales différentes. Dans l'exemple suivant, la première coupure n'isole pas l'anomalie.
 
-![image](https://github.com/user-attachments/assets/02d1715e-90fd-4dea-9e84-140d0df21dfb)
+![image](https://github.com/user-attachments/assets/70b0b335-0cd6-48c8-8cfd-3082d1c6ff31)
 
 Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gauche de la ligne et l'autre représentant les points à droite de la ligne. Le processus est répété jusqu'à ce que chaque feuille de l'arbre représente un point de données unique du jeu de données. Dans notre exemple, la deuxième itération parvient à isoler l'anomalie. Après cette étape, l'arbre ressemblerait à ceci :
 
 
-![image](https://github.com/user-attachments/assets/b178ed3d-e532-411b-a223-437fcaf4baa9)
-![image](https://github.com/user-attachments/assets/70b0b335-0cd6-48c8-8cfd-3082d1c6ff31)
+
 ![image](https://github.com/user-attachments/assets/02bfb42c-f95f-4672-a29d-0507b9bac644)
-![image](https://github.com/user-attachments/assets/50be8390-30be-4f81-a18f-0080c774fe19)
-![image](https://github.com/user-attachments/assets/c8ebf98a-46d6-492f-b448-a57c2100d28c)
-![image](https://github.com/user-attachments/assets/95716ccc-9ee7-46e6-a58e-992a92af97c5)
-![image](https://github.com/user-attachments/assets/643121d0-2c9f-4943-851d-fef31f260607)
+
+
+
+
 
 
 
@@ -39,6 +46,12 @@ Nous obtenons un arbre composé de deux nœuds, l'un contenant les points à gau
 
 
 Rappelez-vous qu'une coupure peut également se produire le long de l'autre dimension, comme c'est le cas pour ce troisième arbre de décision.
+
+![image](https://github.com/user-attachments/assets/50be8390-30be-4f81-a18f-0080c774fe19)
+![image](https://github.com/user-attachments/assets/c8ebf98a-46d6-492f-b448-a57c2100d28c)
+![image](https://github.com/user-attachments/assets/95716ccc-9ee7-46e6-a58e-992a92af97c5)
+![image](https://github.com/user-attachments/assets/643121d0-2c9f-4943-851d-fef31f260607)
+
 
 En moyenne, un point de données anormal sera isolé dans une boîte englobante à une profondeur d'arbre plus petite que les autres points. Lors de l'inférence avec un modèle Isolation Forest entraîné, le score d'anomalie final est reporté comme la moyenne des scores reportés par chaque arbre de décision individuel.
 
