@@ -1,4 +1,50 @@
-### Comparaison des Méthodes de Détection d'Anomalies
+# 01 - Explication Détailée de la Détection des Anomalies dans chaque Code
+
+#### 1. K-Means avec Largeur de Silhouette
+
+**Code** :
+```python
+silhouette_values = silhouette_samples(X, labels)
+anomalies = X[silhouette_values < 0]
+```
+
+- **silhouette_samples(X, labels)** : Cette fonction calcule le score de silhouette pour chaque point de données. Le score de silhouette mesure la qualité du clustering pour chaque point, en évaluant la cohésion (comment un point est proche des autres points de son cluster) et la séparation (comment un point est éloigné des points des autres clusters). Le score de silhouette varie de -1 à 1 :
+  - **Score proche de 1** : Le point est bien assigné à son cluster.
+  - **Score proche de 0** : Le point est sur ou très près de la frontière entre deux clusters.
+  - **Score négatif** : Le point pourrait être mieux assigné à un autre cluster.
+- **anomalies = X[silhouette_values < 0]** : Les points avec un score de silhouette négatif sont considérés comme des anomalies, car ils sont mal assignés à leur cluster actuel.
+
+#### 2. DBSCAN
+
+**Code** :
+```python
+labels_dbscan = dbscan.fit_predict(X)
+anomalies = X[labels_dbscan == -1]
+```
+
+- **dbscan.fit_predict(X)** : Cette fonction exécute l'algorithme DBSCAN sur les données `X` et retourne les labels des clusters. Les paramètres principaux de DBSCAN sont :
+  - **eps** : La distance maximale entre deux points pour qu'ils soient considérés comme voisins.
+  - **min_samples** : Le nombre minimum de points pour former un cluster dense.
+- **labels_dbscan == -1** : Les points marqués par le label `-1` sont considérés comme des anomalies par DBSCAN, car ils ne font partie d'aucun cluster dense (ils sont considérés comme du bruit).
+
+#### 3. K-Means avec Distances aux Centres
+
+**Code** :
+```python
+distances = np.linalg.norm(X - kmeans.cluster_centers_[labels], axis=1)
+threshold = np.mean(distances) + 2 * np.std(distances)
+anomalies = distances > threshold
+```
+
+- **distances = np.linalg.norm(X - kmeans.cluster_centers_[labels], axis=1)** : Cette ligne calcule la distance euclidienne entre chaque point et le centre de son cluster respectif. Mathématiquement, la distance euclidienne \( d \) entre un point \( x_i \) et le centre du cluster \( c_j \) est donnée par :
+  \[
+  d(x_i, c_j) = \sqrt{\sum_{k=1}^{n} (x_{ik} - c_{jk})^2}
+  \]
+  où \( x_{ik} \) est la \( k \)-ième dimension du point \( x_i \), et \( c_{jk} \) est la \( k \)-
+
+---
+
+# 02 -  Comparaison des Méthodes de Détection d'Anomalies
 
 # ÉQUATION 1 : 
   $$
