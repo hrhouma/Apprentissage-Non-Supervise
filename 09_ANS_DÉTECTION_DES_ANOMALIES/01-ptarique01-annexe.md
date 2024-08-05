@@ -37,8 +37,8 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 Cette méthode utilise également l'algorithme K-Means, mais détecte les anomalies en calculant la distance entre chaque point et le centre de son cluster.
 
 - **distances = np.linalg.norm(X - kmeans.cluster_centers_[labels], axis=1)** : Cette ligne calcule la distance euclidienne entre chaque point et le centre de son cluster respectif. Mathématiquement, la distance euclidienne \( d \) entre un point \( x_i \) et le centre du cluster \( c_j \) est donnée par :
-==> ÉQUATION 1 
-  où \( x_{ik} \) est la \( k \)-ième dimension du point \( x_i \), et \( c_{jk} \) est la \( k \)-ième dimension du centre \( c_j \).
+==> **ÉQUATION 1** 
+  où $$ x_{ik} $$ est la \( k \)-ième dimension du point \( x_i \), et \( c_{jk} \) est la \( k \)-ième dimension du centre \( c_j \).
 - **threshold = np.mean(distances) + 2 * np.std(distances)** : Un seuil est défini comme la moyenne des distances plus deux écarts-types.
 - **anomalies = distances > threshold** : Les points dont la distance dépasse ce seuil sont considérés comme des anomalies.
 
