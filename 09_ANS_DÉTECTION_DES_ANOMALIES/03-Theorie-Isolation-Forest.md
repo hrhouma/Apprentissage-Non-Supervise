@@ -1,4 +1,5 @@
-# Introduction
+# Introduction: 
+
 - Isolation Forest est un algorithme d'apprentissage automatique non supervisé pour la détection d'anomalies. 
 - Comme son nom l'indique, Isolation Forest est une méthode d'ensemble (similaire à la forêt aléatoire).
 - En d'autres termes, il utilise la moyenne des prédictions de plusieurs arbres de décision pour attribuer le score d'anomalie final à un point de données donné.
