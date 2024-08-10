@@ -17,17 +17,20 @@ $$
 
 
 ---
+
 $$
   d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
 $$
   où \(d\) est la distance Euclidienne entre les points \(X\) et \(Y\).
 
 ---
+
 $$
   d = \sum_{i=1}^{n} |X_i - Y_i|
 $$
   où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
 ---
+
 $$
   d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
