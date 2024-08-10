@@ -46,7 +46,8 @@ $$
 d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
 
-  où \(\mu\) est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
+$$ \mu\ $$ 
+est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
 
 ---
 # Section 1: Introduction à la détection d'anomalies
