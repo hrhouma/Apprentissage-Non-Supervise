@@ -201,7 +201,7 @@ La méthode du Z-score est une technique statistique utilisée pour identifier l
 
 ## Méthode de l'Intervalle Interquartile (IQR)
 
-La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesurant l'étendue des 50 % de données centrales. L'IQR est calculé comme la différence entre le troisième quartile (\(Q3\)) et le premier quartile (\(Q1\)).
+- La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesurant l'étendue des 50 % de données centrales. L'IQR est calculé comme la différence entre le troisième quartile (\(Q3\)) et le premier quartile (\(Q1\)).
 
 # Voir FORMULE 2
 
@@ -210,6 +210,28 @@ La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesura
 - **Exemple :** Dans notre ensemble de données de factures, les montants situés en dehors de ces bornes (par exemple, en dessous de 77.5 ou au-dessus de 105.5) sont identifiés comme des outliers.
 
 - **Programmation :** Vous pouvez calculer les quantiles avec la méthode `quantile()` de `pandas`, puis identifier les outliers en appliquant la formule de l'IQR.
+
+
+## Annexe pour IQR pour celles et ceux qui ont des difficultés en mathématiques: 
+
+- L'Intervalle Interquartile (IQR) est une mesure de dispersion statistique qui montre l'écart entre les valeurs du premier quartile (Q1) et du troisième quartile (Q3). Pour l'expliquer à quelqu'un qui ne comprend pas bien les statistiques, on peut utiliser une analogie simple.
+
+- Imagine que tu as un groupe d'enfants dans une cour de récréation. Chaque enfant a un jouet, et tu veux savoir si la plupart des enfants ont des jouets similaires en taille. Si on classe tous les jouets du plus petit au plus grand, le quartile 1 (Q1) représente la taille en dessous de laquelle se trouve le premier quart des jouets les plus petits. Le quartile 3 (Q3) représente la taille en dessous de laquelle se trouve les trois quarts des jouets, c'est-à-dire que seuls les plus grands jouets sont au-dessus de cette taille.
+
+- L'IQR, ou l'Intervalle Interquartile, est simplement la différence entre la taille du jouet au niveau de Q3 et celle au niveau de Q1. Cela te donne une idée de la taille moyenne des jouets qui ne sont ni trop petits ni trop grands, c'est-à-dire des jouets qui se situent au milieu de la distribution. Si cet intervalle est petit, ça veut dire que la plupart des jouets sont de tailles similaires. S'il est grand, ça signifie qu'il y a une grande variation de taille entre les jouets.
+
+- Dans la vraie vie, l'IQR peut être utilisé pour évaluer la "consistance" des données. Par exemple, si tu regardes les notes des élèves dans une classe, l'IQR te dirait à quel point les notes de la majorité des élèves sont proches les unes des autres, en éliminant les notes les plus extrêmes (les plus basses et les plus hautes).
+
+
+- Simplifions encore :
+
+- Imagine que tu as 100 biscuits de tailles différentes, que tu veux comparer. Tu les alignes du plus petit au plus grand. Le premier quart (les 25 premiers biscuits) représente les biscuits petits, et le troisième quart (les 25 derniers avant les plus grands) représente les biscuits moyens-grands.
+
+- L'Intervalle Interquartile (IQR) te dit simplement de prendre la taille du 75ème biscuit (Q3) et de soustraire la taille du 25ème biscuit (Q1). Cela te donne une idée de la taille des biscuits qui se trouvent au milieu de ton rang, sans tenir compte des très petits ou des très grands.
+
+- En gros, ça te montre à quel point les biscuits du milieu sont de tailles similaires. Si cet intervalle est petit, ça veut dire qu'ils sont presque tous de la même taille. S'il est grand, ça veut dire qu'ils varient beaucoup en taille.
+
+
 
 ## Méthode Basée sur la Distance
 
