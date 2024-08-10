@@ -18,7 +18,8 @@ $$
 IQR = Q3 - Q1
 $$
 
-
+ où \(Q3\) est le troisième quartile (75e percentile) et \(Q1\) est le premier quartile (25e percentile).
+ 
 ---
 
 # FORMULE 3
@@ -37,7 +38,8 @@ $$
 d = \sum_{i=1}^{n} |X_i - Y_i|
 $$
 
-  où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
+où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
+
 ---
 
 # FORMULE 5
@@ -156,7 +158,6 @@ La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesura
 
 # Voir FORMULE 2
 
-  où \(Q3\) est le troisième quartile (75e percentile) et \(Q1\) est le premier quartile (25e percentile).
 
 - **Interprétation :** Les valeurs situées en dessous de \(Q1 - 1.5 \times IQR\) ou au-dessus de \(Q3 + 1.5 \times IQR\) sont considérées comme des outliers.
 
