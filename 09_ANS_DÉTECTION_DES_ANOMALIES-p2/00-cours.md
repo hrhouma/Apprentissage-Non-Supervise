@@ -1,3 +1,37 @@
+
+# FORMULES 
+
+
+---
+$$
+  Z = \frac{(X - \mu)}{\sigma}
+$$
+  où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est la moyenne de l'ensemble de données, et \(\sigma\) est l'écart-type.
+
+---
+$$
+  IQR = Q3 - Q1
+$$
+
+
+---
+$$
+  d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
+$$
+  où \(d\) est la distance Euclidienne entre les points \(X\) et \(Y\).
+
+---
+$$
+  d = \sum_{i=1}^{n} |X_i - Y_i|
+$$
+  où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
+---
+$$
+  d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
+$$
+  où \(\mu\) est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
+
+---
 # Section 1: Introduction à la détection d'anomalies
 
 - La détection d'anomalies est un domaine de plus en plus adopté dans l'industrie.
@@ -81,11 +115,7 @@ Dans cette section, nous allons explorer différentes méthodes pour détecter l
 
 La méthode du Z-score est une technique statistique utilisée pour identifier les outliers en mesurant le nombre d'écarts-types d'un point de données par rapport à la moyenne de l'ensemble de données.
 
-- **Formule :**  
-$$
-  Z = \frac{(X - \mu)}{\sigma}
-$$
-  où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est la moyenne de l'ensemble de données, et \(\sigma\) est l'écart-type.
+# Voir FORMULE 1
 
 - **Interprétation :** Les points de données avec un Z-score supérieur à 3 ou inférieur à -3 sont considérés comme des outliers car ils se situent bien en dehors de la plage normale des données. Parfois, une valeur seuil de 2 au lieu de 3 est également utilisée.
 
@@ -97,10 +127,8 @@ $$
 
 La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesurant l'étendue des 50 % de données centrales. L'IQR est calculé comme la différence entre le troisième quartile (\(Q3\)) et le premier quartile (\(Q1\)).
 
-- **Formule :**  
-$$
-  IQR = Q3 - Q1
-$$
+# Voir FORMULE 2
+
   où \(Q3\) est le troisième quartile (75e percentile) et \(Q1\) est le premier quartile (25e percentile).
 
 - **Interprétation :** Les valeurs situées en dessous de \(Q1 - 1.5 \times IQR\) ou au-dessus de \(Q3 + 1.5 \times IQR\) sont considérées comme des outliers.
@@ -114,22 +142,16 @@ $$
 La méthode basée sur la distance identifie les outliers en mesurant la distance entre les points de données et la moyenne de l'ensemble de données. Il existe plusieurs types de distances couramment utilisées :
 
 - **Distance Euclidienne :**  
-$$
-  d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
-$$
-  où \(d\) est la distance Euclidienne entre les points \(X\) et \(Y\).
+
+# Voir FORMULE 3
 
 - **Distance de Manhattan :**  
-$$
-  d = \sum_{i=1}^{n} |X_i - Y_i|
-$$
-  où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
+
+# Voir FORMULE 4
 
 - **Distance de Mahalanobis :**  
-$$
-  d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
-$$
-  où \(\mu\) est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
+
+# Voir FORMULE 5
 
 - **Exemple :** Dans l'ensemble de données de factures, vous pouvez utiliser ces différentes distances pour identifier les points de données qui sont significativement éloignés de la moyenne, et donc les marquer comme outliers.
 
