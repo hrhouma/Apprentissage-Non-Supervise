@@ -3,9 +3,11 @@
 
 
 ---
+
 $$
-  Z = \frac{(X - \mu)}{\sigma}
+Z = \frac{(X - \mu)}{\sigma}
 $$
+ 
   où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est la moyenne de l'ensemble de données, et \(\sigma\) est l'écart-type.
 
 ---
