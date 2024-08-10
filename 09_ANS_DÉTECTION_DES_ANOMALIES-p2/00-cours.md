@@ -46,7 +46,10 @@ $$
 d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
 
-$$ \mu\ $$ 
+$$ 
+\mu
+$$ 
+
 est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
 
 ---
