@@ -210,3 +210,309 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 3. **Distance Method :** Appliquez les distances Euclidienne, Manhattan et Mahalanobis pour détecter les outliers.
 4. **DBSCAN :** Ajustez les paramètres \(\epsilon\) et \(minPts\) pour identifier les outliers et observez les résultats.
 
+
+---
+
+# Section 5 : Algorithmes Non Basés sur le Clustering
+
+## Introduction
+
+Dans la session précédente, nous avons exploré les algorithmes de clustering pour la détection des anomalies. Dans cette section, nous allons nous concentrer sur les algorithmes non basés sur le clustering, qui détectent les anomalies en évaluant chaque point de données individuellement ou dans des contextes localisés, sans former de clusters globaux.
+
+## Différences entre Algorithmes de Clustering et Non Clustering
+
+- **Algorithmes de Clustering :** Ils regroupent les points de données en clusters basés sur la similarité. Les anomalies sont identifiées comme des points qui dévient de manière significative de ces clusters. Les méthodes incluent K-means, DBSCAN, les modèles de mélanges gaussiens (GMM), et le clustering hiérarchique.
+
+- **Algorithmes Non Clustering :** Ils évaluent chaque point de données individuellement, en se basant sur des propriétés statistiques ou de densité locales. Les anomalies sont détectées en fonction de leur déviation par rapport au comportement attendu. Les algorithmes incluent Isolation Forest, One-Class SVM, et Local Outlier Factor (LOF).
+
+## Isolation Forest
+
+**Isolation Forest** est un algorithme non basé sur le clustering qui isole les anomalies en partitionnant les données de manière récursive. Les anomalies sont rapidement isolées avec un nombre minimal de divisions car elles se trouvent dans des régions peu denses de l'espace des données.
+
+### Fonctionnement de l'algorithme
+
+1. **Partitionnement Aléatoire :** L'algorithme commence par diviser les données de manière aléatoire sur une caractéristique donnée.
+2. **Isolation des Anomalies :** Les points isolés rapidement avec moins de divisions sont considérés comme des anomalies.
+3. **Longueur du Chemin :** La longueur du chemin pour isoler un point est utilisée pour déterminer s'il est une anomalie. Une longueur de chemin courte indique une anomalie.
+
+### Exemple
+
+Prenons un petit ensemble de données avec deux caractéristiques. Isolation Forest partitionne les données et isole les points en fonction de leur position relative par rapport aux autres. Les points qui nécessitent moins de divisions pour être isolés sont considérés comme des anomalies.
+
+### Programmation
+
+En Python, vous pouvez utiliser `IsolationForest` de la bibliothèque `sklearn` pour implémenter cet algorithme. Voici un exemple de code :
+
+```python
+from sklearn.ensemble import IsolationForest
+
+# Application de Isolation Forest
+iso_forest = IsolationForest(contamination=0.05, random_state=42)
+iso_forest.fit(X)
+anomalies = iso_forest.predict(X)
+```
+
+## Histogram-Based Outlier Score (HBOS)
+
+**HBOS** est un algorithme efficace pour la détection des anomalies basé sur les histogrammes des distributions des caractéristiques. Il construit des histogrammes pour chaque caractéristique, et les anomalies sont identifiées en fonction de leur densité dans ces histogrammes.
+
+### Fonctionnement de l'algorithme
+
+1. **Construction des Histogrammes :** Pour chaque caractéristique, un histogramme est construit.
+2. **Densité de Probabilité :** La densité de probabilité est calculée pour chaque point de données. Les points dans des bacs à faible fréquence sont considérés comme des anomalies.
+3. **Score d'Anomalie :** Les scores sont combinés pour obtenir un score global d'anomalie pour chaque point de données.
+
+### Programmation
+
+Voici un exemple de code pour appliquer HBOS à un ensemble de données en utilisant Python :
+
+```python
+from pyod.models.hbos import HBOS
+
+# Application de HBOS
+hbos = HBOS()
+hbos.fit(X)
+anomaly_scores = hbos.decision_function(X)
+anomalies = hbos.predict(X)
+```
+
+## Approche Hybride
+
+Une approche hybride combine les avantages des algorithmes de clustering et des algorithmes non clustering pour améliorer la précision de la détection des anomalies. Par exemple, vous pouvez utiliser **GMM** pour identifier les anomalies globales et **LOF** pour détecter les anomalies locales au sein de ces clusters.
+
+### Exemple d'Implémentation Hybride
+
+En appliquant GMM pour créer des clusters, puis en appliquant LOF à chaque cluster, vous pouvez identifier un plus large éventail d'anomalies, y compris celles qui pourraient être ignorées par une seule méthode.
+
+```python
+from sklearn.mixture import GaussianMixture
+from sklearn.neighbors import LocalOutlierFactor
+
+# Application de GMM pour le clustering
+gmm = GaussianMixture(n_components=3)
+gmm_labels = gmm.fit_predict(X)
+
+# Application de LOF à chaque cluster
+lof = LocalOutlierFactor(n_neighbors=20, contamination=0.05)
+lof_anomalies = lof.fit_predict(X[gmm_labels == 0])
+```
+
+## Exercice Pratique
+
+### Instructions de l'Exercice
+
+1. **Détection Initiale des Anomalies :** Utilisez l'algorithme Isolation Forest avec un taux de contamination de 5 % pour identifier un premier ensemble d'anomalies.
+2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
+3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
+
+Voici un exemple de code pour cet exercice :
+
+```python
+import pandas as pd
+from sklearn.ensemble import IsolationForest
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+# Chargement des données
+data = pd.read_csv('votre_fichier.csv')
+
+# Détection initiale des anomalies
+iso_forest = IsolationForest(contamination=0.05)
+anomalies = iso_forest.fit_predict(data)
+
+# Raffinement des anomalies
+pca = PCA(n_components=2)
+data_reduced = pca.fit_transform(data)
+plt.scatter(data_reduced[:, 0], data_reduced[:, 1], c=anomalies)
+plt.show()
+```
+
+----
+
+### Section 6 : Explication des Résultats de la Détection d'Anomalies dans un Contexte de Fraude
+
+#### Contexte : Détection de Fraude dans l'Assurance Automobile
+
+Dans cette section, nous allons approfondir la manière d'expliquer les résultats d'un algorithme de détection d'anomalies, en prenant pour exemple un scénario de détection de fraude dans le secteur de l'assurance automobile. Ce domaine est particulièrement sensible, car la détection d'anomalies y signifie potentiellement l'identification de comportements frauduleux de la part des clients, des partenaires, ou même des employés.
+
+Le type d'analyse que nous réalisons est un apprentissage non supervisé, c'est-à-dire que nous n'avons pas de données labellisées indiquant quels cas sont des fraudes. Cela rend l'explication des résultats encore plus cruciale, car nous devons convaincre les parties prenantes que les anomalies identifiées par notre modèle sont dignes d'une investigation plus poussée.
+
+#### Importance de l'Explication des Anomalies
+
+Lorsque nous présentons les résultats d'un modèle de détection d'anomalies à des clients ou à la direction, la question qui revient souvent est : *"Comment pouvez-vous affirmer que ces cas sont des anomalies ?"*. Cette question est encore plus pertinente dans le cadre de la détection de fraude, car signaler une anomalie peut être perçu comme une accusation directe de malversation. Pour éviter toute incompréhension ou méfiance, il est impératif de pouvoir fournir une explication claire et détaillée des raisons pour lesquelles un point de données spécifique est considéré comme une anomalie.
+
+Dans un contexte de détection de fraude, il est important de faire preuve de diplomatie. Par exemple, au lieu de dire directement que certaines transactions sont frauduleuses, nous pouvons les décrire comme des "cas potentiellement non conformes" qui nécessitent une enquête plus approfondie. Toutefois, même en adoucissant le message, l'essentiel reste que nous pointons du doigt des transactions suspectes, ce qui implique que certaines personnes ou organisations pourraient être suspectées de fraude.
+
+#### Utilité des Algorithmes d'Explication : SHAP
+
+Expliquer pourquoi un algorithme détecte certaines anomalies est essentiel, surtout dans un contexte où les résultats du modèle peuvent avoir des conséquences significatives sur les opérations d'une entreprise. C'est là qu'intervient SHAP (SHapley Additive exPlanations), un algorithme d'explication qui permet de décomposer les décisions de modèles complexes, comme les modèles de forêts d'isolement (Isolation Forest), pour montrer comment chaque facteur individuel a contribué à l'identification d'une anomalie.
+
+Dans notre scénario, nous analysons 32 facteurs différents pour identifier des anomalies dans les données. Le but de SHAP est de nous aider à isoler les facteurs critiques qui ont conduit à l'identification de ces anomalies. Ce type d'information est extrêmement précieux non seulement pour justifier pourquoi certaines transactions sont suspectes, mais aussi pour aider à mettre en place des contrôles préventifs visant à minimiser les risques de fraude à l'avenir.
+
+#### Construction du Modèle : Isolation Forest
+
+La première étape consiste à construire un modèle Isolation Forest pour identifier les anomalies dans notre jeu de données. Isolation Forest est un algorithme qui fonctionne en isolant les anomalies en se basant sur la distance qui les sépare des autres points de données. Plus un point est isolé rapidement, plus il est susceptible d'être une anomalie.
+
+**Étape 1 : Importation des Bibliothèques et Chargement des Données**
+
+Nous commençons par importer les bibliothèques nécessaires, y compris SHAP pour l'explication des anomalies, et pandas pour la manipulation des données.
+
+```python
+import shap
+import pandas as pd
+from sklearn.ensemble import IsolationForest
+
+# Chargement du jeu de données
+data = pd.read_csv('chemin_vers_le_fichier.csv')
+```
+
+**Étape 2 : Construction du Modèle Isolation Forest**
+
+Ensuite, nous construisons le modèle Isolation Forest en définissant le paramètre de contamination à 1 %. Cela signifie que nous demandons à l'algorithme de détecter au moins 1 % des points de données comme des anomalies. Le modèle est ensuite ajusté (fit) aux données.
+
+```python
+# Construction du modèle Isolation Forest
+iso_forest = IsolationForest(contamination=0.01, random_state=42)
+iso_forest.fit(data)
+```
+
+#### Explication des Anomalies avec SHAP
+
+Une fois le modèle Isolation Forest en place, nous utilisons SHAP pour expliquer pourquoi certains points de données ont été identifiés comme des anomalies. SHAP attribue une valeur à chaque facteur, ce qui permet de voir l'importance relative de chaque facteur dans la décision d'isoler un point de données comme anomalie.
+
+**Étape 3 : Utilisation de SHAP pour Expliquer les Anomalies**
+
+SHAP nous permet d'analyser chaque point d'anomalie individuellement et de comprendre quels facteurs spécifiques ont contribué à son identification.
+
+```python
+# Utilisation de SHAP pour expliquer les anomalies
+explainer = shap.Explainer(iso_forest, data)
+shap_values = explainer(data)
+
+# Boucle sur chaque anomalie pour afficher les facteurs contributifs
+for i in range(len(data)):
+    shap.force_plot(explainer.expected_value, shap_values[i], data.iloc[i])
+```
+
+- Dans cette analyse, les facteurs marqués en rouge sont ceux qui ont un impact positif significatif sur la détection de l'anomalie, tandis que ceux en bleu ont un impact négatif ou négligeable. Par exemple, si un point de données présente une anomalie due à une combinaison spécifique de type de collecte et de fabrication automatique, ces facteurs apparaîtront en rouge, signalant leur importance.
+
+#### Identification des Facteurs Critiques à l'Échelle Globale
+
+Au-delà de l'explication des anomalies individuelles, SHAP peut également être utilisé pour identifier les principaux facteurs contribuant aux anomalies dans l'ensemble du jeu de données. Cela est essentiel pour les équipes opérationnelles, qui peuvent utiliser ces informations pour renforcer les contrôles internes et prévenir la fraude à l'avenir.
+
+**Étape 4 : Détermination des Facteurs Clés de l'Ensemble des Anomalies**
+
+Pour identifier les principaux facteurs influençant les anomalies, nous calculons la valeur absolue moyenne des contributions SHAP pour chaque facteur, que nous classons ensuite par ordre décroissant.
+
+```python
+# Identification des facteurs critiques à l'échelle globale
+mean_shap_values = np.abs(shap_values.values).mean(axis=0)
+important_factors = pd.DataFrame(list(zip(data.columns, mean_shap_values)), columns=['Facteur', 'Importance SHAP'])
+important_factors = important_factors.sort_values(by='Importance SHAP', ascending=False)
+
+# Affichage des principaux facteurs
+print(important_factors.head(5))
+```
+
+En classant les facteurs en fonction de leur importance SHAP, nous pouvons voir quels facteurs, tels que la limite d'assurance, l'âge du client ou la gravité de l'incident, ont le plus grand impact sur la détection des anomalies.
+
+#### Application Pratique : Contrôles Préventifs Basés sur SHAP
+
+- Les informations fournies par SHAP ne servent pas seulement à expliquer les résultats du modèle, mais aussi à élaborer des stratégies préventives.
+- Par exemple, si l'analyse montre que la limite d'assurance et l'âge du client sont des facteurs critiques pour la fraude, des contrôles spécifiques peuvent être mis en place pour surveiller de plus près ces variables lors de l'évaluation des nouvelles demandes d'assurance.
+
+### Conclusion de la partie 6
+
+- L'utilisation d'algorithmes d'explication comme SHAP en conjonction avec des modèles de détection d'anomalies tels qu'Isolation Forest permet non seulement d'identifier des anomalies, mais aussi de comprendre pourquoi ces anomalies se produisent.
+- Cette compréhension approfondie est essentielle non seulement pour justifier les décisions de l'algorithme, mais aussi pour mettre en place des mesures de prévention efficaces et ainsi réduire les risques de fraude à l'avenir.
+
+
+
+
+---
+
+
+### Section 7 : Comparaison des Algorithmes de Détection d'Anomalies avec la Bibliothèque PyOD
+
+#### Introduction à PyOD et Contexte de l'Exercice
+
+- Dans cette section, nous allons explorer l'utilisation de la bibliothèque **PyOD** (Python Outlier Detection), un outil puissant pour la détection d'anomalies dans les données multivariées.
+- PyOD est un ensemble de plus de 30 algorithmes différents, qui ont été largement utilisés dans la recherche académique pour détecter des anomalies dans divers types de jeux de données.
+
+- Pour illustrer l'efficacité de PyOD, nous appliquerons plusieurs de ces algorithmes sur un jeu de données provenant de Kaggle, spécifiquement un jeu de données sur les assurances santé.
+- Ce jeu de données est utilisé pour prédire la persistance des clients à payer leurs primes d'assurance. Dans ce contexte, un client qui ne paie pas sa prime est considéré comme une anomalie.
+
+- Le jeu de données contient environ 80 000 points de données et 13 attributs différents, dont 9 attributs continus et 2 attributs nominaux.
+- Ces attributs incluent des informations telles que l'âge, le montant de la prime, le revenu, la région, le canal de souscription, et d'autres variables pertinentes pour prédire la persistance des paiements.
+
+#### Application des Algorithmes de Détection d'Anomalies
+
+Pour cette analyse, nous avons sélectionné 10 algorithmes de détection d'anomalies différents, couvrant une variété de méthodes, notamment :
+
+- **Algorithmes basés sur la proximité** : Score d'anomalie basé sur la distance, détection basée sur les k plus proches voisins (k-NN), etc.
+- **Algorithmes basés sur les forêts** : Isolation Forest, un algorithme populaire pour la détection d'anomalies.
+- **Algorithmes basés sur les composantes principales** : Analyse en Composantes Principales (PCA).
+- **Réseaux de neurones** : Bien que généralement plus adaptés aux données de type image ou vidéo, nous appliquons également des modèles de deep learning pour observer leur performance sur des données tabulaires.
+
+Après avoir appliqué ces algorithmes, nous évaluerons leur performance en termes de précision, en comparant la détection correcte des anomalies avec les connaissances préalables que nous avons sur les clients qui n'ont pas payé leurs primes.
+
+#### Précision et Évaluation des Modèles
+
+Il est crucial de noter que l'évaluation de la précision globale d'un modèle peut être trompeuse, surtout dans un contexte de détection d'anomalies. Il est plus pertinent d'évaluer la précision séparément pour les anomalies et les non-anomalies, car les actions que nous entreprenons en fonction de ces classifications peuvent avoir des impacts significatifs.
+
+Par exemple, si un client est incorrectement identifié comme une anomalie (c'est-à-dire qu'il est identifié à tort comme un client qui ne paiera pas), cela pourrait conduire à des décisions commerciales erronées, comme la résiliation prématurée d'une police d'assurance ou des actions judiciaires inutiles. Inversement, ne pas identifier une véritable anomalie pourrait laisser passer une fraude ou un risque élevé.
+
+#### Implémentation du Code et Résultats
+
+Voici une implémentation détaillée pour comparer différents algorithmes de détection d'anomalies en utilisant PyOD :
+
+1. **Prétraitement des Données :**
+   - Remplacement des valeurs manquantes par la moyenne (pour les valeurs numériques) ou par la modalité (pour les valeurs catégorielles).
+   - Encodage des variables nominales pour les rendre compatibles avec les algorithmes.
+   - Normalisation des données pour traiter les outliers et préparer les données pour la modélisation.
+
+2. **Application des Algorithmes :**
+   - Importation des algorithmes disponibles dans PyOD.
+   - Création d'un dictionnaire pour stocker les modèles et les résultats.
+   - Application de chaque algorithme sur le jeu de données traité.
+   - Enregistrement des résultats de chaque modèle, incluant la durée d'exécution et la proportion d'anomalies détectées.
+
+3. **Analyse des Résultats :**
+   - Comparaison de la précision des modèles, à la fois pour les anomalies et les non-anomalies.
+   - Visualisation des résultats pour identifier quel algorithme offre la meilleure performance pour ce jeu de données spécifique.
+
+Voici un extrait de code pour illustrer l'application de PyOD :
+
+```python
+# Importation des bibliothèques nécessaires
+import numpy as np
+import pandas as pd
+from pyod.models.knn import KNN
+from pyod.models.iforest import IForest
+from sklearn.preprocessing import MinMaxScaler, LabelEncoder
+
+# Chargement et prétraitement des données
+data = pd.read_csv('chemin_vers_votre_fichier.csv')
+data.fillna(data.mean(), inplace=True)
+encoder = LabelEncoder()
+data['sourcing_channel'] = encoder.fit_transform(data['sourcing_channel'])
+data['residence_area_type'] = encoder.fit_transform(data['residence_area_type'])
+scaler = MinMaxScaler()
+data_scaled = scaler.fit_transform(data)
+
+# Application de l'algorithme Isolation Forest
+model = IForest(contamination=0.06)
+model.fit(data_scaled)
+data['anomaly'] = model.labels_
+
+# Évaluation des résultats
+print("Nombre d'anomalies détectées : ", sum(data['anomaly'] == 1))
+```
+
+#### Conclusion et Recommandations
+
+PyOD est une bibliothèque puissante pour explorer et comparer différents algorithmes de détection d'anomalies. Cependant, il est recommandé de commencer par tester ces algorithmes sur des jeux de données expérimentaux avant de les déployer dans un contexte commercial, afin d'ajuster les paramètres et de s'assurer que les modèles offrent une précision suffisante pour les anomalies et les non-anomalies.
+
+En comprenant les forces et les faiblesses de chaque algorithme dans différents contextes, les praticiens peuvent mieux sélectionner l'outil adapté à leurs besoins spécifiques en matière de détection d'anomalies, minimisant ainsi les risques de décisions incorrectes et améliorant la gestion proactive des fraudes et autres irrégularités.
+
+
