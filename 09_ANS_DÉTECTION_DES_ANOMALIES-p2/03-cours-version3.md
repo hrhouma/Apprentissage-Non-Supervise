@@ -1,4 +1,5 @@
 # Table des Matières
+
 1. [Formule 1: Z-Score](#formule-1)
 2. [Formule 2: Intervalle Interquartile (IQR)](#formule-2)
 3. [Formule 3: Distance Euclidienne](#formule-3)
@@ -20,6 +21,7 @@
 
 ## Formule 1: Z-Score
 <a name="formule-1"></a>
+
 $$
 Z = \frac{(X - \mu)}{\sigma}
 $$
@@ -32,6 +34,7 @@ $$
 
 ## Formule 2: Intervalle Interquartile (IQR)
 <a name="formule-2"></a>
+
 $$
 IQR = Q3 - Q1
 $$
@@ -44,6 +47,7 @@ $$
 
 ## Formule 3: Distance Euclidienne
 <a name="formule-3"></a>
+
 $$
 d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
 $$
@@ -56,6 +60,7 @@ $$
 
 ## Formule 4: Distance de Manhattan
 <a name="formule-4"></a>
+
 $$
 d = \sum_{i=1}^{n} |X_i - Y_i|
 $$
@@ -68,6 +73,7 @@ où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
 
 ## Formule 5: Distance de Mahalanobis
 <a name="formule-5"></a>
+
 $$
 d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
