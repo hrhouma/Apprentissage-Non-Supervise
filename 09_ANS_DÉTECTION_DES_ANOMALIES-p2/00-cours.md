@@ -50,7 +50,13 @@ $$
 \mu
 $$ 
 
-est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
+est le vecteur de la moyenne.
+
+$$
+\Sigma
+$$
+
+est la matrice de covariance.
 
 ---
 # Section 1: Introduction à la détection d'anomalies
