@@ -593,3 +593,44 @@ En comprenant les forces et les faiblesses de chaque algorithme dans différents
 
 [Retour en haut](#table-des-matières)
 
+
+---
+
+# Annexe :  La Fin du Mythe de la Black Box en Machine Learning : Mythe ou Réalité ?
+
+Dans le monde du machine learning, la notion de "boîte noire" a toujours été un sujet de préoccupation. L'idée est simple : les modèles complexes, tels que les réseaux de neurones profonds, prennent des décisions que même leurs créateurs peuvent avoir du mal à comprendre ou à expliquer. Cette opacité a conduit à des critiques sur la confiance que l'on peut accorder à ces modèles, surtout dans des domaines critiques comme la santé, la finance ou la justice.
+
+Cependant, avec l'émergence d'outils d'explicabilité comme SHAP (SHapley Additive exPlanations), certains affirment que nous avons résolu le problème de la boîte noire. Mais est-ce vraiment le cas ? La fin de la boîte noire est-elle une réalité ou un mythe ?
+
+#### SHAP : Un Pas en Avant Vers l'Explicabilité
+
+SHAP est une méthode basée sur la théorie des jeux qui attribue une valeur de Shapley à chaque caractéristique d'un modèle, indiquant l'importance de cette caractéristique pour une prédiction donnée. Ce mécanisme a révolutionné la manière dont nous pouvons interpréter les modèles complexes, permettant de fournir des explications précises et cohérentes sur les décisions des modèles.
+
+Avec SHAP, nous pouvons maintenant répondre à des questions comme "Pourquoi le modèle a-t-il prédit que cet utilisateur ne rembourserait pas son prêt ?" en identifiant les caractéristiques spécifiques qui ont conduit à cette prédiction. Cela représente un progrès significatif par rapport à la situation précédente, où les modèles de réseaux de neurones étaient souvent considérés comme des boîtes noires impenetrables.
+
+#### L'Explicabilité : Une Solution Complète ?
+
+Cependant, il est essentiel de nuancer cette avancée. Bien que SHAP et d'autres techniques d'explicabilité réduisent l'opacité des modèles, ils ne rendent pas ces modèles totalement transparents ou interprétables dans tous les sens.
+
+1. **Explicabilité vs. Interprétabilité** : SHAP nous donne des explications sur les décisions des modèles, mais il ne rend pas les modèles eux-mêmes plus simples ou plus transparents. Un réseau de neurones reste un modèle complexe avec de nombreuses couches et des interactions non linéaires difficiles à comprendre dans leur intégralité.
+
+2. **Complexité des Explications** : Les valeurs de Shapley sont utiles, mais elles peuvent être difficiles à interpréter, surtout pour les modèles avec des milliers de caractéristiques. Comprendre l'importance relative de chaque caractéristique et comment elles interagissent peut rapidement devenir un casse-tête.
+
+3. **Approximation et Fiabilité** : Les explications fournies par SHAP sont des approximations basées sur des modèles complexes. Ces approximations sont souvent très précises, mais elles ne sont pas parfaites. Dans certains cas, elles peuvent ne pas capturer toutes les subtilités du modèle.
+
+4. **Coût Computationnel** : Utiliser SHAP pour expliquer un modèle complexe peut être très coûteux en termes de temps de calcul et de ressources. Pour des modèles très grands ou des ensembles de données volumineux, cela peut poser des problèmes pratiques.
+
+#### La Boîte Noire : Un Problème Révolu ?
+
+Dire que le problème de la boîte noire est "révolu" serait une exagération. Nous avons fait des progrès énormes grâce à des outils comme SHAP, mais la complexité inhérente des modèles modernes signifie qu'il reste encore des défis à relever. 
+
+En réalité, l'explicabilité n'est qu'une partie de la solution. Il est également crucial de travailler sur la transparence des modèles, l'éthique des décisions automatisées, et l'interprétabilité globale pour garantir que nous pouvons vraiment comprendre et faire confiance aux systèmes d'IA que nous développons.
+
+#### Conclusion
+
+L'affirmation selon laquelle le problème de la boîte noire est résolu est un mythe partiellement vrai. Oui, nous avons des outils comme SHAP qui nous permettent de mieux comprendre les modèles complexes, mais cela ne signifie pas que tous les défis liés à l'opacité des modèles sont résolus. L'explicabilité est un pas en avant, mais la route vers une compréhension complète et une transparence totale est encore longue. Il est important de continuer à chercher des solutions qui allient puissance de prédiction et clarté pour que la confiance dans les modèles de machine learning puisse véritablement se développer.
+
+L'histoire de la boîte noire n'est pas encore terminée, mais avec les avancées actuelles, nous sommes certainement en train d'écrire son prochain chapitre.
+
+
+
