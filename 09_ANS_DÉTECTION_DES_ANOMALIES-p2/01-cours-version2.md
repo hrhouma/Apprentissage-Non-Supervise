@@ -20,10 +20,11 @@
 
 ## Formule 1: Z-Score
 <a name="formule-1-z-score"></a>
+
 $$
 Z = \frac{(X - \mu)}{\sigma}
 $$
-  
+
 où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est la moyenne de l'ensemble de données, et \(\sigma\) est l'écart-type.
 
 **Explication :** Le Z-score permet de standardiser les données pour les rendre comparables, même si elles proviennent de différentes distributions. Un Z-score de 2 indique, par exemple, que le point de données est à deux écarts-types de la moyenne.
@@ -34,6 +35,7 @@ où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est 
 
 ## Formule 2: Intervalle Interquartile (IQR)
 <a name="formule-2-intervalle-interquartile-iqr"></a>
+
 $$
 IQR = Q3 - Q1
 $$
@@ -48,6 +50,7 @@ où \(Q3\) est le troisième quartile (75e percentile) et \(Q1\) est le premier 
 
 ## Formule 3: Distance Euclidienne
 <a name="formule-3-distance-euclidienne"></a>
+
 $$
 d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
 $$
@@ -62,6 +65,7 @@ où \(d\) est la distance Euclidienne entre les points \(X\) et \(Y\).
 
 ## Formule 4: Distance de Manhattan
 <a name="formule-4-distance-de-manhattan"></a>
+
 $$
 d = \sum_{i=1}^{n} |X_i - Y_i|
 $$
@@ -76,6 +80,7 @@ où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
 
 ## Formule 5: Distance de Mahalanobis
 <a name="formule-5-distance-de-mahalanobis"></a>
+
 $$
 d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
