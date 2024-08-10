@@ -4,6 +4,7 @@
 
 ---
 
+# FORMULE 1
 $$
 Z = \frac{(X - \mu)}{\sigma}
 $$
@@ -11,6 +12,8 @@ $$
   où \(Z\) est le Z-score, \(X\) est la valeur du point de données, \(\mu\) est la moyenne de l'ensemble de données, et \(\sigma\) est l'écart-type.
 
 ---
+
+# FORMULE 2
 $$
   IQR = Q3 - Q1
 $$
@@ -18,21 +21,24 @@ $$
 
 ---
 
+# FORMULE 3
 $$
-  d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
+d = \sqrt{\sum_{i=1}^{n}(X_i - Y_i)^2}
 $$
   où \(d\) est la distance Euclidienne entre les points \(X\) et \(Y\).
 
 ---
 
+# FORMULE 4
 $$
-  d = \sum_{i=1}^{n} |X_i - Y_i|
+d = \sum_{i=1}^{n} |X_i - Y_i|
 $$
   où \(d\) est la distance de Manhattan entre les points \(X\) et \(Y\).
 ---
 
+# FORMULE 5
 $$
-  d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
+d_M = \sqrt{(X - \mu)^T \Sigma^{-1} (X - \mu)}
 $$
   où \(\mu\) est le vecteur de la moyenne et \(\Sigma\) est la matrice de covariance.
 
