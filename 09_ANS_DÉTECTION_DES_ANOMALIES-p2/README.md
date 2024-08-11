@@ -5,7 +5,9 @@
 # PARTIE 2 :
 
 1 - https://medium.com/@limyenwee_19946/unsupervised-outlier-detection-with-isolation-forest-eab398c593b2
+
 2 - https://github.com/youngdataspace/Detect-Outliers-Using-Isolation-Forest/tree/main
+
 3 - https://www.analyticsvidhya.com/blog/2021/07/anomaly-detection-using-isolation-forest-a-complete-guide/
 
 
