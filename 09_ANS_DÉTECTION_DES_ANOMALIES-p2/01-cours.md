@@ -506,11 +506,189 @@ anomalies = hbos.predict(X)
 # Exercice Pratique 7 - (07-Exercice 4 - Detection via ISOLATION FOREST-TO-DO)
 ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
 
-### Instructions de l'Exercice
+
+- Cet exercice vise à identifier des anomalies dans un jeu de données de fabrication en utilisant des techniques de détection d'anomalies et de réduction de la dimensionalité. Le jeu de données utilisé est fourni sous le nom `IsoForestDatasetPredMain.xlsx`.
+
+#### Description du jeu de données
+
+Le jeu de données provient d'un scénario de fabrication et contient les informations suivantes :
+- Température de l'air (K)
+- Température du processus (K)
+- Vitesse de rotation (rpm)
+- Couple (Nm)
+- Usure de l'outil (min)
+
+#### Objectif
+
+L'objectif de cet exercice est de programmer la détection d'anomalies dans le jeu de données à travers deux processus distincts :
+
+1. **Détection Initiale d'Anomalies** : Utiliser l'algorithme Isolation Forest avec un taux de contamination de 5 % pour identifier le premier ensemble d'anomalies.
+   
+2. **Affinement des Anomalies Détectées** : Parmi les anomalies identifiées, isoler celles qui se situent dans les 90e et 95e percentiles basés sur leur distance par rapport à la moyenne du jeu de données.
+
+#### Étapes supplémentaires
+
+- **Réduction de la Dimensionalité** : Réduire le jeu de données à deux composantes principales à l'aide de l'Analyse en Composantes Principales (PCA).
+- **Visualisation** : Visualiser les anomalies détectées en utilisant un diagramme de dispersion avec des marqueurs distincts pour les points normaux et les anomalies.
+- **Représentation des Clusters et Marquage des Anomalies** : Ajouter un cercle pour représenter les clusters et des flèches pour marquer les anomalies en dehors de ces clusters.
+
+---
+
+### Correction de l'exercice
 
 1. **Détection Initiale des Anomalies :** Utilisez l'algorithme Isolation Forest avec un taux de contamination de 5 % pour identifier un premier ensemble d'anomalies.
+
+
+
+```python
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import IsolationForest
+from scipy.spatial import distance
+import matplotlib.pyplot as plt
+
+# Charger le jeu de données
+data = pd.read_excel('IsoForestDatasetPredMain.xlsx')
+
+# Sélectionner les caractéristiques
+features = ['Température de l\'air [K]', 'Température du processus [K]', 'Vitesse de rotation [rpm]', 'Couple [Nm]', 'Usure de l\'outil [min]']
+X = data[features]
+
+# Appliquer Isolation Forest pour la détection initiale des anomalies
+iso_forest = IsolationForest(n_estimators=100, contamination=0.05, random_state=42)
+iso_forest.fit(X)
+data['scores'] = iso_forest.decision_function(X)
+data['anomaly'] = iso_forest.predict(X)
+
+# Filtrer les anomalies (où anomaly == -1)
+anomalies = data[data['anomaly'] == -1]
+
+# Calculer la distance Euclidienne par rapport à la moyenne pour chaque anomalie
+mean_values = X.mean(axis=0)
+anomalies['distance'] = anomalies[features].apply(lambda row: distance.euclidean(row, mean_values), axis=1)
+
+# Identifier les anomalies dans les 95e et 90e percentiles de la distance
+percentile_95th = np.percentile(anomalies['distance'], 95)
+percentile_90th = np.percentile(anomalies['distance'], 90)
+
+anomalies_95th = anomalies[anomalies['distance'] >= percentile_95th]
+anomalies_90th = anomalies[anomalies['distance'] >= percentile_90th]
+
+# Imprimer les enregistrements correspondant à ces percentiles
+print("Anomalies dans le 95e percentile basées sur la distance :")
+print(anomalies_95th[['Numéro de référence'] + features])
+
+print("\nAnomalies dans le 90e percentile basées sur la distance :")
+print(anomalies_90th[['Numéro de référence'] + features])
+```
+
+---
+
+
 2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
+
+
+```python
+import pandas as pd
+import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import IsolationForest
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Charger le jeu de données
+data = pd.read_excel('IsoForestDatasetPredMain.xlsx')
+features = ['Température de l\'air [K]', 'Température du processus [K]', 'Vitesse de rotation [rpm]', 'Couple [Nm]', 'Usure de l\'outil [min]']
+
+# Standardiser les données
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(data[features])
+
+# PCA pour la réduction de la dimensionalité à 2D
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+data_pca = pd.DataFrame(data=X_pca, columns=['PC1', 'PC2'])
+
+# Appliquer Isolation Forest pour la détection des anomalies
+iso = IsolationForest(contamination=0.05)
+data_pca['anomaly'] = iso.fit_predict(data_pca)
+
+# Visualisation des résultats
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='PC1', y='PC2', hue='anomaly', data=data_pca, palette=['blue', 'red'], legend='full', style='anomaly', markers=['o', 'x'])
+plt.title('Détection des Anomalies avec PCA et Isolation Forest')
+plt.xlabel('Composante Principale 1')
+plt.ylabel('Composante Principale 2')
+plt.legend(title='Type de Données', labels=['Normal', 'Anomalie'])
+plt.grid(True)
+plt.show()
+```
+
+---
+
+
+
 3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
+
+
+```python
+import pandas as pd
+import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import IsolationForest
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+
+# Charger le jeu de données
+data = pd.read_excel('IsoForestDatasetPredMain.xlsx')
+features = ['Température de l\'air [K]', 'Température du processus [K]', 'Vitesse de rotation [rpm]', 'Couple [Nm]', 'Usure de l\'outil [min]']
+
+# Standardiser les données
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(data[features])
+
+# PCA pour la réduction de la dimensionalité à 2D
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+data_pca = pd.DataFrame(data=X_pca, columns=['PC1', 'PC2'])
+
+# Appliquer Isolation Forest pour la détection des anomalies
+iso = IsolationForest(contamination=0.05)
+data_pca['anomaly'] = iso.fit_predict(data_pca[['PC1', 'PC2']])
+
+# Définir les données normales et les anomalies
+normal_data = data_pca[data_pca['anomaly'] == 1]
+anomalies = data_pca[data_pca['anomaly'] == -1]
+
+# Tracer
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Tracer les points normaux
+ax.scatter(normal_data['PC1'], normal_data['PC2'], color='blue', label='Données Normales')
+
+# Tracer les anomalies
+ax.scatter(anomalies['PC1'], anomalies['PC2'], color='red', label='Anomalies', marker='x')
+
+# Cercle pour indiquer le cluster principal
+circle_radius = np.std(normal_data[['PC1', 'PC2']].values)  # Écart-type comme rayon du cercle de cluster
+circle = Circle(xy=(np.mean(normal_data['PC1']), np.mean(normal_data['PC2'])), radius=circle_radius, color='green', fill=False, linewidth=1.5, label='Limite du Cluster')
+ax.add_patch(circle)
+
+# Flèches pointant vers les anomalies
+for index, anomaly in anomalies.iterrows():
+    ax.annotate('', xy=(anomaly['PC1'], anomaly['PC2']), xytext=(np.mean(normal_data['PC1']), np.mean(normal_data['PC2'])),
+                arrowprops=dict(facecolor='red', shrink=0.05, width=1.5, headwidth=8))
+
+# Améliorer le graphique
+ax.set_title('Données Réduites par PCA avec Indicateurs d\'Anomalie')
+ax.set_xlabel('Composante Principale 1')
+ax.set_ylabel('Composante Principale 2')
+ax.legend()
+plt.grid(True)
+plt.show()
+```
 
 
 ---
