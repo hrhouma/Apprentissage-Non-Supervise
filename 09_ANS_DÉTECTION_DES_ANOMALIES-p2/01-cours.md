@@ -103,7 +103,7 @@ est la matrice de covariance.
 - Cette présentation commence par une compréhension des anomalies et des différents types d'anomalies.
 - La présentation est structurée pour introduire les trois types de détection d'anomalies et les domaines d'application associés.
 - Nous aborderons ensuite le codage pertinent pour les types de détection en apprentissage non supervisé.
-- Les données et les codes utilisés dans cette présentation sont disponibles dans le dossier ressources, vous permettant ainsi de les télécharger et de pratiquer en même temps.
+- Les données et les codes utilisés dans cette présentation sont disponibles dans le dossier ressources, vous permettant ainsi de les télécharger et de pratiquer en même temps, dans la deuxième partie de la séance.
 
 [Retour en haut](#table-des-matières)
 
@@ -114,7 +114,7 @@ est la matrice de covariance.
 
 - Avant de plonger dans les algorithmes, il est essentiel de comprendre ce que sont les anomalies.
 - Une anomalie peut être un ou plusieurs points de données qui ne s'intègrent pas au reste des données.
-- Identifier des anomalies dans un petit ensemble de données est généralement facile, mais cela devient difficile avec des ensembles de données plus volumineux.
+- Identifier des anomalies dans un petit ensemble de données est généralement facile, mais cela devient difficile avec des ensembles de données **plus volumineux**.
 - Il existe trois types principaux d'anomalies :
   - **Anomalies basées sur le temps** : Les points de données sont dépendants du temps. Par exemple, le prix de l'essence à différents jours d'un mois.
   - **Anomalies non basées sur le temps** : Les points de données ne sont pas dépendants du temps. Par exemple, le prix d'un appartement dans une ville donnée en fonction de plusieurs facteurs.
