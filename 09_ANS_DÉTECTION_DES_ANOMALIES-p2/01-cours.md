@@ -596,9 +596,91 @@ En comprenant les forces et les faiblesses de chaque algorithme dans différents
 [Retour en haut](#table-des-matières)
 
 
+
 ---
 
-# Annexe :  La Fin du Mythe de la Black Box en Machine Learning : Mythe ou Réalité ?
+
+# Annexe 1 :  Comprendre les Anomalies et les Outliers ?
+
+## Introduction
+
+Dans le cadre de l'analyse de données, il est essentiel de comprendre les concepts d'anomalies et d'outliers. Ces notions sont fondamentales pour des applications telles que la détection de fraude, la maintenance prédictive, et l'amélioration de la qualité des données. Ce document clarifie la distinction entre anomalies et outliers, et explique leur importance dans l'analyse de données.
+
+## Définition des Concepts
+
+### Anomalie
+
+Une **anomalie** est un point de données ou un ensemble de points qui se distingue par un comportement inhabituel ou inattendu par rapport au reste du jeu de données. Les anomalies peuvent signaler des événements rares, des erreurs, ou des comportements qui ne suivent pas la tendance générale.
+
+#### Types d'anomalies :
+1. **Anomalies basées sur le temps** : Les points de données sont dépendants du temps. Par exemple, les variations du prix de l'essence sur une période.
+2. **Anomalies non basées sur le temps** : Les points de données ne dépendent pas du temps. Par exemple, le prix d'un appartement en fonction de divers facteurs.
+3. **Anomalies d'image** : Anomalies détectées dans des ensembles d'images, souvent utilisées dans la vision par ordinateur.
+
+### Outlier
+
+Un **outlier** est un point de données qui se situe loin de la majorité des autres points dans un jeu de données. Il est souvent identifié statistiquement par sa distance par rapport à d'autres points.
+
+### Relation entre Outliers et Anomalies
+
+- **Dans certains cas** : Chaque outlier est considéré comme une anomalie. Cette approche simplifie l'analyse et aide à identifier rapidement des points de données potentiellement problématiques. Par exemple, dans un **datawarehouse bancaire**, la détection de transactions financières est très stricte. Tout montant qui s'écarte significativement des transactions habituelles d'un client peut être considéré comme une anomalie pour prévenir les fraudes ou identifier des erreurs. De même, dans les systèmes de **prévention des fraudes par carte de crédit**, chaque transaction considérée comme un outlier par rapport aux habitudes d'achat d'un client (comme un montant inhabituel ou une localisation géographique étrange) est automatiquement flaguée comme une anomalie et nécessitera une vérification supplémentaire.
+- **Dans un contexte plus large** : Un outlier n'est pas nécessairement une anomalie. Par exemple, une transaction exceptionnellement élevée peut être normale pour certains clients et ne serait donc pas considérée comme une anomalie.
+
+### Valeurs Nulles
+
+Une **valeur nulle** représente l'absence de données. Bien qu'une valeur nulle ne soit pas automatiquement une anomalie, elle peut en indiquer une si elle apparaît dans un contexte où aucune donnée ne devrait être manquante. Par exemple, un champ obligatoire laissé vide dans une base de données pourrait être interprété comme une anomalie.
+
+## Méthodes de Détection des Anomalies
+
+### Algorithmes Supervisés
+
+Les algorithmes supervisés sont utilisés lorsque des exemples d'anomalies passées sont disponibles. Ils permettent de classifier de nouveaux points de données en fonction de ces références.
+
+### Algorithmes Non Supervisés
+
+Les algorithmes non supervisés sont utilisés lorsque aucune référence passée n'est disponible. Ils sont souvent préférés en entreprise car les données passées ne sont pas toujours fiables ou disponibles. Ces algorithmes, basés sur des clusters ou d'autres méthodes, détectent des comportements inattendus sans connaissance préalable.
+
+## Exemples Pratiques
+
+1. **Jeux de données basés sur le temps** : Transactions bancaires à différents moments.
+2. **Jeux de données non basés sur le temps** : Prix des appartements en fonction de divers facteurs.
+
+La détection d'anomalies dans les jeux de données basés sur le temps est particulièrement utile pour identifier des événements rares mais critiques, comme la maintenance prédictive dans l'industrie.
+
+### Exemples concrets où les outliers sont toujours des anomalies
+
+1. **Datawarehouse bancaire** : Dans une banque, les transactions financières sont rigoureusement surveillées. Si une transaction présente un montant qui dévie fortement des habitudes d'un client, elle est automatiquement considérée comme une anomalie. Cette approche stricte permet de détecter rapidement les activités frauduleuses ou les erreurs de saisie.
+  
+2. **Prévention des fraudes par carte de crédit** : Les systèmes de détection de fraude considèrent chaque outlier comme une anomalie potentielle. Par exemple, si un client qui effectue habituellement de petites transactions locales réalise soudainement un achat important à l'étranger, cela sera marqué comme une anomalie, et une alerte sera déclenchée.
+
+3. **Analyse des risques d'assurance** : Les compagnies d'assurance utilisent des modèles où chaque outlier dans les réclamations (comme un montant de sinistre très élevé ou une fréquence de réclamations inhabituelle) est immédiatement considéré comme une anomalie. Cela permet de réduire les risques de fraude ou de fausses déclarations.
+
+## Conclusion
+
+Dans l'analyse de données, bien comprendre la différence entre anomalies et outliers est crucial. Si, dans certains cas, chaque outlier est considéré comme une anomalie, cette règle peut ne pas s'appliquer dans toutes les situations. Il est important de choisir les bons outils et méthodes pour détecter efficacement ces phénomènes, en tenant compte des spécificités de votre jeu de données et du contexte de l'analyse.
+
+---
+
+
+
+# Annexe 2 :  Comprendre les Anomalies et les Outliers ?
+
+
+**Dans certains cas, par exemple ou le contexte est stricte** : Chaque outlier est considéré comme une anomalie. Cette approche simplifie l'analyse et aide à identifier rapidement des points de données potentiellement problématiques. 
+
+### Exemples de contextes stricts :
+
+1. **Datawarehouse bancaire** : Dans un environnement bancaire, la surveillance des transactions financières est extrêmement rigoureuse. Toute transaction qui dévie significativement des habitudes d'un client, que ce soit par son montant ou sa localisation, est automatiquement considérée comme une anomalie. Par exemple, si un client effectue habituellement des transactions de faible montant et qu'une transaction soudainement élevée apparaît, cela est immédiatement flagué pour une enquête approfondie, afin de prévenir les fraudes ou de corriger des erreurs potentielles.
+
+2. **Prévention des fraudes par carte de crédit** : Dans les systèmes de détection de fraude par carte de crédit, chaque transaction identifiée comme un outlier est immédiatement traitée comme une anomalie. Par exemple, un achat important réalisé dans un pays où le client n'a jamais voyagé ou une série de petites transactions effectuées en peu de temps dans différents endroits peut indiquer une activité frauduleuse. Ces anomalies déclenchent généralement des alertes automatiques et peuvent entraîner la suspension de la carte jusqu'à ce que la situation soit clarifiée.
+
+3. **Signes vitaux en médecine** : Dans le domaine médical, les signes vitaux des patients (tels que la fréquence cardiaque, la tension artérielle, la température corporelle, etc.) sont surveillés en temps réel. Chaque outlier est traité comme une anomalie potentiellement critique. Par exemple, une chute soudaine de la pression artérielle ou une augmentation rapide de la température corporelle par rapport aux valeurs normales du patient est immédiatement considérée comme une anomalie. Cette détection précoce permet aux professionnels de la santé de réagir rapidement pour éviter des complications graves ou des urgences médicales.
+
+4. **Surveillance industrielle et maintenance prédictive** : Dans les environnements industriels, les capteurs surveillent en continu les performances des machines. Si un capteur enregistre une température ou une vibration qui dévie significativement des valeurs normales, cela est traité comme une anomalie. Par exemple, une machine qui fonctionne habituellement à une certaine température pourrait indiquer un problème mécanique si la température dépasse soudainement ce seuil. L'identification de ces anomalies permet une intervention rapide, prévenant ainsi les pannes coûteuses et les arrêts de production non planifiés.
+
+---
+
+# Annexe 3 :  La Fin du Mythe de la Black Box en Machine Learning : Mythe ou Réalité ?
 
 Dans le monde du machine learning, la notion de "boîte noire" a toujours été un sujet de préoccupation. L'idée est simple : les modèles complexes, tels que les réseaux de neurones profonds, prennent des décisions que même leurs créateurs peuvent avoir du mal à comprendre ou à expliquer. Cette opacité a conduit à des critiques sur la confiance que l'on peut accorder à ces modèles, surtout dans des domaines critiques comme la santé, la finance ou la justice.
 
