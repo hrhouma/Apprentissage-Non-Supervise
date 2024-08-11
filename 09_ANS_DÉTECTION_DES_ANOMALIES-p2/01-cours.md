@@ -184,7 +184,11 @@ est la matrice de covariance.
 
 ---
 
-# Section 4 : Détection des Outliers
+# Section 4:
+
+----
+
+# Section 4.1 : Détection des Outliers
 <a name="section-4"></a>
 
 - Dans cette section, nous allons explorer différentes méthodes pour détecter les outliers, c'est-à-dire des points de données extrêmes qui se situent nettement en dehors de la majorité d'un ensemble de données ou d'un cluster. La détection des outliers est cruciale pour une analyse statistique précise et la performance des modèles.
@@ -272,15 +276,120 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 
 - **Programmation :** Utilisez `DBSCAN` de `scikit-learn` pour appliquer cet algorithme à vos données.
 
-## Exercice Pratique
+----
+
+# Section 4.2 - Exercice 
 
 ### Instructions de l'exercice
+- D'abord. il faut télécharger le fichier excel dans le dossier ressources TAT.xlsx: 
 1. **Z-Score Method :** Déterminez le nombre d'outliers en utilisant cette méthode.
 2. **IQR Method :** Utilisez la méthode de l'IQR pour identifier les outliers.
 3. **Distance Method :** Appliquez les distances Euclidienne, Manhattan et Mahalanobis pour détecter les outliers.
 4. **DBSCAN :** Ajustez les paramètres \(\epsilon\) et \(minPts\) pour identifier les outliers et observez les résultats.
 
+- Le "Turn Around Time" (TAT) est un terme couramment utilisé dans divers contextes, notamment en gestion de projet, en opérations et en informatique. Il se réfère généralement au temps total nécessaire pour accomplir une tâche ou un processus du début à la fin. 
+- Exemples:
+  
+1. **Gestion de projet/Opérations** : Le "Turn Around Time" désigne le temps total écoulé entre l'initiation d'une tâche ou d'un processus et son achèvement. Par exemple, le temps écoulé entre le moment où un client passe une commande et celui où la commande est exécutée et livrée.
+
+2. **Fabrication** : Le "Turn Around Time" peut faire référence au temps nécessaire pour passer d'une production à une autre sur une machine ou une ligne de production. Cela peut aussi indiquer le temps requis pour réparer ou entretenir un équipement.
+
+3. **Soins de santé** : Dans le domaine de la santé, le "Turn Around Time" peut désigner le temps pris pour effectuer des tests médicaux et fournir les résultats au patient ou au professionnel de santé.
+
+4. **Informatique/Ingénierie logicielle** : En informatique, le "Turn Around Time" peut désigner le temps total pris par un système informatique pour exécuter une tâche ou un processus depuis le moment où il est soumis jusqu'à ce que les résultats soient disponibles.
+
 [Retour en haut](#table-des-matières)
+
+----
+
+# Section 4.3 - proposition de correction pour la détection des Outliers
+
+```python
+# Importer les bibliothèques nécessaires
+import pandas as pd
+import numpy as np
+from scipy.spatial import distance
+from scipy.stats import zscore
+from sklearn.covariance import EmpiricalCovariance
+from sklearn.cluster import DBSCAN
+
+# Charger les données à partir d'un fichier CSV
+data = pd.read_csv('chemin_du_fichier.csv')
+
+# Extraire la colonne 'Turn Around Time' (temps de rotation) pour l'analyse
+tat = data['Turn Around Time']
+
+# Méthode 1 : Z-Score
+# Le Z-Score est utilisé pour normaliser les données et identifier les valeurs qui s'écartent 
+# de la moyenne par plus de 3 écarts-types
+data['z_score'] = zscore(tat)
+z_outliers = data[np.abs(data['z_score']) > 3]  # Les outliers sont ceux avec un Z-Score absolu > 3
+
+# Méthode 2 : IQR (Interquartile Range)
+# Le IQR est la différence entre le troisième quartile (Q3) et le premier quartile (Q1)
+# Cette méthode identifie les outliers en dehors de l'intervalle [Q1 - 1.5*IQR, Q3 + 1.5*IQR]
+Q1 = tat.quantile(0.25)
+Q3 = tat.quantile(0.75)
+IQR = Q3 - Q1
+iqr_outliers = data[(tat < (Q1 - 1.5 * IQR)) | (tat > (Q3 + 1.5 * IQR))]
+
+# Méthode 3 : Méthode des distances
+# Utilisation de trois types de distances pour identifier les outliers
+
+# Calculer le vecteur moyen pour la distance
+mean_vector = np.mean(tat)
+
+# Calculer la matrice de covariance pour la distance de Mahalanobis
+cov_matrix = np.cov(tat)
+inv_cov_matrix = np.linalg.inv(cov_matrix.reshape(1, 1))
+
+# 3.1) Distance de Manhattan
+# Calcul de la distance de Manhattan pour chaque point et identification des outliers
+manhattan_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'cityblock').flatten() > 3]
+
+# 3.2) Distance Euclidienne
+# Calcul de la distance Euclidienne pour chaque point et identification des outliers
+euclidean_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'euclidean').flatten() > 3]
+
+# 3.3) Distance de Mahalanobis
+# Calcul de la distance de Mahalanobis pour chaque point et identification des outliers
+mahalanobis_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'mahalanobis', VI=inv_cov_matrix).flatten() > 3]
+
+# Méthode 4 : DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+# DBSCAN est un algorithme de clustering qui peut identifier les points aberrants comme ceux qui ne font pas partie d'un cluster dense
+dbscan = DBSCAN(eps=0.5, min_samples=5).fit(tat.values.reshape(-1, 1))
+data['dbscan_labels'] = dbscan.labels_
+dbscan_outliers = data[data['dbscan_labels'] == -1]  # Les outliers sont étiquetés avec -1 par DBSCAN
+
+# Compter et afficher le nombre d'outliers détectés par chaque méthode
+outlier_counts = {
+    "Z-Score": len(z_outliers),
+    "IQR": len(iqr_outliers),
+    "Manhattan Distance": len(manhattan_outliers),
+    "Euclidean Distance": len(euclidean_outliers),
+    "Mahalanobis Distance": len(mahalanobis_outliers),
+    "DBSCAN": len(dbscan_outliers)
+}
+
+print("Nombre d'outliers détectés par chaque méthode :")
+for method, count in outlier_counts.items():
+    print(f"{method}: {count}")
+```
+
+### Explications :
+
+1. **Détermination du nombre d'outliers en utilisant différentes méthodes** :
+   - **Méthode Z-Score** : Normalisation des données pour identifier les points qui s'écartent significativement de la moyenne.
+   - **Méthode IQR (Interquartile Range)** : Utilisation des quartiles pour définir un intervalle de valeurs "normales" et identifier les valeurs extrêmes.
+   - **Méthode des distances** : Application de trois distances différentes (Manhattan, Euclidienne, Mahalanobis) pour identifier les outliers basés sur la distance par rapport à un centre.
+   - **DBSCAN** : Algorithme de clustering qui identifie les outliers en tant que points isolés ne faisant partie d'aucun cluster dense.
+
+2. **Modification des paramètres de DBSCAN pour ajuster la détection des outliers** :
+   - Test de différentes valeurs pour epsilon (la distance maximale entre deux points pour être considérés voisins) et `min_samples` (le nombre minimum de points pour former un cluster).
+
+3. **Optimisation du seuil pour la méthode du Z-Score** :
+   - Exploration de plusieurs seuils (de 3 à 1) pour identifier celui qui capture le plus grand nombre d'outliers. 
+
 
 ---
 
