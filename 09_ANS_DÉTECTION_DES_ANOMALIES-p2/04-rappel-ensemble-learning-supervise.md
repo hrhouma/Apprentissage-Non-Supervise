@@ -23,7 +23,7 @@ Cependant, il existe également des méthodes d'ensemble pour l'apprentissage no
 
 ---
 
-# 2 - Exemple - Ensemble learning en supervisé
+# 2 (SUPERVISÉ) - Exemple - Ensemble learning en supervisé
 
 - Je vous présente un exemple concret d'ensemble learning supervisé, en utilisant deux des méthodes les plus populaires : **Bagging** avec **Random Forest** et **Boosting** avec **AdaBoost**. 
 - Cet exemple va illustrer comment combiner plusieurs modèles pour améliorer la performance globale d'un modèle de classification.
