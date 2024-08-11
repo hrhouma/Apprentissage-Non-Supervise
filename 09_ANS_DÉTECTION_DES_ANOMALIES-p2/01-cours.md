@@ -92,6 +92,26 @@ est la matrice de covariance.
 
 [Retour en haut](#table-des-matières)
 
+# Table récapitulant les exercices 
+
+- Tous les exercices utilisent le même lien pour le téléchargement des ressources.
+
+
+| **Nom de l'Exercice**                                   | **Lien**                                                                                         |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Exercice Pratique 1 - 01-ZSCORE                           | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 2 - 02-IQR                              | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 3 - 03-DBSCAN-OUTLIER                   | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 4 - RÉSUMÉ ZSCORE-IQR                   | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 5 - 05-Exercice 2 - clustering          | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 6 - 06-Exercice 3 - non clustering      | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 7 - 07-Exercice 4 - Detection via ISOLATION FOREST-TO-DO | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 8 - 08-Exercice 5 - Hybride - clustering + non clustering | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| Exercice Pratique 9 - PyOD - 09-PyOD                      | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+| EXERCICE (04-(Section 4.2 - Exercice ) Exercice 1 - outlier detection - section4-2-TAT.xlsx) | [Lien vers le fichier](https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing) |
+
+
+
 ---
 
 # Section 1: Introduction à la détection d'anomalies
