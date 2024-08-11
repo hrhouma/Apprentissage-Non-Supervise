@@ -867,6 +867,13 @@ En classant les facteurs en fonction de leur importance SHAP, nous pouvons voir 
 - Dans cette section, nous allons explorer l'utilisation de la bibliothèque **PyOD** (Python Outlier Detection), un outil puissant pour la détection d'anomalies dans les données multivariées.
 - PyOD est un ensemble de plus de 30 algorithmes différents, qui ont été largement utilisés dans la recherche académique pour détecter des anomalies dans divers types de jeux de données.
 
+
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 9 PyOD - 09-PyOD
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+
+
 - Pour illustrer l'efficacité de PyOD, nous appliquerons plusieurs de ces algorithmes sur un jeu de données provenant de Kaggle, spécifiquement un jeu de données sur les assurances santé.
 - Ce jeu de données est utilisé pour prédire la persistance des clients à payer leurs primes d'assurance. Dans ce contexte, un client qui ne paie pas sa prime est considéré comme une anomalie.
 
