@@ -488,7 +488,10 @@ lof_anomalies = lof.fit_predict(X[gmm_labels == 0])
 2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
 3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
 
-Voici un exemple de code pour cet exercice :
+🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# EXERCICE (06-Exercice 3 - non clustering)
+- exemple de code pour cet exercice :
 
 ```python
 import pandas as pd
