@@ -50,7 +50,7 @@ y = iris.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 ```
 
-#### (SUPERVISÉ) 2. **Bagging avec Random Forest**
+#### 2. **Bagging avec Random Forest**
 
    - **Random Forest** est une méthode d'ensemble basée sur le bagging, où plusieurs arbres de décision sont entraînés sur des sous-échantillons aléatoires des données.
 
