@@ -1094,5 +1094,116 @@ L'affirmation selon laquelle le problème de la boîte noire est résolu est un 
 
 L'histoire de la boîte noire n'est pas encore terminée, mais avec les avancées actuelles, nous sommes certainement en train d'écrire son prochain chapitre.
 
+----
 
+# Annexe 4 : Exemple pyod
+
+
+### 1. **Montage de Google Drive**
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+   Cette ligne de code permet de monter Google Drive dans l'environnement Google Colab. Cela signifie que vous pouvez accéder directement aux fichiers stockés sur votre Google Drive depuis votre notebook Colab. Cela est particulièrement utile pour lire des fichiers de données ou enregistrer des résultats.
+
+### 2. **Installation des bibliothèques nécessaires**
+   ```python
+   !pip install pyod
+   ```
+   PyOD (Python Outlier Detection) est une bibliothèque Python qui offre une large gamme d'algorithmes pour la détection des anomalies (ou outliers). Cette commande installe PyOD afin que vous puissiez l'utiliser pour entraîner différents modèles de détection des anomalies.
+
+### 3. **Chargement et prétraitement des données**
+   ```python
+   df_train = pd.read_csv("/content/drive/MyDrive/SeaportAI/Health_Insurance_Train.csv")
+   ```
+   Ici, le fichier CSV contenant les données d'entraînement est chargé depuis Google Drive. Ce fichier semble être lié à l'assurance santé, bien que le contexte exact des données ne soit pas donné.
+
+   - **Gestion des valeurs manquantes:**
+     ```python
+     df_train.loc[:,["Count_3-6_months_late","Count_6-12_months_late","Count_more_than_12_months_late"]] = df_train.loc[:,["Count_3-6_months_late","Count_6-12_months_late","Count_more_than_12_months_late"]].fillna(0)
+     df_train["application_underwriting_score"].fillna(df_train["application_underwriting_score"].mean(skipna=True), inplace=True)
+     ```
+     Les colonnes `Count_3-6_months_late`, `Count_6-12_months_late` et `Count_more_than_12_months_late` représentent probablement des comptes de retards de paiement. Les valeurs manquantes dans ces colonnes sont remplacées par 0, ce qui signifie que l'absence de données est interprétée comme aucun retard de paiement.
+     
+     La colonne `application_underwriting_score`, qui semble représenter un score d'évaluation pour la souscription, est remplie par la moyenne des valeurs non nulles.
+
+   - **Normalisation des données:**
+     ```python
+     scaler = MinMaxScaler()
+     df_train[["ScaledAge","ScaledIncome","ScaledPremiumPaid","ScaledPremium","ScaledUnderwritingScore"]] = scaler.fit_transform(df_train[["age_in_days","Income","no_of_premiums_paid","premium","application_underwriting_score"]])
+     ```
+     Le `MinMaxScaler` est utilisé pour normaliser certaines caractéristiques numériques de manière à ce qu'elles soient comprises entre 0 et 1. Cela aide à équilibrer l'importance des différentes caractéristiques lors de l'entraînement des modèles de machine learning.
+
+   - **Encodage des variables catégorielles:**
+     ```python
+     from sklearn.preprocessing import LabelEncoder
+     encoder = LabelEncoder()
+     train_data["sourcing_channel"] = encoder.fit_transform(train_data["sourcing_channel"])
+     train_data["residence_area_type"] = encoder.fit_transform(train_data["residence_area_type"])
+     ```
+     Les variables catégorielles telles que `sourcing_channel` (canal de distribution) et `residence_area_type` (type de zone de résidence) sont converties en format numérique à l'aide de `LabelEncoder`. Cela est nécessaire car les modèles de machine learning fonctionnent mieux avec des données numériques.
+
+### 4. **Initialisation des modèles de détection des anomalies**
+   ```python
+   model_dict = {
+       "ABOD": ABOD(contamination=outlier_percent),
+       "KNN": KNN(contamination=outlier_percent),
+       "Isolation Forest": IForest(contamination=outlier_percent),
+       "LOF": LOF(contamination=outlier_percent),
+       "CBLOF": CBLOF(contamination=outlier_percent),
+       "COPOD": COPOD(contamination=outlier_percent),
+       "PCA": PCA(contamination=outlier_percent),
+       "HBOS": HBOS(contamination=outlier_percent)
+   }
+   ```
+   Ici, un dictionnaire est créé pour stocker plusieurs modèles de détection des anomalies. Le paramètre `contamination` est utilisé pour spécifier le pourcentage estimé de données qui sont des outliers. Voici une brève description de chaque modèle :
+
+   - **ABOD (Angle-Based Outlier Detection):** Détecte les outliers en analysant les angles formés entre les points de données.
+   - **KNN (K-Nearest Neighbors):** Détecte les outliers en mesurant la distance aux voisins les plus proches.
+   - **Isolation Forest:** Un modèle basé sur les arbres de décision qui isole les points de données inhabituels (outliers).
+   - **LOF (Local Outlier Factor):** Détecte les outliers en comparant la densité locale des points de données.
+   - **CBLOF (Clustering-Based Local Outlier Factor):** Utilise le clustering pour détecter les outliers.
+   - **COPOD (Copula-Based Outlier Detection):** Modèle non paramétrique qui identifie les outliers basés sur des copules.
+   - **PCA (Principal Component Analysis):** Détecte les outliers en réduisant la dimensionnalité des données et en analysant les composantes principales.
+   - **HBOS (Histogram-Based Outlier Score):** Détecte les outliers en analysant la distribution des données.
+
+### 5. **Entraînement et évaluation des modèles**
+   - **Entraînement des modèles:**
+     ```python
+     clf.fit(train_data)
+     ```
+     Chaque modèle du dictionnaire `model_dict` est entraîné sur les données prétraitées `train_data`.
+
+   - **Détection des outliers et évaluation:**
+     ```python
+     labels = clf.labels_
+     n_outliers = np.count_nonzero(labels)
+     ```
+     Après l'entraînement, les modèles prédisent si chaque point de données est un outlier (anomalie) ou non. Ces prédictions sont stockées dans un tableau appelé `labels`.
+
+   - **Enregistrement des résultats:**
+     ```python
+     result_df = pd.DataFrame({"Package Name":[],"Model Name":[],"Time Taken in Seconds":[],"No.Of Data Points":[],"No.Of Outliers":[],"Percentage":[]})
+     ```
+     Les résultats, y compris le temps d'exécution, le nombre d'outliers détectés et le pourcentage d'outliers, sont enregistrés dans un DataFrame `result_df`.
+
+   - **Visualisation:**
+     ```python
+     plt.title(clf_name)
+     plt.hist(labels)
+     plt.show()
+     ```
+     Le script génère des histogrammes pour visualiser la distribution des prédictions d'anomalies faites par chaque modèle.
+
+### 6. **Sauvegarde des résultats**
+   ```python
+   result_df.to_excel("/content/drive/MyDrive/SeaportAI/Models Comparison.xlsx")
+   outlier_df.to_excel("/content/drive/MyDrive/SeaportAI/Models Prediction.xlsx")
+   ```
+   Les résultats finaux sont sauvegardés dans des fichiers Excel sur Google Drive pour une analyse ultérieure.
+
+---
+
+### **Conclusion:**
+Ce script présente une méthode complète pour détecter les anomalies dans un ensemble de données en utilisant différents modèles de machine learning. Chaque modèle est évalué pour voir à quel point il peut identifier les anomalies dans les données d'assurance santé. Ces informations sont essentielles dans divers contextes tels que la détection de fraudes, la segmentation des clients, ou l'identification d'événements rares dans les données. Les résultats enregistrés permettent de comparer l'efficacité de chaque modèle, ce qui peut être utile pour choisir le meilleur modèle pour des applications futures.
 
