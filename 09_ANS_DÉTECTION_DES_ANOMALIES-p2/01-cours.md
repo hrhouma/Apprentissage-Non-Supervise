@@ -139,8 +139,14 @@ est la matrice de covariance.
 
 ---
 
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 # Section 3: Exercice Pratique
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+
 <a name="section-3"></a>
+
+
+
 
 **Instructions de l'exercice**
 
@@ -205,6 +211,12 @@ est la matrice de covariance.
 
 - **Programmation :** En Python, cela peut être accompli en utilisant les bibliothèques `numpy` et `pandas`. Vous calculez d'abord la moyenne et l'écart-type, puis vous appliquez la formule du Z-score pour chaque point de données.
 
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 1 - 01-ZSCORE
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+
+- https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing
+
 ## Méthode de l'Intervalle Interquartile (IQR)
 
 - La méthode de l'Intervalle Interquartile (IQR) identifie les outliers en mesurant l'étendue des 50 % de données centrales. L'IQR est calculé comme la différence entre le troisième quartile (\(Q3\)) et le premier quartile (\(Q1\)).
@@ -237,7 +249,9 @@ est la matrice de covariance.
 
 - En gros, ça te montre à quel point les biscuits du milieu sont de tailles similaires. Si cet intervalle est petit, ça veut dire qu'ils sont presque tous de la même taille. S'il est grand, ça veut dire qu'ils varient beaucoup en taille.
 
-
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 2 - 02-IQR
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 
 ## Méthode Basée sur la Distance
 
@@ -276,13 +290,20 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 
 - **Programmation :** Utilisez `DBSCAN` de `scikit-learn` pour appliquer cet algorithme à vos données.
 
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 3- 03-DBSCAN-OUTLIER
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
+
 ----
 
 # Section 4.2 - Exercice 
 
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-### EXERCICE (04-(Section 4.2 - Exercice ) Exercice 1 - outlier detection - section4-2-TAT.xlsx)
+# Exercice Pratique 4- RÉSUMÉ ZSCORE-IQR
 ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
+
 
 ### Instructions de l'exercice
 - D'abord. il faut télécharger le fichier excel dans le dossier ressources TAT.xlsx: 
@@ -290,6 +311,8 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 2. **IQR Method :** Utilisez la méthode de l'IQR pour identifier les outliers.
 3. **Distance Method :** Appliquez les distances Euclidienne, Manhattan et Mahalanobis pour détecter les outliers.
 4. **DBSCAN :** Ajustez les paramètres \(\epsilon\) et \(minPts\) pour identifier les outliers et observez les résultats.
+
+
 
 - Le "Turn Around Time" (TAT) est un terme couramment utilisé dans divers contextes, notamment en gestion de projet, en opérations et en informatique. Il se réfère généralement au temps total nécessaire pour accomplir une tâche ou un processus du début à la fin. 
 - Exemples:
@@ -305,6 +328,10 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 [Retour en haut](#table-des-matières)
 
 ----
+
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+### EXERCICE (04-(Section 4.2 - Exercice ) Exercice 1 - outlier detection - section4-2-TAT.xlsx)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
 
 # Section 4.3 - proposition de correction pour la détection des Outliers
 
@@ -408,6 +435,12 @@ Dans la session précédente, nous avons exploré les algorithmes de clustering 
 
 - **Algorithmes de Clustering :** Ils regroupent les points de données en clusters basés sur la similarité. Les anomalies sont identifiées comme des points qui dévient de manière significative de ces clusters. Les méthodes incluent K-means, DBSCAN, les modèles de mélanges gaussiens (GMM), et le clustering hiérarchique.
 
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 5 - (05-Exercice 2 - clustering)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
+
+
 - **Algorithmes Non Clustering :** Ils évaluent chaque point de données individuellement, en se basant sur des propriétés statistiques ou de densité locales. Les anomalies sont détectées en fonction de leur déviation par rapport au comportement attendu. Les algorithmes incluent Isolation Forest, One-Class SVM, et Local Outlier Factor (LOF).
 
 ## Isolation Forest
@@ -437,6 +470,12 @@ iso_forest.fit(X)
 anomalies = iso_forest.predict(X)
 ```
 
+
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 6 - (06-Exercice 3 - non clustering)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
+
 ## Histogram-Based Outlier Score (HBOS)
 
 **HBOS** est un algorithme efficace pour la détection des anomalies basé sur les histogrammes des distributions des caractéristiques. Il construit des histogrammes pour chaque caractéristique, et les anomalies sont identifiées en fonction de leur densité dans ces histogrammes.
@@ -449,7 +488,7 @@ anomalies = iso_forest.predict(X)
 
 ### Programmation
 
-Voici un exemple de code pour appliquer HBOS à un ensemble de données en utilisant Python :
+Exemple de code pour appliquer HBOS à un ensemble de données en utilisant Python :
 
 ```python
 from pyod.models.hbos import HBOS
@@ -460,6 +499,21 @@ hbos.fit(X)
 anomaly_scores = hbos.decision_function(X)
 anomalies = hbos.predict(X)
 ```
+
+
+
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# Exercice Pratique 7 - (07-Exercice 4 - Detection via ISOLATION FOREST-TO-DO)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
+### Instructions de l'Exercice
+
+1. **Détection Initiale des Anomalies :** Utilisez l'algorithme Isolation Forest avec un taux de contamination de 5 % pour identifier un premier ensemble d'anomalies.
+2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
+3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
+
+
+---
 
 ## Approche Hybride
 
@@ -482,19 +536,16 @@ lof = LocalOutlierFactor(n_neighbors=20, contamination=0.05)
 lof_anomalies = lof.fit_predict(X[gmm_labels == 0])
 ```
 
-## Exercice Pratique
-
-### Instructions de l'Exercice
-
-1. **Détection Initiale des Anomalies :** Utilisez l'algorithme Isolation Forest avec un taux de contamination de 5 % pour identifier un premier ensemble d'anomalies.
-2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
-3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
-
-
+----
 
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
-# EXERCICE (06-Exercice 3 - non clustering)
+# Exercice Pratique 8 - EXERCICE (08-Exercice 5 - Hybride - clustering + non clustering)
 ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+
+
+
+
 
 # Référence :
 
