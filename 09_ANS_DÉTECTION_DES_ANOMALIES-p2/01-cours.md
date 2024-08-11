@@ -95,6 +95,7 @@ est la matrice de covariance.
 # Table récapitulant les exercices 
 
 - Tous les exercices utilisent le même lien pour le téléchargement des ressources.
+- https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing
 
 
 | **Nom de l'Exercice**                                   | **Lien**                                                                                         |
