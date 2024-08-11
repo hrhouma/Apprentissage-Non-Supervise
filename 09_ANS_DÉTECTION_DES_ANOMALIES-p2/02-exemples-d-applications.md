@@ -1,7 +1,7 @@
 
 # 1 - Exemples de Détection d'Anomalies
 
-Ce tableau présente divers exemples de détection d'anomalies appliqués dans différents domaines, classés par catégorie, avec une indication du type d'anomalie pour chaque cas.
+- Ce tableau présente divers exemples de détection d'anomalies appliqués dans différents domaines, classés par catégorie, avec une indication du type d'anomalie pour chaque cas.
 
 | Catégorie                          | Exemple                                                     | Type d'anomalie             |
 |------------------------------------|-------------------------------------------------------------|-----------------------------|
@@ -144,18 +144,19 @@ Ce tableau présente divers exemples de détection d'anomalies appliqués dans d
 | **Détection des anomalies dans les données de sécurité des applications de systèmes** | Surveillance des applications de systèmes pour détecter les anomalies de sécurité | Basée sur le temps | Non supervisé |
 | **Détection des anomalies dans les données de sécurité des applications de sécurité** | Surveillance des applications de sécurité pour détecter les anomalies de sécurité | Basée sur le temps | Non supervisé |
 
-Ce tableau montre comment la détection d'anomalies peut être appliquée dans divers domaines pour identifier des activités frauduleuses et des opportunités de marché, en utilisant différentes méthodes et types d'anomalies.
+- Ce tableau montre comment la détection d'anomalies peut être appliquée dans divers domaines pour identifier des activités frauduleuses et des opportunités de marché, en utilisant différentes méthodes et types d'anomalies.
 
 ## Power BI
 
-Power BI est un ensemble de services logiciels, d'applications et de connecteurs développés par Microsoft, conçus pour transformer des sources de données disparates en insights cohérents, visuellement immersifs et interactifs. Il permet de se connecter à diverses sources de données, de les visualiser et de découvrir ce qui est important, et de partager ces informations avec d'autres utilisateurs[1][3].
+- Power BI est un ensemble de services logiciels, d'applications et de connecteurs développés par Microsoft, conçus pour transformer des sources de données disparates en insights cohérents, visuellement immersifs et interactifs. Il permet de se connecter à diverses sources de données, de les visualiser et de découvrir ce qui est important, et de partager ces informations avec d'autres utilisateurs[1][3].
 
 ## Splunk
 
-Splunk est une plateforme logicielle qui indexe et analyse les données des machines, les rendant consultables pour en extraire des informations exploitables. Elle est souvent utilisée pour la gestion des informations et des événements de sécurité (SIEM), ainsi que pour l'analyse des logs et des données générées par les machines[2][7].
+- Splunk est une plateforme logicielle qui indexe et analyse les données des machines, les rendant consultables pour en extraire des informations exploitables. Elle est souvent utilisée pour la gestion des informations et des événements de sécurité (SIEM), ainsi que pour l'analyse des logs et des données générées par les machines[2][7].
 
 
-Citations:
+# Citations:
+
 [1] https://learn.microsoft.com/fr-fr/power-bi/fundamentals/power-bi-overview
 
 [2] https://www.cyberuniversity.com/post/quest-ce-que-splunk-concepts-fonctionnalites-produits
