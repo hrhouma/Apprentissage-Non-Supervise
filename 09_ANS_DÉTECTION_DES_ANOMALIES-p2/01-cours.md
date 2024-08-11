@@ -280,6 +280,10 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 
 # Section 4.2 - Exercice 
 
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+### EXERCICE (04-(Section 4.2 - Exercice ) Exercice 1 - outlier detection - section4-2-TAT.xlsx)
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
+
 ### Instructions de l'exercice
 - D'abord. il faut télécharger le fichier excel dans le dossier ressources TAT.xlsx: 
 1. **Z-Score Method :** Déterminez le nombre d'outliers en utilisant cette méthode.
@@ -459,9 +463,7 @@ anomalies = hbos.predict(X)
 
 ## Approche Hybride
 
-Une approche hybride combine
-
- les avantages des algorithmes de clustering et des algorithmes non clustering pour améliorer la précision de la détection des anomalies. Par exemple, vous pouvez utiliser **GMM** pour identifier les anomalies globales et **LOF** pour détecter les anomalies locales au sein de ces clusters.
+Une approche hybride combine les avantages des algorithmes de clustering et des algorithmes non clustering pour améliorer la précision de la détection des anomalies. Par exemple, vous pouvez utiliser **GMM** pour identifier les anomalies globales et **LOF** pour détecter les anomalies locales au sein de ces clusters.
 
 ### Exemple d'Implémentation Hybride
 
@@ -488,10 +490,17 @@ lof_anomalies = lof.fit_predict(X[gmm_labels == 0])
 2. **Raffinement des Anomalies :** Parmi les anomalies identifiées, isolez celles qui se situent dans les percentiles 90 et 95, en fonction de leur distance par rapport à la moyenne de l'ensemble des données.
 3. **Visualisation :** Réduisez la dimensionnalité des données avec PCA et visualisez les anomalies.
 
-🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦🫦
+
+
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 # EXERCICE (06-Exercice 3 - non clustering)
-- exemple de code pour cet exercice :
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+# Référence :
+
+- https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing
+
+ ## Exemple de code pour cet exercice :
 
 ```python
 import pandas as pd
@@ -500,7 +509,7 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
 # Chargement des données
-data = pd.read_csv('votre_fichier.csv')
+data = pd.read_csv('FraudDetectionInsuranceNonClusterv1.csv')
 
 # Détection initiale des anomalies
 iso_forest = IsolationForest(contamination=0.05)
@@ -552,7 +561,7 @@ import pandas as pd
 from sklearn.ensemble import IsolationForest
 
 # Chargement du jeu de données
-data = pd.read_csv('chemin_vers_le_fichier.csv')
+data = pd.read_csv('FraudDetectionInsuranceNonClusterv1.csv')
 ```
 
 **Étape 2 : Construction du Modèle Isolation Forest**
@@ -671,7 +680,7 @@ Voici une implémentation détaillée pour comparer différents algorithmes de d
    - Comparaison de la précision des modèles, à la fois pour les anomalies et les non-anomalies.
    - Visualisation des résultats pour identifier quel algorithme offre la meilleure performance pour ce jeu de données spécifique.
 
-Voici un extrait de code pour illustrer l'application de PyOD :
+## Extrait de code pour illustrer l'application de PyOD :
 
 ```python
 # Importation des bibliothèques nécessaires
