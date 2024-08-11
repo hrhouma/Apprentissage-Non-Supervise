@@ -157,10 +157,17 @@ Splunk est une plateforme logicielle qui indexe et analyse les données des mach
 
 Citations:
 [1] https://learn.microsoft.com/fr-fr/power-bi/fundamentals/power-bi-overview
+
 [2] https://www.cyberuniversity.com/post/quest-ce-que-splunk-concepts-fonctionnalites-produits
+
 [3] https://mssolutions.ca/blogue/blogue/quest-ce-que-power-bi-quels-sont-ses-avantages/
+
 [4] https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-anomaly-detection
+
 [5] https://splunkbase.splunk.com/app/6843
+
 [6] https://www.getapp.fr/compare/102847/122523/power-bi/vs/splunk
+
 [7] https://www.splunk.com/en_us/blog/learn/anomaly-detection.html
+
 [8] https://sourcetable.com/bi-tools/power-bi-vs-splunk
