@@ -129,7 +129,7 @@ est la matrice de covariance.
 - La détection d'anomalies basée sur le temps est particulièrement utile pour identifier des événements rares mais critiques, comme la maintenance prédictive dans l'industrie.
 - **Concept d'outliers (valeurs aberrantes)** :
   - Les outliers sont des points de données extrêmes.
-  - Chaque outlier est une anomalie, mais toutes les anomalies ne sont pas des outliers.
+  - Chaque outlier est une anomalie, mais toutes les anomalies ne sont pas des outliers (voir la discussion dans l'**annexe 1**).
   - Techniques de détection des outliers :
     - **Box plot** : Utilisation de l'intervalle interquartile.
     - **Diagramme de contrôle** : Utilisation de la moyenne et de l'écart-type pour définir des limites de contrôle.
@@ -143,12 +143,14 @@ est la matrice de covariance.
 <a name="section-3"></a>
 
 **Instructions de l'exercice**
-- Temps alloué : 30 minutes
-- Nombre de solutions étudiantes : 61
 
-Dans cet exercice, les apprenants sont invités à fournir des exemples d'application des anomalies et de la détection d'anomalies dans la vie réelle. Cet exercice les aidera dans leur parcours d'apprentissage, car ils pourront se référer à ces exemples tout au long de la présentation et évaluer l'importance de la détection d'anomalies dans des situations réelles.
+- Temps alloué : 30 minutes
+
+- Dans cet exercice, vous êtes invités à fournir des exemples d'application des anomalies et de la détection d'anomalies dans la vie réelle (Après, vous pouvez consulter le document 02-exemples-d-applications-.. dans le même dossier ici). 
+- Cet exercice vous aidera dans votre parcours d'apprentissage, car vous pouvez de vous référer à ces exemples tout au long de ce cours et aussi évaluer l'importance de la détection d'anomalies dans des situations réelles.
 
 **Questions pour cet exercice :**
+
 1. Décrivez ce qu'est une anomalie avec vos propres mots.
 2. Donnez des exemples d'anomalies basées sur le temps. Les exemples peuvent provenir de votre domaine professionnel ou d'un domaine que vous connaissez bien.
 3. Donnez des exemples d'anomalies non basées sur le temps (non supervisées). Les exemples peuvent provenir de votre domaine professionnel ou d'un domaine que vous connaissez bien.
@@ -159,7 +161,7 @@ Dans cet exercice, les apprenants sont invités à fournir des exemples d'applic
 
 ---
 
-**Exemple de l'instructeur :**
+**Proposition de l'instructeur :**
 
 1. **Décrivez ce qu'est une anomalie avec vos propres mots.**
    - Une anomalie est un point de données qui ne correspond pas ou ne s'intègre pas bien avec les autres points de données.
@@ -185,11 +187,11 @@ Dans cet exercice, les apprenants sont invités à fournir des exemples d'applic
 # Section 4 : Détection des Outliers
 <a name="section-4"></a>
 
-Dans cette section, nous allons explorer différentes méthodes pour détecter les outliers, c'est-à-dire des points de données extrêmes qui se situent nettement en dehors de la majorité d'un ensemble de données ou d'un cluster. La détection des outliers est cruciale pour une analyse statistique précise et la performance des modèles.
+- Dans cette section, nous allons explorer différentes méthodes pour détecter les outliers, c'est-à-dire des points de données extrêmes qui se situent nettement en dehors de la majorité d'un ensemble de données ou d'un cluster. La détection des outliers est cruciale pour une analyse statistique précise et la performance des modèles.
 
 ## Méthode du Z-Score
 
-La méthode du Z-score est une technique statistique utilisée pour identifier les outliers en mesurant le nombre d'écarts-types d'un point de données par rapport à la moyenne de l'ensemble de données.
+- La méthode du Z-score est une technique statistique utilisée pour identifier les outliers en mesurant le nombre d'écarts-types d'un point de données par rapport à la moyenne de l'ensemble de données.
 
 # Voir FORMULE 1
 
