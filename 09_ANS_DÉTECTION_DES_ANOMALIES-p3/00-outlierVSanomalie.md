@@ -91,13 +91,16 @@ Pour mieux comprendre la distinction entre *outliers* et *anomalies* dans le con
 
 # 5.1 - Outlier ou Anomalie ?
 
+
 ![image](https://github.com/user-attachments/assets/23e66374-d409-468a-9df1-b2b93e842edc)
+
 
 - source : https://ca.news.yahoo.com/olympic-shooters-become-viral-sensations-as-they-secure-silver-medals-in-paris-did-turkey-send-a-hitman-to-main-character-energy-145517201.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAB7JxtnQY1fv5xhoh1w5P5WGxH0GiZ6Rv2mZ0C_hZOxEImFIkQAXXD5bOsZMqOBM12aOgpgnvAv0hHaQr8S4T7-7dGle6vpKMAP-H34bGZcMXdGDaLdMUQVyEogKUIYWUFr7a-iJ7tUPs7xZqvKYJW0m3QDZm41Q-FYwuPImU2mr
 
 # 5.2 - Outlier ou Anomalie ?
 
 ![image](https://github.com/user-attachments/assets/76b2a214-37ad-46a0-be82-1d9d4eb5bb4b)
+
 
 - source : https://www.transfermarkt.com/lionel-messi-vs-cristiano-ronaldo-who-had-highest-market-value-across-20-year-careers-/view/news/433256
 
