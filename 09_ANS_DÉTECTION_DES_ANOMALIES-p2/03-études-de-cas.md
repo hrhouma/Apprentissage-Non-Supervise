@@ -156,14 +156,18 @@
 
 # Configuration et Exécution de la Détection d'Anomalies avec PyCaret
 
-Ce guide vous guidera à travers l'installation, la configuration et l'exécution d'un script de détection d'anomalies en utilisant PyCaret. Le script analyse un jeu de données de trajets en taxi à New York.
+- https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427
+
+# Application de Détection d'Anomalies avec PyCaret et Tkinter
+
+Ce guide fournit des instructions étape par étape pour installer, configurer et exécuter une application de détection d'anomalies utilisant PyCaret pour l'analyse et Tkinter pour l'interface graphique.
 
 ## Prérequis
 
-- **Python** : Assurez-vous d'avoir Python (version 3.7 à 3.10) installé sur votre machine.
+- **Python** : Assurez-vous d'avoir Python installé (version 3.7 à 3.10 recommandée).
 - **pip** : Assurez-vous que `pip` est installé et à jour.
 
-## Instructions d'Installation
+## Installation
 
 ### Étape 1 : Créer un Environnement Virtuel
 
@@ -178,84 +182,106 @@ Activez l'environnement virtuel :
 - **Sur Windows** :
   ```bash
   pycaret-env\Scripts\activate
+  
   ```
+  
+![image](https://github.com/user-attachments/assets/50d945c9-3895-471f-9689-4ef71cd689cc)
+
 
 - **Sur macOS/Linux** :
   ```bash
   source pycaret-env/bin/activate
   ```
 
-### Étape 2 : Installer PyCaret et ses Dépendances
+### Étape 2 : Installer les Dépendances
 
-Installez PyCaret dans l'environnement virtuel. Vous pouvez choisir d'installer la version de base ou la version complète avec toutes les dépendances optionnelles.
-
-```bash
-pip install pycaret
-```
-
-Pour la version complète avec toutes les dépendances :
+Installez PyCaret et les autres bibliothèques nécessaires dans l'environnement virtuel.
 
 ```bash
 pip install pycaret[full]
+pip install pandas numpy plotly
 ```
 
-### Étape 3 : Vérifier l'Installation
+**Note** : Tkinter est inclus avec Python par défaut, donc aucune installation supplémentaire n'est nécessaire pour Tkinter.
 
-Vérifiez que PyCaret est installé correctement en important le module dans un shell Python.
+## Exécution du Script
 
-```python
-from pycaret.anomaly import *
-```
+### Étape 3 : Créer le Script Python
 
-## Exécution du Script de Détection d'Anomalies
-
-Copiez le code suivant dans un fichier Python (par exemple, `anomaly_detection.py`) et exécutez-le.
+Créez un fichier Python (par exemple, `anomaly_detection_tkinter.py`) et copiez le code suivant :
 
 ```python
-# Importation des bibliothèques nécessaires
+import tkinter as tk
+from tkinter import messagebox
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 from pycaret.anomaly import *
 
-# Charger le jeu de données des passagers de taxi à NYC
-data = pd.read_csv('https://raw.githubusercontent.com/numenta/NAB/master/data/realKnownCause/nyc_taxi.csv')
+def run_anomaly_detection():
+    try:
+        # Load the NYC taxi passengers dataset
+        data = pd.read_csv('https://raw.githubusercontent.com/numenta/NAB/master/data/realKnownCause/nyc_taxi.csv')
 
-# Conversion de la colonne 'timestamp' en format datetime
-data['timestamp'] = pd.to_datetime(data['timestamp'])
+        # Convert 'timestamp' to datetime format
+        data['timestamp'] = pd.to_datetime(data['timestamp'])
 
-# Préparation des données pour la modélisation
-data.set_index('timestamp', drop=True, inplace=True)
-data = data.resample('H').sum()
+        # Prepare data for modeling
+        data.set_index('timestamp', drop=True, inplace=True)
+        data = data.resample('H').sum()
 
-# Initialisation de l'environnement PyCaret pour la détection d'anomalies
-s = setup(data, session_id=123, use_gpu=False)
+        # Initialize PyCaret environment for anomaly detection
+        s = setup(data, session_id=123, use_gpu=False)
 
-# Vérification des modèles disponibles pour la détection d'anomalies
-print(models())
+        # Create and train the Isolation Forest model
+        iforest = create_model('iforest', fraction=0.1)
+        iforest_results = assign_model(iforest)
 
-# Création et entraînement du modèle Isolation Forest
-iforest = create_model('iforest', fraction=0.1)
+        # Display detected anomalies
+        anomalies = iforest_results[iforest_results['Anomaly'] == 1]
+        print(anomalies.head())
 
-# Assigner les résultats du modèle aux données d'origine
-iforest_results = assign_model(iforest)
+        # Visualize detected anomalies
+        fig = px.line(iforest_results, x=iforest_results.index, y="value", title='NYC TAXI TRIPS - UNSUPERVISED ANOMALY DETECTION', template='plotly_dark')
+        outlier_dates = anomalies.index
+        y_values = [iforest_results.loc[i]['value'] for i in outlier_dates]
+        fig.add_trace(go.Scatter(x=outlier_dates, y=y_values, mode='markers', name='Anomaly', marker=dict(color='red', size=10)))
+        fig.show()
 
-# Afficher les anomalies détectées
-anomalies = iforest_results[iforest_results['Anomaly'] == 1]
-print(anomalies.head())
+        messagebox.showinfo("Success", "Anomaly detection completed successfully!")
 
-# Visualisation des anomalies
-fig = px.line(iforest_results, x=iforest_results.index, y="value", title='NYC TAXI TRIPS - UNSUPERVISED ANOMALY DETECTION', template='plotly_dark')
-outlier_dates = anomalies.index
-y_values = [iforest_results.loc[i]['value'] for i in outlier_dates]
-fig.add_trace(go.Scatter(x=outlier_dates, y=y_values, mode='markers', name='Anomaly', marker=dict(color='red', size=10)))
-fig.show()
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred: {e}")
+
+# Create the main window
+root = tk.Tk()
+root.title("Anomaly Detection with PyCaret")
+
+# Create a button to run the anomaly detection
+run_button = tk.Button(root, text="Run Anomaly Detection", command=run_anomaly_detection)
+run_button.pack(pady=20)
+
+# Start the Tkinter event loop
+root.mainloop()
+
 ```
+
+### Étape 4 : Exécuter le Script
+
+1. **Assurez-vous que l'environnement virtuel est activé**.
+2. **Exécutez le script** avec la commande suivante :
+
+   ```bash
+   python anomaly_detection_tkinter.py
+   ```
+
+3. **Interagissez avec l'application** : Cliquez sur le bouton "Run Anomaly Detection" dans la fenêtre Tkinter pour exécuter l'analyse et visualiser les anomalies.
 
 ## Dépannage
 
-- **ModuleNotFoundError** : Assurez-vous que PyCaret est installé dans l'environnement virtuel actif.
-- **Problèmes de dépendances** : Mettez à jour `pip` et `setuptools` :
+- **ModuleNotFoundError** : Assurez-vous que toutes les bibliothèques requises sont installées dans l'environnement virtuel actif.
+- **Problèmes de dépendances** : Mettez à jour `pip` et `setuptools` si nécessaire :
   ```bash
   pip install --upgrade pip setuptools
   ```
@@ -264,4 +290,6 @@ fig.show()
 
 - [Documentation de PyCaret](https://pycaret.gitbook.io/docs/)
 - [Guide d'utilisation de Plotly](https://plotly.com/python/)
+- [Documentation Tkinter](https://docs.python.org/3/library/tkinter.html)
+
 
