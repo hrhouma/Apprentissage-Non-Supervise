@@ -27,18 +27,13 @@ La différence entre une *anomalie* et un *outlier* (ou valeur aberrante) résid
 - **Anomalie** :
   - Une *anomalie* est une observation qui dévie de manière significative des attentes basées sur le comportement normal des données. Dans le contexte de la détection d'anomalies, on recherche des comportements inhabituels qui peuvent être alarmants ou significatifs, comme une fraude ou une défaillance de système. Les anomalies peuvent inclure des *outliers*, mais elles peuvent aussi être des comportements qui ne sont pas simplement des valeurs extrêmes mais qui sont significatifs dans un contexte donné[1][2].
 
-## Imane Khelif : Outlier ou Anomalie ?
-
-En ce qui concerne la boxeuse Imane Khelif, elle a été au centre de controverses liées à des tests de genre et à des allégations concernant son éligibilité à concourir dans la catégorie féminine. Ces controverses ont été qualifiées d'« anomalies » par certains, en raison de la nature inattendue et controversée des résultats des tests de genre effectués par l'Association Internationale de Boxe (IBA)[3][6].
-
-Dans ce contexte, le terme *anomalie* est utilisé pour décrire une situation qui dévie des attentes ou des normes établies, plutôt qu'un simple *outlier* statistique. Les tests sanguins ont révélé des « anomalies » qui ont conduit à des discussions sur son genre, ce qui est différent de la simple identification d'une valeur aberrante dans un ensemble de données[6].
 
 Citations:
+
 [1] https://stats.stackexchange.com/questions/189664/outlier-vs-anomaly-in-machine-learning
+
 [2] https://community.deeplearning.ai/t/difference-between-outlier-and-anomaly/281064
-[3] https://www.ladepeche.fr/2024/08/06/jo-2024-hyperandrogenie-les-tests-sanguins-montrent-que-ces-deux-boxeuses-sont-des-hommes-la-declaration-choc-de-la-federation-internationale-12126793.php
-[4] https://en.wikipedia.org/wiki/Imane_Khelif
-[5] https://apnews.com/article/olympics-2024-imane-khelif-boxing-paris-2eb07d442ffb29a61e09911884dcdaa9
+
 
 
 
