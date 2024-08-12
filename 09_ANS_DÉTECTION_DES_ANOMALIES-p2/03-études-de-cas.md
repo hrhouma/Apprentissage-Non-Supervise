@@ -151,7 +151,7 @@
 
 
 
-
+# Étude de cas 4 
 ---
 
 # Configuration et Exécution de la Détection d'Anomalies avec PyCaret
@@ -293,3 +293,144 @@ root.mainloop()
 - [Documentation Tkinter](https://docs.python.org/3/library/tkinter.html)
 
 
+
+---
+# Annexe  :
+----
+
+
+
+### 1. **Importation des modules**
+
+```python
+import tkinter as tk
+from tkinter import messagebox
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+from pycaret.anomaly import *
+```
+
+- **Pourquoi importer ces modules ?**
+  - **tkinter** : C'est une bibliothèque standard en Python pour créer des interfaces graphiques. Elle permet de créer des fenêtres, des boutons, etc.
+  - **pandas** : C'est une bibliothèque pour manipuler et analyser des données sous forme de tableaux. Pensez à des feuilles Excel.
+  - **numpy** : C'est une bibliothèque pour faire des calculs mathématiques rapides, souvent avec des tableaux de nombres.
+  - **plotly.express et plotly.graph_objects** : Ces bibliothèques permettent de créer des visualisations interactives, comme des graphiques.
+  - **pycaret.anomaly** : PyCaret est une bibliothèque pour simplifier le machine learning. Ici, on l'utilise pour la détection d'anomalies.
+
+### 2. **Définition de la fonction principale**
+
+```python
+def run_anomaly_detection():
+    try:
+```
+
+- **Pourquoi une fonction ?**
+  - Une fonction permet de regrouper du code pour le réutiliser facilement. Ici, la fonction `run_anomaly_detection` regroupe tout ce qui est nécessaire pour détecter les anomalies dans les données.
+
+### 3. **Chargement des données**
+
+```python
+data = pd.read_csv('https://raw.githubusercontent.com/numenta/NAB/master/data/realKnownCause/nyc_taxi.csv')
+```
+
+- **Pourquoi charger des données ?**
+  - Pour faire de la détection d'anomalies, il faut avoir des données à analyser. Ici, on utilise des données de trajets en taxi à New York.
+
+### 4. **Conversion et préparation des données**
+
+```python
+data['timestamp'] = pd.to_datetime(data['timestamp'])
+data.set_index('timestamp', drop=True, inplace=True)
+data = data.resample('H').sum()
+```
+
+- **Pourquoi convertir et préparer les données ?**
+  - **Conversion** : On transforme la colonne 'timestamp' en format date/heure, pour que Python comprenne qu'il s'agit de temps.
+  - **Mise à l'index** : On utilise 'timestamp' comme index, c'est-à-dire comme référence pour nos lignes.
+  - **Resampling** : On regroupe les données par heure. C'est comme si on regroupait toutes les courses de taxi faites chaque heure.
+
+### 5. **Initialisation de l'environnement PyCaret**
+
+```python
+s = setup(data, session_id=123, use_gpu=False)
+```
+
+- **Pourquoi initialiser PyCaret ?**
+  - PyCaret simplifie le processus de machine learning. Ici, il prépare les données pour la détection d'anomalies.
+
+### 6. **Création et entraînement du modèle Isolation Forest**
+
+```python
+iforest = create_model('iforest', fraction=0.1)
+iforest_results = assign_model(iforest)
+```
+
+- **Pourquoi utiliser Isolation Forest ?**
+  - **Isolation Forest** est un algorithme qui détecte les anomalies en isolant les données étranges. On l'entraîne ici sur nos données de trajets de taxi.
+
+### 7. **Affichage des anomalies détectées**
+
+```python
+anomalies = iforest_results[iforest_results['Anomaly'] == 1]
+print(anomalies.head())
+```
+
+- **Pourquoi afficher les anomalies ?**
+  - Pour voir quelles données sont considérées comme inhabituelles ou "anormales". Ici, on montre les premières anomalies détectées.
+
+### 8. **Visualisation des anomalies**
+
+```python
+fig = px.line(iforest_results, x=iforest_results.index, y="value", title='NYC TAXI TRIPS - UNSUPERVISED ANOMALY DETECTION', template='plotly_dark')
+outlier_dates = anomalies.index
+y_values = [iforest_results.loc[i]['value'] for i in outlier_dates]
+fig.add_trace(go.Scatter(x=outlier_dates, y=y_values, mode='markers', name='Anomaly', marker=dict(color='red', size=10)))
+fig.show()
+```
+
+- **Pourquoi visualiser les anomalies ?**
+  - Visualiser permet de mieux comprendre où se trouvent les anomalies sur un graphique. Ici, on voit les anomalies comme des points rouges.
+
+### 9. **Messages d'information ou d'erreur**
+
+```python
+messagebox.showinfo("Success", "Anomaly detection completed successfully!")
+```
+
+- **Pourquoi afficher des messages ?**
+  - Pour informer l'utilisateur si tout s'est bien passé ou s'il y a eu un problème.
+
+### 10. **Création de la fenêtre principale**
+
+```python
+root = tk.Tk()
+root.title("Anomaly Detection with PyCaret")
+```
+
+- **Pourquoi une fenêtre principale ?**
+  - C'est l'interface utilisateur où l'on va cliquer pour lancer la détection d'anomalies.
+
+### 11. **Création du bouton pour lancer la détection**
+
+```python
+run_button = tk.Button(root, text="Run Anomaly Detection", command=run_anomaly_detection)
+run_button.pack(pady=20)
+```
+
+- **Pourquoi un bouton ?**
+  - Pour que l'utilisateur puisse lancer la détection d'anomalies en cliquant sur un bouton.
+
+### 12. **Boucle d'événements Tkinter**
+
+```python
+root.mainloop()
+```
+
+- **Pourquoi une boucle d'événements ?**
+  - Cette boucle permet à la fenêtre de rester ouverte et d'attendre que l'utilisateur interagisse, comme cliquer sur le bouton.
+
+### Conclusion
+
+Ce code est une petite application qui permet à un utilisateur de charger des données, de détecter des anomalies à l'aide de l'algorithme Isolation Forest, et de visualiser ces anomalies. Chaque étape est conçue pour rendre le processus aussi simple que possible pour l'utilisateur final, tout en fournissant des retours visuels et des messages pour indiquer le succès ou l'échec des opérations.
