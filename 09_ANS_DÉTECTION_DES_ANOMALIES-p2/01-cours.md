@@ -329,14 +329,29 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 
 
 ### Instructions de l'exercice
-- D'abord. il faut télécharger le fichier excel dans le dossier ressources TAT.xlsx: 
-1. **Z-Score Method :** Déterminez le nombre d'outliers en utilisant cette méthode.
-2. **IQR Method :** Utilisez la méthode de l'IQR pour identifier les outliers.
-3. **Distance Method :** Appliquez les distances Euclidienne, Manhattan et Mahalanobis pour détecter les outliers.
-4. **DBSCAN :** Ajustez les paramètres \(\epsilon\) et \(minPts\) pour identifier les outliers et observez les résultats.
 
+1. Référez-vous aux données fournies en tant que ressource téléchargeable.
+2. Répondez aux questions suivantes.
 
+**Questions pour cet exercice :**
 
+Déterminez de manière programmatique le nombre de valeurs aberrantes en utilisant :
+- **Méthode du Z-score**
+- **Méthode de l'IQR**
+- **Méthode des distances** (considérez les trois types de distances : Euclidienne, Manhattan et Mahalanobis)
+- **DBScan**
+
+Déterminez de manière programmatique le nombre de valeurs aberrantes en modifiant :
+- Les valeurs de **epsilon** de 0,5 à 1 et 1,5
+- **minpts** de 5 à 4
+
+Déterminez de manière programmatique la valeur de seuil qui identifiera le plus grand nombre de valeurs aberrantes dans le jeu de données, en utilisant la méthode du Z-score.
+
+- Considérez des seuils de Z-score de 3 à 1 (incluez des incréments de 0,1).
+- Déterminez et affichez le seuil qui identifie le nombre maximum de valeurs aberrantes.
+
+- Description du fichier :
+  
 - Le "Turn Around Time" (TAT) est un terme couramment utilisé dans divers contextes, notamment en gestion de projet, en opérations et en informatique. Il se réfère généralement au temps total nécessaire pour accomplir une tâche ou un processus du début à la fin. 
 - Exemples:
   
@@ -356,7 +371,148 @@ DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algo
 ### EXERCICE (04-(Section 4.2 - Exercice ) Exercice 1 - outlier detection - section4-2-TAT.xlsx)
 ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇
 
+
+
+
 # Section 4.3 - proposition de correction pour la détection des Outliers
+
+- D'abord. il faut télécharger le fichier excel dans le dossier ressources TAT.xlsx: 
+1. **Z-Score Method :** Déterminez le nombre d'outliers en utilisant cette méthode.
+2. **IQR Method :** Utilisez la méthode de l'IQR pour identifier les outliers.
+3. **Distance Method :** Appliquez les distances Euclidienne, Manhattan et Mahalanobis pour détecter les outliers.
+4. **DBSCAN :** Ajustez les paramètres \(\epsilon\) et \(minPts\) pour identifier les outliers et observez les résultats.
+
+
+
+```python
+import pandas as pd
+import numpy as np
+from scipy.spatial import distance
+from scipy.stats import zscore
+from sklearn.covariance import EmpiricalCovariance
+from sklearn.cluster import DBSCAN
+
+# Charger les données
+data = pd.read_csv('chemin du fichier')  # Remplacez 'chemin du fichier' par le chemin réel du fichier CSV
+tat = data['Turn Around Time']
+
+# 1) Méthode du Z-Score
+data['z_score'] = zscore(tat)  # Calcul du Z-Score pour chaque valeur
+z_outliers = data[np.abs(data['z_score']) > 3]  # Filtrer les valeurs aberrantes avec un Z-Score absolu > 3
+
+# 2) Méthode de l'IQR (Interquartile Range)
+Q1 = tat.quantile(0.25)  # Premier quartile
+Q3 = tat.quantile(0.75)  # Troisième quartile
+IQR = Q3 - Q1  # Calcul de l'IQR
+iqr_outliers = data[(tat < (Q1 - 1.5 * IQR)) | (tat > (Q3 + 1.5 * IQR))]  # Identification des valeurs aberrantes avec IQR
+
+# 3) Méthode des distances
+mean_vector = np.mean(tat)  # Calcul de la moyenne
+cov_matrix = np.cov(tat)  # Calcul de la matrice de covariance
+inv_cov_matrix = np.linalg.inv(cov_matrix.reshape(1, 1))  # Calcul de l'inverse de la matrice de covariance
+
+# 3.1) Distance Manhattan
+manhattan_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'cityblock').flatten() > 3]
+
+# 3.2) Distance Euclidienne
+euclidean_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'euclidean').flatten() > 3]
+
+# 3.3) Distance de Mahalanobis
+mahalanobis_outliers = data[distance.cdist(tat.values.reshape(-1, 1), np.array([[mean_vector]]), 'mahalanobis', VI=inv_cov_matrix).flatten() > 3]
+
+# 4) DBSCAN
+dbscan = DBSCAN(eps=0.5, min_samples=5).fit(tat.values.reshape(-1, 1))  # Application de l'algorithme DBSCAN
+data['dbscan_labels'] = dbscan.labels_  # Attribution des étiquettes
+dbscan_outliers = data[data['dbscan_labels'] == -1]  # Filtrage des valeurs aberrantes détectées par DBSCAN
+
+# Tabuler et imprimer le nombre de valeurs aberrantes détectées par chaque méthode
+outlier_counts = {
+    "Z-Score": len(z_outliers),
+    "IQR": len(iqr_outliers),
+    "Distance Manhattan": len(manhattan_outliers),
+    "Distance Euclidienne": len(euclidean_outliers),
+    "Distance Mahalanobis": len(mahalanobis_outliers),
+    "DBSCAN": len(dbscan_outliers)
+}
+
+print("Nombre de valeurs aberrantes détectées par chaque méthode :")
+for method, count in outlier_counts.items():
+    print(f"{method} : {count}")
+
+# Changement des paramètres de DBSCAN pour détecter les valeurs aberrantes
+eps_values = [0.5, 1.0, 1.5]  # Valeurs d'epsilon à tester
+min_samples_values = [5, 4]  # Valeurs de min_samples à tester
+dbscan_outliers = {}
+
+for eps in eps_values:
+    for min_samples in min_samples_values:
+        dbscan = DBSCAN(eps=eps, min_samples=min_samples).fit(tat.values.reshape(-1, 1))
+        data[f'dbscan_labels_eps{eps}_min{min_samples}'] = dbscan.labels_
+        dbscan_outliers[f'DBSCAN (eps={eps}, min_samples={min_samples})'] = data[data[f'dbscan_labels_eps{eps}_min{min_samples}'] == -1]
+
+# Imprimer le nombre de valeurs aberrantes détectées pour chaque combinaison de paramètres
+for key, value in dbscan_outliers.items():
+    print(f"{key} : {len(value)}")
+
+# Détermination du seuil Z-Score optimal pour identifier le maximum de valeurs aberrantes
+max_outliers = 0  # Initialisation du nombre maximum de valeurs aberrantes
+best_threshold = 0  # Initialisation du meilleur seuil
+
+# Plage des seuils de Z-Score de 3 à 1, avec des incréments de 0,1
+thresholds = np.arange(3, 0.9, -0.1)
+
+# Dictionnaire pour stocker le nombre de valeurs aberrantes pour chaque seuil
+outlier_counts = {}
+
+# Boucle pour chaque seuil et calcul du nombre de valeurs aberrantes
+for threshold in thresholds:
+    threshold = round(threshold, 1)  # Arrondi du seuil à une décimale
+    data['z_score'] = zscore(tat)  # Recalculer le Z-Score pour la nouvelle itération
+    outliers = data[np.abs(data['z_score']) > threshold]  # Filtrer les valeurs aberrantes avec le seuil courant
+    count_outliers = len(outliers)  # Compter le nombre de valeurs aberrantes
+    outlier_counts[threshold] = count_outliers  # Stocker le nombre de valeurs aberrantes pour ce seuil
+
+    # Mettre à jour le nombre maximum de valeurs aberrantes et le meilleur seuil trouvé jusqu'à présent
+    if count_outliers > max_outliers:
+        max_outliers = count_outliers
+        best_threshold = threshold
+
+# Imprimer les résultats
+print("Nombre de valeurs aberrantes détectées pour chaque seuil de Z-Score :")
+for threshold, count in outlier_counts.items():
+    print(f"Seuil {threshold} : {count} valeurs aberrantes")
+
+print(f"Le seuil qui correspond au maximum de valeurs aberrantes est {best_threshold} avec {max_outliers} valeurs aberrantes.")
+```
+
+### Explication des ajustements et commentaires
+
+1. **Chargement des données :** Le code commence par charger les données à partir d'un fichier CSV. Il est essentiel de remplacer `'chemin du fichier'` par le chemin exact du fichier CSV contenant les données.
+
+2. **Méthode du Z-Score :** On calcule le Z-Score pour chaque valeur de la colonne 'Turn Around Time' (`tat`), et on identifie les valeurs qui s'écartent d'une valeur absolue supérieure à un seuil défini, ici initialement fixé à 3.
+
+3. **Méthode de l'IQR :** L'IQR (Interquartile Range) est utilisé pour identifier les valeurs aberrantes en se basant sur les quartiles de la distribution des données.
+
+4. **Méthode des distances :** Cette section couvre l'identification des valeurs aberrantes en utilisant trois types de distances :
+   - **Manhattan (cityblock)**
+   - **Euclidienne**
+   - **Mahalanobis**, qui nécessite le calcul de l'inverse de la matrice de covariance.
+
+5. **DBSCAN :** DBSCAN est utilisé pour identifier les valeurs aberrantes (étiquetées comme `-1`) en variant les paramètres `epsilon` et `min_samples`.
+
+6. **Optimisation du seuil de Z-Score :** On parcourt une gamme de seuils de Z-Score, allant de 3 à 1 avec des incréments de 0,1 pour déterminer quel seuil identifie le plus grand nombre de valeurs aberrantes.
+
+### Résultats attendus
+
+En exécutant ce code, vous obtiendrez :
+- Le nombre de valeurs aberrantes détectées par chaque méthode.
+- Le nombre de valeurs aberrantes en fonction des différents paramètres pour l'algorithme DBSCAN.
+- Le seuil de Z-Score qui identifie le maximum de valeurs aberrantes, ainsi que le nombre exact de ces valeurs.
+
+
+---
+# Résumé
+----
 
 ```python
 # Importer les bibliothèques nécessaires
