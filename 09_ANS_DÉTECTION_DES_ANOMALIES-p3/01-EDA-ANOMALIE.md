@@ -126,7 +126,7 @@ En résumé, chaque étape a son propre objectif et son importance. Le nettoyage
 # Citations:
 
 [1] https://stats.stackexchange.com/questions/189664/outlier-vs-anomaly-in-machine-learning
+
 [2] https://community.deeplearning.ai/t/difference-between-outlier-and-anomaly/281064
-[3] https://www.ladepeche.fr/2024/08/06/jo-2024-hyperandrogenie-les-tests-sanguins-montrent-que-ces-deux-boxeuses-sont-des-hommes-la-declaration-choc-de-la-federation-internationale-12126793.php
-[4] https://en.wikipedia.org/wiki/Imane_Khelif
-[5] https://apnews.com/article/olympics-2024-imane-khelif-boxing-paris-2eb07d442ffb29a61e09911884dcdaa9
+
+
