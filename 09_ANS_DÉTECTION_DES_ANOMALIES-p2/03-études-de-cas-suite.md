@@ -1,5 +1,9 @@
 - https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427
-- 
+
+```bash
+pip install pycaret[full]
+pip install pandas numpy plotly
+```
 
 # Anomaly Detection with PyCaret
 
