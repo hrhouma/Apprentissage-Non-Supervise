@@ -1,11 +1,13 @@
 # voir les 4 études de cas dans le drive: 
+
 - étude de cas 1 : Voir drive (Exécution sur COLAB)
 - étude de cas 2 : Voir drive (Exécution sur COLAB)
 - étude de cas 3 : Voir drive (Exécution sur COLAB)
 - étude de cas 4 : Voir drive (https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427) (Exécution en local)
 
 - https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427
-
+- https://drive.google.com/drive/folders/1H7kbeWT_kd-vCTm3jFhZygDMAl28kdJn?usp=sharing
+- https://drive.google.com/drive/folders/1GT7BOAt3sOxa4P9J9khsLVn04WgejhdF?usp=sharing
 ----
 
 
