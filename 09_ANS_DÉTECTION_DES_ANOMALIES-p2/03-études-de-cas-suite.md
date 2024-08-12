@@ -5,7 +5,12 @@ pip install pycaret[full]
 pip install pandas numpy plotly
 ```
 
+
+---
+
 # Anomaly Detection with PyCaret
+
+---
 
 ## 1. Introduction
 
