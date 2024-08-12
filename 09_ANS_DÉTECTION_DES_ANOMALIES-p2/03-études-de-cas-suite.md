@@ -224,3 +224,37 @@ run_button.pack(pady=20)
 root.mainloop()
 
 ```
+
+
+---
+# Intreprétation :
+---
+
+## 6. Explication du Graphique de Détection d'Anomalies
+
+Le graphique ci-dessous représente une analyse des anomalies détectées dans les trajets de taxi à New York entre juillet 2014 et février 2015.
+
+
+![NYC Taxi Trips - Anomaly Detection](https://github.com/user-attachments/assets/f3a0528d-347f-45aa-be4e-125723610953)
+
+
+### Contexte Général
+
+Ce graphique montre le nombre de trajets en taxi à chaque heure durant la période analysée. L'axe horizontal représente le temps (de juillet 2014 à février 2015), et l'axe vertical représente le nombre de trajets en taxi effectués.
+
+### Les Éléments du Graphique
+
+- **Ligne bleue** : Représente le nombre de trajets en taxi à chaque heure. Cette ligne fluctue au fil du temps, reflétant les variations normales d'activité.
+- **Points rouges** : Représentent les anomalies détectées. Ce sont des moments où le nombre de trajets est nettement différent de la norme attendue.
+
+### Pourquoi y a-t-il des Anomalies ?
+
+Les anomalies se produisent lorsque le nombre de trajets en taxi s'écarte considérablement du comportement attendu. Voici deux types de scénarios qui peuvent conduire à des anomalies :
+
+1. **Augmentation soudaine** : Par exemple, un grand événement, comme le Nouvel An ou un grand concert, pourrait faire augmenter le nombre de trajets en taxi bien au-delà de la normale. Ces pics sont marqués comme des anomalies (points rouges situés en haut de la ligne bleue).
+
+2. **Diminution soudaine** : Inversement, un événement inattendu, comme une tempête de neige ou une panne générale, pourrait réduire drastiquement le nombre de trajets. Ces baisses sont également considérées comme des anomalies (points rouges situés en bas de la ligne bleue).
+
+### Conclusion
+
+Ce graphique est une illustration visuelle des anomalies dans les trajets de taxi à New York. Les points rouges indiquent des moments où quelque chose d'inhabituel s'est produit, conduisant à un nombre de trajets en taxi très différent de ce qui est attendu. Ces anomalies sont importantes à détecter car elles peuvent révéler des événements ou des comportements exceptionnels dans les données.
