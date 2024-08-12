@@ -25,35 +25,42 @@
 
 #### Introduction
 
-La détection d'anomalies est un domaine crucial dans la surveillance des systèmes, notamment lorsqu'il s'agit de détecter des événements climatiques extrêmes tels que des variations anormales de température. Ce projet se concentre sur l'application d'algorithmes d'apprentissage non supervisé pour identifier ces anomalies. L'objectif principal est de développer un système capable de signaler des dépassements de seuil de température, ce qui pourrait indiquer des situations potentiellement dangereuses ou inhabituelles.
+- La détection d'anomalies est un domaine crucial dans la surveillance des systèmes, notamment lorsqu'il s'agit de détecter des événements climatiques extrêmes tels que des variations anormales de température. 
+- Cet exercice se concentre sur l'application d'algorithmes d'apprentissage non supervisé pour identifier ces anomalies. 
+- L'objectif principal est de développer un système capable de signaler des dépassements de seuil de température, ce qui pourrait indiquer des situations potentiellement dangereuses ou inhabituelles.
 
 ---
 
 #### Problématique
 
 **Question:**
-Comment peut-on utiliser des algorithmes d'apprentissage non supervisé pour détecter efficacement des événements de température qui dépassent un seuil prédéfini, en minimisant les faux positifs tout en garantissant une détection rapide et précise des anomalies ?
+- Comment peut-on utiliser des algorithmes d'apprentissage non supervisé pour détecter efficacement des événements de température qui dépassent un seuil prédéfini, en minimisant les faux positifs tout en garantissant une détection rapide et précise des anomalies ?
 
 ---
 
 #### Contexte et Motivation
 
-Les systèmes de surveillance climatique sont essentiels pour anticiper et réagir aux événements météorologiques extrêmes. La température, en particulier, est un indicateur clé de changements climatiques soudains. Dépasser un seuil de température pourrait indiquer des événements tels que des vagues de chaleur, des incendies de forêt, ou des défaillances de systèmes de refroidissement dans des installations industrielles. Un système automatisé de détection d'anomalies pourrait permettre une réaction plus rapide et plus efficace à ces événements.
+- Les systèmes de surveillance climatique sont essentiels pour anticiper et réagir aux événements météorologiques extrêmes.
+- La température, en particulier, est un indicateur clé de changements climatiques soudains. Dépasser un seuil de température pourrait indiquer des événements tels que des vagues de chaleur, des incendies de forêt, ou des défaillances de systèmes de refroidissement dans des installations industrielles.
+- Un système automatisé de détection d'anomalies pourrait permettre une réaction plus rapide et plus efficace à ces événements.
 
-L'apprentissage non supervisé est particulièrement adapté à ce type de tâche car il permet de détecter des anomalies sans nécessiter de données étiquetées, ce qui est souvent difficile à obtenir dans les systèmes de surveillance en temps réel.
+- L'apprentissage non supervisé est particulièrement adapté à ce type de tâche car il permet de détecter des anomalies sans nécessiter de données étiquetées, ce qui est souvent difficile à obtenir dans les systèmes de surveillance en temps réel.
 
 ---
 
 #### Présentation des Algorithmes Utilisés
 
-Cette section détaille les algorithmes d'apprentissage non supervisé utilisés dans ce projet. Chaque algorithme est présenté avec une explication théorique, un exemple d'implémentation, et une discussion sur les avantages et inconvénients dans le contexte de la détection d'anomalies de température.
+- Cette section détaille les algorithmes d'apprentissage non supervisé utilisés dans cet exercice.
+- Chaque algorithme est présenté avec une explication théorique, un exemple d'implémentation, et une discussion sur les avantages et inconvénients dans le contexte de la détection d'anomalies de température.
 
 ---
 
 ##### 4.1 Isolation Forest
 
 ###### Théorie
-Isolation Forest est un algorithme de détection d'anomalies qui fonctionne sur le principe d'isolation des points de données. Contrairement aux méthodes traditionnelles qui modélisent les points normaux, Isolation Forest isole les points anormaux en les partitionnant de manière répétée jusqu'à ce qu'ils soient isolés des autres données. L'idée sous-jacente est que les anomalies sont des points rares et distincts, et nécessitent donc moins de partitions pour être isolées.
+- Isolation Forest est un algorithme de détection d'anomalies qui fonctionne sur le principe d'isolation des points de données.
+- Contrairement aux méthodes traditionnelles qui modélisent les points normaux, Isolation Forest isole les points anormaux en les partitionnant de manière répétée jusqu'à ce qu'ils soient isolés des autres données.
+- L'idée sous-jacente est que les anomalies sont des points rares et distincts, et nécessitent donc moins de partitions pour être isolées.
 
 ###### Implémentation
 
@@ -94,7 +101,9 @@ print(anomalies)
 ##### 4.2 DBSCAN
 
 ###### Théorie
-DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering basé sur la densité qui peut également être utilisé pour détecter des anomalies. L'idée principale est de regrouper les points qui sont proches les uns des autres en fonction d'un critère de densité. Les points qui ne font pas partie d'un cluster dense sont considérés comme des anomalies.
+- DBSCAN (Density-Based Spatial Clustering of Applications with Noise) est un algorithme de clustering basé sur la densité qui peut également être utilisé pour détecter des anomalies.
+- L'idée principale est de regrouper les points qui sont proches les uns des autres en fonction d'un critère de densité.
+- Les points qui ne font pas partie d'un cluster dense sont considérés comme des anomalies.
 
 ###### Implémentation
 
@@ -127,7 +136,9 @@ print(anomalies)
 ##### 4.3 Autoencodeurs
 
 ###### Théorie
-Les autoencodeurs sont des types de réseaux de neurones utilisés pour l'apprentissage non supervisé, notamment pour la réduction de dimensionnalité et la détection d'anomalies. Un autoencodeur apprend à reconstruire ses entrées, et l'erreur de reconstruction est utilisée pour identifier les anomalies. Les anomalies sont des points pour lesquels l'autoencodeur a une haute erreur de reconstruction, indiquant qu'ils diffèrent significativement des données normales.
+- Les autoencodeurs sont des types de réseaux de neurones utilisés pour l'apprentissage non supervisé, notamment pour la réduction de dimensionnalité et la détection d'anomalies.
+- Un autoencodeur apprend à reconstruire ses entrées, et l'erreur de reconstruction est utilisée pour identifier les anomalies.
+- Les anomalies sont des points pour lesquels l'autoencodeur a une haute erreur de reconstruction, indiquant qu'ils diffèrent significativement des données normales.
 
 ###### Implémentation
 
@@ -173,7 +184,8 @@ print(anomalies)
 ##### 4.4 One-Class SVM
 
 ###### Théorie
-Le One-Class SVM est une variante du Support Vector Machine qui est utilisée pour identifier les anomalies en créant une frontière qui sépare toutes les données d'entraînement de l'origine dans l'espace des caractéristiques. Les points qui se trouvent à l'extérieur de cette frontière sont considérés comme des anomalies.
+- Le One-Class SVM est une variante du Support Vector Machine qui est utilisée pour identifier les anomalies en créant une frontière qui sépare toutes les données d'entraînement de l'origine dans l'espace des caractéristiques.
+- Les points qui se trouvent à l'extérieur de cette frontière sont considérés comme des anomalies.
 
 ###### Implémentation
 
@@ -203,7 +215,9 @@ print(anomalies)
 ##### 4.5 Clustering Hiérarchique
 
 ###### Théorie
-Le clustering hiérarchique est une méthode de clustering qui regroupe les points de données en une hiérarchie de clusters. Il existe deux approches principales : l'algorithme agglomératif (fusion de clusters) et l'algorithme divisif (division de clusters). Pour la détection d'anomalies, les points qui ne s'intègrent pas bien dans les clusters formés sont considérés comme des anomalies.
+- Le clustering hiérarchique est une méthode de clustering qui regroupe les points de données en une hiérarchie de clusters.
+- Il existe deux approches principales : l'algorithme agglomératif (fusion de clusters) et l'algorithme divisif (division de clusters).
+- Pour la détection d'anomalies, les points qui ne s'intègrent pas bien dans les clusters formés sont considérés comme des anomalies.
 
 ###### Implémentation
 
@@ -231,17 +245,21 @@ print(anomalies)
 
 #### Exemples d'Implémentation
 
-Dans cette section, nous allons illustrer comment utiliser ces algorithmes pour détecter des anomalies de température. Chaque exemple inclura des explications détaillées sur le code, des visualisations potentielles, et une analyse des résultats.
+- Dans cette section, nous allons illustrer comment utiliser ces algorithmes pour détecter des anomalies de température.
+- Chaque exemple inclura des explications détaillées sur le code, des visualisations potentielles, et une analyse des résultats.
 
 ##### 5.1 Exemple d'Isolation Forest
 
-Isolation Forest est particulièrement bien adapté à la détection d'anomalies dans des ensembles de données avec de nombreuses dimensions ou lorsque les anomalies sont rares. Le code présenté plus haut montre comment il peut être utilisé pour identifier des températures anormales.
+- Isolation Forest est particulièrement bien adapté à la détection d'anomalies dans des ensembles de données avec de nombreuses dimensions ou lorsque les anomalies sont rares.
+- Le code présenté plus haut montre comment il peut être utilisé pour identifier des températures anormales.
 
 ###### Explication et Analyse du Code
-L'algorithme divise les données en sous-ensembles jusqu'à ce que chaque point de données soit isolé. Les anomalies, qui sont des points rares et éloignés des autres, seront isolées plus rapidement que les points normaux. L'exemple utilise un taux de contamination de 1%, ce qui signifie que l'on s'attend à ce que 1% des points de données soient des anomalies.
+- L'algorithme divise les données en sous-ensembles jusqu'à ce que chaque point de données soit isolé.
+- Les anomalies, qui sont des points rares et éloignés des autres, seront isolées plus rapidement que les points normaux.
+- L'exemple utilise un taux de contamination de 1%, ce qui signifie que l'on s'attend à ce que 1% des points de données soient des anomalies.
 
 ###### Visualisation
-Vous pouvez visualiser les résultats en utilisant un graphique de points, où les anomalies sont mises en évidence :
+- Vous pouvez visualiser les résultats en utilisant un graphique de points, où les anomalies sont mises en évidence :
 
 ```python
 import matplotlib.pyplot as plt
@@ -255,13 +273,16 @@ plt.show()
 
 ##### 5.2 Exemple de DBSCAN
 
-DBSCAN est utile pour détecter des anomalies dans des données où les clusters sont bien définis et les anomalies ne sont pas connectées à des clusters denses. Le code présenté plus haut montre comment utiliser DBSCAN pour identifier des anomalies.
+- DBSCAN est utile pour détecter des anomalies dans des données où les clusters sont bien définis et les anomalies ne sont pas connectées à des clusters denses.
+- Le code présenté plus haut montre comment utiliser DBSCAN pour identifier des anomalies.
 
 ###### Explication et Analyse du Code
-DBSCAN regroupe les points de données qui sont proches les uns des autres en clusters basés sur la densité. Les points qui ne peuvent pas être regroupés dans un cluster sont considérés comme du bruit ou des anomalies. Le choix des paramètres `epsilon` et `min_samples` est crucial et peut nécessiter des ajustements en fonction des données.
+- DBSCAN regroupe les points de données qui sont proches les uns des autres en clusters basés sur la densité.
+- Les points qui ne peuvent pas être regroupés dans un cluster sont considérés comme du bruit ou des anomalies.
+- Le choix des paramètres `epsilon` et `min_samples` est crucial et peut nécessiter des ajustements en fonction des données.
 
 ###### Visualisation
-Un graphique similaire à celui utilisé pour l'Isolation Forest peut être utilisé ici pour visualiser les résultats :
+- Un graphique similaire à celui utilisé pour l'Isolation Forest peut être utilisé ici pour visualiser les résultats :
 
 ```python
 plt.scatter(df.index, df['Temperature'], c=df['cluster'], cmap='coolwarm')
@@ -273,10 +294,12 @@ plt.show()
 
 ##### 5.3 Exemple d'Autoencodeur
 
-Les autoencodeurs sont particulièrement efficaces pour des ensembles de données où les relations entre les caractéristiques sont complexes. Ils nécessitent cependant un entraînement significatif, ce qui peut prendre du temps pour des ensembles de données volumineux.
+- Les autoencodeurs sont particulièrement efficaces pour des ensembles de données où les relations entre les caractéristiques sont complexes.
+- Ils nécessitent cependant *un entraînement significatif*, ce qui peut prendre du temps pour des ensembles de données volumineux.
 
 ###### Explication et Analyse du Code
-L'autoencodeur est un réseau de neurones qui apprend à reconstruire ses entrées. Les anomalies sont détectées en mesurant l'erreur de reconstruction. Les points avec une erreur de reconstruction élevée sont considérés comme des anomalies, car le modèle n'a pas réussi à bien les représenter.
+- L'autoencodeur est un réseau de neurones qui apprend à reconstruire ses entrées. Les anomalies sont détectées en mesurant l'erreur de reconstruction.
+- Les points avec une erreur de reconstruction élevée sont considérés comme des anomalies, car le modèle n'a pas réussi à bien les représenter.
 
 ###### Visualisation
 Vous pouvez visualiser l'erreur de reconstruction pour identifier les anomalies :
@@ -299,20 +322,23 @@ plt.show()
 
 #### Analyse et Comparaison des Résultats
 
-Dans cette section, nous analysons les résultats obtenus avec chaque algorithme. Nous comparons leurs performances, leur précision dans la détection des anomalies, et leur applicabilité à différents types de données. Les points d'intérêt incluent :
+- Dans cette section, nous analysons les résultats obtenus avec chaque algorithme.
+- Nous comparons leurs performances, leur précision dans la détection des anomalies, et leur applicabilité à différents types de données. Les points d'intérêt incluent :
 
 - **Taux de faux positifs** : Combien d'anomalies détectées sont en réalité des points normaux ?
 - **Taux de faux négatifs** : Combien d'anomalies réelles n'ont pas été détectées ?
 - **Robustesse** : L'algorithme est-il sensible aux changements de données ?
 - **Scalabilité** : Comment l'algorithme se comporte-t-il avec des ensembles de données de grande taille ?
 
-Cette analyse détaillée vous aide à choisir l'algorithme le plus adapté à vos besoins spécifiques.
+- Cette analyse détaillée vous aide à choisir l'algorithme le plus adapté à vos besoins spécifiques.
 
 ---
 
 #### Conclusion
 
-La détection d'anomalies de température est essentielle pour de nombreuses applications, notamment la surveillance climatique et industrielle. Les algorithmes d'apprentissage non supervisé offrent une approche puissante pour identifier ces anomalies sans nécessiter de données étiquetées. Chacun des algorithmes présentés a ses avantages et inconvénients, et le choix dépendra de la nature de vos données et de vos exigences spécifiques.
+- La détection d'anomalies de température est essentielle pour de nombreuses applications, notamment la surveillance climatique et industrielle.
+- Les algorithmes d'apprentissage non supervisé offrent une approche puissante pour identifier ces anomalies sans nécessiter de données étiquetées.
+- Chacun des algorithmes présentés a ses avantages et inconvénients, et le choix dépendra de la nature de vos données et de vos exigences spécifiques.
 
 Pour des implémentations plus avancées, vous pouvez également envisager de combiner plusieurs algorithmes pour améliorer la précision et la robustesse de la détection.
 
