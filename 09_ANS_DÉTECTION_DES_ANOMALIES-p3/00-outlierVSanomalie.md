@@ -62,31 +62,17 @@ Citations:
 **En résumé** : Un outlier est simplement une valeur qui se distingue par son écart par rapport aux autres, tandis qu'une anomalie est une valeur qui signale quelque chose d'inhabituel ou de problématique dans un *contexte* particulier.
 
 
+
 ----
-# 4  - Exemples de l'actualité
+# 4 (DÉFINITION3) - *Exemples*
 ----
 
-# 4.1 - Outlier ou Anomalie ?
-
-![image](https://github.com/user-attachments/assets/23e66374-d409-468a-9df1-b2b93e842edc)
-
-# 4.2 - Outlier ou Anomalie ?
-
-![image](https://github.com/user-attachments/assets/76b2a214-37ad-46a0-be82-1d9d4eb5bb4b)
-
-# 4.3 - Outlier ou Anomalie ?
-
-![image](https://github.com/user-attachments/assets/fb5fdbad-3d9c-4742-92f3-cc96b81de8c8)
-
-
-# 2 -  : 
-
-## 2.1 - Exemple d'une classe d'éléves : 
+## 4.1 - Exemple d'une classe d'éléves : 
 
 - Imagine que tu as une classe d'élèves. La plupart des enfants apprennent à lire à peu près au même âge, disons entre 5 et 7 ans. Mais il y a toujours des exceptions. Par exemple, si un enfant apprend à lire à 3 ans, c'est un **outlier** — il est en dehors de la norme, mais cela ne signifie pas forcément qu'il y a quelque chose d'inhabituel. Peut-être qu'il a juste eu beaucoup de stimulation précoce.
 - Maintenant, pense à un enfant autiste qui, à 5 ans, connaît déjà tous les systèmes planétaires et les lois de la physique. C'est plus qu'un outlier; c'est une **anomalie** parce que son comportement est si exceptionnel qu'il attire l'attention et pourrait indiquer quelque chose d'unique qui mérite d'être étudié plus en profondeur.
 
-## 2.2 - Exemple de Cristiano Ronaldo et Lionel Messi
+## 4.2 - Exemple de Cristiano Ronaldo et Lionel Messi
 
 Pour mieux comprendre la distinction entre *outliers* et *anomalies* dans le contexte du football, examinons les exemples de Cristiano Ronaldo, Pelé, Neymar, Lionel Messi, et Ronaldo Rozário.
 
@@ -104,30 +90,23 @@ Pour mieux comprendre la distinction entre *outliers* et *anomalies* dans le con
 
 
 
+----
+# 5  Exercice - Exemples de l'actualité
+----
+
+# 5.1 - Outlier ou Anomalie ?
+
+![image](https://github.com/user-attachments/assets/23e66374-d409-468a-9df1-b2b93e842edc)
+
+- source : https://ca.news.yahoo.com/olympic-shooters-become-viral-sensations-as-they-secure-silver-medals-in-paris-did-turkey-send-a-hitman-to-main-character-energy-145517201.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAB7JxtnQY1fv5xhoh1w5P5WGxH0GiZ6Rv2mZ0C_hZOxEImFIkQAXXD5bOsZMqOBM12aOgpgnvAv0hHaQr8S4T7-7dGle6vpKMAP-H34bGZcMXdGDaLdMUQVyEogKUIYWUFr7a-iJ7tUPs7xZqvKYJW0m3QDZm41Q-FYwuPImU2mr
+
+# 5.2 - Outlier ou Anomalie ?
+
+![image](https://github.com/user-attachments/assets/76b2a214-37ad-46a0-be82-1d9d4eb5bb4b)
+
+- source : https://www.transfermarkt.com/lionel-messi-vs-cristiano-ronaldo-who-had-highest-market-value-across-20-year-careers-/view/news/433256
 
 
-
-
-
-
-
-- Mais comme il a un impact énorme et change même la manière dont on parle du football, on pourrait aussi le considérer comme une **anomalie** — une exception qui mérite une attention particulière.
-
-
-
-Imen Khelif, en tant que boxeuse qui se distingue par ses performances exceptionnelles et ses résultats impressionnants, peut être considérée comme un **outlier** dans le monde de la boxe. 
-Cela signifie qu'elle se démarque par rapport à la majorité des autres athlètes en raison de ses accomplissements remarquables.
-
-
-
-
-Imen Khelif, en tant que boxeuse qui se distingue par ses performances exceptionnelles et ses résultats impressionnants, peut être considérée comme un **outlier** dans le monde de la boxe. Cela signifie qu'elle se démarque par rapport à la majorité des autres athlètes en raison de ses accomplissements remarquables.
-
-Cependant, si l'on considère le contexte de la boxe en Algérie ou dans une catégorie spécifique où elle surpasse nettement ses concurrentes, elle pourrait être perçue comme une **anomalie**. Dans ce cas, elle représente un cas exceptionnel, potentiellement inhabituel, par rapport aux attentes ou à la norme de performance dans son environnement spécifique.
-
-**En résumé** : 
-- **Outlier** : Si on parle de ses performances en tant qu'individu exceptionnel qui dépasse la norme générale des athlètes.
-- **Anomalie** : Si on se réfère à elle comme un cas rare et exceptionnel dans un contexte particulier, où sa performance pourrait être perçue comme inattendue ou rare.
 
 
 ----------
