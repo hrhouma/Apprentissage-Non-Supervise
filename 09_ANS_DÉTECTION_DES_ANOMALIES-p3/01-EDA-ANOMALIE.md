@@ -107,3 +107,26 @@ L'EDA et la détection des anomalies sont des outils puissants qui, lorsqu'ils s
    - Visualiser et interpréter les anomalies dans le contexte des insights obtenus pendant l'EDA.
 
 En résumé, chaque étape a son propre objectif et son importance. Le nettoyage des données assure la qualité, l'EDA permet de comprendre les données, et la détection des anomalies identifie des points de données significativement différents. Ces étapes sont complémentaires et souvent réalisées successivement pour obtenir une analyse complète et fiable.
+
+
+# Annexe : *anomalie* et un *outlier*
+
+- La différence entre une *anomalie* et un *outlier* (ou valeur aberrante) réside principalement dans le contexte d'utilisation et l'interprétation des données.
+
+## Différences entre anomalie et outlier
+
+- **Outlier (Valeur aberrante)** :
+  - Un *outlier* est un point de données qui se situe à une distance significative de la majorité des autres points de données dans un ensemble donné. Il est souvent utilisé dans le contexte de la modélisation statistique pour indiquer que le modèle ne décrit pas correctement les données. Les *outliers* peuvent être des valeurs extrêmes mais ne sont pas nécessairement des erreurs ou des anomalies[1][2].
+  
+- **Anomalie** :
+  - Une *anomalie* est une observation qui dévie de manière significative des attentes basées sur le comportement normal des données. Dans le contexte de la détection d'anomalies, on recherche des comportements inhabituels qui peuvent être alarmants ou significatifs, comme une fraude ou une défaillance de système. Les anomalies peuvent inclure des *outliers*, mais elles peuvent aussi être des comportements qui ne sont pas simplement des valeurs extrêmes mais qui sont significatifs dans un contexte donné[1][2].
+
+
+
+# Citations:
+
+[1] https://stats.stackexchange.com/questions/189664/outlier-vs-anomaly-in-machine-learning
+[2] https://community.deeplearning.ai/t/difference-between-outlier-and-anomaly/281064
+[3] https://www.ladepeche.fr/2024/08/06/jo-2024-hyperandrogenie-les-tests-sanguins-montrent-que-ces-deux-boxeuses-sont-des-hommes-la-declaration-choc-de-la-federation-internationale-12126793.php
+[4] https://en.wikipedia.org/wiki/Imane_Khelif
+[5] https://apnews.com/article/olympics-2024-imane-khelif-boxing-paris-2eb07d442ffb29a61e09911884dcdaa9
