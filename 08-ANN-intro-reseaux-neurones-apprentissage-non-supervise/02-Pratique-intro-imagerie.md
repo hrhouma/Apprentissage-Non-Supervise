@@ -214,3 +214,82 @@ plt.show()
 ### Conclusion
 
 Ce code vous permet de comprendre les concepts de base de la manipulation et de la visualisation d'images avec Python. Il couvre des aspects comme le chargement des images, la conversion en niveaux de gris, l'extraction des valeurs de pixels, et la quantification des niveaux de gris. Les exemples fournis utilisent des images classiques pour illustrer ces concepts de manière concrète et pratique.
+
+
+# Annexe : bibliothèques `numpy`, `Pillow`, et `scikit-image` :
+
+| **Bibliothèque** | **Description** | **Fonctionnalités Principales** | **Utilisation Typique** | **Exemple de Code** |
+|------------------|-----------------|-------------------------------|------------------------|---------------------|
+| **NumPy**        | `NumPy` est une bibliothèque de calcul scientifique en Python. Elle fournit un puissant objet `ndarray` pour manipuler des tableaux multidimensionnels ainsi qu'une collection de fonctions mathématiques pour effectuer des opérations sur ces tableaux. | - Manipulation de tableaux multidimensionnels (`ndarray`).<br>- Opérations mathématiques avancées (algèbre linéaire, statistiques, etc.).<br>- Manipulation et transformation de données. | - Calculs numériques.<br>- Traitement de données sous forme de matrices.<br>- Préparation de données pour l'apprentissage automatique et d'autres analyses. | ```python<br>import numpy as np<br><br># Création d'un tableau 1D<br>array = np.array([1, 2, 3, 4, 5])<br><br># Création d'un tableau 2D<br>matrix = np.array([[1, 2], [3, 4]])<br><br># Calcul de la somme des éléments<br>sum_array = np.sum(array)<br>``` |
+| **Pillow**       | `Pillow` est une bibliothèque de traitement d'images en Python. C'est une version améliorée de l'ancienne bibliothèque `PIL` (Python Imaging Library). Elle permet de créer, modifier et enregistrer des images dans divers formats. | - Chargement et sauvegarde d'images dans divers formats (JPEG, PNG, GIF, etc.).<br>- Redimensionnement, recadrage, rotation et transformation des images.<br>- Application de filtres et d'effets aux images.<br>- Manipulation des pixels et ajustements de couleur. | - Traitement d'images pour les applications web ou desktop.<br>- Préparation d'images pour l'analyse et la reconnaissance d'images.<br>- Création d'images à la volée dans des scripts automatisés. | ```python<br>from PIL import Image<br><br># Charger une image<br>image = Image.open('path_to_your_image.jpg')<br><br># Redimensionner l'image<br>image_resized = image.resize((100, 100))<br><br># Sauvegarder l'image redimensionnée<br>image_resized.save('resized_image.jpg')<br>``` |
+| **scikit-image** | `scikit-image` est une bibliothèque dédiée au traitement d'images. Elle offre une collection d'algorithmes pour l'analyse, la transformation, et la manipulation des images, construite sur `numpy`. | - Chargement et traitement d'images.<br>- Algorithmes pour le filtrage, la transformation, la segmentation, et la détection d'objets.<br>- Calcul de mesures d'image (histogrammes, gradients, etc.).<br>- Prise en charge d'images en niveaux de gris, RVB, et images multi-canal. | - Analyse d'images pour la reconnaissance de formes, la segmentation, et la détection d'objets.<br>- Prétraitement d'images pour les pipelines d'apprentissage automatique.<br>- Création de pipelines de traitement d'images personnalisés. | ```python<br>from skimage import io, filters<br><br># Charger une image<br>image = io.imread('path_to_your_image.jpg')<br><br># Appliquer un filtre gaussien<br>image_filtered = filters.gaussian(image, sigma=1.0)<br><br># Sauvegarder l'image filtrée<br>io.imsave('filtered_image.jpg', image_filtered)<br>``` |
+
+### Explications supplémentaires
+- **NumPy** est fondamental pour toute forme de calcul scientifique en Python. Il est souvent utilisé en conjonction avec d'autres bibliothèques comme `Pandas` pour l'analyse de données et `Matplotlib` pour la visualisation.
+- **Pillow** simplifie le traitement d'images, rendant des tâches comme le redimensionnement, le filtrage et l'ajustement des couleurs accessibles et faciles à réaliser.
+- **scikit-image** offre des outils spécialisés pour le traitement d'images plus avancé, souvent utilisé dans les domaines de la vision par ordinateur et de la reconnaissance d'images.
+
+Ces bibliothèques sont souvent utilisées ensemble dans des projets où le traitement d'images et l'analyse de données sont nécessaires.
+
+
+<hr/>
+<hr/>
+<hr/>
+
+
+- Pour les bibliothèques `numpy`, `Pillow`, et `scikit-image` dans un projet Python, voici comment vous pouvez les installer et les importer dans votre code.
+
+### Étape 1: Installation des bibliothèques
+- Vous pouvez les installer en utilisant `pip`. Ouvrez un terminal et exécutez les commandes suivantes :
+
+```bash
+pip install numpy pillow scikit-image
+```
+
+### Étape 2: Importation des bibliothèques
+Une fois les bibliothèques installées, vous pouvez les importer dans votre script Python comme suit :
+
+```python
+import numpy as np
+from PIL import Image
+from skimage import io
+```
+
+### Explication
+
+- **Numpy** (`numpy`): Une bibliothèque essentielle pour les calculs numériques en Python, particulièrement utile pour manipuler des tableaux multidimensionnels (ndarrays).
+  
+- **Pillow** (`PIL` ou `Pillow`): Une bibliothèque pour le traitement d'images. `Pillow` est une version améliorée de l'ancienne bibliothèque `PIL` (Python Imaging Library).
+
+- **Scikit-image** (`skimage`): Une collection d'algorithmes pour le traitement des images, basée sur `numpy`.
+
+### Exemple d'utilisation
+
+Voici un exemple simple qui montre comment charger et afficher une image en utilisant ces bibliothèques :
+
+```python
+import numpy as np
+from PIL import Image
+from skimage import io
+
+# Charger une image en utilisant Pillow
+image_pillow = Image.open('path_to_your_image.jpg')
+image_pillow.show()
+
+# Charger une image en utilisant scikit-image
+image_skimage = io.imread('path_to_your_image.jpg')
+
+# Convertir l'image en tableau numpy
+image_np = np.array(image_pillow)
+
+# Afficher les dimensions de l'image
+print(f'Dimensions de l\'image: {image_np.shape}')
+```
+
+### Explications supplémentaires
+- `Image.open()` de Pillow charge une image depuis le chemin spécifié et la retourne sous forme d'objet image.
+- `io.imread()` de scikit-image lit une image et la retourne sous forme de tableau `numpy`.
+- `np.array()` convertit un objet image en un tableau `numpy` pour un traitement numérique plus avancé.
+
+- N'oubliez pas de remplacer `'path_to_your_image.jpg'` par le chemin réel de votre image.
+- Cela devrait vous permettre de commencer à travailler avec ces bibliothèques dans vos projets de traitement d'images.
