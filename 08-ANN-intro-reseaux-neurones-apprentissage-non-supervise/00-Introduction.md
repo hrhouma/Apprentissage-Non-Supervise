@@ -31,5 +31,5 @@ Les autoencodeurs compressent les données d'entrée en une représentation late
 
 ## **Conclusion**
 
-La maîtrise des réseaux de neurones et des autoencodeurs est cruciale pour exploiter pleinement les techniques d'apprentissage automatique, tant supervisées que non supervisées.
+La maîtrise des réseaux de neurones et des autoencodeurs est cruciale pour exploiter pleinement les techniques d'apprentissage non supervisées.
 
