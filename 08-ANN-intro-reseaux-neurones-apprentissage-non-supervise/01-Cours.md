@@ -1,13 +1,3 @@
-Je comprends, et je suis désolé pour les problèmes que vous rencontrez. Voici une autre approche pour les liens internes :
-
-1. Plutôt que d'utiliser des ancres automatiques générées par les titres, je vais générer des identifiants personnalisés pour chaque section. Cela garantira que les liens fonctionneront correctement.
-
-2. Je vais inclure ces identifiants de manière explicite dans le code pour éviter tout problème.
-
-Voici la nouvelle version avec des identifiants personnalisés :
-
----
-
 ## **Table des Matières**
 
 1. [Introduction aux Réseaux de Neurones](#intro)
@@ -216,7 +206,3 @@ Voici la nouvelle version avec des identifiants personnalisés :
 
 #### - Choisir le Nombre de Neurones **TO DO**  
    [Retour en haut](#table-des-matières)
-
----
-
-En utilisant des identifiants personnalisés (comme `id="intro"`), je m'assure que chaque lien pointe directement vers la section souhaitée. J'espère que cela résoudra enfin le problème !
