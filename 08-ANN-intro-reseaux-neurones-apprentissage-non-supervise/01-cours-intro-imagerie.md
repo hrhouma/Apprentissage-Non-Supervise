@@ -79,11 +79,18 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 ## Représentation d’une image digitale
 ![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
 
+Cette image (ci-haut) illustre la structure d'une image numérique en niveaux de gris, décomposée en pixels. Elle montre :
+
+- **Colonnes et lignes de pixels** : L'image est constituée de lignes (horizontalement) et de colonnes (verticalement) de pixels.
+- **Zoom sur une région** : Une petite région de l'image est agrandie pour montrer un groupe de pixels.
+- **Zoom sur un pixel spécifique** : Un seul pixel est isolé et agrandi, avec ses coordonnées (x = 120), (y = 162) et sa valeur d'intensité en niveaux de gris (135).
+
+Cette représentation démontre comment une image est construite à partir d'une grille de pixels, où chaque pixel a une position spécifique et une valeur qui détermine la nuance de gris affichée.
+
 ## Représentation d’images avec différents niveaux de gris
 
-Voici une version reformulée et cohérente pour expliquer l'image fournie :
+L'image ci-dessus illustre le concept de représentation des images en niveaux de gris, où chaque pixel de l'image correspond à une valeur d'intensité spécifique. Ces valeurs sont organisées en une grille de lignes et de colonnes, avec chaque pixel ayant une position précise (coordonnées \(x, y\)) et une valeur numérique indiquant sa luminosité. Plus la valeur est élevée, plus le pixel sera clair; à l'inverse, une valeur faible correspond à un pixel sombre. Cette méthode de représentation permet de capturer les détails et les nuances d'une image en utilisant différentes intensités de gris.
 
----
 
 ## Représentation d'une image couleur
 
