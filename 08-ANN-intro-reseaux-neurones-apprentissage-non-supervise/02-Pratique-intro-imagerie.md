@@ -1,6 +1,6 @@
 # Analyse et Visualisation d'Images avec Python
 
-# 1 - Introduction
+# PARTIE 1 -  Introduction
 
 Ce README fournit une explication détaillée de chaque section du code, avec un accent sur l'analyse et la visualisation d'images en utilisant des bibliothèques Python telles que Matplotlib, NumPy, et Scikit-Image. Le code illustre des techniques de base pour le chargement, la manipulation, et la visualisation d'images en utilisant plusieurs exemples célèbres comme 'Cameraman', 'Lena', et 'Mona Lisa'.
 
@@ -60,7 +60,7 @@ plt.show()
 <hr/>
 <hr/>
 
-# 2. Affichage de l'Image Lena et Extraction des Valeurs de Pixels
+# PARTIE 2 - Affichage de l'Image Lena et Extraction des Valeurs de Pixels
 
 ```python
 import matplotlib.pyplot as plt
@@ -106,7 +106,7 @@ print("B (Bleu) :\n", B)
 <hr/>
 <hr/>
 
-# 3. Visualisation des Canaux RGB de l'Image Mona Lisa
+# PARTIE 3 -  Visualisation des Canaux RGB de l'Image Mona Lisa
 
 ```python
 import matplotlib.pyplot as plt
@@ -136,7 +136,7 @@ plt.show()
 <hr/>
 <hr/>
 
-# 4. Conversion de l'Image Lena en Niveaux de Gris
+# PARTIE 4 - Conversion de l'Image Lena en Niveaux de Gris
 
 ```python
 import matplotlib.pyplot as plt
@@ -169,7 +169,7 @@ print("Valeurs des pixels de la partie supérieure gauche en échelle de gris :\
 <hr/>
 <hr/>
 
-# 5. Quantification des Niveaux de Gris
+# PARTIE 5 - Quantification des Niveaux de Gris
 
 ```python
 import matplotlib.pyplot as plt
