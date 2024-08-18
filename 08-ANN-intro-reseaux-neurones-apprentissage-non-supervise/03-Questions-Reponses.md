@@ -113,6 +113,4 @@ Une fonction d'activation est une opération mathématique appliquée à la sort
 
 Le choix du nombre de neurones et de couches dépend de la complexité de la tâche et de la dimensionnalité des données d'entrée. Plus la tâche est complexe, plus on augmente la taille des couches denses. Ce sont des hyperparamètres définis avant le début de l'entraînement du modèle.
 
----
 
-Ce README vous guidera à travers la compréhension et l'implémentation du projet de classification avec le dataset Fashion MNIST. Référez-vous aux références vidéo et code pour des exemples supplémentaires et des démonstrations pratiques.
