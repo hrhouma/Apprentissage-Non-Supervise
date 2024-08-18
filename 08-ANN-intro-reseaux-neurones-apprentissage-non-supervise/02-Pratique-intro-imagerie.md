@@ -1,6 +1,6 @@
-## README - Analyse et Visualisation d'Images avec Python
+# Analyse et Visualisation d'Images avec Python
 
-### Introduction
+# 1 - Introduction
 
 Ce README fournit une explication détaillée de chaque section du code, avec un accent sur l'analyse et la visualisation d'images en utilisant des bibliothèques Python telles que Matplotlib, NumPy, et Scikit-Image. Le code illustre des techniques de base pour le chargement, la manipulation, et la visualisation d'images en utilisant plusieurs exemples célèbres comme 'Cameraman', 'Lena', et 'Mona Lisa'.
 
@@ -52,7 +52,11 @@ plt.show()
   2. Elle est convertie en un tableau NumPy pour une manipulation plus facile.
   3. Enfin, l'image est affichée en niveaux de gris avec `plt.imshow`.
 
-### 2. Affichage de l'Image Lena et Extraction des Valeurs de Pixels
+<hr/>
+<hr/>
+<hr/>
+
+# 2. Affichage de l'Image Lena et Extraction des Valeurs de Pixels
 
 ```python
 import matplotlib.pyplot as plt
@@ -93,7 +97,12 @@ print("B (Bleu) :\n", B)
   2. Un rectangle est dessiné sur l'image pour indiquer la région d'intérêt.
   3. Les valeurs des canaux Rouge, Vert, et Bleu des pixels de la région supérieure gauche sont extraites et affichées.
 
-### 3. Visualisation des Canaux RGB de l'Image Mona Lisa
+
+<hr/>
+<hr/>
+<hr/>
+
+# 3. Visualisation des Canaux RGB de l'Image Mona Lisa
 
 ```python
 import matplotlib.pyplot as plt
@@ -118,7 +127,12 @@ plt.show()
   1. L'image est chargée à partir de l'URL donnée.
   2. Les trois canaux sont séparément affichés en utilisant des cartes de couleurs correspondant à chaque canal.
 
-### 4. Conversion de l'Image Lena en Niveaux de Gris
+
+<hr/>
+<hr/>
+<hr/>
+
+# 4. Conversion de l'Image Lena en Niveaux de Gris
 
 ```python
 import matplotlib.pyplot as plt
@@ -147,7 +161,11 @@ print("Valeurs des pixels de la partie supérieure gauche en échelle de gris :\
   1. L'image en couleur est convertie en niveaux de gris.
   2. L'image convertie est affichée, et les valeurs de luminance des pixels sont extraites.
 
-### 5. Quantification des Niveaux de Gris
+<hr/>
+<hr/>
+<hr/>
+
+# 5. Quantification des Niveaux de Gris
 
 ```python
 import matplotlib.pyplot as plt
@@ -184,6 +202,10 @@ plt.show()
 - **Étapes** :
   1. L'image en niveaux de gris est quantifiée en différents niveaux (de 2 à 256).
   2. Chaque image quantifiée est affichée côte à côte pour comparer les effets de la réduction des niveaux de gris.
+
+<hr/>
+<hr/>
+<hr/>
 
 ### Conclusion
 
