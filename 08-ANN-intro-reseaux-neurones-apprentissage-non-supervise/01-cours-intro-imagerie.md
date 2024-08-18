@@ -80,32 +80,35 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 ![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
 
 ## Représentation d’images avec différents niveaux de gris
-![image](https://github.com/user-attachments/assets/0e5ac5bd-27e0-4be3-aa63-c47f4b35b4f2)
+
+Voici une version reformulée et cohérente pour expliquer l'image fournie :
+
+---
 
 ## Représentation d'une image couleur
 
-- La Figure ci-bas est une représentation d'une image en couleur selon le modèle RGB (Rouge, Vert, Bleu).
-- Il y a deux méthodes pour représenter une image couleur :
-  
-### 1. **Superposition des canaux (Figure à gauche) :**
-   - **Représentation par superposition des canaux** : Cette partie montre comment une image en couleur est composée de trois canaux distincts, chacun représentant l'intensité de l'une des trois couleurs primaires (Rouge, Vert, Bleu) qui composent l'image.
-   - **Canaux RGB** : Chaque canal est une image en niveaux de gris où l'intensité lumineuse correspond à la quantité de rouge, de vert ou de bleu présente dans chaque pixel de l'image. Ces trois canaux sont superposés pour créer l'image finale en couleur.
-   - **Taille de l'image** : Si l'image a une taille de  *N x  M*  pixels, la représentation de l'image en couleur aura une taille de *N x M x 3*. Le facteur 3 provient des trois canaux (Rouge, Vert, Bleu).
+La figure ci-dessous montre comment une image couleur est représentée selon le modèle RGB (Rouge, Vert, Bleu). Il existe deux méthodes principales pour représenter cette image en couleur :
 
-### 2. **Représentation par carte des couleurs (Figure à droite) :**
-   - **Carte des couleurs** : Il s'agit d'une autre manière de représenter une image en couleur, où chaque pixel de l'image est associé à une valeur de couleur spécifique déterminée par la combinaison des intensités des canaux Rouge, Vert et Bleu.
-   - **Encodage des pixels** : Chaque pixel de l'image est encodé sur 3 octets, soit 24 bits au total. Chaque octet correspond à l'intensité d'une des couleurs primaires (8 bits pour le rouge, 8 bits pour le vert, et 8 bits pour le bleu). Cette combinaison d'intensités permet de représenter une large gamme de couleurs.
-
-### 3. **Résumé de l'encodage :**
-   - **3 octets par pixel** : Chaque pixel de l'image en couleur est représenté par 3 octets, ce qui signifie qu'il y a 8 bits pour chaque couleur primaire (R, G, B). Par conséquent, chaque pixel peut avoir 256 niveaux d'intensité pour chaque couleur, permettant de représenter 16 777 216 (256 x 256 x 256) couleurs possibles.
+![image](https://github.com/user-attachments/assets/c8663778-fd99-4557-9a19-7d546d406a08)
 
 
+### 1. **Superposition des canaux (Figure à gauche)**
+   - **Principe de la superposition** : Cette partie illustre comment une image couleur est construite en combinant trois canaux distincts, chacun correspondant à l'une des trois couleurs primaires (Rouge, Vert, Bleu).
+   - **Canaux RGB** : Chaque canal est une image en niveaux de gris qui indique l'intensité de la couleur associée (Rouge, Vert ou Bleu) pour chaque pixel de l'image. En superposant ces trois canaux, on obtient l'image finale en couleur.
+   - **Taille de l'image** : Pour une image de taille \(N \times M\) pixels, la taille totale de l'image en couleur sera de \(N \times M \times 3\) octets. Le facteur 3 correspond aux trois canaux (Rouge, Vert, Bleu), chacun étant codé sur 1 octet.
+
+### 2. **Représentation par carte des couleurs (Figure à droite)**
+   - **Carte des couleurs** : Cette méthode alternative consiste à associer chaque pixel de l'image à une couleur spécifique déterminée par les valeurs des canaux Rouge, Vert et Bleu. Plutôt que de stocker séparément les canaux, cette méthode utilise une carte où chaque entrée correspond à une combinaison de ces trois couleurs.
+   - **Encodage des pixels** : Chaque pixel de l'image est encodé sur 3 octets, soit 24 bits au total, répartis en 8 bits pour chaque couleur primaire (Rouge, Vert, Bleu). Cette méthode permet de représenter une grande variété de couleurs avec précision.
+
+### 3. **Résumé de l'encodage**
+   - **3 octets par pixel** : Chaque pixel de l'image est représenté par 3 octets, ce qui signifie qu'il peut avoir 256 niveaux d'intensité pour chacune des couleurs primaires (Rouge, Vert, Bleu). Cela permet de représenter un total de 16 777 216 (256 x 256 x 256) couleurs différentes.
 
 
-En résumé, cette figure illustre comment une image en couleur est construite à partir de trois canaux de couleurs primaires, et comment chaque pixel de l'image est encodé pour capturer cette information colorimétrique.
+
+En résumé, cette figure montre les deux approches pour représenter une image couleur : soit par superposition des trois canaux de couleurs, soit par l'utilisation d'une carte des couleurs, où chaque pixel est directement associé à une valeur colorimétrique unique. Ces méthodes illustrent la manière dont chaque pixel de l'image capture les informations de couleur pour créer une image riche en détails et en nuances.
 
 
-![image](https://github.com/user-attachments/assets/c84849d3-b5fd-4005-97a4-2e935747f6e3)
 
 [Retour en haut](#cours-imagerie)
 
