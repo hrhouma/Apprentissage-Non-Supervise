@@ -44,6 +44,8 @@ Les images numériques sont composées de pixels organisés en une matrice de li
 
 ![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
 
+Représentation d’une image digitale
+
 
 En Python, avec la bibliothèque NumPy, nous pouvons manipuler des images sous forme de matrices.
 
