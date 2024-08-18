@@ -82,9 +82,9 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 ### 4. Problèmes de Bruit et Dimensionalité des Images
 
 #### Nature et origine du bruit dans les images
-Le bruit dans les images est une perturbation qui peut altérer la qualité visuelle et rendre l’analyse difficile. Il peut être introduit par des facteurs tels que des capteurs défectueux, des interférences électriques, ou des méthodes de compression.
+Le bruit dans les images est comparable aux interférences que vous pourriez entendre à la radio : des grésillements qui perturbent la clarté du signal. En imagerie, ce bruit se manifeste par des pixels anormaux ou des imperfections qui ne devraient pas être là. Par exemple, lorsque vous prenez une photo dans une faible lumière, vous remarquerez peut-être des petits points ou des grains qui ne devraient pas exister, semblables à la neige sur un écran de télévision. Ces "parasites" peuvent être causés par plusieurs facteurs, comme une mauvaise qualité de capteur ou des interférences électroniques.
 
-Voici comment générer du bruit sur une image en niveaux de gris :
+Voici un exemple concret de génération de bruit dans une image en niveaux de gris :
 
 ```python
 import numpy as np
@@ -107,7 +107,16 @@ plt.imshow(image_bruitee, cmap='gray')
 plt.show()
 ```
 
-[Retour en haut](#cours-imagerie)
+#### Problème de la dimensionnalité
+Maintenant, imaginez que vous avez une photo numérique d'une personne. Cette image contient potentiellement des millions de pixels, et chaque pixel détient une petite portion d'information visuelle. Si vous deviez analyser cette image pour reconnaître cette personne, chaque pixel deviendrait une pièce du puzzle, une caractéristique individuelle que vous devez prendre en compte.
+
+Mais plus vous avez de pièces à analyser, plus il devient difficile de reconstruire l'image complète dans un temps raisonnable. C’est ce que nous appelons la "malédiction de la dimensionnalité". En d'autres termes, lorsque les données deviennent trop volumineuses, leur traitement devient extrêmement complexe et inefficace.
+
+Prenons un exemple plus concret : imaginez que vous essayez de reconnaître un visage dans une foule à partir d'une photo haute résolution. Si vous deviez examiner chaque pixel de l'image, vous seriez rapidement submergé par la quantité de données à traiter. Mais si vous pouviez d'abord réduire la quantité de données en ne conservant que les parties de l'image les plus pertinentes (comme les contours du visage, les yeux, la bouche), vous pourriez accomplir cette tâche beaucoup plus rapidement.
+
+C'est ici que la réduction de la dimensionnalité entre en jeu. Elle vous permet de filtrer les informations superflues et de vous concentrer sur les éléments clés. Pour continuer avec l'analogie du visage, au lieu de traiter une image entière, vous vous concentrez sur les éléments essentiels comme la forme du visage, la distance entre les yeux, et la courbure des lèvres, qui sont des indicateurs bien plus fiables pour l'identification.
+
+**Transition vers l'extraction des caractéristiques :** Après avoir réduit la dimensionnalité, l'étape suivante est l'extraction des caractéristiques spécifiques. Par exemple, pour reconnaître une personne dans une image, il serait plus efficace d'identifier les éléments distinctifs comme la forme du nez, le contour des yeux, et la structure des lèvres, plutôt que d'analyser chaque pixel individuellement. Ces caractéristiques, une fois extraites, deviennent les blocs de construction que nous utilisons pour comprendre ce que l'image représente réellement.
 
 ---
 
@@ -116,44 +125,7 @@ plt.show()
 ### 5. Traitement d’Images : Bas, Moyen et Haut Niveau
 
 #### Extraction des caractéristiques (Bas niveau)
-Le traitement d'images commence par l'extraction de caractéristiques à partir de l'image brute. Ces caractéristiques peuvent être des contours, des textures, ou des gradients de luminosité.
-
-[Retour en haut](#cours-imagerie)
-
----
-
-<a id="manipulation-des-images-en-python"></a>
-
-### 6. Manipulation des Images en Python
-
-#### Lire, écrire et afficher des images
-Python permet de manipuler facilement des images avec des bibliothèques comme PIL (Pillow) et OpenCV.
-
-```python
-from PIL import Image
-import matplotlib.pyplot as plt
-
-# Lire une image depuis un fichier
-I = Image.open('cameraman.tif')
-
-# Afficher l'image
-plt.imshow(I, cmap='gray')
-plt.axis('off')
-plt.show()
-
-# Sauvegarder l'image dans un autre format
-I.save('camera1.png')
-```
-
-[Retour en haut](#cours-imagerie)
-
----
-
-<a id="conclusion-et-perspectives"></a>
-
-### 7. Conclusion et Perspectives
-
-Ce cours vous a introduit aux concepts de base de l'imagerie numérique et au traitement d'images en Python. En comprenant les types d'images, les espaces de couleurs, les défis du bruit, et les différents niveaux de traitement, vous êtes maintenant mieux équipés pour explorer des applications plus avancées en vision par ordinateur.
+Le traitement d'images débute par l'extraction de caractéristiques spécifiques de l'image brute, un processus comparable à l'identification des traits distinctifs d'une personne. Par exemple, si vous cherchez à reconnaître une personne dans une image, vous ne vous attardez pas sur chaque détail insignifiant, mais vous cherchez plutôt des caractéristiques reconnaissables comme la forme des yeux, la structure du nez, et la courbure des lèvres. Ces éléments sont plus que de simples points de données ; ils sont les indicateurs visuels qui vous aident à identifier la personne.
 
 [Retour en haut](#cours-imagerie)
 
