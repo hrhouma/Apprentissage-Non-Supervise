@@ -42,6 +42,9 @@ Une image est une représentation visuelle des objets réels, stockée sous form
 ### 2. Numérisation d’une Image
 Les images numériques sont composées de pixels organisés en une matrice de lignes et de colonnes. Chaque pixel possède une valeur qui représente son intensité lumineuse, généralement comprise entre 0 (noir) et 255 (blanc).
 
+![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
+
+
 En Python, avec la bibliothèque NumPy, nous pouvons manipuler des images sous forme de matrices.
 
 ```python
