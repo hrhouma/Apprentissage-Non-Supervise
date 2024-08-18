@@ -1,4 +1,6 @@
-### Cours d'Introduction à l'Imagerie Numérique 
+<a id="cours-imagerie"></a>
+
+### Cours d'Introduction à l'Imagerie Numérique pour Débutants
 
 #### Table des Matières
 
@@ -26,18 +28,18 @@
 
 ---
 
-### 1. Introduction à l’Imagerie Numérique
+<a id="introduction-a-l-imagerie-numerique"></a>
 
-#### Qu’est-ce qu’une image ?
+### 1. Introduction à l’Imagerie Numérique
 Une image est une représentation visuelle des objets réels, stockée sous forme numérique pour être traitée par des systèmes informatiques. Les images numériques jouent un rôle crucial dans la vision par ordinateur, qui vise à créer des systèmes capables de comprendre et d’interpréter ces images. Des applications courantes incluent la reconnaissance faciale, la détection d'empreintes digitales, et la surveillance vidéo.
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
 
-### 2. Numérisation d’une Image
+<a id="numerisation-dune-image"></a>
 
-#### Représentation matricielle des images
+### 2. Numérisation d’une Image
 Les images numériques sont composées de pixels organisés en une matrice de lignes et de colonnes. Chaque pixel possède une valeur qui représente son intensité lumineuse, généralement comprise entre 0 (noir) et 255 (blanc).
 
 En Python, avec la bibliothèque NumPy, nous pouvons manipuler des images sous forme de matrices.
@@ -57,9 +59,11 @@ I[:, 1] = 0
 print(I)
 ```
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
+
+<a id="types-dimages-et-espaces-de-couleurs"></a>
 
 ### 3. Types d’Images et Espaces de Couleurs
 
@@ -69,9 +73,11 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 - **Images en niveaux de gris** : Pixels avec des valeurs entre 0 et 255, représentant différentes intensités de lumière.
 - **Images couleur** : Composées de plusieurs canaux de couleurs (comme le RGB).
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
+
+<a id="problemes-de-bruit-et-dimensionalite-des-images"></a>
 
 ### 4. Problèmes de Bruit et Dimensionalité des Images
 
@@ -101,18 +107,22 @@ plt.imshow(image_bruitee, cmap='gray')
 plt.show()
 ```
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
+
+<a id="traitement-dimages-bas-moyen-et-haut-niveau"></a>
 
 ### 5. Traitement d’Images : Bas, Moyen et Haut Niveau
 
 #### Extraction des caractéristiques (Bas niveau)
 Le traitement d'images commence par l'extraction de caractéristiques à partir de l'image brute. Ces caractéristiques peuvent être des contours, des textures, ou des gradients de luminosité.
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
+
+<a id="manipulation-des-images-en-python"></a>
 
 ### 6. Manipulation des Images en Python
 
@@ -135,12 +145,15 @@ plt.show()
 I.save('camera1.png')
 ```
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
 
 ---
+
+<a id="conclusion-et-perspectives"></a>
 
 ### 7. Conclusion et Perspectives
 
 Ce cours vous a introduit aux concepts de base de l'imagerie numérique et au traitement d'images en Python. En comprenant les types d'images, les espaces de couleurs, les défis du bruit, et les différents niveaux de traitement, vous êtes maintenant mieux équipés pour explorer des applications plus avancées en vision par ordinateur.
 
-[Retour en haut](#cours-dintroduction-a-limagerie-numerique-pour-debutants)
+[Retour en haut](#cours-imagerie)
+
