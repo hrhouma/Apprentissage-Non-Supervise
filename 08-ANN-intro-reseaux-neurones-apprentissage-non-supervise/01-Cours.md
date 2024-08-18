@@ -1,6 +1,6 @@
 ## **Table des Matières**
 
-1. [Introduction aux Réseaux de Neurones dans l’Apprentissage Non-Supervisé](#-introduction-aux-réseaux-de-neurones-dans-lapprentissage-non-supervisé)
+1. [Introduction aux Réseaux de Neurones dans l’Apprentissage Non-Supervisé](#introduction-aux-réseaux-de-neurones-dans-lapprentissage-non-supervisé)
    
 2. [Rappel : Apprentissage Supervisé vs Non Supervisé et Concept de Division des Données](#rappel-apprentissage-supervisé-vs-non-supervisé-et-concept-de-division-des-données)
    
@@ -62,7 +62,7 @@
 
 ## **Cours**
 
-### Introduction aux Réseaux de Neurones dans l’Apprentissage Non-Supervisé **TO DO**  
+## Introduction aux Réseaux de Neurones dans l’Apprentissage Non-Supervisé **TO DO**  
    [Retour en haut](#table-des-matières)
 
 ### 2. Rappel : Apprentissage Supervisé vs Non Supervisé et Concept de Division des Données **TO DO**  
