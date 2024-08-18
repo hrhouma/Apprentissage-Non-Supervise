@@ -1,4 +1,4 @@
-# Analyse et Visualisation d'Images avec Python
+# ANALYSE ET  VISUALISATION d'IMAGES AVEC PYTHON
 
 <hr/>
 <hr/>
@@ -10,11 +10,11 @@
 <hr/>
 <hr/>
 
-Ce README fournit une explication détaillée de chaque section du code, avec un accent sur l'analyse et la visualisation d'images en utilisant des bibliothèques Python telles que Matplotlib, NumPy, et Scikit-Image. Le code illustre des techniques de base pour le chargement, la manipulation, et la visualisation d'images en utilisant plusieurs exemples célèbres comme 'Cameraman', 'Lena', et 'Mona Lisa'.
+- Ce fichier fournit une explication détaillée de chaque section du code, avec un accent sur l'analyse et la visualisation d'images en utilisant des bibliothèques Python telles que Matplotlib, NumPy, et Scikit-Image. Le code illustre des techniques de base pour le chargement, la manipulation, et la visualisation d'images en utilisant plusieurs exemples célèbres comme 'Cameraman', 'Lena', et 'Mona Lisa'.
 
 ### Prérequis
 
-Avant d'exécuter le code, assurez-vous d'avoir installé les bibliothèques Python suivantes :
+- Avant d'exécuter le code, assurez-vous d'avoir installé les bibliothèques Python suivantes :
 
 - Matplotlib
 - NumPy
