@@ -83,6 +83,28 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 ![image](https://github.com/user-attachments/assets/0e5ac5bd-27e0-4be3-aa63-c47f4b35b4f2)
 
 ## Représentation d'une image couleur
+
+- La Figure ci-bas est une représentation d'une image en couleur selon le modèle RGB (Rouge, Vert, Bleu).
+- Il y a deux méthodes pour représenter une image couleur :
+  
+### 1. **Superposition des canaux (Figure à gauche) :**
+   - **Représentation par superposition des canaux** : Cette partie montre comment une image en couleur est composée de trois canaux distincts, chacun représentant l'intensité de l'une des trois couleurs primaires (Rouge, Vert, Bleu) qui composent l'image.
+   - **Canaux RGB** : Chaque canal est une image en niveaux de gris où l'intensité lumineuse correspond à la quantité de rouge, de vert ou de bleu présente dans chaque pixel de l'image. Ces trois canaux sont superposés pour créer l'image finale en couleur.
+   - **Taille de l'image** : Si l'image a une taille de  *N x  M*  pixels, la représentation de l'image en couleur aura une taille de *N x M x 3*. Le facteur 3 provient des trois canaux (Rouge, Vert, Bleu).
+
+### 2. **Représentation par carte des couleurs (Figure à droite) :**
+   - **Carte des couleurs** : Il s'agit d'une autre manière de représenter une image en couleur, où chaque pixel de l'image est associé à une valeur de couleur spécifique déterminée par la combinaison des intensités des canaux Rouge, Vert et Bleu.
+   - **Encodage des pixels** : Chaque pixel de l'image est encodé sur 3 octets, soit 24 bits au total. Chaque octet correspond à l'intensité d'une des couleurs primaires (8 bits pour le rouge, 8 bits pour le vert, et 8 bits pour le bleu). Cette combinaison d'intensités permet de représenter une large gamme de couleurs.
+
+### 3. **Résumé de l'encodage :**
+   - **3 octets par pixel** : Chaque pixel de l'image en couleur est représenté par 3 octets, ce qui signifie qu'il y a 8 bits pour chaque couleur primaire (R, G, B). Par conséquent, chaque pixel peut avoir 256 niveaux d'intensité pour chaque couleur, permettant de représenter 16 777 216 (256 x 256 x 256) couleurs possibles.
+
+
+
+
+En résumé, cette figure illustre comment une image en couleur est construite à partir de trois canaux de couleurs primaires, et comment chaque pixel de l'image est encodé pour capturer cette information colorimétrique.
+
+
 ![image](https://github.com/user-attachments/assets/c84849d3-b5fd-4005-97a4-2e935747f6e3)
 
 [Retour en haut](#cours-imagerie)
@@ -166,3 +188,70 @@ Le traitement d'images débute par l'extraction de caractéristiques spécifique
 
 [Retour en haut](#cours-imagerie)
 
+
+
+# Annexe  1 : **carte des couleurs** 
+
+La **carte des couleurs** est une représentation visuelle qui associe chaque valeur numérique d'un pixel à une couleur spécifique. En d'autres termes, une carte de couleurs est un tableau ou une matrice où chaque position représente un pixel, et la valeur à chaque position correspond à une couleur particulière selon une échelle prédéfinie.
+
+### Exemple de Carte des Couleurs :
+
+Prenons l'exemple d'une image très simple, en noir et blanc (échelle de gris) avec une taille de \( 2 \times 2 \) pixels. Voici comment pourrait se présenter une carte des couleurs pour cette image :
+
+#### Image en Niveaux de Gris :
+Supposons que nous avons une image de 2x2 pixels avec les valeurs suivantes :
+- Pixel en (1,1) : 0 (noir)
+- Pixel en (1,2) : 255 (blanc)
+- Pixel en (2,1) : 127 (gris moyen)
+- Pixel en (2,2) : 64 (gris foncé)
+
+Voici la matrice des valeurs :
+$$
+\begin{bmatrix}
+0 & 255 \\
+127 & 64
+\end{bmatrix}
+$$
+
+#### Carte des Couleurs Correspondante :
+Une carte des couleurs associée pourrait être définie comme suit, en utilisant une échelle de gris où 0 représente le noir et 255 représente le blanc. Chaque valeur numérique dans la matrice sera convertie en une couleur en utilisant cette échelle.
+
+- **(0, 0, 0)** pour le noir (0)
+- **(255, 255, 255)** pour le blanc (255)
+- **(127, 127, 127)** pour le gris moyen (127)
+- **(64, 64, 64)** pour le gris foncé (64)
+
+La carte des couleurs pour notre image serait alors :
+
+$$
+\begin{bmatrix}
+(0, 0, 0) & (255, 255, 255) \\
+(127, 127, 127) & (64, 64, 64)
+\end{bmatrix}
+$$
+
+Chaque tuple représente la couleur d’un pixel en RGB.
+
+### Carte des Couleurs en Couleur (Palette RGB) :
+
+Pour une image en couleur, chaque pixel est représenté par un triplet (R, G, B) indiquant les intensités de rouge, vert, et bleu respectivement. Par exemple, une image de 2x2 pixels pourrait avoir une carte des couleurs comme suit :
+
+$$
+\begin{bmatrix}
+(255, 0, 0) & (0, 255, 0) \\
+(0, 0, 255) & (255, 255, 0)
+\end{bmatrix}
+$$
+
+- **(255, 0, 0)** : Rouge pur
+- **(0, 255, 0)** : Vert pur
+- **(0, 0, 255)** : Bleu pur
+- **(255, 255, 0)** : Jaune
+
+### Utilisation Pratique :
+
+La carte des couleurs est particulièrement utile pour les images scientifiques ou médicales, où les valeurs de pixel représentent des données quantitatives (comme la température, l'altitude, etc.), et où l'on souhaite visualiser ces données sous forme de couleurs pour une interprétation plus facile. Un exemple courant est l’utilisation d’une carte de couleurs dans les images thermiques, où chaque température est associée à une couleur spécifique allant du bleu (froid) au rouge (chaud).
+
+### Conclusion :
+
+La carte des couleurs est un outil essentiel pour visualiser les données numériques d'une image en associant des valeurs numériques à des couleurs spécifiques, facilitant ainsi l'interprétation visuelle de l'information contenue dans l'image.
