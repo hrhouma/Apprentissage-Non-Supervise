@@ -80,7 +80,7 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 
 ![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
 
-Cette image (ci-haut) illustre la structure d'une image numérique en niveaux de gris, décomposée en pixels. Elle montre :
+Cette image *ci-haut* illustre la structure d'une image numérique en niveaux de gris, décomposée en pixels. Elle montre :
 
 - **Colonnes et lignes de pixels** : L'image est constituée de lignes (horizontalement) et de colonnes (verticalement) de pixels.
 - **Zoom sur une région** : Une petite région de l'image est agrandie pour montrer un groupe de pixels.
@@ -93,7 +93,7 @@ Pour résumer, l'image ci-dessus illustre le concept de représentation des imag
 
 ![image](https://github.com/user-attachments/assets/c8663778-fd99-4557-9a19-7d546d406a08)
 
-La figure ci-haut montre comment une image couleur est représentée selon le modèle RGB (Rouge, Vert, Bleu). Il existe deux méthodes principales pour représenter cette image en couleur :
+La figure *ci-haut* montre comment une image couleur est représentée selon le modèle RGB (Rouge, Vert, Bleu). Il existe deux méthodes principales pour représenter cette image en couleur :
 
 ### 1. **Superposition des canaux (Figure à gauche)**
    - **Principe de la superposition** : Cette partie illustre comment une image couleur est construite en combinant trois canaux distincts, chacun correspondant à l'une des trois couleurs primaires (Rouge, Vert, Bleu).
