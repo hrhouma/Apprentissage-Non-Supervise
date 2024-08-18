@@ -23,7 +23,7 @@
 8. [Conclusion](#conclusion)
 
 ## 1. Introduction <a name="introduction"></a>
-Les réseaux de neurones convolutionnels (CNNs) sont une technologie révolutionnaire dans le domaine de l'intelligence artificielle et du traitement des images. Ce document vise à introduire les concepts fondamentaux liés aux CNNs, en les expliquant de manière détaillée et accessible aux débutants. Nous commencerons par comprendre ce qu'est une image numérique, avant d'explorer comment les CNNs peuvent analyser ces images pour réaliser des tâches complexes comme la reconnaissance d'objets.
+Les réseaux de neurones convolutionnels (CNNs) sont d'abord un type de réseaux de neurones . Il s'agit d'un domaine révolutionnaire en IA et en traitement des images. Cette partie vise à introduire les concepts fondamentaux liés aux CNNs. Nous commencerons par comprendre ce qu'est une image numérique, avant d'explorer comment les CNNs peuvent analyser ces images pour réaliser des tâches complexes comme la reconnaissance d'objets.
 
 ## 2. Comprendre les images numériques <a name="comprendre-les-images-numériques"></a>
 
@@ -109,4 +109,4 @@ Avant de plonger dans les concepts plus avancés comme les réseaux de neurones 
 **Transition vers les réseaux de neurones et les autoencodeurs :** Une fois que vous comprenez comment les CNNs extraient des caractéristiques importantes tout en réduisant la dimensionnalité, vous serez mieux préparés à aborder les concepts des autoencodeurs, qui sont utilisés pour la compression des données et la détection d'anomalies, et des réseaux de neurones plus traditionnels, qui se concentrent sur d'autres types de données et de tâches.
 
 ## 8. Conclusion <a name="conclusion"></a>
-Les Convolutional Neural Networks sont un pilier du traitement moderne des images et de l'intelligence artificielle. Leur capacité à gérer efficacement la dimensionnalité élevée des images et à détecter des motifs complexes en fait des outils puissants pour une large gamme d'applications. Ce document a pour objectif de fournir une base solide pour comprendre ces réseaux et préparer les étudiants à aborder des concepts plus avancés, comme les réseaux de neurones traditionnels et les autoencodeurs.
+Les Convolutional Neural Networks sont un pilier du traitement moderne des images et de l'intelligence artificielle. Leur capacité à gérer efficacement la dimensionnalité élevée des images et à détecter des motifs complexes en fait des outils puissants pour une large gamme d'applications. Ce document a pour objectif de fournir une base solide pour comprendre ces réseaux et vous préparer à aborder des concepts plus avancés, comme les réseaux de neurones traditionnels et les autoencodeurs.
