@@ -42,9 +42,7 @@ Une image est une représentation visuelle des objets réels, stockée sous form
 ### 2. Numérisation d’une Image
 Les images numériques sont composées de pixels organisés en une matrice de lignes et de colonnes. Chaque pixel possède une valeur qui représente son intensité lumineuse, généralement comprise entre 0 (noir) et 255 (blanc).
 
-![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
 
-Représentation d’une image digitale
 
 
 En Python, avec la bibliothèque NumPy, nous pouvons manipuler des images sous forme de matrices.
@@ -78,7 +76,41 @@ Les images peuvent être classifiées selon le type d'information qu'elles conti
 - **Images en niveaux de gris** : Pixels avec des valeurs entre 0 et 255, représentant différentes intensités de lumière.
 - **Images couleur** : Composées de plusieurs canaux de couleurs (comme le RGB).
 
+## Représentation d’une image digitale
+![image](https://github.com/user-attachments/assets/6309f9a7-4b7d-4840-9474-a355fb8d5970)
+
+## Représentation d’images avec différents niveaux de gris
+![image](https://github.com/user-attachments/assets/0e5ac5bd-27e0-4be3-aa63-c47f4b35b4f2)
+
+## Représentation d'une image couleur
+![image](https://github.com/user-attachments/assets/c84849d3-b5fd-4005-97a4-2e935747f6e3)
+
 [Retour en haut](#cours-imagerie)
+
+
+
+Pour 1000 images en haute définition (HD) de taille 1920 x 1080 pixels, voici comment la représentation par canal et par carte des couleurs se compare en termes de taille de stockage :
+
+### Représentation par canal (RGB)
+
+![image](https://github.com/user-attachments/assets/436310df-c773-4fd2-9dbc-a3f03277b785)
+
+- Chaque pixel est encodé sur 3 octets (1 octet par canal pour Rouge, Vert, et Bleu). La taille totale pour 1000 images est calculée comme suit :
+
+$$ 
+1000 \times 1920 \times 1080 \times 3 = 6,220,800,000 \text{ octets} \approx 5.8 \text{ Go} 
+$$
+
+### Représentation par carte des couleurs
+En utilisant une carte de 256 couleurs (chaque pixel est encodé sur 1 octet) :
+
+$$ 
+(1000 \times 1920 \times 1080 \times 1) + (256 \times 3) = 2,073,600,768 \text{ octets} \approx 1.93 \text{ Go}
+$$
+
+### Conclusion
+Pour 1000 images en HD, la méthode RGB occupe environ 5.8 Go, tandis que la méthode par carte des couleurs nécessite environ 1.93 Go, démontrant que la représentation par carte des couleurs est bien plus efficace en termes de stockage.
+
 
 ---
 
