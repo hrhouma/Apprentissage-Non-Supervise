@@ -143,9 +143,7 @@ d'origine                                      Reconstruite
 
 ## 8. Conclusion 🏁
 
-Cet exercice sur les réseaux de neurones n'est pas seulement une question de théorie, mais une fondation essentielle pour tout travail en apprentissage automatique, qu'il soit supervisé ou non supervisé. En maîtrisant ces concepts, vous serez mieux équipés pour construire des modèles efficaces et optimisés pour vos futurs
-
- projets en intelligence artificielle.
+Cet exercice sur les réseaux de neurones n'est pas seulement une question de théorie, mais une fondation essentielle pour tout travail en apprentissage automatique, qu'il soit supervisé ou non supervisé. En maîtrisant ces concepts, vous serez mieux équipés pour construire des modèles efficaces et optimisés pour vos futurs projets en intelligence artificielle.
 
 ---
 
