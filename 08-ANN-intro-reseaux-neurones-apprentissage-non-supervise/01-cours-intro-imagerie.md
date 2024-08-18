@@ -1,6 +1,6 @@
 <a id="cours-imagerie"></a>
 
-### Cours d'Introduction à l'Imagerie Numérique pour Débutants
+### Introduction à l'Imagerie Numérique 
 
 #### Table des Matières
 
