@@ -1,59 +1,151 @@
 ## **Table des Matières**
 
-1. [Introduction aux Réseaux de Neurones dans l’Apprentissage Non-Supervisé](#introduction-aux-reseaux-de-neurones-dans-lapprentissage-non-supervise)
+1. [Introduction aux Réseaux de Neurones](#introduction-aux-réseaux-de-neurones)
    
-2. [Rappel : Apprentissage Supervisé vs Non Supervisé et Concept de Division des Données](#rappel-apprentissage-supervise-vs-non-supervise-et-concept-de-division-des-donnees)
+2. [Apprentissage Supervisé vs Non Supervisé](#apprentissage-supervisé-vs-non-supervisé)
    
-   - [Qu'est-ce que l'entraînement et le test ?](#quest-ce-que-lentrainement-et-le-test)
+   - [Entraînement et Test](#entraînement-et-test)
      
-   - [Importance de la Division des Données](#importance-de-la-division-des-donnees)
+   - [Importance de la Division](#importance-de-la-division)
      
-3. [Type de Données pour les Algorithmes d'IA](#type-de-donnees-pour-les-algorithmes-dia)
+3. [Type de Données pour l'IA](#type-de-données-pour-lia)
    
-   - [TensorFlow - Types de Données : Différence entre float32 et float64](#tensorflow---types-de-donnees--difference-entre-float32-et-float64)
+   - [Types de Données : float32 vs float64](#types-de-données-float32-vs-float64)
      
-   - [Comparaison : Numérique vs Chaîne de Caractères pour l'IA](#comparaison--numerique-vs-chaine-de-caracteres-pour-lia)
+   - [Numérique vs Chaîne de Caractères](#numérique-vs-chaîne-de-caractères)
      
-4. [Rappel du Concept des Variables Catégoriques](#rappel-du-concept-des-variables-categoriques)
+4. [Variables Catégoriques](#variables-catégoriques)
    
-   - [Définition des Variables Catégoriques](#definition-des-variables-categoriques)
+   - [Définition des Variables Catégoriques](#définition-des-variables-catégoriques)
      
-   - [Importance en Traitement par un Algorithme d'IA](#importance-en-traitement-par-un-algorithme-dia)
+   - [Importance pour l'IA](#importance-pour-lia)
      
-   - [One-Hot Encoding : Explication et Utilisation](#one-hot-encoding--explication-et-utilisation)
+   - [One-Hot Encoding](#one-hot-encoding)
      
-5. [Rappel des Données de Validation](#rappel-des-donnees-de-validation)
+5. [Données de Validation](#données-de-validation)
    
-   - [Qu'est-ce que les Données de Validation ?](#quest-ce-que-les-donnees-de-validation)
+   - [Qu'est-ce que les Données de Validation ?](#quest-ce-que-les-données-de-validation)
      
-   - [Différence avec les Données de Test](#difference-avec-les-donnees-de-test)
+   - [Validation vs Test](#validation-vs-test)
      
 6. [Normalisation en IA](#normalisation-en-ia)
    
-   - [Qu'est-ce que la Normalisation en IA ?](#quest-ce-que-la-normalisation-en-ia)
+   - [Qu'est-ce que la Normalisation ?](#quest-ce-que-la-normalisation)
      
-   - [Processus et Importance de la Normalisation](#processus-et-importance-de-la-normalisation)
+   - [Processus et Importance](#processus-et-importance)
      
-7. [Introduction au Modèle Séquentiel en Keras](#introduction-au-modele-sequentiel-en-keras)
+7. [Modèle Séquentiel en Keras](#modèle-séquentiel-en-keras)
    
-   - [Création et Compréhension des Modèles Séquentiels](#creation-et-comprehension-des-modeles-sequentiels)
+   - [Création et Compréhension](#création-et-compréhension)
      
-8. [Exploration des Couches dans un Réseau de Neurones](#exploration-des-couches-dans-un-reseau-de-neurones)
+8. [Couches dans un Réseau de Neurones](#couches-dans-un-réseau-de-neurones)
    
-   - [La Couche Flatten : Fonctionnalités et Exemples](#la-couche-flatten--fonctionnalites-et-exemples)
+   - [Couche Flatten](#couche-flatten)
      
-   - [La Couche de Sortie : Fonctionnalités et Exemples](#la-couche-de-sortie--fonctionnalites-et-exemples)
+   - [Couche de Sortie](#couche-de-sortie)
      
-   - [Couche Dense : Définition et Exemples](#couche-dense--definition-et-exemples)
+   - [Couche Dense](#couche-dense)
      
 9. [Fonction d'Activation](#fonction-dactivation)
    
    - [Qu'est-ce qu'une Fonction d'Activation ?](#quest-ce-quune-fonction-dactivation)
      
-   - [Pourquoi Utiliser ReLU et Softmax pour la Sortie ?](#pourquoi-utiliser-relu-et-softmax-pour-la-sortie)
+   - [ReLU vs Softmax](#relu-vs-softmax)
      
-10. [Dessiner une Architecture de Réseau de Neurones](#dessiner-une-architecture-de-reseau-de-neurones)
+10. [Architecture de Réseau de Neurones](#architecture-de-réseau-de-neurones)
     
     - [Choix des Neurones et des Couches](#choix-des-neurones-et-des-couches)
       
-    - [Comment Choisir le Nombre de Neurones dans la Couche de Sortie ?](#comment-choisir-le-nombre-de-neurones-dans-la-couche-de-sortie)
+    - [Choisir le Nombre de Neurones](#choisir-le-nombre-de-neurones)
+
+---
+
+## **Cours**
+
+### 1. Introduction aux Réseaux de Neurones **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 2. Apprentissage Supervisé vs Non Supervisé **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Entraînement et Test **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Importance de la Division **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 3. Type de Données pour l'IA **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Types de Données : float32 vs float64 **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Numérique vs Chaîne de Caractères **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 4. Variables Catégoriques **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Définition des Variables Catégoriques **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Importance pour l'IA **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - One-Hot Encoding **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 5. Données de Validation **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Qu'est-ce que les Données de Validation ? **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Validation vs Test **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 6. Normalisation en IA **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Qu'est-ce que la Normalisation ? **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Processus et Importance **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 7. Modèle Séquentiel en Keras **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Création et Compréhension **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 8. Couches dans un Réseau de Neurones **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Couche Flatten **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Couche de Sortie **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Couche Dense **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 9. Fonction d'Activation **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Qu'est-ce qu'une Fonction d'Activation ? **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - ReLU vs Softmax **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+### 10. Architecture de Réseau de Neurones **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Choix des Neurones et des Couches **TO DO**  
+   [Retour en haut](#table-des-matières)
+
+#### - Choisir le Nombre de Neurones **TO DO**  
+   [Retour en haut](#table-des-matières)
+
