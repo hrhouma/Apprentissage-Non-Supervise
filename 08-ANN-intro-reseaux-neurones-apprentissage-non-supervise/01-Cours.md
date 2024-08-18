@@ -64,145 +64,146 @@
 
 <a id="intro"></a>
 
-### 1. Introduction aux Réseaux de Neurones **TO DO**  
+### 1. Introduction aux Réseaux de Neurones  
    [Retour en haut](#table-des-matières)
 
 <a id="supervised-vs-unsupervised"></a>
 
-### 2. Apprentissage Supervisé vs Non Supervisé **TO DO**  
+### 2. Apprentissage Supervisé vs Non Supervisé  
    [Retour en haut](#table-des-matières)
 
 <a id="training-testing"></a>
 
-#### - Entraînement et Test **TO DO**  
+#### - Entraînement et Test  
    [Retour en haut](#table-des-matières)
 
 <a id="data-split-importance"></a>
 
-#### - Importance de la Division **TO DO**  
+#### - Importance de la Division  
    [Retour en haut](#table-des-matières)
 
 <a id="data-types"></a>
 
-### 3. Type de Données pour l'IA **TO DO**  
+### 3. Type de Données pour l'IA  
    [Retour en haut](#table-des-matières)
 
 <a id="float32-vs-float64"></a>
 
-#### - Types de Données : float32 vs float64 **TO DO**  
+#### - Types de Données : float32 vs float64  
    [Retour en haut](#table-des-matières)
 
 <a id="numeric-vs-string"></a>
 
-#### - Numérique vs Chaîne de Caractères **TO DO**  
+#### - Numérique vs Chaîne de Caractères  
    [Retour en haut](#table-des-matières)
 
 <a id="categorical-variables"></a>
 
-### 4. Variables Catégoriques **TO DO**  
+### 4. Variables Catégoriques  
    [Retour en haut](#table-des-matières)
 
 <a id="categorical-definition"></a>
 
-#### - Définition des Variables Catégoriques **TO DO**  
+#### - Définition des Variables Catégoriques  
    [Retour en haut](#table-des-matières)
 
 <a id="categorical-importance"></a>
 
-#### - Importance pour l'IA **TO DO**  
+#### - Importance pour l'IA  
    [Retour en haut](#table-des-matières)
 
 <a id="one-hot-encoding"></a>
 
-#### - One-Hot Encoding **TO DO**  
+#### - One-Hot Encoding  
    [Retour en haut](#table-des-matières)
 
 <a id="validation-data"></a>
 
-### 5. Données de Validation **TO DO**  
+### 5. Données de Validation  
    [Retour en haut](#table-des-matières)
 
 <a id="what-is-validation-data"></a>
 
-#### - Qu'est-ce que les Données de Validation ? **TO DO**  
+#### - Qu'est-ce que les Données de Validation ?  
    [Retour en haut](#table-des-matières)
 
 <a id="validation-vs-test"></a>
 
-#### - Validation vs Test **TO DO**  
+#### - Validation vs Test  
    [Retour en haut](#table-des-matières)
 
 <a id="normalization"></a>
 
-### 6. Normalisation en IA **TO DO**  
+### 6. Normalisation en IA  
    [Retour en haut](#table-des-matières)
 
 <a id="what-is-normalization"></a>
 
-#### - Qu'est-ce que la Normalisation ? **TO DO**  
+#### - Qu'est-ce que la Normalisation ?  
    [Retour en haut](#table-des-matières)
 
 <a id="normalization-importance"></a>
 
-#### - Processus et Importance **TO DO**  
+#### - Processus et Importance  
    [Retour en haut](#table-des-matières)
 
 <a id="keras-sequential"></a>
 
-### 7. Modèle Séquentiel en Keras **TO DO**  
+### 7. Modèle Séquentiel en Keras  
    [Retour en haut](#table-des-matières)
 
 <a id="sequential-model-creation"></a>
 
-#### - Création et Compréhension **TO DO**  
+#### - Création et Compréhension  
    [Retour en haut](#table-des-matières)
 
 <a id="neural-layers"></a>
 
-### 8. Couches dans un Réseau de Neurones **TO DO**  
+### 8. Couches dans un Réseau de Neurones  
    [Retour en haut](#table-des-matières)
 
 <a id="flatten-layer"></a>
 
-#### - Couche Flatten **TO DO**  
+#### - Couche Flatten  
    [Retour en haut](#table-des-matières)
 
 <a id="output-layer"></a>
 
-#### - Couche de Sortie **TO DO**  
+#### - Couche de Sortie  
    [Retour en haut](#table-des-matières)
 
 <a id="dense-layer"></a>
 
-#### - Couche Dense **TO DO**  
+#### - Couche Dense  
    [Retour en haut](#table-des-matières)
 
 <a id="activation-functions"></a>
 
-### 9. Fonction d'Activation **TO DO**  
+### 9. Fonction d'Activation  
    [Retour en haut](#table-des-matières)
 
 <a id="activation-definition"></a>
 
-#### - Qu'est-ce qu'une Fonction d'Activation ? **TO DO**  
+#### - Qu'est-ce qu'une Fonction d'Activation ?  
    [Retour en haut](#table-des-matières)
 
 <a id="relu-vs-softmax"></a>
 
-#### - ReLU vs Softmax **TO DO**  
+#### - ReLU vs Softmax  
    [Retour en haut](#table-des-matières)
 
 <a id="network-architecture"></a>
 
-### 10. Architecture de Réseau de Neurones **TO DO**  
+### 10. Architecture de Réseau de Neurones  
    [Retour en haut](#table-des-matières)
 
 <a id="neuron-layer-choices"></a>
 
-#### - Choix des Neurones et des Couches **TO DO**  
+#### - Choix des Neurones et des Couches  
    [Retour en haut](#table-des-matières)
 
 <a id="choosing-neurons"></a>
 
-#### - Choisir le Nombre de Neurones **TO DO**  
+#### - Choisir le Nombre de Neurones  
    [Retour en haut](#table-des-matières)
+
