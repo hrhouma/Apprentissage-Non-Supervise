@@ -17,8 +17,10 @@ Le préfixe `x` représente les données (les images dans ce cas), tandis que ce
 
 ### 3. Types de données : différence entre `float32` et `float64`
 
-[The Real Difference Between float32 and float64 (StackOverflow)](https://stackoverflow.com/questions/43440821/the-real-difference-between-float32-and-float64)  
+
 La différence entre `float32` et `float64` réside principalement dans la précision et la taille en mémoire. `float64` est la double précision de `float32`.
+
+[The Real Difference Between float32 and float64 (StackOverflow)](https://stackoverflow.com/questions/43440821/the-real-difference-between-float32-and-float64)  
 
 ### 4. Variables catégoriques et One-Hot Encoding
 
