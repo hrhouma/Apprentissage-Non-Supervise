@@ -19,6 +19,10 @@ Vous pouvez les installer en utilisant pip :
 pip install matplotlib numpy pillow scikit-image
 ```
 
+<hr/>
+<hr/>
+<hr/>
+
 ### 1. Chargement et Affichage de l'Image Cameraman
 
 ```python
