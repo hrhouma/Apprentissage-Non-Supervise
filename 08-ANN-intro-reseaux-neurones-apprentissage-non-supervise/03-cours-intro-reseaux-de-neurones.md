@@ -899,7 +899,11 @@ Les fonctions d'activation, qu'il s'agisse de ReLU ou de Softmax, jouent un rôl
 
 | **Fonction d'Activation** | **Formule**                                                | **Plage de Valeurs**  | **Usage Typique**                       | **Avantages**                                        | **Inconvénients**                                     |
 |---------------------------|------------------------------------------------------------|-----------------------|------------------------------------------|-----------------------------------------------------|------------------------------------------------------|
-| **Sigmoid**                | \(\sigma(x) = \frac{1}{1 + e^{-x}}\)                       | (0, 1)                | Couches de sortie pour la classification binaire | Sortie entre 0 et 1, interprétable comme probabilité | Saturation pour les grandes valeurs de x (vanishing gradient), computationnellement coûteuse |
+| **Sigmoid**                | 
+$$ 
+\sigma(x) = \frac{1}{1 + e^{-x}}
+$$
+| (0, 1)                | Couches de sortie pour la classification binaire | Sortie entre 0 et 1, interprétable comme probabilité | Saturation pour les grandes valeurs de x (vanishing gradient), computationnellement coûteuse |
 | **Tanh**                   | \(\text{Tanh}(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\)     | (-1, 1)               | Couches cachées, certaines tâches de régression | Centre les données autour de 0, bonne convergence | Saturation pour les grandes valeurs de x (vanishing gradient), computationnellement coûteuse |
 | **ReLU**                   | \(\text{ReLU}(x) = \max(0, x)\)                            | [0, +∞)               | Couches cachées dans des réseaux profonds | Simple, computation rapide, évite le vanishing gradient | Peut entraîner des neurones morts (dead neurons), pas de sortie négative |
 | **Leaky ReLU**             | \(\text{Leaky ReLU}(x) = \max(\alpha x, x)\)              | (-∞, +∞)              | Couches cachées, alternative à ReLU      | Évite le problème des neurones morts de ReLU, maintien du gradient pour les valeurs négatives | La valeur de \(\alpha\) doit être choisie manuellement |
