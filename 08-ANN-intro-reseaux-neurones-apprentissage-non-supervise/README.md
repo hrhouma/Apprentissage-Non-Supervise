@@ -1,7 +1,7 @@
 # Plan de la séance
 
 # 1. Théorie - Imagerie
-- **Document GitHub** : 08-ANN-intro-reseaux-neurones-apprentissage-non-supervise/01-cours-intro-imagerie.md)
+- **Document GitHub** : 08-ANN-intro-reseaux-neurones-apprentissage-non-supervise/01-cours-intro-imagerie.md
 
 # 2. Exercices - Imagerie
 - **Lien Drive** : code-partie-4-les-bases-de-limagerie
