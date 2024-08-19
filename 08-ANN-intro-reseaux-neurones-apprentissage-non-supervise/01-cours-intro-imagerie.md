@@ -454,6 +454,15 @@ Quand vous appliquez un filtre sur l'image du chat, cela s'appelle une convoluti
 
 Le padding (remplissage) est un petit truc qui permet de s'assurer que même les parties du nez du chat qui sont près des bords de l'image sont bien prises en compte. C'est comme ajouter un petit cadre autour de l'image pour ne rien rater.
 
+
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/08-ANN-intro-reseaux-neurones-apprentissage-non-supervise/01-cours-intro-imagerie.md
+- https://github.com/vdumoulin/conv_arithmetic/blob/master/README.md
+- https://yosinski.com/deepvis
+- https://deeplizard.com/learn/video/qSTv_m-KFk0
+- https://setosa.io/ev/image-kernels/
+
+
+
 ---
 
 
