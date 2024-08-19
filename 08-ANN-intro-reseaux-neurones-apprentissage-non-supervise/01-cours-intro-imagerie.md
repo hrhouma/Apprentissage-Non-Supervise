@@ -199,6 +199,58 @@ plt.imshow(image_bruitee, cmap='gray')
 plt.show()
 ```
 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Créer une matrice 3x3 représentant une image
+I = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Afficher la matrice originale comme une image en niveaux de gris
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)  # Première sous-figure (1 ligne, 3 colonnes, 1ère position)
+plt.imshow(I, cmap='gray')
+plt.title("Avant la modification")
+plt.colorbar()
+plt.axis('off')
+
+# Accéder à la deuxième ligne
+ligne2 = I[1, :]
+print("Deuxième ligne :")
+print(ligne2)
+
+# Modifier une colonne entière
+I[:, 1] = 0
+print("Matrice modifiée :")
+print(I)
+
+# Afficher la matrice modifiée comme une image en niveaux de gris
+plt.subplot(1, 3, 2)  # Deuxième sous-figure (1 ligne, 3 colonnes, 2ème position)
+plt.imshow(I, cmap='gray')
+plt.title("Après la modification")
+plt.colorbar()
+plt.axis('off')
+
+# Générer du bruit gaussien
+noise = np.random.normal(0, 0.5, I.shape)
+
+# Ajouter le bruit à la matrice modifiée
+I_noisy = I + noise
+
+# Afficher l'image avec le bruit ajouté
+plt.subplot(1, 3, 3)  # Troisième sous-figure (1 ligne, 3 colonnes, 3ème position)
+plt.imshow(I_noisy, cmap='gray')
+plt.title("Avec bruit ajouté")
+plt.colorbar()
+plt.axis('off')
+
+# Afficher les trois images côte à côte
+plt.show()
+```
+
+
 #### Problème de la dimensionnalité
 Maintenant, imaginez que vous avez une photo numérique d'une personne. Cette image contient potentiellement des millions de pixels, et chaque pixel détient une petite portion d'information visuelle. Si vous deviez analyser cette image pour reconnaître cette personne, chaque pixel deviendrait une pièce du puzzle, une caractéristique individuelle que vous devez prendre en compte.
 
