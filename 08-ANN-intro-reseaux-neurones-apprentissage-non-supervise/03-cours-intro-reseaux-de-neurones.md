@@ -99,7 +99,9 @@ L'une des forces des réseaux de neurones est leur capacité à apprendre des re
 <hr/> 
 
 
-- L'apprentissage supervisé et l'apprentissage non supervisé sont deux des principales approches utilisées en apprentissage automatique pour entraîner des modèles, y compris les réseaux de neurones.
+### 2. Apprentissage Supervisé vs Non Supervisé
+
+L'apprentissage supervisé et l'apprentissage non supervisé sont deux des principales approches utilisées en apprentissage automatique pour entraîner des modèles, y compris les réseaux de neurones.
 
 **Apprentissage Supervisé :**
 
@@ -108,6 +110,7 @@ Dans l'apprentissage supervisé, le modèle est entraîné sur un ensemble de do
 Exemples courants d'apprentissage supervisé :
 - **Classification** : Le modèle apprend à classer les données en catégories, par exemple, reconnaître des images de chats ou de chiens.
 - **Régression** : Le modèle prédit des valeurs continues, comme estimer le prix d'une maison en fonction de ses caractéristiques.
+- **Réseaux de Neurones** : Souvent utilisés dans un cadre supervisé pour des tâches comme la reconnaissance d'images ou le traitement du langage naturel, où le réseau apprend à partir de grandes quantités de données étiquetées.
 
 **Apprentissage Non Supervisé :**
 
@@ -116,6 +119,7 @@ Contrairement à l'apprentissage supervisé, l'apprentissage non supervisé ne d
 Exemples courants d'apprentissage non supervisé :
 - **Clustering** : Le modèle regroupe les données en clusters basés sur des similitudes, comme segmenter des clients en groupes ayant des comportements d'achat similaires.
 - **Réduction de dimensionnalité** : Le modèle réduit le nombre de variables dans un ensemble de données tout en préservant les informations les plus importantes, comme le fait la méthode d'Analyse en Composantes Principales (PCA).
+- **Autoencodeurs** : Un type spécifique de réseau de neurones utilisé en apprentissage non supervisé. Les autoencodeurs apprennent à compresser les données d'entrée en une représentation plus compacte, puis à reconstruire les données d'origine à partir de cette représentation. Ils sont souvent utilisés pour la réduction de dimensionnalité, la détection d'anomalies, ou l'apprentissage des caractéristiques importantes des données sans avoir besoin d'étiquettes.
 
 **Principales Différences :**
 
@@ -129,13 +133,12 @@ Exemples courants d'apprentissage non supervisé :
 
 3. **Applications** :
    - **Supervisé** : Classification, régression.
-   - **Non supervisé** : Clustering, réduction de dimensionnalité.
+   - **Non supervisé** : Clustering, réduction de dimensionnalité, autoencodeurs.
 
-Les deux approches ont leurs propres avantages et sont choisies en fonction des objectifs spécifiques et des types de données disponibles.
+Les réseaux de neurones jouent un rôle dans les deux types d'apprentissage. Dans l'apprentissage supervisé, ils sont utilisés pour des tâches prédictives complexes. Dans l'apprentissage non supervisé, les autoencodeurs sont un exemple de l'utilisation des réseaux de neurones pour découvrir des représentations latentes dans les données sans supervision explicite.
+
 
 ---
-
-
 
 
    [Retour en haut](#table-des-matières)
