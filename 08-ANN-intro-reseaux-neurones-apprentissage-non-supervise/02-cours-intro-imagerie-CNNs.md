@@ -1,5 +1,9 @@
 # Introduction aux Convolutional Neural Networks (CNNs)
 
+### Important :
+- Cette partie ne peut pas être couverte avant de voir les filtres et convolution en imagerie.
+- Rendez-vous à la partie introduction imagerie + Filtres + Convolutions +  Les références en image de l'opération de Convolutions ;)
+  
 ## Table des matières
 1. [Introduction](#introduction)
 2. [Comprendre les images numériques](#comprendre-les-images-numériques)
