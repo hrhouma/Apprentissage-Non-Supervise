@@ -53,17 +53,40 @@ En Python, avec la bibliothèque NumPy, nous pouvons manipuler des images sous f
 
 ```python
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Créer une matrice 3x3 représentant une image
 I = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
+# Afficher la matrice originale comme une image en niveaux de gris
+plt.figure(figsize=(10, 4))
+
+plt.subplot(1, 2, 1)  # Première sous-figure (1 ligne, 2 colonnes, 1ère position)
+plt.imshow(I, cmap='gray')
+plt.title("Avant la modification")
+plt.colorbar()
+plt.axis('off')
+
 # Accéder à la deuxième ligne
 ligne2 = I[1, :]
+print("Deuxième ligne :")
 print(ligne2)
 
 # Modifier une colonne entière
 I[:, 1] = 0
+print("Matrice modifiée :")
 print(I)
+
+# Afficher la matrice modifiée comme une image en niveaux de gris
+plt.subplot(1, 2, 2)  # Deuxième sous-figure (1 ligne, 2 colonnes, 2ème position)
+plt.imshow(I, cmap='gray')
+plt.title("Après la modification")
+plt.colorbar()
+plt.axis('off')
+
+# Afficher les deux images côte à côte
+plt.show()
+
 ```
 
 [Retour en haut](#cours-imagerie)
