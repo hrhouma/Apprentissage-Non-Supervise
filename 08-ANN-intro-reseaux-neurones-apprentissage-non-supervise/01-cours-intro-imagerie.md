@@ -274,6 +274,7 @@ Le traitement d'images débute par l'extraction de caractéristiques spécifique
 [Retour en haut](#cours-imagerie)
 
 
+---
 
 # Annexe  1 : **carte des couleurs** 
 
@@ -348,7 +349,7 @@ La carte des couleurs est un outil essentiel pour visualiser les données numér
 
 
 
-# Annexe 1 -  Utilisation des Filtres, Padding, et Convolutions dans le Traitement des Images
+# Annexe 2 -  Utilisation des Filtres, Padding, et Convolutions dans le Traitement des Images
 
 Dans le cadre du traitement d'images, en particulier pour l'extraction des caractéristiques de bas niveau, les concepts de filtres, padding, et convolutions jouent un rôle fondamental. 
 
@@ -397,7 +398,7 @@ En résumé, les filtres, la convolution, et le padding sont des outils cruciaux
 
 ---
 
-# Annexe 2 : Extraction d'une Caractéristique d'une Image Bruitée
+# Annexe 3 : Extraction d'une Caractéristique d'une Image Bruitée
 
 
 - Les filtres sont comme des lunettes spéciales que l'on pose sur une image pour mieux voir certaines parties, comme les bords ou les textures. Imaginez un filtre comme une petite grille que l'on fait glisser sur l'image, pixel par pixel, pour détecter ces éléments.
@@ -454,6 +455,142 @@ Quand vous appliquez un filtre sur l'image du chat, cela s'appelle une convoluti
 Le padding (remplissage) est un petit truc qui permet de s'assurer que même les parties du nez du chat qui sont près des bords de l'image sont bien prises en compte. C'est comme ajouter un petit cadre autour de l'image pour ne rien rater.
 
 ---
+
+
+
+----
+
+# Annexe 4  : Bruit dans une image
+
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from skimage import data, color, img_as_ubyte, exposure
+from skimage.util import random_noise
+
+# Charger l'image "astronaut" comme substitut pour "Lena"
+image = data.astronaut()
+
+# Convertir l'image en niveaux de gris
+gray_image = color.rgb2gray(image)
+gray_image = img_as_ubyte(gray_image)
+
+# Ajouter du bruit gaussien
+gaussian_noise_img = random_noise(gray_image, mode='gaussian', var=0.01)
+gaussian_noise_img = img_as_ubyte(gaussian_noise_img)
+
+# Ajouter du bruit de sel et poivre
+salt_pepper_noise_img = random_noise(gray_image, mode='s&p', amount=0.05)
+salt_pepper_noise_img = img_as_ubyte(salt_pepper_noise_img)
+
+# Ajouter du bruit de speckle
+speckle_noise_img = random_noise(gray_image, mode='speckle', var=0.01)
+speckle_noise_img = img_as_ubyte(speckle_noise_img)
+
+# Étirement du contraste pour augmenter les niveaux de gris
+stretched_gaussian = exposure.rescale_intensity(gaussian_noise_img, in_range='image', out_range=(0, 255))
+stretched_salt_pepper = exposure.rescale_intensity(salt_pepper_noise_img, in_range='image', out_range=(0, 255))
+stretched_speckle = exposure.rescale_intensity(speckle_noise_img, in_range='image', out_range=(0, 255))
+
+# Afficher les résultats
+plt.figure(figsize=(15, 15))
+
+plt.subplot(3, 3, 1)
+plt.imshow(gray_image, cmap='gray')
+plt.title("Image originale en niveaux de gris")
+plt.axis('off')
+
+plt.subplot(3, 3, 2)
+plt.imshow(gaussian_noise_img, cmap='gray')
+plt.title("Bruit gaussien")
+plt.axis('off')
+
+plt.subplot(3, 3, 3)
+plt.imshow(stretched_gaussian, cmap='gray')
+plt.title("Bruit gaussien avec niveaux de gris augmentés")
+plt.axis('off')
+
+plt.subplot(3, 3, 4)
+plt.imshow(salt_pepper_noise_img, cmap='gray')
+plt.title("Bruit de sel et poivre")
+plt.axis('off')
+
+plt.subplot(3, 3, 5)
+plt.imshow(stretched_salt_pepper, cmap='gray')
+plt.title("Bruit de sel et poivre avec niveaux de gris augmentés")
+plt.axis('off')
+
+plt.subplot(3, 3, 6)
+plt.imshow(speckle_noise_img, cmap='gray')
+plt.title("Bruit de speckle")
+plt.axis('off')
+
+plt.subplot(3, 3, 7)
+plt.imshow(stretched_speckle, cmap='gray')
+plt.title("Bruit de speckle avec niveaux de gris augmentés")
+plt.axis('off')
+
+plt.show()
+
+
+```
+
+
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from skimage import data, color, img_as_ubyte, exposure
+from skimage.util import random_noise
+
+# Charger l'image "astronaut" comme substitut pour "Lena"
+image = data.astronaut()
+
+# Convertir l'image en niveaux de gris
+gray_image = color.rgb2gray(image)
+gray_image = img_as_ubyte(gray_image)
+
+# Ajouter une grande quantité de bruit de sel et poivre
+salt_pepper_noise_img = random_noise(gray_image, mode='s&p', amount=0.3)  # Augmenter la quantité de bruit
+salt_pepper_noise_img = img_as_ubyte(salt_pepper_noise_img)
+
+# Étirement du contraste pour augmenter les niveaux de gris
+stretched_salt_pepper = exposure.rescale_intensity(salt_pepper_noise_img, in_range='image', out_range=(0, 255))
+
+# Afficher les résultats
+plt.figure(figsize=(10, 10))
+
+plt.subplot(1, 2, 1)
+plt.imshow(salt_pepper_noise_img, cmap='gray')
+plt.title("Bruit de sel et poivre (30%)")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(stretched_salt_pepper, cmap='gray')
+plt.title("Avec niveaux de gris augmentés")
+plt.axis('off')
+
+plt.show()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------
+
 
 <a id="references"></a>
 
