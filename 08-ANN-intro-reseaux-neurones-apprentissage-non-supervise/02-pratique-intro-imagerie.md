@@ -1,5 +1,11 @@
 # ANALYSE ET  VISUALISATION d'IMAGES AVEC PYTHON
 
+
+### Important :
+#### ==> Correction : https://drive.google.com/drive/folders/1E8i2CdvHVD473TqGRGDZ0NzHeVu3-SHn?usp=sharing
+*Avant de consulter ma correction dans le fichier `code.txt`, je vous encourage vivement à essayer de corriger le code par vous-même. Le troubleshooting est une compétence précieuse et très recherchée dans l'industrie. Vous pourrez ainsi renforcer vos compétences en résolution de problèmes tout en gagnant en autonomie. Bonne chance!*
+
+  
 <hr/>
 <hr/>
 <hr/>
