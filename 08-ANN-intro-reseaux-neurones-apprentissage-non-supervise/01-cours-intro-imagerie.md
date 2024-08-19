@@ -28,6 +28,10 @@
 
 ---
 
+# Remarque Générale :
+
+- *Pour les images et certains éléments, veuillez consulter les références situées en bas du document :* [Introduction à l'Imagerie Numérique](#--Références)
+
 <a id="introduction-a-l-imagerie-numerique"></a>
 
 ### 1. Introduction à l’Imagerie Numérique
@@ -264,7 +268,7 @@ La carte des couleurs est un outil essentiel pour visualiser les données numér
 
 ---
 
-# Références :
+# Références
 
 
 1. **Livres**
