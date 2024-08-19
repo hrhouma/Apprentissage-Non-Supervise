@@ -1524,4 +1524,87 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 - **Initialisation des Poids** : Les poids initiaux du réseau influencent la vitesse de convergence et la probabilité de trouver une solution optimale. Une bonne initialisation est essentielle pour un entraînement efficace.
 - **Taille de la Fenêtre** : Pour les réseaux convolutifs, la taille de la fenêtre détermine la zone d'entrée regardée par chaque neurone, ce qui influence la manière dont les caractéristiques spatiales sont capturées.
 
+---
 
+# Annexe 4 - taille de fenêtre dans les réseaux CNNs (à venir dans les prochaines sections)
+
+---
+
+La "taille de fenêtre" dans le contexte des réseaux de neurones convolutifs (CNN, Convolutional Neural Networks) fait référence à la **taille du noyau de convolution** ou du **filtre** qui est appliqué sur les images ou les données d'entrée.
+
+### Explication :
+
+Dans un réseau convolutif, la **convolution** est une opération clé qui consiste à faire glisser un petit noyau ou filtre (matrice de taille fixe) sur l'image d'entrée (ou les données d'entrée) pour produire une carte de caractéristiques (feature map). La taille de ce noyau est appelée **taille de fenêtre**.
+
+- **Taille de la fenêtre** : C'est la dimension du noyau de convolution utilisé pour parcourir les données. Par exemple, une taille de fenêtre de **3x3** signifie que le noyau ou le filtre est une matrice de 3 pixels par 3 pixels.
+
+### Fonctionnement :
+
+- **Filtre 3x3** : Ce filtre regarde une zone de 3x3 pixels à la fois sur l'image d'entrée. Il effectue une multiplication élément par élément avec les valeurs de pixels correspondantes, puis additionne les résultats pour produire une seule valeur dans la carte de caractéristiques.
+- **Filtre 5x5** : Ce filtre regarde une zone plus grande, de 5x5 pixels, ce qui lui permet de capturer des motifs plus larges dans l'image, mais réduit la résolution de la carte de caractéristiques plus rapidement.
+
+### Exemple :
+
+Supposons que nous avons une petite image 5x5 :
+
+```
+1 1 1 0 0
+0 1 1 1 0
+0 0 1 1 1
+0 0 1 1 0
+0 1 1 0 0
+```
+
+Et un filtre de convolution 3x3 :
+
+```
+1 0 1
+0 1 0
+1 0 1
+```
+
+La convolution de ce filtre sur l'image d'entrée produit une nouvelle matrice (feature map). Par exemple, en appliquant le filtre sur le coin supérieur gauche de l'image, vous obtenez :
+
+```
+(1*1 + 0*1 + 1*1) +
+(0*0 + 1*1 + 0*1) +
+(1*0 + 0*0 + 1*1) = 3
+```
+
+Cette opération est répétée en glissant le filtre sur toute l'image, produisant une carte de caractéristiques plus petite.
+
+### Effet de la Taille de Fenêtre :
+
+- **Taille de fenêtre plus petite (3x3)** :
+  - Capture les petits motifs locaux.
+  - Maintient plus de détails fins dans l'image.
+  - Plus couramment utilisée dans les premières couches des CNN.
+
+- **Taille de fenêtre plus grande (5x5 ou 7x7)** :
+  - Capture des motifs plus larges.
+  - Peut perdre plus de détails, mais est utile pour combiner les informations globales.
+  - Parfois utilisée dans les couches plus profondes des CNN.
+
+### Exemples de Code :
+
+Voici comment vous pourriez définir différentes tailles de fenêtres dans un CNN utilisant Keras :
+
+**Taille de fenêtre 3x3 :**
+
+```python
+from keras.models import Sequential
+from keras.layers import Conv2D
+
+model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)))
+```
+
+**Taille de fenêtre 5x5 :**
+
+```python
+model.add(Conv2D(32, kernel_size=(5, 5), activation='relu'))
+```
+
+### Résumé :
+
+La taille de la fenêtre de convolution est un hyperparamètre crucial dans les réseaux de neurones convolutifs. Elle influence directement la manière dont le réseau extrait les caractéristiques des données d'entrée, affectant ainsi la performance globale du modèle. Plus la taille de la fenêtre est petite, plus les motifs locaux sont capturés, tandis qu'une fenêtre plus grande capture des informations plus globales mais peut entraîner une perte de détails fins.
