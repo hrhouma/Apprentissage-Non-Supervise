@@ -15,6 +15,11 @@
 - Le rapport final doit inclure une introduction, une méthodologie, les résultats, une discussion, et une conclusion.
 - La présentation doit se concentrer sur les points les plus importants du projet, en mettant en avant les résultats et leurs implications.
 
+
+**Directives supplémentaires :**
+- Le projet peut être réalisé individuellement ou en groupe, avec un maximum de **4 personnes** par groupe.
+
+
 ### **Grille d'Évaluation**
 
 #### **1. Choix du Projet et Justification (15 points)**
