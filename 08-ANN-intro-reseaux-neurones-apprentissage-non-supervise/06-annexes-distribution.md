@@ -56,7 +56,7 @@ Chaque type de distribution est utilisé dans des contextes spécifiques en fonc
 
 
 
-```markdown
+
 | Distribution Type       | Description                                                                 | Example                                                |
 |-------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------|
 | Normal (Gaussienne)     | Une distribution en forme de cloche où la plupart des valeurs se concentrent autour de la moyenne. | Taille des individus dans une population.              |
@@ -69,5 +69,4 @@ Chaque type de distribution est utilisé dans des contextes spécifiques en fonc
 | Beta                    | Modélise des probabilités sur un intervalle [0,1] avec différentes formes possibles. | Probabilité de succès d'un produit sur le marché.      |
 | Pareto                  | Modélise des situations où une petite portion des causes a un grand effet, souvent en économie. | Répartition des richesses dans une population.         |
 | Gamma                   | Utilisée pour modéliser le temps d'attente pour des événements irréguliers. | Temps nécessaire pour qu'un serveur traite des demandes. |
-```
 
