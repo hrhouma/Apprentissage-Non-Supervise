@@ -893,6 +893,28 @@ Softmax est une fonction d'activation utilisée principalement dans les couches 
 
 Les fonctions d'activation, qu'il s'agisse de ReLU ou de Softmax, jouent un rôle crucial dans le fonctionnement des réseaux de neurones. Elles permettent au réseau d'apprendre des relations complexes et d'effectuer des prédictions qui peuvent être interprétées et utilisées dans des applications réelles.
 
+
+
+# Table de comparaison entre les différentes fonctions d'activation couramment utilisées dans les réseaux de neurones :
+
+| **Fonction d'Activation** | **Formule**                                                | **Plage de Valeurs**  | **Usage Typique**                       | **Avantages**                                        | **Inconvénients**                                     |
+|---------------------------|------------------------------------------------------------|-----------------------|------------------------------------------|-----------------------------------------------------|------------------------------------------------------|
+| **Sigmoid**                | \(\sigma(x) = \frac{1}{1 + e^{-x}}\)                       | (0, 1)                | Couches de sortie pour la classification binaire | Sortie entre 0 et 1, interprétable comme probabilité | Saturation pour les grandes valeurs de x (vanishing gradient), computationnellement coûteuse |
+| **Tanh**                   | \(\text{Tanh}(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\)     | (-1, 1)               | Couches cachées, certaines tâches de régression | Centre les données autour de 0, bonne convergence | Saturation pour les grandes valeurs de x (vanishing gradient), computationnellement coûteuse |
+| **ReLU**                   | \(\text{ReLU}(x) = \max(0, x)\)                            | [0, +∞)               | Couches cachées dans des réseaux profonds | Simple, computation rapide, évite le vanishing gradient | Peut entraîner des neurones morts (dead neurons), pas de sortie négative |
+| **Leaky ReLU**             | \(\text{Leaky ReLU}(x) = \max(\alpha x, x)\)              | (-∞, +∞)              | Couches cachées, alternative à ReLU      | Évite le problème des neurones morts de ReLU, maintien du gradient pour les valeurs négatives | La valeur de \(\alpha\) doit être choisie manuellement |
+| **Softmax**                | \(\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}\) | (0, 1)                | Couches de sortie pour la classification multi-classes | Sortie interprétable comme probabilité, normalisation | Saturation des petites valeurs de x, computationnellement coûteuse |
+| **Linear**                 | \(f(x) = x\)                                               | (-∞, +∞)              | Couches de sortie pour la régression      | Simplicité, pas de saturation                        | Pas de non-linéarité, limité aux problèmes linéaires  |
+
+**Résumé :**
+- **Sigmoid** et **Tanh** sont principalement utilisées pour des tâches où la sortie doit être comprise dans une plage limitée (0,1 ou -1,1) et où une interprétation probabiliste est utile. Cependant, elles peuvent souffrir de la saturation et du problème de vanishing gradient.
+- **ReLU** est la fonction d'activation la plus courante dans les réseaux profonds modernes en raison de sa simplicité et de sa performance, bien qu'elle puisse souffrir de neurones morts.
+- **Leaky ReLU** est une variante de ReLU qui tente de résoudre le problème des neurones morts en permettant une petite pente pour les valeurs négatives.
+- **Softmax** est indispensable pour les problèmes de classification multi-classes, où elle permet de convertir les sorties en probabilités interprétables.
+- **Linear** est utilisée pour les problèmes de régression, où aucune non-linéarité n'est requise dans la couche de sortie.
+
+
+
 ---
 
 [Retour en haut](#table-des-matières)
