@@ -261,3 +261,42 @@ La carte des couleurs est particulièrement utile pour les images scientifiques 
 ### Conclusion :
 
 La carte des couleurs est un outil essentiel pour visualiser les données numériques d'une image en associant des valeurs numériques à des couleurs spécifiques, facilitant ainsi l'interprétation visuelle de l'information contenue dans l'image.
+
+---
+
+# Références :
+
+
+1. **Livres**
+   - *Computer Vision: Algorithms and Applications* par Richard Szeliski : Ce livre est une ressource complète qui couvre les algorithmes et les applications de la vision par ordinateur.
+   - *Deep Learning for Computer Vision* par Rajalingappaa Shanmugamani : Ce livre explore l'utilisation des techniques d'apprentissage profond pour la vision par ordinateur, notamment les réseaux de neurones convolutionnels (CNN).
+
+2. **Articles et Guides**
+   - *Deep Learning for Computer Vision: The Abridged Guide* par Run:ai : Cet article explore comment utiliser l'apprentissage profond pour améliorer les projets de vision par ordinateur, en se concentrant sur les architectures de réseaux de neurones convolutionnels (CNN)[4].
+   - *What is Computer Vision?* par IBM : Un aperçu de la façon dont la vision par ordinateur utilise l'intelligence artificielle pour interpréter et comprendre les données visuelles[5].
+
+3. **Cours et Conférences**
+   - *First Principles of Computer Vision* par Shree Nayar : Une série de conférences qui aborde les fondements physiques et mathématiques de la vision par ordinateur[3].
+
+4. **Sites Web et Ressources en Ligne**
+   - *Computer Vision: What it is and why it matters* par SAS : Une ressource qui explique comment la vision par ordinateur fonctionne et pourquoi elle est importante dans divers secteurs[6].
+
+Ces références couvrent une variété d'aspects de la vision par ordinateur, allant des concepts de base aux applications avancées utilisant l'apprentissage profond.
+
+# Autres citations:
+
+[1] https://www.youtube.com/watch?v=wVE8SFMSBJ0
+
+[2] https://www.run.ai/guides/deep-learning-for-computer-vision
+
+[3] https://www.ibm.com/topics/computer-vision
+
+[4] https://www.sas.com/en_th/insights/analytics/computer-vision.html
+
+[5] https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8374005/vision-par-ordinateur
+
+[6] https://www.motionmetrics.com/how-artificial-intelligence-revolutionized-computer-vision-a-brief-history/
+
+[7] https://www.youtube.com/watch?v=OnTgbN3uXvw
+
+
