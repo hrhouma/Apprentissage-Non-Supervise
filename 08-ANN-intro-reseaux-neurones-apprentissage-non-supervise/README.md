@@ -14,4 +14,4 @@
 - **Lien Drive** : 10-Réseaux-de-neurones/02-pratique/code-partie-1-introduction-a-tensorflow-et-RNN
 
 # 5. Exercices et Quiz
-- **À venir**
+- dossier : 07-evaluation-formative.md
