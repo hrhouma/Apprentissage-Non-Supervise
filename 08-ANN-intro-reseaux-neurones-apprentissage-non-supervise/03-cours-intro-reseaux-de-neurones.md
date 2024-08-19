@@ -949,6 +949,24 @@ f(x) = x
 $$
 
 
+Voici la suite :
+
+---
+
+**Résumé :**
+
+- **Sigmoid** (Equation 1) et **Tanh** (Equation 2) sont principalement utilisées pour des tâches où la sortie doit être comprise dans une plage limitée (0,1 pour Sigmoid ou -1,1 pour Tanh) et où une interprétation probabiliste est utile. Cependant, elles peuvent souffrir de la saturation, ce qui entraîne un problème de vanishing gradient, rendant l'entraînement des réseaux de neurones plus difficile.
+
+- **ReLU** (Equation 3) est la fonction d'activation la plus courante dans les réseaux profonds modernes en raison de sa simplicité et de sa performance. Elle est particulièrement efficace pour les réseaux profonds car elle évite le problème de vanishing gradient, mais elle peut parfois entraîner des neurones morts (c'est-à-dire des neurones qui cessent de s'activer), surtout si les valeurs négatives dominent l'entraînement.
+
+- **Leaky ReLU** (Equation 4) est une variante de ReLU qui tente de résoudre le problème des neurones morts en permettant une petite pente pour les valeurs négatives. Cela maintient le gradient même pour les valeurs négatives de l'entrée, ce qui peut aider à améliorer la robustesse du modèle.
+
+- **Softmax** (Equation 5) est indispensable pour les problèmes de classification multi-classes. Elle convertit les sorties du réseau en probabilités, où la somme de toutes les sorties est égale à 1, permettant de prédire à quelle classe appartient une entrée donnée. Softmax est généralement utilisée dans la couche de sortie des réseaux de neurones pour les tâches de classification.
+
+- **Linear** (Equation 6) est utilisée dans les couches de sortie pour les tâches de régression, où l'objectif est de prédire une valeur continue. Cette fonction d'activation est simple et n'introduit aucune non-linéarité, ce qui la rend adaptée pour les problèmes où une relation linéaire entre l'entrée et la sortie est suffisante.
+
+
+
 ---
 
 [Retour en haut](#table-des-matières)
@@ -964,28 +982,161 @@ $$
 
 
 
-### 10. Architecture de Réseau de Neurones  
+### 10. Architecture de Réseau de Neurones
 
-<hr/> 
-<hr/> 
-<hr/> 
+L'architecture d'un réseau de neurones est un élément clé qui détermine sa capacité à apprendre et à généraliser les connaissances à partir des données. La conception de l'architecture implique plusieurs décisions critiques, telles que le choix du nombre de couches, le nombre de neurones par couche, et la manière dont ces couches sont connectées. Une architecture bien conçue peut améliorer considérablement la performance du modèle, tandis qu'une mauvaise conception peut limiter sa capacité à apprendre efficacement.
 
-   [Retour en haut](#table-des-matières)
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="neuron-layer-choices"></a>
 
-#### - Choix des Neurones et des Couches  
-   [Retour en haut](#table-des-matières)
+#### Choix des Neurones et des Couches
+
+Le choix du nombre de couches et de neurones dans chaque couche dépend largement de la complexité du problème à résoudre et de la quantité de données disponibles. Voici les principales considérations à prendre en compte lors de la conception de l'architecture d'un réseau de neurones :
+
+1. **Couches d'Entrée :**
+   - La couche d'entrée est la première couche du réseau, et son rôle est de recevoir les données brutes. Le nombre de neurones dans la couche d'entrée correspond au nombre de caractéristiques dans les données d'entrée. Par exemple, pour une image de taille 28x28 pixels en niveaux de gris, la couche d'entrée aura 784 neurones (28*28).
+
+2. **Couches Cachées :**
+   - Les couches cachées sont situées entre la couche d'entrée et la couche de sortie. Ce sont elles qui effectuent la majeure partie du traitement dans le réseau, extrayant les caractéristiques pertinentes des données d'entrée.
+   - **Nombre de Couches** : Un réseau de neurones peut avoir une ou plusieurs couches cachées. Plus le problème est complexe, plus il peut être utile d'ajouter des couches cachées, mais cela augmente aussi le risque de surapprentissage.
+   - **Nombre de Neurones par Couche** : Chaque couche cachée peut avoir un nombre différent de neurones. Généralement, on commence par un grand nombre de neurones dans les premières couches cachées, puis on réduit progressivement leur nombre dans les couches suivantes.
+
+3. **Couche de Sortie :**
+   - La couche de sortie produit la prédiction finale du réseau. Le nombre de neurones dans la couche de sortie dépend du type de problème :
+     - **Classification binaire** : Un seul neurone avec une fonction d'activation sigmoid.
+     - **Classification multi-classes** : Un neurone par classe avec une fonction d'activation softmax.
+     - **Régression** : Un seul neurone avec une activation linéaire (ou aucune activation).
+
+**Exemple de Conception :**
+
+- Pour un problème de classification d'images (10 classes), une architecture typique pourrait ressembler à ceci :
+  - **Couche d'entrée** : 784 neurones (pour une image 28x28)
+  - **Couche cachée 1** : 512 neurones, activation ReLU
+  - **Couche cachée 2** : 256 neurones, activation ReLU
+  - **Couche de sortie** : 10 neurones, activation softmax
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="choosing-neurons"></a>
 
-#### - Choisir le Nombre de Neurones  
-   [Retour en haut](#table-des-matières)
+#### Choisir le Nombre de Neurones
+
+Le choix du nombre de neurones dans chaque couche est crucial car il affecte directement la capacité du réseau à apprendre des relations complexes dans les données, mais aussi sa tendance à surapprendre.
+
+1. **Sous-dimensionnement :**
+   - Si vous choisissez trop peu de neurones, le réseau peut ne pas avoir la capacité d'apprendre les relations complexes présentes dans les données. Cela conduit souvent à un problème appelé **underfitting**, où le modèle est trop simple pour capturer les nuances des données.
+
+2. **Sur-dimensionnement :**
+   - Si vous choisissez trop de neurones, le réseau peut devenir trop complexe, avec un grand nombre de paramètres à ajuster. Cela peut entraîner un **overfitting**, où le modèle s'adapte trop étroitement aux données d'entraînement, perdant sa capacité à généraliser à de nouvelles données.
+
+3. **Règles Empiriques :**
+   - Il n'existe pas de formule magique pour choisir le nombre de neurones, mais quelques règles empiriques peuvent guider la conception :
+     - Commencez par un nombre de neurones proportionnel au nombre de caractéristiques dans les données.
+     - Augmentez le nombre de neurones si le modèle semble underfitting.
+     - Réduisez le nombre de neurones ou utilisez des techniques de régularisation (comme le dropout) si le modèle semble overfitting.
+
+4. **Expérimentation :**
+   - La conception optimale de l'architecture nécessite souvent des expérimentations répétées. Il est courant de tester différentes configurations en utilisant la validation croisée pour déterminer l'architecture qui offre le meilleur compromis entre performance et complexité.
+
+**Exemple :**
+- Pour un réseau de neurones simple destiné à la reconnaissance de chiffres manuscrits (comme le dataset MNIST), vous pourriez commencer avec une architecture comme suit :
+  - **Couche d'entrée** : 784 neurones
+  - **Couche cachée 1** : 128 neurones, activation ReLU
+  - **Couche cachée 2** : 64 neurones, activation ReLU
+  - **Couche de sortie** : 10 neurones, activation softmax
+
+Si ce modèle montre des signes d'underfitting, vous pourriez augmenter le nombre de neurones à 256 et 128 dans les couches cachées, respectivement.
+
+---
+
+Le choix de l'architecture du réseau de neurones, y compris le nombre de couches et de neurones, est une étape critique dans le développement de modèles performants. Cela nécessite une compréhension approfondie des données et des objectifs, ainsi qu'une expérimentation attentive pour trouver le meilleur équilibre entre complexité et généralisation.
 
 
+
+
+----
+
+# Exemple de Choix du Nombre de Neurones Basé sur les Caractéristiques des Données
+
+Supposons que vous travaillez sur un problème de classification où vous avez un jeu de données avec 20 caractéristiques (features). Les caractéristiques peuvent représenter des attributs comme l'âge, le revenu, la taille, etc. Vous souhaitez créer un réseau de neurones pour prédire une classe parmi trois possibles.
+
+**Règle empirique** : Une règle simple consiste à commencer par un nombre de neurones dans la première couche cachée qui est proportionnel au nombre de caractéristiques. Une approche courante est de choisir un nombre de neurones dans la première couche cachée qui est égal ou légèrement supérieur au nombre de caractéristiques.
+
+**Exemple :**
+
+- **Nombre de caractéristiques** : 20
+- **Nombre de neurones dans la première couche cachée** : 20 à 40 neurones
+
+### Architecture proposée :
+
+1. **Couche d'entrée** : 20 neurones (une pour chaque caractéristique)
+2. **Couche cachée 1** : 30 neurones (nombre proportionnel au nombre de caractéristiques)
+3. **Couche cachée 2** : 15 neurones (réduction pour capturer des relations plus abstraites)
+4. **Couche de sortie** : 3 neurones (une pour chaque classe possible)
+
+### Schéma en ASCII :
+
+```
+Input Layer (20 neurones)
++--------------------+
+|  O  O  O  O  O  O  |
+|  O  O  O  O  O  O  |
+|  O  O  O  O  O  O  |
++--------------------+
+          |
+Hidden Layer 1 (30 neurones)
++-------------------------------+
+|  O  O  O  O  O  O  O  O  O  O  |
+|  O  O  O  O  O  O  O  O  O  O  |
+|  O  O  O  O  O  O  O  O  O  O  |
++-------------------------------+
+          |
+Hidden Layer 2 (15 neurones)
++------------------------+
+|  O  O  O  O  O  O  O  O |
+|  O  O  O  O  O  O  O  O |
+|  O  O  O  O  O  O  O  O |
++------------------------+
+          |
+Output Layer (3 neurones)
++-----+
+|  O  |
+|  O  |
+|  O  |
++-----+
+```
+
+### Explication :
+
+- **Couche d'entrée** : La couche d'entrée a 20 neurones, chacun correspondant à une caractéristique de l'entrée.
+- **Couche cachée 1** : Basée sur la règle empirique, nous avons choisi 30 neurones, légèrement plus que le nombre de caractéristiques, pour capturer les relations complexes.
+- **Couche cachée 2** : Le nombre de neurones est réduit à 15 pour capter des abstractions plus fines après la première couche.
+- **Couche de sortie** : Trois neurones, chacun correspondant à l'une des classes à prédire.
+
+Cette approche permet de démarrer avec une architecture simple et d'augmenter ou de réduire le nombre de neurones en fonction des performances obtenues après quelques essais.
+
+
+
+
+
+---
+
+[Retour en haut](#table-des-matières)
+
+
+
+
+
+-----
 
 # Annexe 01 - Limitations de réseaux de neurones
 
+---
 
 ### Exemple de Limitation avec un Réseau de Neurones Convolutifs Complexe
 
@@ -1076,3 +1227,301 @@ Dans cet exemple, trois branches distinctes (ou "tours") sont appliquées en par
 - Pour des architectures simples où les couches sont simplement empilées, le modèle séquentiel de Keras est suffisant.
 - Pour des architectures complexes comme Inception, où les couches peuvent avoir des connexions parallèles ou fusionner à différents points, l'API fonctionnelle de Keras est nécessaire pour créer et gérer ces structures.
 - C'est pourquoi le modèle séquentiel n'est pas adapté à des réseaux de neurones convolutifs complexes et pourquoi l'API fonctionnelle de Keras est une meilleure option pour ces cas.
+
+
+
+---
+
+# Annexe 02 - Qu'est-ce que les Hyperparamètres dans un Réseau de Neurones ?
+
+---
+
+### Qu'est-ce que les Hyperparamètres dans un Réseau de Neurones ?
+
+Les hyperparamètres sont des paramètres qui contrôlent la structure et l'apprentissage d'un réseau de neurones. Contrairement aux paramètres internes du modèle (comme les poids des connexions entre neurones), les hyperparamètres ne sont pas appris à partir des données, mais sont définis à l'avance par l'utilisateur et influencent le comportement du modèle. Leur réglage correct est essentiel pour obtenir de bonnes performances du modèle.
+
+Voici quelques exemples d'hyperparamètres couramment utilisés dans les réseaux de neurones :
+
+#### 1. Nombre de Couches (Architecture du Réseau)
+Le nombre de couches dans un réseau de neurones, également appelé profondeur du réseau, est l'un des hyperparamètres les plus importants. Un réseau peut avoir une seule couche cachée (ce qu'on appelle un perceptron multicouche simple) ou plusieurs couches cachées, formant un réseau profond.
+
+- **Réseau peu profond** : Un réseau avec une ou deux couches cachées. Convient aux problèmes simples où les relations dans les données ne sont pas trop complexes.
+- **Réseau profond** : Un réseau avec de nombreuses couches cachées. Utilisé pour des problèmes complexes comme la reconnaissance d'images, où plusieurs niveaux d'abstraction sont nécessaires.
+
+#### 2. Nombre de Neurones par Couche
+Le nombre de neurones dans chaque couche cachée détermine la capacité du réseau à capturer des informations. Plus il y a de neurones, plus le modèle peut potentiellement apprendre des relations complexes, mais cela augmente également le risque de surapprentissage.
+
+- **Trop peu de neurones** : Le modèle risque de sous-apprendre (underfitting) car il ne dispose pas de suffisamment de capacité pour capturer toutes les nuances des données.
+- **Trop de neurones** : Le modèle peut surapprendre (overfitting), s'adaptant trop étroitement aux données d'entraînement et perdant sa capacité à généraliser à de nouvelles données.
+
+#### 3. Taux d'Apprentissage (Learning Rate)
+Le taux d'apprentissage est un hyperparamètre qui détermine la taille des ajustements apportés aux poids du réseau à chaque étape de l'apprentissage. Un taux d'apprentissage élevé peut accélérer l'entraînement, mais risque de dépasser le minimum global. Un taux d'apprentissage faible, en revanche, permet des ajustements plus fins mais peut rendre l'entraînement très lent.
+
+- **Taux d'apprentissage élevé** : Risque de ne pas converger ou de sauter par-dessus le minimum.
+- **Taux d'apprentissage faible** : Convergence plus stable mais peut nécessiter un grand nombre d'itérations.
+
+#### 4. Taille des Mini-Lots (Batch Size)
+Lors de l'entraînement d'un réseau de neurones, les données d'entraînement sont souvent divisées en petits lots, ou mini-batches, pour permettre une mise à jour des poids plus fréquente. La taille des mini-batches est un hyperparamètre qui peut affecter la vitesse d'entraînement et la qualité du modèle.
+
+- **Mini-batch de grande taille** : Moins de bruit dans les mises à jour des poids, mais nécessite plus de mémoire.
+- **Mini-batch de petite taille** : Mises à jour plus fréquentes et plus de bruit, ce qui peut aider le modèle à sortir des minima locaux.
+
+#### 5. Nombre d'Époques (Epochs)
+Une époque correspond à un passage complet sur l'ensemble des données d'entraînement. Le nombre d'époques est un hyperparamètre qui détermine combien de fois le modèle passe par les données pour ajuster ses poids.
+
+- **Trop peu d'époques** : Le modèle peut ne pas avoir suffisamment appris, conduisant à un underfitting.
+- **Trop d'époques** : Le modèle peut surapprendre les données d'entraînement, conduisant à un overfitting.
+
+#### 6. Fonction d'Activation
+La fonction d'activation est l'hyperparamètre qui détermine comment les sorties des neurones sont transformées avant d'être transmises à la couche suivante. Des fonctions comme ReLU, Sigmoid, et Tanh sont couramment utilisées.
+
+- **ReLU** : Rapide et efficace pour les couches cachées.
+- **Softmax** : Utilisé dans la couche de sortie pour la classification multi-classes.
+- **Sigmoid** : Utilisé dans la couche de sortie pour la classification binaire.
+
+#### 7. Méthode de Régularisation
+La régularisation est un ensemble de techniques visant à prévenir le surapprentissage en pénalisant les poids du modèle. Les méthodes de régularisation sont des hyperparamètres qui peuvent être ajustés pour équilibrer l'apprentissage.
+
+- **Dropout** : Désactive de manière aléatoire un certain pourcentage de neurones à chaque étape d'apprentissage, ce qui aide à éviter la co-dépendance entre les neurones.
+- **L2 Regularization** : Ajoute une pénalité aux poids élevés, encourageant des poids plus petits.
+
+### Schéma en ASCII des Hyperparamètres dans un Réseau de Neurones
+
+```
++--------------------------------+
+|         Hyperparamètres         |
++--------------------------------+
+|  Nombre de Couches : 3          |
+|  Nombre de Neurones (C1) : 64   |
+|  Nombre de Neurones (C2) : 32   |
+|  Nombre de Neurones (C3) : 16   |
+|  Taux d'Apprentissage : 0.001   |
+|  Taille des Mini-Batches : 32   |
+|  Nombre d'Époques : 50          |
+|  Fonction d'Activation : ReLU   |
+|  Régularisation : Dropout 0.5   |
++--------------------------------+
+         |
+Input Layer  ---> Hidden Layer 1 (64) ---> Hidden Layer 2 (32) ---> Hidden Layer 3 (16) ---> Output Layer
+         |
++--------------------------------+
+|    Ajustement des poids         |
+|         (Learning Rate)         |
++--------------------------------+
+```
+
+### Conclusion
+
+Les hyperparamètres sont essentiels pour configurer et entraîner un réseau de neurones efficacement. Leur choix et leur ajustement nécessitent souvent une série d'expérimentations et de validations croisées pour trouver la meilleure combinaison qui offre un compromis entre performance et généralisation. L'optimisation des hyperparamètres peut impliquer des techniques comme la recherche en grille (grid search), la recherche aléatoire (random search), ou l'optimisation bayésienne pour automatiser le processus et obtenir des résultats optimaux.
+
+
+----
+
+# Annexe 3 - exemple d'hyperparamètres
+
+---
+
+
+
+- Je vous présente des exemples de code Python utilisant Keras pour illustrer comment chaque hyperparamètre peut être modifié et comment cela affecte la conception et l'entraînement d'un réseau de neurones.
+- Pour chaque hyperparamètre, j'ai inclus un exemple de code où il est modifié pour montrer sa variabilité.
+
+### 1. Nombre de Couches (Architecture du Réseau)
+
+**Exemple de code avec un réseau peu profond :**
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Modèle avec une seule couche cachée
+model = Sequential()
+model.add(Dense(64, input_shape=(20,), activation='relu'))
+model.add(Dense(1, activation='sigmoid'))  # Sortie pour la classification binaire
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+**Exemple de code avec un réseau profond :**
+
+```python
+# Modèle avec plusieurs couches cachées
+model = Sequential()
+model.add(Dense(128, input_shape=(20,), activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+### 2. Nombre de Neurones par Couche
+
+**Exemple de code avec peu de neurones :**
+
+```python
+# Modèle avec moins de neurones par couche
+model = Sequential()
+model.add(Dense(16, input_shape=(20,), activation='relu'))
+model.add(Dense(8, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+**Exemple de code avec plus de neurones :**
+
+```python
+# Modèle avec plus de neurones par couche
+model = Sequential()
+model.add(Dense(128, input_shape=(20,), activation='relu'))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+### 3. Taux d'Apprentissage (Learning Rate)
+
+**Exemple de code avec un taux d'apprentissage élevé :**
+
+```python
+from keras.optimizers import Adam
+
+# Modèle avec un taux d'apprentissage élevé
+model = Sequential()
+model.add(Dense(64, input_shape=(20,), activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+optimizer = Adam(learning_rate=0.01)  # Taux d'apprentissage élevé
+model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+**Exemple de code avec un taux d'apprentissage faible :**
+
+```python
+# Modèle avec un taux d'apprentissage faible
+optimizer = Adam(learning_rate=0.0001)  # Taux d'apprentissage faible
+model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+### 4. Taille des Mini-Lots (Batch Size)
+
+**Exemple de code avec une taille de mini-batch petite :**
+
+```python
+# Entraînement avec une petite taille de mini-batch
+model.fit(X_train, y_train, epochs=10, batch_size=16, validation_data=(X_val, y_val))
+```
+
+**Exemple de code avec une taille de mini-batch grande :**
+
+```python
+# Entraînement avec une grande taille de mini-batch
+model.fit(X_train, y_train, epochs=10, batch_size=128, validation_data=(X_val, y_val))
+```
+
+### 5. Nombre d'Époques (Epochs)
+
+**Exemple de code avec peu d'époques :**
+
+```python
+# Entraînement avec un petit nombre d'époques
+model.fit(X_train, y_train, epochs=5, batch_size=32, validation_data=(X_val, y_val))
+```
+
+**Exemple de code avec beaucoup d'époques :**
+
+```python
+# Entraînement avec un grand nombre d'époques
+model.fit(X_train, y_train, epochs=100, batch_size=32, validation_data=(X_val, y_val))
+```
+
+### 6. Fonction d'Activation
+
+**Exemple de code avec ReLU :**
+
+```python
+# Modèle utilisant ReLU comme fonction d'activation
+model = Sequential()
+model.add(Dense(64, input_shape=(20,), activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+**Exemple de code avec Tanh :**
+
+```python
+# Modèle utilisant Tanh comme fonction d'activation
+model = Sequential()
+model.add(Dense(64, input_shape=(20,), activation='tanh'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+### 7. Méthode de Régularisation
+
+**Exemple de code avec Dropout :**
+
+```python
+from keras.layers import Dropout
+
+# Modèle avec Dropout
+model = Sequential()
+model.add(Dense(128, input_shape=(20,), activation='relu'))
+model.add(Dropout(0.5))  # 50% des neurones désactivés aléatoirement
+model.add(Dense(64, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+**Exemple de code avec L2 Regularization :**
+
+```python
+from keras.regularizers import l2
+
+# Modèle avec L2 regularization
+model = Sequential()
+model.add(Dense(128, input_shape=(20,), activation='relu', kernel_regularizer=l2(0.01)))
+model.add(Dense(64, activation='relu', kernel_regularizer=l2(0.01)))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+
+# Résumé : 
+
+
+- La table ci-dessous présente des exemples d'hyperparamètres couramment utilisés dans les réseaux de neurones, avec une brève description et des exemples de valeurs typiques ou configurations :
+
+| **Hyperparamètre**           | **Description**                                                                 | **Exemples de Valeurs/Configurations**                                      |
+|------------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Nombre de Couches**        | Détermine la profondeur du réseau, c'est-à-dire combien de couches cachées il contient. | Réseau peu profond : 1 ou 2 couches cachées<br>Réseau profond : 5 à 20 couches cachées |
+| **Nombre de Neurones par Couche** | Nombre de neurones dans chaque couche cachée. Plus de neurones peuvent capturer des relations complexes, mais risquent de surapprendre. | Couches cachées : 32, 64, 128, 256 neurones<br>Couche de sortie : 1 (binaire), n (multi-classes) |
+| **Taux d'Apprentissage (Learning Rate)** | Contrôle la taille des ajustements des poids à chaque itération. Un taux d'apprentissage trop élevé peut empêcher la convergence, tandis qu'un taux trop faible peut ralentir l'apprentissage. | Haut : 0.01<br>Moyen : 0.001<br>Bas : 0.0001 |
+| **Taille des Mini-Lots (Batch Size)** | Nombre de données d'entraînement utilisées pour une seule mise à jour des poids. Les petits lots offrent plus de bruit mais des mises à jour plus fréquentes. | Petite : 16, 32<br>Grande : 64, 128, 256 |
+| **Nombre d'Époques (Epochs)** | Nombre de fois que le modèle voit l'ensemble des données d'entraînement. Trop d'époques peuvent entraîner un surapprentissage. | Peu : 5, 10<br>Beaucoup : 50, 100, 200 |
+| **Fonction d'Activation**    | Fonction appliquée à la sortie de chaque neurone pour introduire de la non-linéarité. | Couches cachées : ReLU, Tanh<br>Couches de sortie : Sigmoid (binaire), Softmax (multi-classes) |
+| **Méthode de Régularisation**| Techniques pour prévenir le surapprentissage en pénalisant les poids ou en désactivant certains neurones pendant l'entraînement. | Dropout : 0.2, 0.5<br>L2 Regularization : 0.01, 0.001 |
+| **Optimiseur**               | Algorithme qui ajuste les poids du modèle en fonction de la fonction de perte.  | SGD (Gradient Descent), Adam, RMSprop                                        |
+| **Initialisation des Poids** | Méthode pour initialiser les poids des neurones. Une mauvaise initialisation peut ralentir ou empêcher la convergence. | Initialisation aléatoire, He Initialization, Xavier Initialization          |
+| **Taille de la Fenêtre**     | Pour les réseaux convolutifs, la taille de la fenêtre de convolution détermine combien de pixels sont utilisés pour calculer chaque neurone de sortie. | 3x3, 5x5, 7x7                                                               |
+
+### Explication de la Table
+
+- **Nombre de Couches** : Ce paramètre définit combien de transformations non-linéaires les données subissent avant d'atteindre la sortie. Un réseau plus profond peut modéliser des fonctions plus complexes.
+- **Nombre de Neurones par Couche** : Le nombre de neurones dans chaque couche cachée détermine la capacité du réseau à capturer des relations dans les données. Un nombre trop faible peut limiter la capacité du modèle, tandis qu'un nombre trop élevé peut conduire à un surapprentissage.
+- **Taux d'Apprentissage** : Ce paramètre contrôle la vitesse à laquelle le modèle apprend. Un taux trop élevé risque de rendre l'apprentissage instable, tandis qu'un taux trop faible peut ralentir l'apprentissage de manière significative.
+- **Taille des Mini-Lots** : La taille des mini-lots influence la stabilité et la vitesse de l'apprentissage. Les petits lots peuvent introduire du bruit, ce qui aide parfois à sortir des minima locaux, tandis que les grands lots fournissent des mises à jour plus stables.
+- **Nombre d'Époques** : Détermine combien de fois l'algorithme d'apprentissage passera par l'ensemble des données d'entraînement. Trop d'époques peuvent entraîner un surapprentissage, tandis que trop peu peuvent conduire à un sous-apprentissage.
+- **Fonction d'Activation** : Les fonctions d'activation déterminent comment les signaux sont propagés dans le réseau, en introduisant des non-linéarités qui permettent au modèle de capturer des relations complexes.
+- **Méthode de Régularisation** : Les techniques comme le Dropout ou la régularisation L2 aident à prévenir le surapprentissage en rendant le modèle moins sensible aux particularités du jeu de données d'entraînement.
+- **Optimiseur** : L'optimiseur ajuste les poids en fonction de la fonction de perte. Différents optimisateurs conviennent mieux à différentes architectures et types de données.
+- **Initialisation des Poids** : Les poids initiaux du réseau influencent la vitesse de convergence et la probabilité de trouver une solution optimale. Une bonne initialisation est essentielle pour un entraînement efficace.
+- **Taille de la Fenêtre** : Pour les réseaux convolutifs, la taille de la fenêtre détermine la zone d'entrée regardée par chaque neurone, ce qui influence la manière dont les caractéristiques spatiales sont capturées.
+
+
