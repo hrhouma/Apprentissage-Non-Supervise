@@ -1,7 +1,3 @@
-Pour améliorer votre README avec des **emojis professionnels** plutôt que des animations, voici une version améliorée :
-
----
-
 # 🚀 Considérez le code suivant :
 
 ```python
