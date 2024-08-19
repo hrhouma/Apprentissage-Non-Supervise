@@ -602,89 +602,311 @@ Ces techniques sont fondamentales pour préparer les données en vue d'une utili
 
 
 
+<hr/> 
+<hr/> 
+<hr/> 
 
 
-
+### 7. Modèle Séquentiel en Keras
 
 <hr/> 
 <hr/> 
 <hr/> 
 
-### 7. Modèle Séquentiel en Keras 
 
+Keras est une bibliothèque d'apprentissage profond hautement modulable et facile à utiliser, souvent utilisée pour construire et entraîner des modèles de réseaux de neurones. Le modèle séquentiel est l'une des structures les plus simples disponibles dans Keras, permettant de construire un modèle couche par couche de manière linéaire.
 
-<hr/> 
-<hr/> 
-<hr/> 
+---
 
-   [Retour en haut](#table-des-matières)
+[Retour en haut](#table-des-matières)
 
 <a id="sequential-model-creation"></a>
 
-#### - Création et Compréhension  
-   [Retour en haut](#table-des-matières)
+#### Création et Compréhension
+
+Le modèle séquentiel en Keras est conçu pour permettre une construction simple et intuitive des réseaux de neurones. Il convient particulièrement bien aux modèles où les couches sont empilées les unes après les autres de manière séquentielle.
+
+**Création d'un Modèle Séquentiel :**
+
+1. **Initialisation** :
+   - Pour commencer, vous initialisez un modèle séquentiel avec `Sequential()`.
+
+   ```python
+   from keras.models import Sequential
+
+   model = Sequential()
+   ```
+
+2. **Ajout de Couches** :
+   - Les couches sont ajoutées au modèle séquentiel une par une, en utilisant la méthode `add()`. Par exemple, une couche dense (Fully Connected Layer) peut être ajoutée comme suit :
+
+   ```python
+   from keras.layers import Dense
+
+   model.add(Dense(units=64, activation='relu', input_shape=(100,)))
+   ```
+
+   Ici, `units=64` spécifie le nombre de neurones dans la couche, `activation='relu'` spécifie la fonction d'activation, et `input_shape=(100,)` définit la forme des données d'entrée.
+
+3. **Compilation du Modèle** :
+   - Après avoir ajouté toutes les couches, vous devez compiler le modèle en spécifiant la fonction de perte, l'optimiseur, et les métriques d'évaluation :
+
+   ```python
+   model.compile(loss='categorical_crossentropy',
+                 optimizer='adam',
+                 metrics=['accuracy'])
+   ```
+
+4. **Entraînement du Modèle** :
+   - Une fois le modèle compilé, vous pouvez l'entraîner en utilisant la méthode `fit()` avec les données d'entraînement :
+
+   ```python
+   model.fit(x_train, y_train, epochs=10, batch_size=32)
+   ```
+
+   Ici, `epochs=10` indique que le modèle va parcourir les données d'entraînement 10 fois, et `batch_size=32` spécifie la taille des lots de données utilisés pour l'entraînement.
+
+5. **Évaluation et Prédiction** :
+   - Après l'entraînement, vous pouvez évaluer le modèle sur des données de test ou faire des prédictions avec `evaluate()` et `predict()` :
+
+   ```python
+   model.evaluate(x_test, y_test)
+   predictions = model.predict(x_new)
+   ```
+
+**Compréhension du Modèle Séquentiel :**
+
+Le modèle séquentiel est linéaire, ce qui signifie que les données passent par chaque couche une à une, dans l'ordre où les couches ont été ajoutées. Cette simplicité fait du modèle séquentiel un excellent choix pour les débutants et pour des réseaux de neurones où cette structure convient, comme les réseaux fully connected.
+
+**Limitations :**
+- Le modèle séquentiel ne peut pas gérer des architectures complexes qui nécessitent des connexions multiples entre les couches (comme les réseaux de neurones convolutifs complexes ou les architectures avec des chemins parallèles).
+- Pour des architectures plus complexes, il est préférable d'utiliser l'API fonctionnelle de Keras.
+
+# Pour plus de détails, voir l'annexe 01.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="neural-layers"></a>
 
 
-<hr/> 
-<hr/> 
-<hr/> 
 
-### 8. Couches dans un Réseau de Neurones  
+
+
 
 <hr/> 
 <hr/> 
 <hr/> 
+### 8. Couches dans un Réseau de Neurones
 
-   [Retour en haut](#table-des-matières)
+Les réseaux de neurones sont construits à partir de différentes couches, chacune jouant un rôle spécifique dans le traitement des données et l'apprentissage des caractéristiques. Ces couches sont combinées pour former une architecture qui peut résoudre des problèmes complexes, comme la classification d'images, la reconnaissance de la parole, ou la prédiction de séries temporelles.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="flatten-layer"></a>
 
-#### - Couche Flatten  
-   [Retour en haut](#table-des-matières)
+#### Couche Flatten
+
+La couche Flatten est utilisée pour transformer une matrice de données multidimensionnelle en un vecteur unidimensionnel, qui peut ensuite être utilisé comme entrée pour des couches denses (fully connected). Cela est particulièrement utile dans les réseaux de neurones convolutifs (CNN), où les sorties des couches convolutives et de pooling sont en forme de tenseurs (par exemple, 2D ou 3D).
+
+**Exemple d'utilisation :**
+- Supposons que vous ayez une sortie de taille `(28, 28, 64)` après plusieurs couches convolutives. La couche Flatten convertit cela en un vecteur de `28 * 28 * 64 = 50176` valeurs, qui peut ensuite être utilisé comme entrée pour une couche dense.
+
+```python
+from keras.layers import Flatten
+
+model.add(Flatten())
+```
+
+**Fonction :**
+- La couche Flatten ne modifie pas les données en elles-mêmes, mais réorganise leur forme pour qu'elles puissent être traitées par des couches suivantes dans le réseau.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="output-layer"></a>
 
-#### - Couche de Sortie  
-   [Retour en haut](#table-des-matières)
+#### Couche de Sortie
+
+La couche de sortie est la dernière couche d'un réseau de neurones, celle qui produit les prédictions finales du modèle. Le choix de la couche de sortie dépend du type de problème à résoudre :
+
+- **Classification binaire** : Une couche dense avec un seul neurone et une fonction d'activation `sigmoid` est souvent utilisée.
+  
+  ```python
+  model.add(Dense(1, activation='sigmoid'))
+  ```
+
+- **Classification multi-classes** : Une couche dense avec autant de neurones que de classes, et une fonction d'activation `softmax`, est couramment utilisée.
+  
+  ```python
+  model.add(Dense(10, activation='softmax'))
+  ```
+
+- **Régression** : Pour les problèmes de régression, la couche de sortie est généralement une couche dense sans fonction d'activation ou avec une activation linéaire.
+
+  ```python
+  model.add(Dense(1))  # Activation linéaire par défaut
+  ```
+
+**Fonction :**
+- La couche de sortie transforme les caractéristiques apprises par le réseau en une prédiction exploitable, adaptée au type de tâche (classification, régression, etc.).
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="dense-layer"></a>
 
-#### - Couche Dense  
-   [Retour en haut](#table-des-matières)
+#### Couche Dense
+
+La couche Dense, également appelée fully connected layer, est l'une des couches les plus couramment utilisées dans les réseaux de neurones. Chaque neurone dans une couche dense est connecté à tous les neurones de la couche précédente. C'est dans cette couche que se déroulent les calculs principaux, où les caractéristiques extraites par les couches précédentes sont combinées pour produire une décision ou une prédiction.
+
+**Exemple d'utilisation :**
+
+```python
+from keras.layers import Dense
+
+model.add(Dense(units=128, activation='relu'))
+```
+
+- **units=128** : Indique le nombre de neurones dans la couche.
+- **activation='relu'** : Spécifie la fonction d'activation à utiliser pour chaque neurone.
+
+**Fonction :**
+- Les couches denses sont responsables de l'intégration des informations extraites des données pour former des prédictions complexes. Elles sont généralement placées après les couches convolutives ou récurrentes et jouent un rôle clé dans la décision finale du modèle.
+
+---
+
+Les couches dans un réseau de neurones travaillent ensemble pour transformer les données brutes en prédictions utiles. Chaque type de couche, de la couche Flatten à la couche Dense en passant par la couche de sortie, remplit un rôle spécifique, contribuant à la complexité et à la précision du modèle.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="activation-functions"></a>
 
 
-<hr/> 
-<hr/> 
-<hr/> 
 
-### 9. Fonction d'Activation  
+
+
 
 <hr/> 
 <hr/> 
 <hr/> 
 
-   [Retour en haut](#table-des-matières)
+
+### 9. Fonction d'Activation
+
+Les fonctions d'activation jouent un rôle crucial dans les réseaux de neurones en déterminant si un neurone doit être activé ou non, c'est-à-dire si l'information doit être transmise à travers le réseau. Elles introduisent de la non-linéarité dans le modèle, ce qui permet aux réseaux de neurones d'apprendre et de représenter des fonctions complexes.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="activation-definition"></a>
 
-#### - Qu'est-ce qu'une Fonction d'Activation ?  
-   [Retour en haut](#table-des-matières)
+#### Qu'est-ce qu'une Fonction d'Activation ?
+
+Une fonction d'activation est une fonction mathématique appliquée à la sortie de chaque neurone dans un réseau de neurones. Après qu'un neurone a calculé une somme pondérée de ses entrées, la fonction d'activation décide du signal final envoyé à la couche suivante. Sans ces fonctions, un réseau de neurones ne serait qu'une simple combinaison linéaire, incapable de capturer les relations complexes dans les données.
+
+**Exemples de Fonctions d'Activation :**
+
+- **Sigmoid** : 
+  - Fonction utilisée principalement pour les modèles de classification binaire.
+  - Convertit la sortie en une probabilité comprise entre 0 et 1.
+  - Formule : 
+
+$$
+\text{Sigmoid}(x) = \frac{1}{1 + e^{-x}}
+$$
+
+- **Tanh (Tangente hyperbolique)** : 
+  - Fonction qui échelonne la sortie entre -1 et 1.
+  - Utilisée lorsque des sorties négatives sont également importantes.
+  - Formule : 
+
+$$
+\text{Tanh}(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
+
+- **ReLU (Rectified Linear Unit)** : 
+  - Fonction d'activation la plus couramment utilisée dans les réseaux de neurones modernes.
+  - Transforme les valeurs négatives en 0 et laisse passer les valeurs positives telles quelles.
+  - Formule :
+  
+$$
+\text{ReLU}(x) = \max(0, x)
+$$
+
+- **Softmax** :
+  - Fonction utilisée dans la couche de sortie pour les problèmes de classification multi-classes.
+  - Convertit les sorties en probabilités qui totalisent 1.
+  - Formule : 
+
+$$
+\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum_{j} e^{x_j}}
+$$
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="relu-vs-softmax"></a>
 
-#### - ReLU vs Softmax  
-   [Retour en haut](#table-des-matières)
+#### ReLU vs Softmax
+
+**ReLU (Rectified Linear Unit) :**
+
+ReLU est une fonction d'activation simple mais extrêmement efficace. Elle est définie comme étant 0 pour toute entrée négative et égale à l'entrée elle-même pour toute entrée positive. Cette simplicité lui permet de surmonter certains des problèmes associés à d'autres fonctions d'activation, comme la disparition du gradient (vanishing gradient problem) rencontrée avec Sigmoid ou Tanh.
+
+**Caractéristiques de ReLU :**
+
+- **Non-linéarité** : Permet au réseau de capturer des relations complexes.
+- **Simplicité** : Très rapide à calculer, ce qui améliore la vitesse d'entraînement.
+- **Évitement de la saturation** : Contrairement à Sigmoid ou Tanh, ReLU ne sature pas pour des valeurs positives, ce qui aide à maintenir un gradient non nul.
+
+**Usage :**
+- ReLU est souvent utilisée dans les couches cachées des réseaux de neurones pour introduire de la non-linéarité tout en étant efficace en termes de calcul.
+
+**Softmax :**
+
+Softmax est une fonction d'activation utilisée principalement dans les couches de sortie pour les problèmes de classification multi-classes. Elle transforme un vecteur de valeurs arbitraires en un vecteur de probabilités, où chaque valeur représente la probabilité que l'entrée appartienne à une certaine classe.
+
+**Caractéristiques de Softmax :**
+
+- **Probabilités** : Convertit les sorties en probabilités, ce qui est utile pour les tâches de classification.
+- **Normalisation** : La somme de toutes les probabilités est toujours égale à 1, ce qui permet une interprétation directe comme distribution de probabilités.
+
+**Usage :**
+- Softmax est utilisée dans la couche de sortie d'un réseau de neurones lorsqu'on veut classifier une entrée parmi plusieurs classes possibles. Par exemple, dans un modèle de classification d'images qui distingue entre 10 catégories, Softmax produira un vecteur de probabilités de taille 10.
+
+**Résumé des Différences :**
+
+- **ReLU** : Utilisée dans les couches cachées pour maintenir un gradient efficace, fonctionne bien pour des problèmes où la saturation n'est pas souhaitée.
+- **Softmax** : Utilisée dans la couche de sortie pour des problèmes de classification multi-classes, où il est nécessaire de prédire une classe parmi plusieurs.
+
+---
+
+Les fonctions d'activation, qu'il s'agisse de ReLU ou de Softmax, jouent un rôle crucial dans le fonctionnement des réseaux de neurones. Elles permettent au réseau d'apprendre des relations complexes et d'effectuer des prédictions qui peuvent être interprétées et utilisées dans des applications réelles.
+
+---
+
+[Retour en haut](#table-des-matières)
 
 <a id="network-architecture"></a>
 
 
+
 <hr/> 
 <hr/> 
 <hr/> 
+
+
+
 
 ### 10. Architecture de Réseau de Neurones  
 
@@ -704,3 +926,97 @@ Ces techniques sont fondamentales pour préparer les données en vue d'une utili
 #### - Choisir le Nombre de Neurones  
    [Retour en haut](#table-des-matières)
 
+
+
+# Annexe 01 - Limitations de réseaux de neurones
+
+
+### Exemple de Limitation avec un Réseau de Neurones Convolutifs Complexe
+
+Le modèle séquentiel est idéal pour des architectures simples où les couches sont empilées les unes après les autres. Cependant, il devient limité lorsqu'il s'agit de réseaux de neurones convolutifs (CNN) complexes qui nécessitent des connexions plus sophistiquées entre les couches, comme des chemins parallèles ou des couches qui partagent des entrées et se rejoignent plus tard dans le réseau.
+
+**Exemple d'Architecture Complexe : Réseau Inception**
+
+Un exemple typique est l'architecture Inception, utilisée dans des réseaux de neurones convolutifs avancés comme **InceptionNet**. Dans cette architecture, plusieurs convolutions de différentes tailles (par exemple, 1x1, 3x3, 5x5) sont appliquées en parallèle sur la même entrée, puis les résultats sont concaténés en une seule sortie.
+
+```python
+from keras.layers import Input, Conv2D, MaxPooling2D, concatenate
+from keras.models import Model
+
+input_img = Input(shape=(256, 256, 3))
+
+tower_1 = Conv2D(64, (1, 1), padding='same', activation='relu')(input_img)
+tower_1 = Conv2D(64, (3, 3), padding='same', activation='relu')(tower_1)
+
+tower_2 = Conv2D(64, (1, 1), padding='same', activation='relu')(input_img)
+tower_2 = Conv2D(64, (5, 5), padding='same', activation='relu')(tower_2)
+
+tower_3 = MaxPooling2D((3, 3), strides=(1, 1), padding='same')(input_img)
+tower_3 = Conv2D(64, (1, 1), padding='same', activation='relu')(tower_3)
+
+output = concatenate([tower_1, tower_2, tower_3], axis=1)
+
+model = Model(inputs=input_img, outputs=output)
+```
+
+Dans cet exemple, trois branches distinctes (ou "tours") sont appliquées en parallèle sur la même image d'entrée, et leurs sorties sont ensuite fusionnées (concatenated) pour former la sortie du bloc Inception. Ce type de structure ne peut pas être implémenté avec un modèle séquentiel car il nécessite des connexions multiples et des fusions complexes entre les couches.
+
+
+
+```
+                      +----------------------------+
+                      |         Input Layer        |
+                      |     Shape: (256, 256, 3)   |
+                      +----------------------------+
+                                   |
+     +-----------------------------+--------------------------------+
+     |                             |                                |
++----v----+                   +----v----+                      +----v----+
+|  Conv2D |                   |  Conv2D |                      | MaxPool |
+| 1x1, 64 |                   | 1x1, 64 |                      | 3x3     |
++---------+                   +---------+                      +---------+
+     |                             |                                |
++----v----+                   +----v----+                      +----v----+
+|  Conv2D |                   |  Conv2D |                      |  Conv2D |
+| 3x3, 64 |                   | 5x5, 64 |                      | 1x1, 64 |
++---------+                   +---------+                      +---------+
+     |                             |                                |
+     +-----------------------------+--------------------------------+
+                                   |
+                      +------------v------------+
+                      |        Concatenate       |
+                      +--------------------------+
+                                   |
+                      +------------v------------+
+                      |       Output Layer       |
+                      +--------------------------+
+```
+
+**Description du schéma :**
+
+1. **Input Layer** : C'est l'entrée du réseau, qui reçoit une image de taille 256x256 avec 3 canaux (par exemple, une image en couleur RGB).
+
+2. **Branch 1 (à gauche)** :
+   - Une première convolution `1x1` avec 64 filtres.
+   - Suivie d'une autre convolution `3x3` avec 64 filtres.
+
+3. **Branch 2 (au centre)** :
+   - Une première convolution `1x1` avec 64 filtres.
+   - Suivie d'une convolution `5x5` avec 64 filtres.
+
+4. **Branch 3 (à droite)** :
+   - Un max pooling `3x3` avec un stride de `1x1`.
+   - Suivi d'une convolution `1x1` avec 64 filtres.
+
+5. **Concatenate** : Les sorties des trois branches sont ensuite fusionnées (concatenated) pour former une seule sortie.
+
+6. **Output Layer** : La sortie finale qui résulte de la concaténation des trois chemins.
+
+
+
+
+
+**Conclusion :**
+- Pour des architectures simples où les couches sont simplement empilées, le modèle séquentiel de Keras est suffisant.
+- Pour des architectures complexes comme Inception, où les couches peuvent avoir des connexions parallèles ou fusionner à différents points, l'API fonctionnelle de Keras est nécessaire pour créer et gérer ces structures.
+- C'est pourquoi le modèle séquentiel n'est pas adapté à des réseaux de neurones convolutifs complexes et pourquoi l'API fonctionnelle de Keras est une meilleure option pour ces cas.
