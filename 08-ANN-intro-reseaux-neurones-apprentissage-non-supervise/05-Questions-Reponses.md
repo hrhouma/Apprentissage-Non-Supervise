@@ -108,7 +108,7 @@ X_{\text{standardisé}} = \frac{X - \mu}{\sigma}
 $$
 
 
-où \(\mu\) est la moyenne de \(X\) et \(\sigma\) est l'écart-type.
+où *mu* est la moyenne de X et *sigma* est l'écart-type.
 
 **Quand utiliser quoi ?**  
 - Utilisez la **normalisation** lorsque vos données ne suivent pas une distribution gaussienne et que vous avez des caractéristiques avec des gammes différentes.
@@ -149,8 +149,6 @@ Il est préférable d'utiliser des types de données numériques car les algorit
 **❓ 7.3) Pour les humains, est-il préférable d'avoir un type de données numérique ou chaîne de caractères ? Pourquoi ?**
 
 Les chaînes de caractères sont plus compréhensibles pour les humains, mais les types numériques sont essentiels pour les calculs et le traitement informatique.
-
-
 
 
 
