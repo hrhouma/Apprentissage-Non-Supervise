@@ -101,12 +101,14 @@ $$
 
 - **Standardisation :**  
   La standardisation transforme les données de manière à ce qu'elles aient une moyenne de 0 et un écart-type de 1. Cela est utile lorsque les données suivent une distribution gaussienne (ou une distribution proche de la normale) et que vous souhaitez centrer et mettre à l'échelle les données.  
-  Par exemple, pour standardiser une variable \(X\), on utilise la formule suivante :  
+  Par exemple, pour standardiser une variable \(X\), on utilise la formule suivante 
 
 $$
 X_{\text{standardisé}} = \frac{X - \mu}{\sigma}
 $$
-  où \(\mu\) est la moyenne de \(X\) et \(\sigma\) est l'écart-type.
+
+
+où \(\mu\) est la moyenne de \(X\) et \(\sigma\) est l'écart-type.
 
 **Quand utiliser quoi ?**  
 - Utilisez la **normalisation** lorsque vos données ne suivent pas une distribution gaussienne et que vous avez des caractéristiques avec des gammes différentes.
