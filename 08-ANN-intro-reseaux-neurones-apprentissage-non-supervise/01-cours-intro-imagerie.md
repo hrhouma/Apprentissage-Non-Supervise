@@ -30,7 +30,7 @@
 
 # Remarque Générale :
 
-- *Pour les images et certains éléments, veuillez consulter les références situées en bas du document :* [Introduction à l'Imagerie Numérique](#-Références)
+- *Pour les images et certains éléments, veuillez consulter les références situées en bas du document :* [Introduction à l'Imagerie Numérique](#references)
 
 <a id="introduction-a-l-imagerie-numerique"></a>
 
@@ -268,7 +268,7 @@ La carte des couleurs est un outil essentiel pour visualiser les données numér
 
 ---
 
-<a id="Références"></a>
+<a id="references"></a>
 
 # Références
 
