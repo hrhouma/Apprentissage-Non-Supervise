@@ -420,3 +420,16 @@ Ces références couvrent une variété d'aspects de la vision par ordinateur, a
 [7] https://www.youtube.com/watch?v=OnTgbN3uXvw
 
 
+
+---
+
+# Autres citations pour les filtres et conv :
+
+- https://github.com/hrhouma/Apprentissage-Non-Supervise/blob/main/08-ANN-intro-reseaux-neurones-apprentissage-non-supervise/01-cours-intro-imagerie.md
+- https://github.com/vdumoulin/conv_arithmetic/blob/master/README.md
+- https://yosinski.com/deepvis
+- https://deeplizard.com/learn/video/qSTv_m-KFk0
+- https://setosa.io/ev/image-kernels/
+
+
+
