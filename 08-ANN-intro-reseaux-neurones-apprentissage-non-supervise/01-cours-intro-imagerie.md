@@ -30,7 +30,7 @@
 
 # Remarque Générale :
 
-- *Pour les images et certains éléments, veuillez consulter les références situées en bas du document :* [Introduction à l'Imagerie Numérique](#-Reférences)
+- *Pour les images et certains éléments, veuillez consulter les références situées en bas du document :* [Introduction à l'Imagerie Numérique](#-Références)
 
 <a id="introduction-a-l-imagerie-numerique"></a>
 
