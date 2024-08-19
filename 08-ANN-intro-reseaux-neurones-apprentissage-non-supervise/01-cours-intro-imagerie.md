@@ -266,6 +266,118 @@ La carte des couleurs est particulièrement utile pour les images scientifiques 
 
 La carte des couleurs est un outil essentiel pour visualiser les données numériques d'une image en associant des valeurs numériques à des couleurs spécifiques, facilitant ainsi l'interprétation visuelle de l'information contenue dans l'image.
 
+
+
+
+---
+
+
+
+# Annexe 1 -  Utilisation des Filtres, Padding, et Convolutions dans le Traitement des Images
+
+Dans le cadre du traitement d'images, en particulier pour l'extraction des caractéristiques de bas niveau, les concepts de filtres, padding, et convolutions jouent un rôle fondamental. 
+
+
+## Exemple :
+
+```
++-------------+   +-------------+   +-------------+
+|  Image de   |-->|   Filtre    |-->| Caractéristique: |
+|   l'oiseau  |   | Convolution |   |      Bec       |
++-------------+   +-------------+   +-------------+
+```
+
+- Ce schéma montre comment une image bruité volumineuse (haute dimension) d'un oiseau passe par un filtre et une convolution pour extraire une caractéristique spécifique, comme le bec de l'oiseau (caractéstique bas-niveau).
+
+
+## Comment ça fonctionne ?
+
+- C'est la **convolution** qui applique les **filtres** à l'image pour extraire des caractéristiques spécifiques.
+- On obtient les caractéstique bas niveaux grâce à la combinaison des deux : les **filtres** et la **convolution**. 
+
+
+## Définitions : 
+
+- **Filtres** : Ils sont utilisés pour détecter des caractéristiques spécifiques dans une image, comme des contours ou des motifs. Par exemple, un filtre pourrait être conçu pour mettre en évidence les contours du bec de l'oiseau.
+
+- **Convolution** : C'est le processus par lequel le filtre est appliqué sur l'image. Pendant la convolution, le filtre est glissé sur toute l'image, et à chaque position, il effectue des calculs pour produire une nouvelle image, appelée carte de caractéristiques, qui montre où la caractéristique recherchée (comme le bec) est présente.
+
+
+
+- **Filtres (ou noyaux)** : Un filtre est une petite matrice appliquée à une image pour détecter certaines caractéristiques, comme les bords ou les textures. Par exemple, un filtre de détection de contours pourrait accentuer les lignes et les formes dans une image, permettant ainsi de capturer les informations essentielles pour des tâches ultérieures comme la reconnaissance de formes.
+
+- **Convolution** : La convolution est le processus par lequel un filtre est appliqué à une image. Elle consiste à faire glisser le filtre sur toute l'image et à calculer un produit scalaire entre le filtre et les sous-matrices de l'image qu'il recouvre. Ce processus génère une nouvelle image, souvent appelée carte de caractéristiques, qui met en évidence les caractéristiques détectées par le filtre.
+
+- **Padding** : Le padding est l'ajout de pixels supplémentaires autour des bords d'une image avant d'appliquer une convolution. Cela permet de préserver les dimensions de l'image après la convolution et d'éviter la perte d'informations importantes situées aux bords. Le padding est particulièrement utile lorsque l'on souhaite conserver les dimensions de l'image d'origine après l'application des filtres.
+
+### Exemple d'Application : Extraction des Caractéristiques de Bas Niveau
+
+L'extraction des caractéristiques de bas niveau à partir d'une image est essentielle pour des tâches telles que la reconnaissance de formes ou la détection d'objets. Par exemple, pour reconnaître un visage dans une image, on commence par détecter les contours des yeux, du nez, et de la bouche en appliquant des filtres adaptés. La convolution de ces filtres avec l'image originale produit des cartes de caractéristiques qui mettent en évidence ces éléments clés. 
+
+Le padding peut être utilisé pour s'assurer que les contours près des bords de l'image ne sont pas perdus lors de l'application des filtres, garantissant ainsi que toutes les parties de l'image sont traitées de manière égale.
+
+En résumé, les filtres, la convolution, et le padding sont des outils cruciaux dans le traitement d'images pour extraire des caractéristiques de bas niveau, qui sont ensuite utilisées pour des analyses plus avancées comme l'interprétation et la compréhension des scènes dans la vision par ordinateur.
+
+
+
+---
+
+# Annexe 2 : Extraction d'une Caractéristique d'une Image Bruitée
+
+
+- Les filtres sont comme des lunettes spéciales que l'on pose sur une image pour mieux voir certaines parties, comme les bords ou les textures. Imaginez un filtre comme une petite grille que l'on fait glisser sur l'image, pixel par pixel, pour détecter ces éléments.
+
+- La convolution est simplement le fait de faire glisser ce filtre sur l'image et de calculer combien il "correspond" à chaque partie de l'image. Le résultat est une nouvelle image qui montre où les caractéristiques, comme les bords, sont le plus présentes.
+
+- Le padding consiste à ajouter des bordures autour de l'image avant d'appliquer le filtre pour s'assurer que même les bords de l'image sont bien pris en compte.
+
+- Imaginez que vous avez une image d'un chat, mais cette image est un peu bruitée, ce qui signifie qu'il y a des pixels qui perturbent la clarté. Vous voulez extraire une caractéristique spécifique, comme le nez du chat, malgré ce bruit.
+
+```
+Image de chat bruitée :
+
+* * * * *
+* # * N *
+* * @ * *
+* * * * *
+* * * * *
+
+```
+
+- **N** : représente le nez du chat.
+- **#** et **@** : représentent du bruit qui rend l'image moins claire.
+
+#### But : Identifier et extraire le nez du chat.
+
+En appliquant des filtres et des convolutions, on va "nettoyer" l'image pour mieux détecter le nez du chat, même si l'image est perturbée par le bruit.
+
+```
+Après application d'un filtre et convolution :
+
+0 0 0 0 0
+0 1 1 N 0
+0 1 0 1 0
+0 0 0 0 0
+0 0 0 0 0
+
+```
+
+- Les **1** indiquent où le filtre a trouvé des parties du nez.
+- Le **N** montre que l'on a bien identifié la position du nez du chat malgré le bruit initial.
+
+---
+
+Ce schéma simplifié montre comment on peut utiliser des filtres pour extraire des caractéristiques importantes d'une image, même lorsqu'elle est bruitée, en se concentrant sur les éléments essentiels comme le nez du chat.
+
+
+## RÉSUMÉ : 
+
+- Imaginez que vous avez une image d'un chat. Si vous voulez identifier des parties spécifiques du visage du chat, comme son nez, vous allez utiliser des filtres. Ces filtres sont comme des petites grilles spéciales qui vont se concentrer sur certains détails, par exemple, les formes rondes ou les contours.
+
+Quand vous appliquez un filtre sur l'image du chat, cela s'appelle une convolution. La convolution va passer ce filtre sur toute l'image, pixel par pixel, et générer une nouvelle image où seuls les éléments correspondant à ce que vous cherchez (comme le nez) seront mis en avant.
+
+Le padding (remplissage) est un petit truc qui permet de s'assurer que même les parties du nez du chat qui sont près des bords de l'image sont bien prises en compte. C'est comme ajouter un petit cadre autour de l'image pour ne rien rater.
+
 ---
 
 <a id="references"></a>
@@ -288,6 +400,8 @@ La carte des couleurs est un outil essentiel pour visualiser les données numér
    - *Computer Vision: What it is and why it matters* par SAS : Une ressource qui explique comment la vision par ordinateur fonctionne et pourquoi elle est importante dans divers secteurs[6].
 
 Ces références couvrent une variété d'aspects de la vision par ordinateur, allant des concepts de base aux applications avancées utilisant l'apprentissage profond.
+
+---
 
 # Autres citations:
 
