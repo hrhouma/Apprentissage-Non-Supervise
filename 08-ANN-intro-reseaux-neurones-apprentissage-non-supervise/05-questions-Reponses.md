@@ -66,6 +66,10 @@ Le préfixe `x` représente les données (les images dans ce cas), tandis que ce
 
 La différence entre `float32` et `float64` réside principalement dans la précision et la taille en mémoire. `float64` est la double précision de `float32`. [Lire plus ici](https://stackoverflow.com/questions/43440821/the-real-difference-between-float32-and-float64).
 
+
+## float32 est moins précis mais plus rapide que float64, et float64 est plus précis que float32 mais consomme plus de mémoire. Si la précision est plus importante que la vitesse, vous pouvez utiliser float64. Et si la vitesse est plus importante que la précision, vous pouvez utiliser float32.
+ 
+
 ### 4. 📦 Variables catégoriques et One-Hot Encoding
 
 **❓ Qu'est-ce que le concept des variables catégoriques et en quoi est-il important en IA ?**  
