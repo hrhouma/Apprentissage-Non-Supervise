@@ -2,6 +2,8 @@
 
 ## Introduction
 
+- https://drive.google.com/drive/folders/1v-8LrdbyBSP7jhSJMLHguULbwfYVLNnS?usp=sharing
+  
 En IA, les réseaux de neurones jouent un rôle crucial pour résoudre des problèmes complexes, comme la reconnaissance d'images, la classification de texte ou la prédiction de tendances. Deux éléments fondamentaux au cœur de ces réseaux sont **les poids** et **les biais**. Ce README a pour objectif d'expliquer leur importance et leur fonctionnement de manière claire et accessible.
 
 ## 1. Comprendre les Poids
