@@ -53,6 +53,17 @@ print(f"Prédiction pour une entrée de 6.0 : {prediction}")
 ### Résultats attendus
 
 - **Biais initial** : Le biais est initialisé à 0,5 avant l'entraînement.
-- **Biais final** : Après l'entraînement, le biais devrait se rapprocher de 1, qui est la valeur idéale pour l'équation \( y = 2 \times X + 1 \).
-- **Prédiction** : La prédiction pour une entrée de 6.0 devrait être proche de 13.0 (soit \( 2 \times 6 + 1 \)) après l'entraînement.
+- **Biais final** : Après l'entraînement, le biais devrait se rapprocher de 1, qui est la valeur idéale pour l'équation
+
+$$
+y = 2 \times X + 1
+$$
+
+- **Prédiction** : La prédiction pour une entrée de 6.0 devrait être proche de 13.0 (soit
+
+$$
+2 \times 6 + 1
+$$
+
+après l'entraînement.
 
