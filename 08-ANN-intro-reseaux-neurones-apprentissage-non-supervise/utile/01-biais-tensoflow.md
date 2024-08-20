@@ -1,5 +1,7 @@
 # Exemple : Modèle avec biais défini manuellement
 
+- https://drive.google.com/drive/folders/1v-8LrdbyBSP7jhSJMLHguULbwfYVLNnS?usp=sharing
+  
 ```python
 import tensorflow as tf
 import numpy as np
