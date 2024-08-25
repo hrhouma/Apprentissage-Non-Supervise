@@ -188,4 +188,5 @@ Le deuxième extrait de code prétend (;) être un autoencodeur convolutionnel a
 
 L'objectif de cet autoencodeur est de réduire la dimensionnalité des images tout en conservant l'essence des données. Ensuite, il tente de reconstruire les images originales à partir de cette représentation compressée. Ce processus démontre la capacité de l'autoencodeur à capturer les caractéristiques importantes des données, même après la réduction de leur dimensionnalité, tout en permettant une reconstruction fidèle des images.
 
-
+# Annexe 02 - êtes vous curieux ? 
+## => allez à 03-pratique02
