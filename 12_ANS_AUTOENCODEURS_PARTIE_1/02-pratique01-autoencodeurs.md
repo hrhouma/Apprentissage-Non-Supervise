@@ -1,4 +1,4 @@
-# Pratique pour Autoencodeurs
+# Pratique 01 pour Autoencodeurs
 
 Ce README présente trois extraits de code qui implémentent des autoencodeurs, une forme de réseau de neurones utilisée pour l'apprentissage non supervisé, principalement pour la réduction de dimensionnalité et l'apprentissage de caractéristiques. Chaque extrait de code a un objectif différent et démontre l'application d'autoencodeurs sur divers types de données.
 
