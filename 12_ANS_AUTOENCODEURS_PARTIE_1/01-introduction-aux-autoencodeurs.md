@@ -156,7 +156,7 @@ En résumé, ce code vise à vous familiariser avec les concepts d'autoencodeurs
 Les autoencodeurs peuvent également être utilisés pour la réduction de bruit dans les images, en filtrant les éléments indésirables tout en maintenant la qualité visuelle.
 
 ----
-# ==> voir **ANNEXE 03. **Autoencodeur pour Images - Partie 2**
+# ==> voir **ANNEXE 03. Autoencodeur pour Images - Partie 2**
 ----
 
 
