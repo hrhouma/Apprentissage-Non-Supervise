@@ -1,6 +1,6 @@
 ### Évaluation Formative : Comprendre le Choix du Nombre de Neurones et des Hyperparamètres dans un Autoencodeur
 
-Cette évaluation formative est conçue pour évaluer votre compréhension du choix du nombre de neurones et des hyperparamètres dans les autoencodeurs, en particulier dans le contexte des deux implémentations présentées pour le jeu de données MNIST.
+Cette évaluation formative est conçue pour évaluer votre compréhension du choix du nombre de neurones et des hyperparamètres dans les autoencodeurs, en particulier dans le contexte des deux implémentations présentées pour le jeu de données MNIST de la paratique 01 et 02 (c'est la même pratique).
 
 ---
 
