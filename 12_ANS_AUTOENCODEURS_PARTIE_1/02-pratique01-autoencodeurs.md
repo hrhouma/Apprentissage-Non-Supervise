@@ -19,20 +19,31 @@ Ce fichier présente trois extraits de code qui implémentent des autoencodeurs,
 **Schéma du Processus :**
 
 ```
-       +-----------------------------+
-       |   Données Originales (X1, X2, X3)   |
-       +-------------+---------------+
+       +-----------------------------------+
+       |   Données Originales (X1, X2)     |
+       +-----------------------------------+
                      |
                      v
-       +-------------+---------------+
-       |       Autoencodeur       |
-       |  Encoder : 3 -> 2       |
-       +-------------+---------------+
+       +-----------------------------------+
+       |  Ajout de Bruit (Génération X3)   |
+       +-----------------------------------+
                      |
                      v
-       +-------------+---------------+
-       |  Données Réduites (X1, X2)   |
-       +-----------------------------+
+       +-----------------------------------+
+       |  Données avec Bruit (X1, X2, X3)  |
+       +-------------+---------------------+
+                     |
+                     v
+       +-------------+---------------------+
+       |       Autoencodeur                |
+       |  Encoder : 3 -> 2                 |
+       +-------------+---------------------+
+                     |
+                     v
+       +-------------+---------------------+
+       |  Données Réduites (X1, X2)         |
+       +-----------------------------------+
+
 ```
 
 **Code :**
@@ -98,7 +109,7 @@ plt.scatter(encoded_2dim['X1'], encoded_2dim['X2'], c=y)
 
 **Objectif :**
 
-Cet extrait de code applique un autoencodeur convolutionnel au jeu de données MNIST, qui contient des images de chiffres manuscrits (28x28 pixels). L'autoencodeur réduit la dimensionnalité des images, puis tente de reconstruire les images d'origine à partir de cette représentation compressée. Le but est de démontrer la capacité de l'autoencodeur à capturer l'essence des données en une représentation de plus faible dimension tout en préservant les caractéristiques importantes pour la reconstruction.
+Cet extrait de code applique un autoencodeur convolutionnel au jeu de données MNIST (**voir l'annexe 01**), qui contient des images de chiffres manuscrits (28x28 pixels). L'autoencodeur réduit la dimensionnalité des images, puis tente de reconstruire les images d'origine à partir de cette représentation compressée. Le but est de démontrer la capacité de l'autoencodeur à capturer l'essence des données en une représentation de plus faible dimension tout en préservant les caractéristiques importantes pour la reconstruction.
 
 **Schéma du Processus :**
 
@@ -168,4 +179,13 @@ decoded_imgs = autoencoder.predict(X_test)
 
 # **Conclusions Générales**
 
-Ces trois exemples montrent comment les autoencodeurs peuvent être appliqués à différents types de données, qu'il s'agisse de données synthétiques, d'images de chiffres manuscrits (MNIST), ou d'autres types de données. L'objectif général est de montrer comment ces modèles peuvent réduire la dimensionnalité des données tout en préservant suffisamment d'informations pour permettre une reconstruction fidèle des données d'origine. Les visualisations créées après l'entraînement des modèles aident à évaluer l'efficacité de la compression et de la reconstruction.
+Ces deux exemples montrent comment les autoencodeurs peuvent être appliqués à différents types de données, qu'il s'agisse de données synthétiques, d'images de chiffres manuscrits (MNIST), ou d'autres types de données. L'objectif général est de montrer comment ces modèles peuvent réduire la dimensionnalité des données tout en préservant suffisamment d'informations pour permettre une reconstruction fidèle des données d'origine. Les visualisations créées après l'entraînement des modèles aident à évaluer l'efficacité de la compression et de la reconstruction.
+
+# Anenxe 01 - Est-ce vraiment convolutionnel ?
+
+
+Le deuxième extrait de code prétend (;) être un autoencodeur convolutionnel appliqué au jeu de données MNIST, qui contient des images de chiffres manuscrits (28x28 pixels). Mais ne vous laissez pas berner—c'est une blague ! En réalité, cet extrait de code met en œuvre un autoencodeur simple, utilisant uniquement *des couches denses (fully connected layers), et non des couches convolutionnelles.*
+
+L'objectif de cet autoencodeur est de réduire la dimensionnalité des images tout en conservant l'essence des données. Ensuite, il tente de reconstruire les images originales à partir de cette représentation compressée. Ce processus démontre la capacité de l'autoencodeur à capturer les caractéristiques importantes des données, même après la réduction de leur dimensionnalité, tout en permettant une reconstruction fidèle des images.
+
+
