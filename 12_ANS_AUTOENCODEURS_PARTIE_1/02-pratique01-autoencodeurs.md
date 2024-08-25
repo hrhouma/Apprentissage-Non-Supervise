@@ -4,7 +4,7 @@ Ce README présente trois extraits de code qui implémentent des autoencodeurs, 
 
 ---
 
-#### **Code 1 : Autoencodeur Simple sur Données Synthétiques**
+# **Code 1 : Autoencodeur Simple sur Données Synthétiques**
 
 ---
 
@@ -89,7 +89,7 @@ plt.scatter(encoded_2dim['X1'], encoded_2dim['X2'], c=y)
 
 ---
 
-#### **Code 2 : Autoencodeur Convolutionnel sur le Jeu de Données MNIST**
+# **Code 2 : Autoencodeur Convolutionnel sur le Jeu de Données MNIST**
 
 ---
 
@@ -163,6 +163,6 @@ decoded_imgs = autoencoder.predict(X_test)
 
 ---
 
-### **Conclusions Générales**
+# **Conclusions Générales**
 
 Ces trois exemples montrent comment les autoencodeurs peuvent être appliqués à différents types de données, qu'il s'agisse de données synthétiques, d'images de chiffres manuscrits (MNIST), ou d'autres types de données. L'objectif général est de montrer comment ces modèles peuvent réduire la dimensionnalité des données tout en préservant suffisamment d'informations pour permettre une reconstruction fidèle des données d'origine. Les visualisations créées après l'entraînement des modèles aident à évaluer l'efficacité de la compression et de la reconstruction.
