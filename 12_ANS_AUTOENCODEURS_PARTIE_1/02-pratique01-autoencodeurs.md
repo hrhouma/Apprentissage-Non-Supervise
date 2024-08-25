@@ -1,7 +1,9 @@
 # Pratique 01 pour Autoencodeurs
 
-Ce README présente trois extraits de code qui implémentent des autoencodeurs, une forme de réseau de neurones utilisée pour l'apprentissage non supervisé, principalement pour la réduction de dimensionnalité et l'apprentissage de caractéristiques. Chaque extrait de code a un objectif différent et démontre l'application d'autoencodeurs sur divers types de données.
+Ce fichier présente trois extraits de code qui implémentent des autoencodeurs, une forme de réseau de neurones utilisée pour l'apprentissage non supervisé, principalement pour la réduction de dimensionnalité et l'apprentissage de caractéristiques. Chaque extrait de code a un objectif différent et démontre l'application d'autoencodeurs sur divers types de données.
 
+# Pour plus de détails ==> Drive du cours 
+* 09-Introduction_aux_auto-encodeurs ==> 03-Exercices
 ---
 
 # **Code 1 : Autoencodeur Simple sur Données Synthétiques**
@@ -11,7 +13,8 @@ Ce README présente trois extraits de code qui implémentent des autoencodeurs, 
 
 **Objectif :**
 
-Cet extrait de code montre comment implémenter un autoencodeur simple sur un jeu de données synthétiques généré à l'aide de la fonction `make_blobs` de `sklearn`. L'objectif principal est de réduire la dimensionnalité du jeu de données de trois à deux dimensions, puis de visualiser les résultats pour comprendre l'efficacité de la réduction. Le code ajoute également du bruit aléatoire aux données pour simuler des conditions réelles, puis entraîne l'autoencodeur pour reconstruire les données à partir de cette représentation réduite.
+- Cet extrait de code montre comment implémenter un autoencodeur simple sur un jeu de données synthétiques généré à l'aide de la fonction `make_blobs` de `sklearn`. 
+- L'objectif principal est de réduire la dimensionnalité du jeu de données de trois à deux dimensions, puis de visualiser les résultats pour comprendre l'efficacité de la réduction. Le code ajoute également du bruit aléatoire aux données pour simuler des conditions réelles, puis entraîne l'autoencodeur pour reconstruire les données à partir de cette représentation réduite.
 
 **Schéma du Processus :**
 
