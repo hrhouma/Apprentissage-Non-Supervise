@@ -4,7 +4,7 @@
 
 #### **Dimensions des Données d'Entrée**
 
-Pour les deux autoencodeurs présentés dans le README, les données d'entrée proviennent du jeu de données MNIST. Chaque image dans MNIST est de taille 28x28 pixels. Dans le cas d'un autoencodeur convolutionnel, chaque pixel est traité comme une valeur unique, et s'il y a un canal de couleur (comme c'est souvent le cas avec des images en couleur), on inclurait cette dimension supplémentaire.
+Pour les deux autoencodeurs présentés dans lce travail, les données d'entrée proviennent du jeu de données MNIST. Chaque image dans MNIST est de taille 28x28 pixels. Dans le cas d'un autoencodeur convolutionnel, chaque pixel est traité comme une valeur unique, et s'il y a un canal de couleur (comme c'est souvent le cas avec des images en couleur), on inclurait cette dimension supplémentaire.
 
 - **MNIST** : Les images sont en niveaux de gris, donc il n'y a qu'un seul canal. Ainsi, les dimensions d'entrée pour chaque image sont **28x28x1**.
 
