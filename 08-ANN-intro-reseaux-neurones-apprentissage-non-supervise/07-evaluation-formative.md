@@ -75,7 +75,7 @@
 
 ---
 
-# 10. 10-heperparameters.py
+# 10. 10-hyperparametres.py
 - **Question 1** : Expliquez comment GridSearchCV est utilisé dans ce script pour optimiser les hyperparamètres d'un modèle de réseau de neurones.
 - **Question 2** : Pourquoi est-il important d'ajuster les hyperparamètres d'un modèle, et quels sont les risques si cette étape est négligée ?
 - **Question 3** : Décrivez les avantages de l'utilisation d'un wrapper Keras (KerasClassifier) avec scikit-learn pour effectuer une recherche sur grille.
