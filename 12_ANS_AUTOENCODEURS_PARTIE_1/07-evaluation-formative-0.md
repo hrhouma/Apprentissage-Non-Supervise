@@ -1,5 +1,7 @@
-# testez avec Dropout
+# Testez avec Dropout
 
+
+***Le Dropout désactive aléatoirement des neurones à chaque itération pour éviter que le modèle ne dépende trop de certains neurones spécifiques. Cela force le réseau à apprendre de manière plus générale, améliorant ainsi sa capacité à généraliser sur de nouvelles données. Même si les meilleurs neurones sont temporairement désactivés, d'autres neurones apprennent des caractéristiques similaires. Lors de la phase de test, tous les neurones sont actifs, ce qui permet d'utiliser pleinement les meilleures caractéristiques apprises.***
 
 # Exemple : version modifiée avec une première couche dense à 800 unités + couches de Dropout pour régulariser le modèle :
 
@@ -129,6 +131,4 @@ Le Dropout sélectionne effectivement les neurones à désactiver de manière al
    - Le fait que la désactivation soit aléatoire et change à chaque itération permet d'assurer que, même si certains neurones particulièrement performants sont désactivés à un moment donné, ils ne seront pas systématiquement désactivés. Cela permet à ces neurones de continuer à contribuer à l'apprentissage global du modèle.
 
 En résumé, bien que le Dropout désactive aléatoirement des neurones, ce mécanisme est conçu pour éviter la dépendance excessive à quelques neurones et encourager l'apprentissage à travers tout le réseau. Cela aide à créer un modèle plus robuste et capable de généraliser efficacement, sans perdre l'information critique que les meilleurs neurones peuvent fournir.
-
-***Le Dropout désactive aléatoirement des neurones à chaque itération pour éviter que le modèle ne dépende trop de certains neurones spécifiques. Cela force le réseau à apprendre de manière plus générale, améliorant ainsi sa capacité à généraliser sur de nouvelles données. Même si les meilleurs neurones sont temporairement désactivés, d'autres neurones apprennent des caractéristiques similaires. Lors de la phase de test, tous les neurones sont actifs, ce qui permet d'utiliser pleinement les meilleures caractéristiques apprises.***
 
