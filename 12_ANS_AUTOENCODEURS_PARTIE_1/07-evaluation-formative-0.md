@@ -50,7 +50,7 @@ history = autoencoder.fit(X_train, X_train, epochs=20, validation_data=(X_test, 
 decoded_imgs = autoencoder.predict(X_test)
 ```
 ------
-### Instructions :
+### Instructions #1 :
 -----
 
 1. **Augmentation de la première couche dense à 800 unités** : Cela permet de maintenir une représentation initiale proche de la taille d'entrée (784 pixels par image).
