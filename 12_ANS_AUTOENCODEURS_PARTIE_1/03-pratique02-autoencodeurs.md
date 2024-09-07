@@ -165,9 +165,7 @@ plt.show()
 
 Ces deux exemples d'autoencodeurs démontrent l'application des réseaux de neurones pour la réduction de dimensionnalité et la reconstruction des images dans le contexte du jeu de données MNIST :
 
-1. **Autoencodeur avec Couches Denses
-
- (Code 1)** : Ce modèle est plus simple et convient mieux pour des données où les relations globales entre les pixels sont plus importantes. Bien qu'il puisse être utilisé pour des images simples comme MNIST, il est moins performant pour des tâches complexes impliquant des images plus riches en détails.
+1. **Autoencodeur avec Couches Denses (Code 1)** : Ce modèle est plus simple et convient mieux pour des données où les relations globales entre les pixels sont plus importantes. Bien qu'il puisse être utilisé pour des images simples comme MNIST, il est moins performant pour des tâches complexes impliquant des images plus riches en détails.
 
 2. **Autoencodeur Convolutionnel (Code 2)** : Ce modèle est particulièrement adapté aux données structurées en grille, comme les images, car il capture efficacement les motifs locaux grâce aux couches de convolution. Il est recommandé pour des tâches où les détails spatiaux locaux sont essentiels, comme la reconnaissance d'images.
 
