@@ -43,6 +43,4 @@ Pour en savoir plus, consultez l'excellente documentation de Gimp sur l'utilisat
 
 Pour plus d'explications, visitez la page d'accueil du projet Explained Visually.
 
----
 
-Pour compléter cette structure, je peux générer des illustrations ou des graphiques si nécessaire. Si vous avez besoin d'une explication plus détaillée ou d'un autre exemple, n'hésitez pas à me le dire !
