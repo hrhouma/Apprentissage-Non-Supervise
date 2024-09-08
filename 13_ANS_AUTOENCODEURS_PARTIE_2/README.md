@@ -27,6 +27,7 @@ Explication sur ce que sont les autoencodeurs et leur rôle dans la réduction d
 ---
 # 2. Réduction de Bruit avec les Autoencodeurs
 Présentation du processus d'entraînement des autoencodeurs pour nettoyer des images bruitées.
+
 ---
 # 3. Exemple Pratique : Construction d'un Autoencodeur pour Nettoyer des Images
 Détails sur la construction et l'entraînement d'un autoencodeur pour réduire le bruit dans des images.
