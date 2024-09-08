@@ -3,7 +3,8 @@
 
 ## Objectif de cette partie
 
-Dans cette partie, nous allons apprendre à utiliser les **autoencodeurs** pour effectuer de la **réduction de bruit** sur des images. Vous verrez comment former un modèle qui reçoit des images bruitées en entrée et produit des versions débruitées en sortie.
+- Nous allons apprendre à utiliser les **autoencodeurs** pour effectuer de la **réduction de bruit** sur des images. 
+- Vous verrez comment former un modèle qui reçoit des images bruitées en entrée et produit des versions débruitées en sortie.
 
 ---
 
