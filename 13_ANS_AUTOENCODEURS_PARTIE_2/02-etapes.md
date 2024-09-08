@@ -1,4 +1,4 @@
-Cette représentation montre les étapes essentielles pour :
+# Représentation montre les étapes essentielles du projet :
 1. Charger et préparer les données,
 2. Construire et entraîner un autoencodeur,
 3. Extraire les **embeddings** et les classer avec un **SVM**,
