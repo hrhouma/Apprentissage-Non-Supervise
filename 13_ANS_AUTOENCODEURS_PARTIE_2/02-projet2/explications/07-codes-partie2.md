@@ -87,14 +87,19 @@ def load_lfw_dataset(
 ```
 
 # PARTIE 7
+
+```ssh
 X, attr = load_lfw_dataset(use_raw=True,dimx=38,dimy=38)
 X = X.astype('float32') / 255.0
 
 img_shape = X.shape[1:]
 IMG_SHAPE = X.shape[1:]
 X_train, X_test = train_test_split(X, test_size=0.1, random_state=42)
+```
 
 # PARTIE 8
+
+```ssh
 import matplotlib.pyplot as plt
 plt.title('sample image')
 for i in range(6):
@@ -103,14 +108,20 @@ for i in range(6):
 
 print("X shape:",X.shape)
 print("attr shape:",attr.shape)
+```
 
 # PARTIE 9
+
+```ssh
 import tensorflow as tf
 import keras, keras.layers as L
 from tensorflow.python.keras.backend import get_session
 s = get_session()
+```
 
 # PARTIE 10
+
+```ssh
 def build_pca_autoencoder(img_shape, code_size=32):
     encoder = keras.models.Sequential()
     encoder.add(L.InputLayer(img_shape))
@@ -123,8 +134,11 @@ def build_pca_autoencoder(img_shape, code_size=32):
     decoder.add(L.Reshape(img_shape))
 
     return encoder, decoder
+```
 
 # PARTIE 11
+
+```ssh
 encoder, decoder = build_pca_autoencoder(img_shape, code_size=32)
 
 inp = L.Input(img_shape)
@@ -133,12 +147,18 @@ reconstruction = decoder(code)
 
 autoencoder = keras.models.Model(inp, reconstruction)
 autoencoder.compile(optimizer='adamax', loss='mse')
+```
 
 # PARTIE 12
+
+```ssh
 autoencoder.fit(x=X_train,y=X_train,epochs=32,
                 validation_data=[X_test,X_test])
+```
 
 # PARTIE 13
+
+```ssh
 def visualize(img,encoder,decoder):
     code = encoder.predict(img[None])[0]
     reco = decoder.predict(code[None])[0]
@@ -155,16 +175,22 @@ def visualize(img,encoder,decoder):
     plt.title("Reconstructed")
     plt.imshow(reco.clip(0,1))
     plt.show()
+```
 
 # PARTIE 14
+
+```ssh
 score = autoencoder.evaluate(X_test,X_test,verbose=0)
 print("Final MSE:",score)
 
 for i in range(5):
     img = X_test[i]
     visualize(img,encoder,decoder)
+```
 
 # PARTIE 15
+
+```ssh
 def build_deep_autoencoder(img_shape,code_size=32):
     H,W,C = img_shape
 
@@ -185,8 +211,11 @@ def build_deep_autoencoder(img_shape,code_size=32):
     decoder.add(L.Reshape([38,38,3]))
 
     return encoder,decoder
+```
 
 # PARTIE 16
+
+```ssh
 get_dim = lambda layer: np.prod(layer.output.shape[1:]) if hasattr(layer.output, 'shape') else np.prod(layer.output.get_shape().as_list()[1:])
 
 for code_size in [1, 8, 32, 128, 512, 1024]:
@@ -203,14 +232,20 @@ for code_size in [1, 8, 32, 128, 512, 1024]:
         assert dim >= code_size
 
 print("All tests passed!")
+```
 
 # PARTIE 17
+
+```ssh
 img_shape = X.shape[1:]
 IMG_SHAPE = X.shape[1:]
 
 get_dim = lambda layer: np.prod(layer.output.shape[1:]) if hasattr(layer.output, 'shape') else np.prod(layer.output.get_shape().as_list()[1:])
+```
 
 # PARTIE 18
+
+```ssh
 for code_size in [1, 8, 32, 128, 512]:
     encoder, decoder = build_deep_autoencoder(IMG_SHAPE, code_size=code_size)
     print("Testing code size %i" % code_size)
@@ -226,7 +261,10 @@ for code_size in [1, 8, 32, 128, 512]:
 
 print("All tests passed!")
 
+```
+
 # PARTIE 19
+```ssh
 encoder,decoder = build_deep_autoencoder(img_shape,code_size=32)
 
 inp = L.Input(img_shape)
@@ -235,8 +273,10 @@ reconstruction = decoder(code)
 
 autoencoder = keras.models.Model(inp,reconstruction)
 autoencoder.compile('adamax','mse')
-
+```
 # PARTIE 20
+
+```ssh
 autoencoder.fit(x=X_train,y=X_train,epochs=32,
                 validation_data=[X_test,X_test])
 
@@ -246,8 +286,11 @@ print("Final MSE:", reconstruction_mse)
 for i in range(5):
     img = X_test[i]
     visualize(img,encoder,decoder)
+```
 
 # PARTIE 21
+
+```ssh
 def apply_gaussian_noise(X, sigma=0.1):
     noise = np.random.normal(0, sigma, X.shape[1:])
     noisy_image = X +
@@ -255,8 +298,11 @@ def apply_gaussian_noise(X, sigma=0.1):
  noise
     noisy_image = np.clip(noisy_image, 0, 1)
     return noisy_image
+```
 
 # PARTIE 22
+
+```ssh
 X_original = X[:100].copy()
 
 try:
@@ -269,7 +315,10 @@ except AssertionError as e:
     print(e)
     X = X_original.copy()
 
+```
+
 # PARTIE 23
+```ssh
 plt.subplot(1, 4, 1)
 plt.imshow(X[0])
 
@@ -281,8 +330,11 @@ plt.imshow(np.clip(apply_gaussian_noise(X[:1], sigma=0.1)[0], 0, 1))
 
 plt.subplot(1, 4, 4)
 plt.imshow(np.clip(apply_gaussian_noise(X[:1], sigma=0.5)[0], 0, 1))
+```
 
 # PARTIE 24
+
+```ssh
 encoder,decoder = build_deep_autoencoder(img_shape,code_size=512)
 assert encoder.output_shape[1:]==(512,)
 
@@ -292,8 +344,11 @@ reconstruction = decoder(code)
 
 autoencoder = keras.models.Model(inp,reconstruction)
 autoencoder.compile('adamax','mse')
+```
 
 # PARTIE 25
+
+```ssh
 for i in range(50):
     print("Epoch %i/50, Generating corrupted samples..."%i)
     X_train_noise = apply_gaussian_noise(X_train)
@@ -301,19 +356,29 @@ for i in range(50):
 
     autoencoder.fit(x=X_train_noise,y=X_train,epochs=1,
                     validation_data=[X_test_noise,X_test])
+```
 
 # PARTIE 26
+
+```ssh
 denoising_mse = autoencoder.evaluate(apply_gaussian_noise(X_test), X_test, verbose=0)
 print("Final MSE:", denoising_mse)
 for i in range(5):
     img = X_test[i]
     visualize(img, encoder, decoder)
+```
 
 # PARTIE 27
+
+```ssh
 encoder.save("./encoder.keras")
 decoder.save("./decoder.keras")
+```
+
 
 # PARTIE 28
+
+```ssh
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.neighbors import NearestNeighbors
@@ -349,6 +414,8 @@ def show_similar(image):
 show_similar(X_test[2])
 show_similar(X_test[500])
 show_similar(X_test[66])
+
+```
 
 # PARTIE 29
 
