@@ -1,1 +1,1 @@
-# Regardez le lien du cours
+# Consultez le lien du cours
