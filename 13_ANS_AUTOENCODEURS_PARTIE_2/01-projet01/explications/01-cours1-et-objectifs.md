@@ -4,7 +4,7 @@
 # **Objectif du projet**
 ----
 
-L'objectif de ce projet est de montrer à vos étudiants comment un modèle de réseau neuronal, appelé autoencodeur, peut être utilisé pour résoudre un problème pratique : **le débruitage d'images**. Dans ce cas, nous avons ajouté un bruit artificiel à des images et nous allons entraîner un modèle à les restaurer dans leur version originale. 
+L'objectif de ce projet est de vous montrer comment un modèle de réseau neuronal, appelé autoencodeur, peut être utilisé pour résoudre un problème pratique : **le débruitage d'images**. Dans ce cas, nous avons ajouté un bruit artificiel à des images et nous allons entraîner un modèle à les restaurer dans leur version originale. 
 
 Nous allons également combiner ce débruitage avec un autre modèle, appelé **classificateur**, pour reconnaître les chiffres présents sur les images après leur débruitage.
 
