@@ -1,7 +1,7 @@
 # **Dénoiser des images avec des autoencodeurs**
 
 ----
-# **Objectif du projet**
+# **Objectif du projet : NETTOYAGE DES DONNÉES AVANT CLASSIFICATION - LE NON SUPERVISÉ AVANT LE SUPERVISÉ**
 ----
 
 L'objectif de ce projet est de vous montrer comment un modèle de réseau neuronal, appelé autoencodeur, peut être utilisé pour résoudre un problème pratique : **le débruitage d'images**. Dans ce cas, nous avons ajouté un bruit artificiel à des images et nous allons entraîner un modèle à les restaurer dans leur version originale. 
@@ -9,7 +9,7 @@ L'objectif de ce projet est de vous montrer comment un modèle de réseau neuron
 Nous allons également combiner ce débruitage avec un autre modèle, appelé **classificateur**, pour reconnaître les chiffres présents sur les images après leur débruitage.
 
 # **Pourquoi faire cela ?**
-Dans la vie réelle, les données sont souvent corrompues ou bruitées. Par exemple, une image peut être floue ou pixelisée, et l'objectif est de restaurer ces images afin de pouvoir mieux les utiliser (pour la reconnaissance d'objets, par exemple).
+Dans la vie réelle, les données sont souvent corrompues ou bruitées. Par exemple, une image peut être floue ou pixelisée, et l'objectif est de restaurer ces images afin de pouvoir mieux les utiliser (pour la reconnaissance d'objets, par exemple). On fait l'apprentissage non supervisé (auto-encoders) avant l'apprentissage supervisé (classification) pour nettoyer les données. 
 
 # **Concepts importants :**
 1. **Autoencodeur** : Un réseau neuronal qui apprend à compresser et à décompresser des données. Il prend une image bruitée en entrée, la compresse dans un espace de plus petite dimension, puis la reconstruit pour la débruiter.
