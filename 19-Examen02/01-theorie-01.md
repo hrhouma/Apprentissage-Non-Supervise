@@ -16,5 +16,5 @@
 |                                |                                            | One-Class SVM                | Classification des anomalies                     | Non supervisée, Non temporelle    | Apprend une région de décision autour des données normales                                              | Peut être difficile à paramétrer; sensible au choix du noyau et des paramètres de régularisation             |
 | Séries Temporelles             | Données temporelles continues              | Modèles ARIMA, SARIMA        | Prédiction de séries temporelles                 | Supervisée, Temporelle            | Permet de modéliser et prédire les tendances et saisonnalités                                          | Modèles assez complexes; nécessitent une bonne compréhension de la temporalité et de l'auto-corrélation      |
 
-### Mean Shift :  utilisation dans les scénarios où la densité des points varie
-### Séries temporelles : modèles ARIMA ou SARIMA sont plus adaptés pour les analyses prédictives temporelles
+### ==> Mean Shift :  utilisation dans les scénarios où la densité des points varie
+### ==> Séries temporelles : modèles ARIMA ou SARIMA sont plus adaptés pour les analyses prédictives temporelles
