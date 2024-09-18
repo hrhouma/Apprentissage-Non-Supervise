@@ -1,5 +1,7 @@
 # **Première Partie : Quiz (10 questions)**
 
+**Choisissez la réponse la plus appropriée et la plus correcte. Il n’y a qu’une seule bonne réponse.**
+
 1. **Qu'est-ce que l'apprentissage non supervisé ?**  
    a) Apprentissage avec des données étiquetées  
    b) Apprentissage avec des données non étiquetées  
