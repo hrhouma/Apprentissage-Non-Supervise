@@ -66,7 +66,7 @@
 
 1. **Expliquez brièvement le fonctionnement de l'algorithme DBSCAN. En quoi se différencie-t-il de K-means pour la détection de clusters ?**
 
-2. **Quelle est l'importance de la réduction de dimensionnalité en apprentissage non supervisé ? Donnez un exemple de technique couramment utilisée.**
+2. **Quelle est l'importance de la réduction de dimensionnalité en apprentissage non supervisé ? Donnez deux exemples de technique couramment utilisée et comparez les.**
 
 # **Troisième Partie : Exercice pratique**
 
