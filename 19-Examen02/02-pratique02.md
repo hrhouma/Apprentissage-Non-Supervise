@@ -256,7 +256,7 @@ L'équipe de data science a implémenté un algorithme qui :
 - Le temps de traitement pour segmenter 100 000 clients était de seulement 2 minutes.
 - L'assignation de nouveaux clients à un segment se fait en temps réel, permettant une personnalisation immédiate.
 
-**Question pour les étudiants :**
+**Question**
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
@@ -356,7 +356,7 @@ L'équipe de bio-informatique a implémenté un algorithme qui :
 - Les biologistes peuvent explorer les relations à différents niveaux de détail en "coupant" l'arbre à différentes hauteurs.
 - L'analyse a confirmé certaines hypothèses existantes sur l'évolution des primates et a révélé de nouvelles relations inattendues.
 
-**Question pour les étudiants :**
+**Questions**
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
