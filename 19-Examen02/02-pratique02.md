@@ -120,10 +120,15 @@ L'équipe de data science a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 ------------------------------------------------
@@ -162,10 +167,15 @@ L'équipe de data science a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 
@@ -207,10 +217,15 @@ L'équipe de data science a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 
@@ -254,10 +269,15 @@ L'équipe de data science a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 
@@ -298,10 +318,15 @@ L'équipe de data science a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 
@@ -344,10 +369,15 @@ L'équipe de bio-informatique a implémenté un algorithme qui :
 Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
 
 A) KMeans
+
 B) DBSCAN
+
 C) Clustering hiérarchique agglomératif
+
 D) Isolation Forest
+
 E) PCA
+
 F) Autoencodeurs
 
 
