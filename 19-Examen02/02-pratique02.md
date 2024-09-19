@@ -70,7 +70,19 @@
 
 # **Troisième Partie : Exercice pratique**
 
-# À venir (Cette partie sera distribuée à 20h)
+**Consigne :** Vous travaillez avec un ensemble de données non étiquetées contenant des informations sur des clients d'une compagnie d'assurance.  
+Votre tâche est de détecter les anomalies dans cet ensemble de données à l'aide de l'algorithme *Isolation Forest*.
+
+1. Chargez l'ensemble de données (un fichier CSV vous est fourni).  
+2. Préparez les données en sélectionnant les colonnes pertinentes et en encodant les variables catégorielles si nécessaire.  
+3. Appliquez l'algorithme *Isolation Forest* pour identifier les anomalies potentielles parmi les clients.  
+4. Affichez les 10 enregistrements ayant le score d'anomalie le plus élevé.
+
+**Indications :**  
+- Utilisez la bibliothèque `scikit-learn`.  
+- Vous pouvez normaliser les données avant d'appliquer l'algorithme.  
+- Utilisez l'analyse en composantes principales (PCA) pour visualiser les anomalies détectées.  
+
 
 ------------------------------------------------
 # **Études de cas** 
