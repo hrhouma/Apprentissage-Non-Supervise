@@ -1,5 +1,6 @@
+---------------------------------------------------------------
 # **Première Partie : Quiz (10 questions)**
-
+---------------------------------------------------------------
 **Choisissez la réponse la plus appropriée et la plus correcte. Il n’y a qu’une seule bonne réponse.**
 
 1. **Qu'est-ce que l'apprentissage non supervisé ?**  
@@ -62,13 +63,17 @@
    c) Réseaux convolutifs et régressions logistiques  
    d) K-means et régressions linéaires
 
+---------------------------------------------------------------
 # **Deuxième Partie : Questions de développement (2 questions)**
+---------------------------------------------------------------
 
 1. **Expliquez brièvement le fonctionnement de l'algorithme DBSCAN. En quoi se différencie-t-il de K-means pour la détection de clusters ?**
 
 2. **Quelle est l'importance de la réduction de dimensionnalité en apprentissage non supervisé ? Donnez deux exemples de technique couramment utilisée et comparez les.**
 
+---------------------------------------------------------------
 # **Troisième Partie : Exercice pratique**
+---------------------------------------------------------------
 
 **Consigne :** Vous travaillez avec un ensemble de données non étiquetées contenant des informations sur des clients d'une compagnie d'assurance.  
 Votre tâche est de détecter les anomalies dans cet ensemble de données à l'aide de l'algorithme *Isolation Forest*.
@@ -84,9 +89,13 @@ Votre tâche est de détecter les anomalies dans cet ensemble de données à l'a
 - Utilisez l'analyse en composantes principales (PCA) pour visualiser les anomalies détectées.  
 
 
-------------------------------------------------
-# **Études de cas** 
-------------------------------------------------
+
+
+---------------------------------------------------------------
+# **Suite deuxième Partie : Étude de cas**
+---------------------------------------------------------------
+
+
 
 ------------------------------------------------
 ## Étude de cas 1 : Détection d'anomalies dans un système de sécurité bancaire
