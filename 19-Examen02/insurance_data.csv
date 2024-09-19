@@ -1,0 +1,100 @@
+months_as_customer,age,policy_number,policy_state,policy_annual_premium,umbrella_limit,insured_sex,insured_education_level,insured_occupation,insured_hobbies,insured_relationship,capital-gains,capital-loss,incident_type,collision_type,incident_severity,incident_hour_of_the_day,number_of_vehicles_involved,property_damage,bodily_injuries,witnesses,police_report_available,total_claim_amount,injury_claim,property_claim
+328,48,521585,OH,1406.91,0,MALE,MD,craft-repair,sleeping,husband,53300,0,Single Vehicle Collision,Side Collision,Major Damage,5,1,YES,1,2,YES,71610,6510,13020
+228,42,342868,IN,1197.22,5000000,MALE,MD,machine-op-inspct,reading,other-relative,0,0,Vehicle Theft,?,Minor Damage,8,1,?,0,0,?,5070,780,780
+134,29,687698,OH,1413.14,5000000,FEMALE,PhD,sales,board-games,own-child,35100,0,Multi-vehicle Collision,Rear Collision,Minor Damage,7,3,NO,2,3,NO,34650,7700,3850
+256,41,227811,IL,1415.74,6000000,FEMALE,PhD,armed-forces,board-games,unmarried,48900,-62400,Single Vehicle Collision,Front Collision,Major Damage,5,1,?,1,2,NO,63400,6340,6340
+228,44,367455,IL,1583.91,6000000,MALE,Associate,sales,board-games,unmarried,66000,-46000,Vehicle Theft,?,Minor Damage,20,1,NO,0,1,NO,6500,1300,650
+256,39,104594,OH,1351.1,0,FEMALE,PhD,tech-support,bungie-jumping,unmarried,0,0,Multi-vehicle Collision,Rear Collision,Major Damage,19,3,NO,0,2,NO,64100,6410,6410
+137,34,413978,IN,1333.35,0,MALE,PhD,prof-specialty,board-games,husband,0,-77000,Multi-vehicle Collision,Front Collision,Minor Damage,0,3,?,0,0,?,78650,21450,7150
+165,37,429027,IL,1137.03,0,MALE,Associate,tech-support,base-jumping,unmarried,0,0,Multi-vehicle Collision,Front Collision,Total Loss,23,3,?,2,2,YES,51590,9380,9380
+27,33,485665,IL,1442.99,0,FEMALE,PhD,other-service,golf,own-child,0,0,Single Vehicle Collision,Front Collision,Total Loss,21,1,NO,1,1,YES,27700,2770,2770
+212,42,636550,IL,1315.68,0,MALE,PhD,priv-house-serv,camping,wife,0,-39300,Single Vehicle Collision,Rear Collision,Total Loss,14,1,NO,2,1,?,42300,4700,4700
+235,42,543610,OH,1253.12,4000000,FEMALE,Masters,exec-managerial,dancing,other-relative,38400,0,Single Vehicle Collision,Front Collision,Total Loss,22,1,YES,2,2,?,87010,7910,15820
+447,61,214618,OH,1137.16,0,FEMALE,High School,exec-managerial,skydiving,other-relative,0,-51000,Multi-vehicle Collision,Front Collision,Major Damage,21,3,YES,1,2,YES,114920,17680,17680
+60,23,842643,OH,1215.36,3000000,MALE,MD,protective-serv,reading,wife,0,0,Single Vehicle Collision,Rear Collision,Total Loss,9,1,YES,1,0,NO,56520,4710,9420
+121,34,626808,OH,936.61,0,FEMALE,MD,armed-forces,bungie-jumping,wife,52800,-32800,Parked Car,?,Minor Damage,5,1,NO,1,1,NO,7280,1120,1120
+180,38,644081,OH,1301.13,0,FEMALE,College,machine-op-inspct,board-games,not-in-family,41300,-55500,Single Vehicle Collision,Rear Collision,Total Loss,12,1,NO,0,2,YES,46200,4200,8400
+473,58,892874,IN,1131.4,0,FEMALE,MD,transport-moving,movies,other-relative,55700,0,Multi-vehicle Collision,Side Collision,Major Damage,12,4,YES,0,0,NO,63120,10520,10520
+70,26,558938,OH,1199.44,5000000,MALE,College,machine-op-inspct,hiking,own-child,63600,0,Multi-vehicle Collision,Rear Collision,Major Damage,0,3,?,1,2,YES,52110,5790,5790
+140,31,275265,IN,708.64,6000000,MALE,High School,machine-op-inspct,reading,unmarried,53500,0,Single Vehicle Collision,Side Collision,Total Loss,9,1,NO,0,2,YES,77880,14160,7080
+160,37,921202,OH,1374.22,0,FEMALE,MD,craft-repair,yachting,other-relative,45500,-37800,Single Vehicle Collision,Side Collision,Total Loss,19,1,YES,1,0,NO,72930,6630,13260
+196,39,143972,IN,1475.73,0,FEMALE,High School,handlers-cleaners,camping,own-child,57000,-27300,Multi-vehicle Collision,Side Collision,Major Damage,8,3,?,2,0,NO,60400,6040,6040
+460,62,183430,IN,1187.96,4000000,MALE,JD,other-service,bungie-jumping,own-child,0,0,Multi-vehicle Collision,Rear Collision,Minor Damage,20,3,NO,1,0,?,47160,0,5240
+217,41,431876,IL,875.15,0,FEMALE,Associate,machine-op-inspct,skydiving,own-child,46700,0,Multi-vehicle Collision,Side Collision,Total Loss,15,3,?,1,2,?,37840,0,4730
+370,55,285496,IL,972.18,0,MALE,High School,prof-specialty,paintball,other-relative,72700,-68200,Multi-vehicle Collision,Rear Collision,Major Damage,20,3,NO,0,0,YES,71520,17880,5960
+413,55,115399,IN,1268.79,0,MALE,MD,priv-house-serv,chess,own-child,0,-31000,Single Vehicle Collision,Front Collision,Total Loss,15,1,?,2,2,?,98160,8180,16360
+237,40,736882,IN,883.31,0,MALE,College,craft-repair,kayaking,husband,0,-53500,Single Vehicle Collision,Rear Collision,Minor Damage,6,1,NO,1,3,NO,77880,7080,14160
+8,35,699044,OH,1266.92,0,MALE,Masters,sales,polo,own-child,0,0,Multi-vehicle Collision,Rear Collision,Major Damage,16,3,NO,1,3,YES,71500,16500,11000
+257,43,863236,IN,1322.1,0,MALE,High School,prof-specialty,golf,own-child,0,-29200,Parked Car,?,Minor Damage,4,1,YES,1,3,YES,9020,1640,820
+202,34,608513,IN,848.07,3000000,MALE,JD,exec-managerial,chess,not-in-family,31000,-30200,Vehicle Theft,?,Minor Damage,5,1,YES,2,1,?,5720,1040,520
+224,40,914088,OH,1291.7,0,FEMALE,JD,sales,kayaking,not-in-family,0,-55600,Single Vehicle Collision,Side Collision,Minor Damage,21,1,NO,1,0,YES,69840,7760,15520
+241,45,596785,IL,1104.5,0,FEMALE,PhD,machine-op-inspct,basketball,unmarried,0,0,Single Vehicle Collision,Rear Collision,Minor Damage,5,1,NO,2,2,NO,91650,14100,14100
+64,25,908616,IL,954.16,0,MALE,Masters,prof-specialty,video-games,husband,53200,0,Multi-vehicle Collision,Side Collision,Major Damage,22,4,NO,0,0,?,75600,12600,12600
+166,37,666333,IL,1337.28,8000000,MALE,JD,craft-repair,reading,husband,27500,0,Multi-vehicle Collision,Side Collision,Major Damage,10,3,NO,2,2,?,67140,7460,7460
+155,35,336614,IL,1088.34,0,FEMALE,Associate,adm-clerical,yachting,other-relative,81100,0,Multi-vehicle Collision,Front Collision,Total Loss,16,3,YES,2,3,NO,29790,3310,3310
+114,30,584859,IL,1558.29,0,MALE,High School,farming-fishing,video-games,wife,51400,-64000,Multi-vehicle Collision,Front Collision,Major Damage,1,3,NO,1,2,?,77110,14020,14020
+149,37,990493,IL,1415.68,0,MALE,PhD,prof-specialty,yachting,own-child,0,0,Single Vehicle Collision,Side Collision,Total Loss,17,1,YES,0,1,YES,64800,10800,5400
+147,33,129872,OH,1334.15,6000000,MALE,High School,craft-repair,reading,not-in-family,53300,-49200,Single Vehicle Collision,Front Collision,Major Damage,15,1,YES,2,0,YES,53100,10620,5310
+62,28,200152,IL,988.45,0,FEMALE,Masters,protective-serv,camping,unmarried,0,0,Single Vehicle Collision,Rear Collision,Total Loss,3,1,?,1,1,YES,60200,6020,6020
+289,49,933293,IL,1222.48,0,FEMALE,JD,priv-house-serv,golf,unmarried,0,0,Parked Car,?,Minor Damage,16,1,NO,1,1,YES,5330,1230,820
+431,54,485664,IN,1155.55,0,FEMALE,MD,craft-repair,bungie-jumping,unmarried,65700,0,Multi-vehicle Collision,Rear Collision,Major Damage,4,3,?,2,0,?,62300,12460,6230
+199,37,982871,IN,1262.08,0,MALE,JD,tech-support,video-games,wife,48500,0,Single Vehicle Collision,Front Collision,Major Damage,4,1,?,0,3,NO,60170,10940,10940
+79,26,206213,IL,1451.62,0,MALE,Associate,tech-support,kayaking,not-in-family,0,-55700,Single Vehicle Collision,Rear Collision,Minor Damage,19,1,NO,2,2,?,40000,8000,4000
+116,34,616337,IN,1737.66,0,MALE,Associate,transport-moving,chess,unmarried,0,-24100,Single Vehicle Collision,Side Collision,Major Damage,1,1,?,1,1,?,97080,16180,16180
+37,23,448961,IL,1475.93,0,FEMALE,College,prof-specialty,hiking,husband,0,-67400,Multi-vehicle Collision,Side Collision,Minor Damage,17,3,YES,1,0,NO,51660,5740,5740
+106,30,790442,OH,538.17,0,FEMALE,PhD,transport-moving,reading,own-child,49700,-60200,Single Vehicle Collision,Rear Collision,Total Loss,23,1,NO,2,2,NO,51120,5680,5680
+269,44,108844,IL,1081.08,0,MALE,JD,priv-house-serv,reading,unmarried,36400,-28700,Single Vehicle Collision,Front Collision,Minor Damage,14,1,YES,0,2,?,56400,11280,11280
+265,40,430029,IL,1454.43,0,FEMALE,MD,protective-serv,yachting,husband,0,0,Multi-vehicle Collision,Rear Collision,Total Loss,17,3,NO,2,3,?,55120,6890,0
+163,33,529112,IN,1240.47,0,FEMALE,Associate,other-service,polo,husband,35300,0,Multi-vehicle Collision,Rear Collision,Total Loss,11,3,YES,1,1,?,77110,0,14020
+355,47,939631,OH,1273.7,4000000,MALE,College,other-service,kayaking,husband,0,0,Multi-vehicle Collision,Front Collision,Major Damage,19,3,NO,2,1,NO,62800,6280,6280
+175,34,866931,IN,1123.87,8000000,FEMALE,PhD,protective-serv,dancing,other-relative,0,0,Vehicle Theft,?,Trivial Damage,5,1,?,2,0,YES,7290,810,810
+192,35,582011,IL,1245.89,0,FEMALE,Masters,exec-managerial,movies,wife,0,-40300,Single Vehicle Collision,Rear Collision,Total Loss,19,1,NO,0,0,?,76600,15320,7660
+430,59,691189,OH,1326.62,7000000,MALE,MD,other-service,bungie-jumping,own-child,0,0,Multi-vehicle Collision,Front Collision,Minor Damage,19,3,?,0,3,YES,81800,16360,8180
+91,27,537546,IL,1073.83,0,FEMALE,JD,farming-fishing,polo,husband,0,0,Vehicle Theft,?,Trivial Damage,4,1,?,1,2,?,7260,1320,660
+217,39,394975,IN,1530.52,0,MALE,College,armed-forces,basketball,not-in-family,0,0,Vehicle Theft,?,Minor Damage,8,1,?,2,1,YES,4300,430,430
+223,40,729634,IN,1201.41,0,FEMALE,JD,priv-house-serv,movies,husband,88400,-46500,Multi-vehicle Collision,Side Collision,Major Damage,7,3,YES,1,0,?,70510,12820,12820
+195,39,282195,OH,1393.57,0,MALE,PhD,machine-op-inspct,movies,not-in-family,47600,-39600,Parked Car,?,Minor Damage,5,1,NO,0,1,YES,2640,480,480
+22,26,420810,OH,1276.57,0,MALE,PhD,craft-repair,skydiving,not-in-family,71500,0,Single Vehicle Collision,Rear Collision,Minor Damage,3,1,YES,1,2,NO,78900,15780,7890
+439,56,524836,IN,1082.49,0,FEMALE,PhD,prof-specialty,chess,unmarried,36100,-55000,Multi-vehicle Collision,Front Collision,Major Damage,12,3,?,2,3,?,56430,0,6270
+94,32,307195,IN,1414.74,0,FEMALE,Masters,adm-clerical,hiking,own-child,0,0,Parked Car,?,Minor Damage,19,1,NO,1,3,NO,2400,300,300
+11,39,623648,IL,1470.06,0,MALE,PhD,other-service,yachting,husband,56600,-45800,Single Vehicle Collision,Front Collision,Total Loss,22,1,YES,0,1,NO,65790,7310,7310
+151,36,485372,OH,870.63,0,FEMALE,MD,adm-clerical,kayaking,own-child,94800,-58500,Multi-vehicle Collision,Side Collision,Minor Damage,12,3,NO,1,1,NO,62920,11440,5720
+154,34,598554,IN,795.23,0,MALE,PhD,machine-op-inspct,base-jumping,other-relative,36900,0,Multi-vehicle Collision,Rear Collision,Major Damage,15,3,YES,2,1,?,69480,15440,0
+245,44,303987,IL,1168.2,0,MALE,JD,handlers-cleaners,basketball,husband,69100,0,Multi-vehicle Collision,Side Collision,Total Loss,23,3,NO,0,3,NO,44280,7380,3690
+119,32,343161,IL,993.51,0,MALE,High School,armed-forces,bungie-jumping,unmarried,0,-49500,Single Vehicle Collision,Side Collision,Minor Damage,12,1,NO,0,3,YES,56300,5630,11260
+215,42,519312,OH,1848.81,0,MALE,JD,transport-moving,video-games,own-child,0,-49000,Multi-vehicle Collision,Front Collision,Major Damage,20,3,YES,2,2,YES,68520,11420,5710
+295,42,132902,OH,1641.73,5000000,MALE,PhD,sales,chess,not-in-family,62400,0,Multi-vehicle Collision,Rear Collision,Total Loss,16,3,NO,0,0,NO,59130,6570,6570
+254,39,332867,IN,1362.87,0,FEMALE,MD,exec-managerial,chess,other-relative,35700,0,Multi-vehicle Collision,Front Collision,Minor Damage,6,3,YES,2,2,NO,82320,13720,6860
+107,31,356590,IN,1239.22,7000000,FEMALE,High School,tech-support,paintball,not-in-family,43400,-91200,Single Vehicle Collision,Side Collision,Minor Damage,12,1,YES,0,1,NO,89700,13800,13800
+478,64,346002,OH,835.02,0,FEMALE,Associate,adm-clerical,reading,unmarried,59600,0,Multi-vehicle Collision,Side Collision,Minor Damage,17,3,NO,1,1,NO,33930,0,3770
+128,30,500533,OH,1061.33,0,MALE,MD,machine-op-inspct,movies,own-child,43300,-66200,Single Vehicle Collision,Front Collision,Major Damage,8,1,NO,0,3,NO,68530,12460,6230
+338,49,348209,IN,1279.08,0,MALE,MD,other-service,kayaking,own-child,0,-51500,Parked Car,?,Minor Damage,13,1,NO,0,1,?,4300,860,860
+271,42,486676,OH,1105.49,0,FEMALE,Associate,prof-specialty,sleeping,own-child,56200,-50000,Multi-vehicle Collision,Side Collision,Major Damage,12,2,?,2,3,?,68310,12420,6210
+222,41,260845,OH,1055.53,0,FEMALE,MD,armed-forces,cross-fit,not-in-family,37800,-50300,Single Vehicle Collision,Front Collision,Total Loss,7,1,NO,0,2,NO,61290,6810,6810
+199,41,657045,OH,895.83,0,FEMALE,Associate,sales,paintball,husband,0,0,Single Vehicle Collision,Rear Collision,Minor Damage,10,1,NO,1,2,NO,30100,3010,0
+215,37,761189,IN,1632.93,0,FEMALE,College,transport-moving,golf,not-in-family,0,-42900,Multi-vehicle Collision,Rear Collision,Minor Damage,7,3,NO,2,0,YES,57120,9520,4760
+192,40,175177,IL,1405.99,0,FEMALE,Associate,sales,yachting,wife,0,0,Multi-vehicle Collision,Side Collision,Minor Damage,18,3,YES,1,0,YES,42930,9540,4770
+120,35,116700,OH,1425.54,0,FEMALE,High School,transport-moving,bungie-jumping,other-relative,78300,0,Multi-vehicle Collision,Front Collision,Total Loss,22,3,NO,2,0,NO,51210,11380,5690
+270,45,166264,OH,1038.09,0,FEMALE,College,handlers-cleaners,golf,husband,0,-19700,Multi-vehicle Collision,Front Collision,Minor Damage,18,3,NO,1,1,YES,89400,14900,7450
+319,47,527945,IN,1307.11,0,MALE,College,transport-moving,dancing,not-in-family,0,0,Multi-vehicle Collision,Front Collision,Total Loss,22,3,NO,0,2,?,59730,10860,10860
+194,39,627540,OH,1489.24,6000000,FEMALE,JD,other-service,kayaking,wife,0,-45000,Vehicle Theft,?,Minor Damage,15,1,YES,2,2,YES,8060,1240,1240
+227,38,279422,OH,976.67,0,FEMALE,PhD,handlers-cleaners,polo,unmarried,0,0,Single Vehicle Collision,Rear Collision,Major Damage,16,1,?,1,2,?,72200,14440,7220
+137,31,484200,OH,1340.43,0,MALE,High School,exec-managerial,paintball,husband,52700,-40600,Multi-vehicle Collision,Side Collision,Minor Damage,6,3,NO,1,2,NO,50800,10160,10160
+244,40,645258,OH,1267.81,5000000,FEMALE,Masters,exec-managerial,video-games,wife,0,0,Vehicle Theft,?,Trivial Damage,10,1,?,2,1,?,6600,660,1320
+78,29,694662,IL,1234.2,6000000,MALE,Masters,other-service,bungie-jumping,other-relative,0,0,Vehicle Theft,?,Minor Damage,3,1,YES,2,2,NO,7500,750,1500
+200,35,960680,IN,1318.06,0,MALE,High School,exec-managerial,video-games,wife,57300,-80600,Vehicle Theft,?,Trivial Damage,13,1,NO,0,3,YES,6490,1180,1180
+284,48,498140,IN,769.95,0,MALE,Masters,prof-specialty,movies,not-in-family,0,-44200,Multi-vehicle Collision,Side Collision,Major Damage,16,2,?,2,3,NO,60940,5540,11080
+275,41,498875,OH,1514.72,0,MALE,High School,transport-moving,board-games,own-child,35700,0,Multi-vehicle Collision,Front Collision,Major Damage,13,3,YES,0,1,?,58300,5830,11660
+153,34,798177,IL,873.64,4000000,FEMALE,Associate,priv-house-serv,yachting,husband,800,0,Multi-vehicle Collision,Front Collision,Minor Damage,9,3,NO,2,1,?,68400,11400,11400
+134,32,614763,IL,1612.43,0,FEMALE,MD,other-service,yachting,own-child,36400,0,Single Vehicle Collision,Side Collision,Total Loss,2,1,?,2,1,YES,64240,11680,11680
+31,36,679370,IL,1318.24,9000000,FEMALE,College,prof-specialty,kayaking,not-in-family,0,-78600,Parked Car,?,Trivial Damage,9,1,NO,0,1,YES,4700,940,470
+41,25,958857,IN,1226.83,0,FEMALE,College,exec-managerial,exercise,not-in-family,0,-56100,Multi-vehicle Collision,Side Collision,Major Damage,12,3,YES,2,0,?,45120,0,5640
+127,29,686816,OH,1326.44,5000000,FEMALE,High School,sales,board-games,own-child,0,0,Multi-vehicle Collision,Front Collision,Total Loss,12,2,YES,1,1,?,66950,10300,10300
+61,23,127754,IL,1136.83,4000000,FEMALE,Associate,tech-support,exercise,own-child,0,-62400,Single Vehicle Collision,Side Collision,Major Damage,14,1,NO,0,3,?,98340,8940,17880
+207,42,918629,IL,1322.78,0,MALE,PhD,farming-fishing,yachting,own-child,55200,0,Parked Car,?,Trivial Damage,9,1,NO,0,1,NO,5900,590,590
+219,43,731450,IN,1483.25,0,FEMALE,MD,exec-managerial,exercise,not-in-family,90700,-20800,Multi-vehicle Collision,Front Collision,Major Damage,3,3,NO,1,1,?,70680,5890,11780
+271,42,307447,IL,1515.3,0,FEMALE,High School,machine-op-inspct,hiking,not-in-family,0,0,Multi-vehicle Collision,Rear Collision,Total Loss,21,3,NO,1,0,NO,93720,17040,8520
+80,25,992145,IL,1075.18,5000000,FEMALE,PhD,armed-forces,exercise,husband,67700,-58400,Vehicle Theft,?,Minor Damage,5,1,NO,2,0,YES,6930,1260,630
+325,47,900628,IN,1690.27,0,FEMALE,Associate,protective-serv,hiking,not-in-family,61500,0,Single Vehicle Collision,Side Collision,Major Damage,11,1,YES,0,3,NO,72930,6630,6630
+29,25,235220,IL,1352.83,0,MALE,Masters,farming-fishing,skydiving,own-child,0,-71700,Multi-vehicle Collision,Rear Collision,Minor Damage,4,4,YES,1,2,YES,64890,7210,7210
+295,48,740019,OH,1148.73,0,FEMALE,College,machine-op-inspct,kayaking,wife,0,0,Parked Car,?,Trivial Damage,6,1,?,1,2,YES,5400,900,900
