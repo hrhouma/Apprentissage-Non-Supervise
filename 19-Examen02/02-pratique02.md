@@ -82,7 +82,7 @@ Votre tâche est de détecter les anomalies dans cet ensemble de données à l'a
 - Vous pouvez normaliser les données avant d'appliquer l'algorithme.
 
 ------------------------------------------------
-# **Études de cas 
+# **Études de cas** 
 ------------------------------------------------
 
 ------------------------------------------------
