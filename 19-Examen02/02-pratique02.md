@@ -378,7 +378,59 @@ D) Isolation Forest
 
 E) PCA
 
+F) AutoencodeursJe comprends. Voici une version modifiée de l'étude de cas qui intègre un algorithme spécifique parmi les options données, tout en gardant le contexte de la détection d'armes par drones :
+
+------------------------------------------------
+## Étude de cas 7 : Analyse des données de détection d'armes par drones dans une zone de conflit
+------------------------------------------------
+
+Dans un pays ravagé par la guerre, une équipe utilise des drones équipés de détecteurs de métaux pour localiser des caches d'armes. Après plusieurs semaines de collecte de données, l'équipe fait face à un défi d'analyse.
+
+**Contexte :**
+- Les drones ont collecté des données sur des milliers de points d'intérêt.
+- Chaque point est caractérisé par sa position GPS, l'intensité du signal métallique, la profondeur estimée, et d'autres mesures environnementales.
+- L'objectif est d'identifier des groupes de points qui pourraient représenter des caches d'armes importantes.
+
+**Défis :**
+1. Traiter un grand volume de données multidimensionnelles.
+2. Identifier des groupes de points sans connaître à l'avance le nombre de caches d'armes.
+3. Détecter des groupes de forme irrégulière, car les caches peuvent suivre des caractéristiques topographiques.
+4. Gérer le bruit dans les données dû aux débris métalliques inoffensifs.
+
+**Solution mise en place :**
+L'équipe d'analyse a implémenté un algorithme qui :
+
+- Groupe les points d'intérêt en fonction de leur proximité spatiale et de la similarité des signaux détectés.
+- Ne nécessite pas de spécifier à l'avance le nombre de groupes.
+- Peut identifier des clusters de forme arbitraire.
+- Est capable de distinguer les zones denses (potentielles caches d'armes) des points isolés (probables débris).
+- Identifie automatiquement les points considérés comme du bruit.
+
+**Résultats :**
+- L'algorithme a identifié 23 clusters potentiels de caches d'armes.
+- Il a révélé des formes de clusters suivant des caractéristiques topographiques comme des lignes de crête ou des vallées.
+- 15% des points ont été classés comme bruit, correspondant probablement à des débris métalliques isolés.
+- La visualisation des résultats a permis une meilleure compréhension de la distribution spatiale des caches potentielles.
+
+**Question :**
+Parmi les algorithmes suivants, lequel correspond le mieux à la solution décrite dans cette étude de cas ?
+
+A) KMeans
+
+B) DBSCAN
+
+C) Clustering hiérarchique agglomératif
+
+D) Isolation Forest
+
+E) PCA
+
 F) Autoencodeurs
+
+
+
+
+
 
 
 
