@@ -390,7 +390,7 @@ D) Isolation Forest
 
 E) PCA
 
-F) AutoencodeursJe comprends. Voici une version modifiée de l'étude de cas qui intègre un algorithme spécifique parmi les options données, tout en gardant le contexte de la détection d'armes par drones :
+F) AutoencodeursJe comprends. 
 
 ------------------------------------------------
 ## Étude de cas 7 : Analyse des données de détection d'armes par drones dans une zone de conflit
